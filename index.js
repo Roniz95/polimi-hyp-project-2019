@@ -3,30 +3,17 @@ const app = express();
 const bodyParser = require("body-parser");
 const sqlDbFactory = require("knex");
 const process = require("process");
-const path = require('path');
+const router = require('./routes');
 const _ = require("lodash");
 const nodemailer = require('nodemailer');
 const mg = require('nodemailer-mailgun-transport');
-let pages = path.join(__dirname, '/public/pages/');
-//app.use(express.static("public"));
-app.use(express.static('public/pages/'));
-app.use(express.static('/public/pages/'));
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-module.exports = app;
+app.use('/', router);
 
 
-//ROUTES
-
-//index page
-app.get('/', function(req, res, ) {
-    res.sendFile(__dirname  + '/public/index.html');
-});
-
-
-app.get('/backend/main.html', function (req, res){
-    res.sendFile(pages + 'main.html')
-});
 
 
 
@@ -69,3 +56,6 @@ function initSqlDB() {
 
     }
 }
+
+
+module.exports = app;
