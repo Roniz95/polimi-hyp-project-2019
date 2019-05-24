@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    
+    <link rel="stylesheet" href="standardStyle.css">
+    <link rel="stylesheet" href="searchStyle.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header class="header group">
+    <a href="Home.html" class="header__logo">Logo </a>
+    <a href="" class="header__icon-bar">
+    <span></span>        
+    <span></span>
+    <span></span>
+    </a>
+    <ul class="header__menuR">
+        <li class="header__menuR__item"><a href="">Login</a></li>
+        <li class="header__menuR__item"><a href="">Sign Up</a></li>
+        <li class="header__menuR__item"><a href="">Carrello</a></li>
+    </ul>
+    <ul class="header__menuL">
+        <li class="header__menuL__item"><a href="AboutUs.html">About Us</a></li>
+        <li class="header__menuL__item"><a href="Book.html">Book</a></li>
+        <li class="header__menuL__item"><a href="Author.html">Author</a></li>
+        <li class="header__menuL__item"><a href="Contact.html">Contact</a></li>
+        <li class="header__menuL__item"><a href="Event.html">Event</a></li>
+        <li class="header__menuL__item"><a href="Search.html">Search</a></li>
+    </ul>   
+    </header>
+    
+     <section class="cover">
+        <img src="cerca_libro.jpg" class="cover__image" alt="img">
+         <div class="cover__filter"></div>
+         <div class="cover__caption"> 
+           <div class="cover__caption__copy">
+               <h1>Search</h1>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="searchBox group">
+        
+        <div class="easySearchBox group">
+            <form>
+            <input type="text" class="searchBar" placeholder="Search..">
+            <div class="dropdown">
+              <button class="dropbtn" type="button"><i class="fa fa-search"></i></button>
+              <div class="dropdown-content">
+                <button class="searchButtonMenu" onclick=''>Book</button> 
+                <button class="searchButtonMenu" onclick=''>Author</button> 
+                </div>
+            </div>
+            </form>
+        </div>
+        <button class="advancedSearchButton" onclick='document.getElementById("advancedSearchId").style.display = "block"'>Advanced Search</button> 
+    </div>
+    
+    
+    <div class="advancedSearchBox group" id="advancedSearchId">
+        
+        <div class="box__slider">
+          <input class="sliderCost" type="range" min="1" max="200" id="maxCost">
+           <p>Max cost: <span id="cost"></span>$</p>
+       </div>
+       
+       <div class="box__checkbox group">
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">My List
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Best seller
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Storico
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Fantascienza
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Politico
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Fantasy
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Avventura
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Per ragazzi
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Dell'orrore
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Giallo
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Rosa
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Psicologico
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Umoristico
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Sociale
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Fiaba
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Biografia
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Poesia
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Didattico
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">Poema
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value="">D'appendice
+           </div>
+       </div>
+    </div>
+    
+    
+    
+    <div class="itemSearchBox group">
+        <div class="itemTypeSearchBox group" id="SearchId">
+
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+                 <a href="BookX.html"><img src="harry1.jpg" class="cardBook__image" alt="..."></a>
+                 <div class="cardBook__link"><a href=""><b>Harry Potter e la pietra filosofale</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Rowling</b></a></div>
+                 <div class="cardBook__link"><a href=""><b>Prezzo: 20.00$</b></a></div>
+            </div>
+            <div class="itemSearch">
+               <a href="AuthorX.html">
+                <img src="h8.jpg" class="cardAuthor__image" alt="...">
+                <div class="cardAuthor__body"><h5><b>J.K.Rowling</b></h5></div>
+                </a>
+            </div>
+            <div class="itemSearch">
+               <a href="AuthorX.html">
+                <img src="h8.jpg" class="cardAuthor__image" alt="...">
+                <div class="cardAuthor__body"><h5><b>J.K.Rowling</b></h5></div>
+                </a>
+            </div>
+            <div class="itemSearch">
+               <a href="AuthorX.html">
+                <img src="h8.jpg" class="cardAuthor__image" alt="...">
+                <div class="cardAuthor__body"><h5><b>J.K.Rowling</b></h5></div>
+                </a>
+            </div>
+            <div class="itemSearch">
+               <a href="AuthorX.html">
+                <img src="h8.jpg" class="cardAuthor__image" alt="...">
+                <div class="cardAuthor__body"><h5><b>J.K.Rowling</b></h5></div>
+                </a>
+            </div>
+            <div class="itemSearch">
+               <a href="AuthorX.html">
+                <img src="h8.jpg" class="cardAuthor__image" alt="...">
+                <div class="cardAuthor__body"><h5><b>J.K.Rowling</b></h5></div>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    
+    
+
+
+  <footer class="footer group">
+       <div class="footer__service">
+           <h5>Service</h5>
+           <ul>
+            <li class="footer__link"><a href="Book.html">Book</a></li>
+            <li class="footer__link"><a href="Author.html">Author</a></li>
+           </ul>
+       </div>
+        <div class="footer__about">
+           <h5>About</h5>
+           <ul>
+            <li class="footer__link"><a href="AboutUs.html">About Us</a></li>
+            <li class="footer__link"><a href="Contact.html">Contact</a></li>
+           </ul>
+       </div>
+        <div class="footer__info">
+           <h5>Company name</h5>
+           <p>Informazioni societarie:Mondadori Retail S.p.A. | divisione online
+            Società con unico azionista soggetta ad attività di direzione e coordinamento da parte di Arnoldo Mondadori Editore S.p.A. | Capitale Sociale: Euro 2.700.000 i.v.
+            P. IVA 11022370156 | Cod. fisc. e Reg. Imprese Milano 00212560239 | REA Milano: 1428290 </p>
+       </div>
+       <div class="footer__social">
+          <a href=""><i class="fa fa-facebook"></i></a>
+          <a href=""><i class="fa fa-twitter"></i></a>
+          <a href=""><i class="fa fa-instagram"></i></a>
+        </div>
+        <p class="footer__copyright"> ©Company name 2019  </p>
+    </footer>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $(".header__icon-bar").click(function(e){
+                
+                $(".header__menuL").toggleClass('is-open');
+                $(".header__menuR").toggleClass('is-open');
+                e.preventDefault();
+            })
+        });
+    </script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+</body>
+</html>
