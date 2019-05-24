@@ -1,0 +1,52 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+
+
+
+
+/*-----------
+CARDS AUTHORS
+------------*/
+.deckAuthor_title{background: #333;width: 100%;height: auto;}
+.deckAuthor_title h6{padding: 5px; color: #fff;text-align: center;font-size: 25px;font-style: italic;}
+.deckAuthor{border: 0px;background: #fff; overflow-x: scroll; overflow-y: hidden; height:auto; display: flex;border: 0; padding: 0;margin-bottom: 5%;width: 100%;}
+.cardAuthor{margin-left:2%;margin-right: 2%; width: 30%;height: auto;float: left;flex: 0 0 auto;max-width: 320px;}
+.cardAuthor__image{width: 100%; ;height: 280px;background: #fff; border-radius: 40%;}
+.cardAuthor__button{height: 100%;font-size: 20px;width: 100%;}
+.cardAuthor__body{background: #fff;height: auto;}
+.cardAuthor__body h5{font-size: 23px; text-align: center;background: #fff; color: #000;}
+
+/*----------
+BANNER
+-----------*/
+.bannerBox__image{border-radius: 40%;}
+.banner__image{border-radius: 40%;}
+
+
+
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1020px){
+    
+    .cardAuthor{width: 40%;max-width: none;}
+    
+}
+
+
+
+
+/*-----------
+Smartphone
+------------*/
+@media screen and (max-width: 600px){
+    
+    .cardAuthor{width: 96%;margin-right: 10%;max-width: none;}
+}
+

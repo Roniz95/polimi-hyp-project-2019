@@ -1,0 +1,47 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+/* EVENTS */
+.eventsBox{width: 94%; height: 88%; margin:2% 3%; padding: 1%;min-height: 365px;}
+.eventsButtonMenu{height: auto;}
+
+.thisMonthEvents{width: 100%; height: 100%; color: #000;float: left;background: darkorange;border: 2px solid #000;overflow-x: hidden; overflow-y: scroll;}
+.soonEvents{width: 100%; height: 100%; color: #000;float: left;background: darkorange;border: 2px solid #000;overflow-x: hidden; overflow-y: scroll;display: none;}
+
+.event{margin: 3%;width: 18.5%;height: auto;display: inline-block;flex: 0 0 auto;vertical-align: top;}
+.event__image{width: 100%;height: auto;border-bottom: 2px solid #000;}
+.event__link__img{height: 350px;width: 100%;border: 2px solid #000;border-top-right-radius: 8%;border-top-left-radius: 8%;}
+.event__link{height: auto;width: 100%;border-bottom: 2px solid #000;border-left: 2px solid #000;border-right: 2px solid #000;text-align: center;color: #000;font-size: 18px;background: #fff;}
+.event__link a{color: #000;}
+
+
+
+
+/*-----------
+Monitor small - ipad pro
+------------*/
+@media (max-width: 1700px){
+
+    .event{width: 29%;margin:2%;}
+    .event__link__img{height: 320px;}
+}
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1020px){
+    .event{width: 43%;margin: 3%;}
+    .event__link__img{height: 320px;}
+}
+
+/*-----------
+Smartphone
+------------*/
+@media (max-width: 600px){
+    .event{width: 96%;margin: 10% 2%;}
+    .event__link__img{height: 280px;}
+}

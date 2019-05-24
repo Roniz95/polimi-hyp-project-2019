@@ -1,0 +1,56 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+
+/*--------------
+EVENT
+---------------*/
+.eventBox{width: 100%;height: auto;}
+.eventMaps {width: 90%;height:auto;background: #333;margin: 5%;padding: 1%;}
+.eventMaps iframe {width: 70%; height: 350px;float: left;}
+.eventMaps__info{height: auto; width: 30%;float: left;color: #fff;text-align: center;}
+.eventDescription{height: auto;width: 96%;margin: 0 2%;padding: 1%;float: left;color: #000;background: #fff;font-size: 25px;font-style: italic;}
+
+
+.deckEvent_title{background: #333;width: 100%;height: auto;}
+.deckEvent_title h6{padding: 5px; color: #fff;text-align: center;font-size: 25px;font-style: italic;}
+.deckEvent{background: #fff; overflow-x: scroll; overflow-y: hidden; height:auto; display: flex;border: 0; padding: 0;margin-bottom: 5%;width: 100%;}
+.event{margin-left:2%;margin-right: 2%; width: 30%;height: auto;display: inline-block;flex: 0 0 auto;max-width: 320px;vertical-align: top;}
+.event__image{width: 100%;height: auto;border-bottom: 2px solid #000;}
+.event__link__img{height: 280px;width: 100%;border: 2px solid #000;border-top-right-radius: 8%;border-top-left-radius: 8%;}
+.event__link{height: auto;width: 100%;border-bottom: 2px solid #000;border-left: 2px solid #000;border-right: 2px solid #000;text-align: center;color: #000;font-size: 18px;background: #fff;}
+.event__link a{color: #000;}
+.cardEvent__button{height: 100%;font-size: 20px;width: 100%;}
+
+
+
+
+
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1020px){
+    .eventMaps{height: auto;}
+    .eventMaps iframe{width: 100%;height: auto;}
+    .eventMaps__info{height: auto;width: 100%;}
+    .event{width: 40%;max-width: none;}
+}
+
+/*-----------
+Smartphone
+------------*/
+@media (max-width: 600px){ 
+    .eventMaps{height: auto;}
+    .eventMaps iframe{width: 100%;height: auto;}
+    .eventMaps__info{height: auto;width: 100%;}
+    .event{width: 96%;margin-right: 10%;max-width: none;}
+}
+
+
+
+

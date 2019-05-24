@@ -1,0 +1,63 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+
+/*--------------
+CAROUSEL
+---------------*/
+.carousel{height:60%;}
+.carousel-inner{height: 100%;}
+.carousel-item{height: 100%; background-color: black;}
+.carousel__image{height: 100%;  width: 100%;  position: absolute;z-index: 0; }
+.carousel-caption {max-height: 28%;Padding: 0px 0px;}
+.carousel-caption h5{font-size: 21px;}
+.carousel-caption p{font-size: 15px;}
+.cover__carousel{ background: #000;height: 30%;top: 70%;width: 100%;position:relative;z-index: 1;opacity: 0.3;}
+
+
+/*--------------
+PRESENTATION
+---------------*/
+.presentation{height: auto; background:#fff; margin: 7%;}
+.presentation p{ text-align: center;font-size: 21px;font-style: italic;background: #fff; color: #000;}
+
+
+/*-----------
+CARDS
+------------*/
+.deck_title{background: #333;width: 100%;height: auto;}
+.deck_title h6{padding: 5px; color: #fff;text-align: center;font-size: 25px;font-style: italic;}
+.deck{border: 1px solid #000;background: #fff; overflow-x: scroll; overflow-y: hidden; height:auto; display: flex;border: 0; padding: 0;width: 100%;}
+.card{margin-left:2%;margin-right: 2%; width: 30%;height: auto;float: left;flex: 0 0 auto;max-width: 320px;border: 2px solid #000;}
+.card__image{width: 100%;  height: 280px;border: 2px solid #000;}
+.card__body{background: #fff;height: auto;border: 2px solid #000;}
+.card__body h5{font-size: 23px; text-align: center;background: #fff; color: #000;}
+.card__body p{font-size: 18px; text-align: left;background: #fff; color: #000;font-style: italic;}
+.card__link{background: #fff;height: auto;border: 2px solid #000;}
+.card__link a{color: #000;}
+
+
+
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1020px){
+    
+    .carousel{height:45%;}
+    .carousel-caption p{font-size: 0px;}
+    .card{width: 40%;max-width: none;}
+}
+
+/*-----------
+Smartphone
+------------*/
+@media (max-width: 600px){
+    .cover__carousel{height: 0%;}
+    .carousel{height: 30%;}
+    .card{width: 96%;margin-right: 10%;max-width: none;}     
+}

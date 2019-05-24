@@ -1,0 +1,35 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+
+/*-----------
+DESCRIPTION
+-----------*/
+.description{padding: 2%; margin: 5%;background: #fff;}
+.description h1{color: red;}
+.description p{color: #000;font-size: 23px;}
+
+.presentation{height: auto;width: 100%;text-align: center;padding: 0% 10%;}
+video {width: 100% !important; height: auto!important;}
+
+
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1020px){
+    .description h1{font-size: 25px;}
+    .description p{font-size: 20px;}
+}
+
+/*-----------
+Smartphone
+------------*/
+@media (max-width: 600px){ 
+    .description h1{font-size: 28px;}
+    .description p{font-size: 18px;}
+}

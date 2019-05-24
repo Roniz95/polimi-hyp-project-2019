@@ -1,0 +1,93 @@
+/*-----------
+GENERAL
+-----------*/
+html,body{height:100%;width: 100%}
+body{background: #fff;}
+
+
+
+
+
+
+/*-----------
+BOX FILTER
+-----------*/
+
+.searchBox{width: 90%; height: auto;margin-top: 5%;margin-left: 5%;margin-right: 5%;text-align: center;}
+.easySearchBox{height: auto;width: 50%;margin: 0% 25%;}
+.searchBar{height: auto;width: 78%;margin-right: 2%; float: left;}
+
+.searchButtonMenu{width: 94%;margin: 3%;float: left;}
+
+.dropbtn {background-color: darkorange;color: white;padding: 16px;font-size: 16px;border: none;cursor: pointer;border-radius: 30%;}
+.dropdown {position: relative;display: inline-block;width: 20%;}
+.dropdown-content {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;ßz-index: 1;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #000;}
+.advancedSearchButton{width: auto;height: auto;font-size: 15px;}
+
+.advancedSearchBox{width: 90%; height: auto;margin:0% 5%;padding: 1%;text-align: center;border: 1px solid #000;display: none;}
+.box__slider{width:30%;margin: 0% 35%; height:  auto; float: left;}
+.sliderCost {-webkit-appearance: none; width: 100%; height: 100%; border-radius: 5px; background: grey; outline: none; opacity: 0.7; -webkit-transition: .2s; transition: opacity .2s;}
+.sliderCost::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: blue; cursor: pointer;}
+.box__slider p{font-size: 20px;text-align: center;}
+.box__checkbox{height: auto;width: 90%;text-align: left;margin: 0% 5%;}
+.elemCheckbox{margin-left: 3%;float: left;}
+
+
+.itemSearchBox{width: 90%; height: 88%; margin:2% 5%;min-height: 365px;}
+.itemTypeSearchBox{width: 100%; height: 100%; color: #000;float: left;background: darkorange;overflow-x: hidden; overflow-y: scroll;}
+
+
+.itemSearch{margin: 3%;width: 18.5%;height: auto;display: inline-block;flex: 0 0 auto;vertical-align: top;}
+
+
+.cardBook__image{width: 100%; height: 350px;border: 1px solid #000;}
+.cardBook__link{background: #fff;height: auto;border: 1px solid #000;}
+.cardBook__link a{color: #000;}
+
+.cardAuthor__image{width: 100%; ;height: 350px;background: #fff; border-radius: 40%;}
+.cardAuthor__body{background: #fff;height: auto;}
+.cardAuthor__body h5{font-size: 23px; text-align: center;background: #fff; color: #000;}
+
+
+
+
+
+
+/*-----------
+Monitor small - ipad pro
+------------*/
+@media (max-width: 1700px){
+
+    .itemSearch{width: 29%;margin:2%;}
+    .cardBook__image{height: 320px;}
+    .cardAuthor__image{height: 320px;}
+}
+
+
+
+/*-----------
+Ipad
+------------*/
+@media (max-width: 1000px){
+    .itemSearch{width: 43%;margin: 3%;}
+    .easySearchBox{width: 60%;margin: 0% 20%;}
+    .searchBar{width: 77%;margin-right: 3%;}
+    .cardBook__image{height: 320px;}
+    .cardAuthor__image{height: 320px;}
+
+}
+
+/*-----------
+Smartphone
+------------*/
+@media (max-width: 500px){
+    .itemSearch{width: 96%;margin: 10% 2%;}
+    .easySearchBox{width: 80%;margin: 0% 10%;}
+    .searchBar{width: 75%;margin-right: 5%;}
+    .cardBook__image{height: 280px;}
+    .cardAuthor__image{height: 280px;}
+
+
+}
