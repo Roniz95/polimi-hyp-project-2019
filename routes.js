@@ -7,10 +7,27 @@ const process = require("process");
 
 let pages = path.join(__dirname, '/public/pages/');
 
-router.get('/', function(req, res, ) {
-    res.sendFile(__dirname  + '/public/index.html');
+//these are the endpoint for the pages, you need to use these for html href link (for example #href=/about-us)
+router.get('/', function(req, res ) {
+    res.sendFile(pages  + 'Home.html');
+});
+router.get('/about-us', function (req, res) {
+    res.sendFile(pages + 'AboutUs.html');
+});
+router.get('/contact', function (req, res) {
+    res.sendFile(pages + 'Contact.html');
+});
+router.get('/author', function (req, res) {
+    res.sendFile(pages + 'Author.html');
 });
 
+router.get('/event', function (req, res){
+   res.sendFile(pages + 'Event.html');
+});
+
+router.get('/search', function (req, res) {
+   res.sendFile(pages + 'Search.html');
+});
 
 router.get('/backend/main.html', function (req, res){
     res.sendFile(pages + 'main.html')
@@ -18,6 +35,26 @@ router.get('/backend/main.html', function (req, res){
 
 router.get('/backend/spec.yaml', function (req, res) {
 
+});
+
+//handle 404
+router.use(function(req, res, next){
+    res.status(404);
+
+    // respond with html page
+    if (req.accepts('html')) {
+        res.sendFile(pages + '404page.html', { url: req.url });
+        return;
+    }
+
+    // respond with json
+    if (req.accepts('json')) {
+        res.send({ error: 'Not found' });
+        return;
+    }
+
+    // default to plain-text. send()
+    res.type('txt').send('Not found');
 });
 
 module.exports = router;
