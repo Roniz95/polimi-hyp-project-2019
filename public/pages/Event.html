@@ -1,315 +1,58 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>Events</title>
     
-    <link rel="stylesheet" href="standardStyle.css">
-    <link rel="stylesheet" href="eventStyle.css">
-
-    
+    <link rel="stylesheet" href="../assets/css/standardStyle.css">
+    <link rel="stylesheet" href="../assets/css/eventStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <header class="header group">
-    <a href="Home.html" class="header__logo">Logo </a>
-    <a href="" class="header__icon-bar">
-    <span></span>        
-    <span></span>
-    <span></span>
-    </a>
-    <ul class="header__menuR">
-        <li class="header__menuR__item"><a href="">Login</a></li>
-        <li class="header__menuR__item"><a href="">Sign Up</a></li>
-        <li class="header__menuR__item"><a href="">Carrello</a></li>
-    </ul>
-    <ul class="header__menuL">
-        <li class="header__menuL__item"><a href="AboutUs.html">About Us</a></li>
-        <li class="header__menuL__item"><a href="Book.html">Book</a></li>
-        <li class="header__menuL__item"><a href="Author.html">Author</a></li>
-        <li class="header__menuL__item"><a href="Contact.html">Contact</a></li>
-        <li class="header__menuL__item"><a href="Event.html">Event</a></li>
-        <li class="header__menuL__item"><a href="Search.html">Search</a></li>
-    </ul>   
-    </header>
     
-    <section class="cover">
-        <img src="event.jpg" class="cover__image" alt="img">
-         <div class="cover__filter"></div>
-         <div class="cover__caption"> 
-           <div class="cover__caption__copy">
-               <h1>All Event</h1>
-            </div>
-        </div>
-    </section>
-    
-    
-    <div class="eventsBox group">
-        
-        <button class="eventsButtonMenu" onclick='document.getElementById("thisMonthId").style.display = "block"; document.getElementById("soonId").style.display = "none"'>This Month</button> 
-        
-        <button class="eventsButtonMenu" onclick='document.getElementById("thisMonthId").style.display = "none"; document.getElementById("soonId").style.display = "block"'>Soon</button> 
-        
-        
-        
-        
-         <div class="thisMonthEvents group" id="thisMonthId">
-          
-           <div class="event ">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event ">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event ">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event ">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-        
-        </div>
-        
-        
-        <div class="soonEvents group" id="soonId">
-          
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-            <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO  Evento lettura all'aperto </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO   Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-            <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento l Evento lettura all'aperto ettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO  Evento lettura all'aperto EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-            <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-            <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-            <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>Evento lettura all'aperto</b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           <div class="event group">
-                <a href="EventX.html" class="event__image"><img src="event.jpg" class="event__link__img" alt="img"> </a>
-                <div class="event__link"><a href="EventX.html" ><b>TITOLO EVENTO </b></a></div>
-                <div class="event__link"><a href="Contact.html"><b> Città</b></a></div>
-                <div class="event__link"><p><b>DATA: 18/06/2019</b></p></div>
-           </div>
-           
-        </div>
-        
-    </div>
-    
-    
-    
-    
-    
-    
-    <footer class="footer group">
-       <div class="footer__service">
-           <h5>Service</h5>
-           <ul>
-            <li class="footer__link"><a href="Book.html">Book</a></li>
-            <li class="footer__link"><a href="Author.html">Author</a></li>
-           </ul>
-       </div>
-        <div class="footer__about">
-           <h5>About</h5>
-           <ul>
-            <li class="footer__link"><a href="AboutUs.html">About Us</a></li>
-            <li class="footer__link"><a href="Contact.html">Contact</a></li>
-           </ul>
-       </div>
-        <div class="footer__info">
-           <h5>Company name</h5>
-           <p>Informazioni societarie:Mondadori Retail S.p.A. | divisione online
-            Società con unico azionista soggetta ad attività di direzione e coordinamento da parte di Arnoldo Mondadori Editore S.p.A. | Capitale Sociale: Euro 2.700.000 i.v.
-            P. IVA 11022370156 | Cod. fisc. e Reg. Imprese Milano 00212560239 | REA Milano: 1428290 </p>
-       </div>
-       <div class="footer__social">
-          <a href=""><i class="fa fa-facebook"></i></a>
-          <a href=""><i class="fa fa-twitter"></i></a>
-          <a href=""><i class="fa fa-instagram"></i></a>
-        </div>
-        <p class="footer__copyright"> ©Company name 2019  </p>
-    </footer>
-    
-    <script src="BookXJS.js"></script>
+    <!-- JQuery scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            
-            $(".header__icon-bar").click(function(e){
-                
-                $(".header__menuL").toggleClass('is-open');
-                $(".header__menuR").toggleClass('is-open');
-                e.preventDefault();
-            })
-        });
-    </script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+  
+  <!-- NAVBAR -->
+  <script src="../assets/js/navbar.js"></script>
+  
+  <!-- HEADER SECTION -->
+  <section class="cover">
+    <img src="../assets/images/event.jpg" class="cover__image" alt="img">
+    <div class="cover__caption">
+      <h1>All Events</h1>
+    </div>
+  </section>
+    
+  <div class="container eventsBox">
+    <div class="button_container">
+      <button id="thisMonthEventsID" class="eventsButtonMenu button_active" onclick="selectThisMonthEvents()">This Month</button> 
+      <button id="soonEventsID" class="eventsButtonMenu" onclick="selectSoonEvents()">Soon</button> 
+    </div>
+    <hr style="margin-top: 0">
+    <div class="container">
+      <div id="thisMonthId" class="row justify-content-center"></div>
+      <div id="soonId" class="row justify-content-center"></div>  
+    </div>
+  </div>
+  
+  <!-- FOOTER -->
+  <script src="../assets/js/footer.js"></script>
+    
+  <script src="../assets/js/Event.js"></script>
+    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      
 </body>
+
 </html>
-
-
-    
-   
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

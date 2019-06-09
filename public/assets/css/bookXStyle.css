@@ -1,81 +1,62 @@
 /*-----------
-GENERAL
------------*/
-html,body{height:100%;width: 100%}
-body{background: #fff;}
-
-
-
-/*-----------
-MAIN BOOK
+  MAIN BOOK
 ------------*/
-.intro{background: darkorange;width: 100%;height: auto;padding: 5% 0;}
-.intro h1{color: #333;text-align: center;color: #000;}
-.box{width: 90%;margin: 5%;padding: 1%;height: auto;}
-.box__one{width: 30%;height: auto; background: #fff;float: left;}
-.box__one__img{height: auto;width: 100%;max-height: 600px;}
-.box__two{width: 68%;height: auto; background: #fff;float: left;margin-left: 2%;padding:0% 2%;border-left: 1px solid grey;}
-.box__two p{font-size: 25px;font-style: italic;color: #000;}
-.box__one__info{height: auto;width: 100%;text-align: center;margin-top: 3%;font-size: 25px;color: #000;float: left;}
-.box__link{color: #000;width: 100%;float: left;}
-.addButton{float: left;width: 100%; height: auto; margin-bottom: 3%; background: darkorange;}
+.intro { background-color: darkorange;  width: 100%;  padding: 5% 0; }
+.intro h1 { color: #333;  text-align: center;  color: #000; }
+.box { padding: 2% 0.5%; }
+.box__one { padding: 2.5% 1% 1.25% 1%; }
+.box__one__img { height: 300px;  width: 100%;  object-fit: contain; }
+.box__one__info { width: 100%;  text-align: center;  font-size: 20px;  }
+.box__one__info p { margin: 0;  padding: 0.5% 0px; }
+.box__link, .box__link:hover { color: #000; }
+.addButton { width: 100%;  margin: 1.5% 0%;  background-color: darkorange!important;  border-radius: 5%;  border: none!important; }
+.box__two { padding: 1.25% 2% 2.5% 2%;  border-left: 1px solid #ccc;  font-size: 15px;  font-style: italic; }
 
 
+/*-------------
+  SOCIAL ZONE
+---------------*/
+.socialContainer { width: 100%; }
+.socialBox  { padding-top: 1%;  padding-bottom: 5%; }
+.socialButtonMenu { border: none; background: none; padding: 0.5em 1em; color: #ccc;  font-size: 20px; }
+.btn__active { color: #000; }
 
+/*-- REVIEWS --*/
+.reviews { width: 100%;  color: #000; }
+.reviews h1 { text-align: center; }
+.reviewer { width: 100%;  display: flex;  justify-content: flex-start;  align-items: center;  padding: 0.5em; }
+.review { border: 2px solid #000;  margin: 2%; }
+.img__reviewer { height: 30px;  width: 30px;  border-radius: 30px;  border: 1px solid #000;  object-fit: cover;  }
+.reviewer p { display: inline-block; font-size: 20px; margin: 0; padding: 0 0.5em; }
+.review p { font-style: italic; width: 100%; padding: 0 0.5em; }
 
-/*-----------
-SOCIAL ZONE
-------------*/
-.socialBox{width: 90%; height: 88%;margin-bottom: 5%; margin: 5%;padding: 1%;min-height: 600px;}
-.socialButtonMenu{height: auto;}
-
-/* REVIEWS */
-.reviews{width: 100%; height: 97%; color: #000;float: left;background: darkorange;border: 1px solid #000;overflow-x: hidden; overflow-y: scroll;}
-.reviews h1{text-align: center;}
-.review{border: 2px solid #000;margin: 2%;width: 96%;padding: 1%;height: auto;border-radius: 5%;margin-bottom: 5%;background: darkorange;}
-.reviewer{height: auto;width: 30%;float: left;max-width: 300px;}
-.img__reviewer{height: auto;width: 100%;border-radius: 100%;border: 1px solid #000;}
-.reviewer p{float: left;font-size: 20px;width: 100%;height: auto;text-align: center;}
-.review h2{float: left;width: 60%;height: auto;text-align: center;margin-left: 10%;}
-.review p1{float: left;font-size: 25px;font-style: italic;width: 100%;height: auto;}
-
-/* INTERVIEW */
-.interview{width: 100%; height: 97%;display: none;font-size: 25px;color: #000;float: left;background: darkorange;border: 1px solid #000;overflow-x: hidden; overflow-y: scroll;}
-.interview h1{text-align: center;}
-.interview p{font-style: italic;}
+/*-- INTERVIEW --*/
+.interview { width: 100%;  display: none; }
+.interview h1 { text-align: center; }
+.interview p { font-style: italic; margin-top: 2%; }
 
 /* NEW REVIEW */
-.newReview{width: 100%; height: 97%;display: none;font-size: 25px;color: #000;float: left;background: darkorange;border: 1px solid #000;}
-.newReview h1{text-align: center;height: 6%;}
-.formBox{height: 82%;width: 96%;background: darkorange;overflow-x: hidden; overflow-y: scroll;border: 2px solid #000;margin-left: 2%;margin-right: 2%;}
-.textBox{float: left; width: 100%;height: auto;background: darkorange;}
-.sendBox{float: left;height: 6%;width: 96%;margin-left: 2%;margin-right: 2%;margin-top: 2%;text-align: center;}
-.sendReview{height: auto;width: auto; }
+.newReview { width: 100%;  display: none;  }
+.newReview h1 { text-align: center; }
+.formBox { width: 100%;  margin: 2% 0% 1% 0%; }
+.textBox { width: 100%;  border-color: #000;  padding: 0.5em; }
+.sendBox { width: 100%;  text-align: center; }
+.sendReview { background-color: darkorange!important;  border: none!important; }
 
 
 
 
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1020px){
-    
-    
+
+
+/*------------------------------------
+  Smartphone and Tablet adjustements
+--------------------------------------*/
+@media (max-width: 768px){ 
+  .intro h1 { font-size: 25px; }
+  .box__two { border-left: none;  text-align: center; }
 }
 
-/*-----------
-Smartphone
-------------*/
-@media (max-width: 600px){ 
-    
-    .box__one{width: 100%;}
-    .box__two{width: 100%}
-    .socialBox{min-height: 443px;}
-    .reviews{height: 92%; }
-    .reviewer{width: 100%;max-width: none;}
-    .review h2{width: 100%;margin-left: 0%;}
-    .interview{height: 92%;}
-    .newReview{height: 92%;}
-    .newReview h1{height: 0%;}
-    .sendBox{height: auto;}
+@media (max-width: 425px){ 
+  .socialButtonMenu { font-size: 15px; }
+  .reviews h1, .interview h1, .newReview h1 { font-size: 27px; }
 }

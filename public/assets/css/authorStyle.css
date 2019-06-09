@@ -1,52 +1,63 @@
-/*-----------
-GENERAL
------------*/
-html,body{height:100%;width: 100%}
-body{background: #fff;}
-
-
-
-
-
-/*-----------
-CARDS AUTHORS
-------------*/
-.deckAuthor_title{background: #333;width: 100%;height: auto;}
-.deckAuthor_title h6{padding: 5px; color: #fff;text-align: center;font-size: 25px;font-style: italic;}
-.deckAuthor{border: 0px;background: #fff; overflow-x: scroll; overflow-y: hidden; height:auto; display: flex;border: 0; padding: 0;margin-bottom: 5%;width: 100%;}
-.cardAuthor{margin-left:2%;margin-right: 2%; width: 30%;height: auto;float: left;flex: 0 0 auto;max-width: 320px;}
-.cardAuthor__image{width: 100%; ;height: 280px;background: #fff; border-radius: 40%;}
-.cardAuthor__button{height: 100%;font-size: 20px;width: 100%;}
-.cardAuthor__body{background: #fff;height: auto;}
-.cardAuthor__body h5{font-size: 23px; text-align: center;background: #fff; color: #000;}
+/*--------
+  TABS
+----------*/
+.button_row { border-bottom: 1px solid #ccc; }
+.choice_container { text-align: center; margin-top: 1em; font-size: 30px; }
+.choice_button { border: none; background: none; padding-top: 0.5em; padding-bottom: 0.5em; color: #ccc; }
+.button_active { color: #000; }
+.choice_hide { display: none!important; }
 
 /*----------
-BANNER
+  BANNER
 -----------*/
-.bannerBox__image{border-radius: 40%;}
-.banner__image{border-radius: 40%;}
+.bannerBox { height: auto; margin: 1em;  padding: 1%;  /*background-color: #fff;*/ }
+.banner_title { text-align: center; padding: 1em;}
+.bannerBox__image { display: flex; justify-content: center; align-items: center; border: none;  }
+.banner__image { height: 100%;  width: 100%;  object-fit: cover;  border-radius: 50%; padding: 1em; }
+.bannerBox__info { /*margin-left: 2%;*/  height: auto; }
+.bannerBox__info h1 { text-align: center;  color: #000; }
+.bannerBox__info p { color: #000;  font-size: 20px; }
+.bannerBox__link { color: red;  font-style: italic; }
 
 
+/*------------------------------
+  AUTHOR SEARCH & AUTOCOMPLETE
+--------------------------------*/
+.title { padding: 2.5em 0; display: flex; justify-content: center; align-items: center; }
+.title h3 { text-align: center; }
+#author_list p { text-align: center; }
+.card { background-color: #fff;  border-radius: 2px;  display: inline-block;  height: 250px;  margin: 1.5rem;  position: relative;  width: 300px; }
+/*.card a { color: #000; }*/
+.author_image { width: 100%; height: 200px; object-fit: cover; }
+.author_text { width: 100%;  font-size: 20px; font-weight: bold;  margin-bottom: 0px; padding: 0.25em 0.5em; display: flex;  justify-content: center; align-items: center; }
+#search_results_text { text-align: center;  font-size: 20px;  font-weight: bold; }
+#autocomplete { height: 100%; margin: 0 auto; width: 78.5%; padding: 0.25em 0.5em; border-radius: 0.25em; border: 1px solid #ccc; }
+#searchButton { /*padding: 0.34em 0.75em;*/ height: 100%; background-color: blue; color: #fff; font-weight: bold; border: none; border-radius: 0.25em; }
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
 
+/*--------------------
+  Tablet adjustments
+----------------------*/
+@media (max-width: 1023px) and (min-width: 768px) {
+  .bannerBox__info p { color: #000;  font-size: 17.5px; }
+  .bannerBox__link { color: red;  font-style: italic; }
+  .banner__image { height: 70%;  width: 100%;  object-fit: cover;  border-radius: 50%; padding: 0; }  
+}
 
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1020px){
-    
-    .cardAuthor{width: 40%;max-width: none;}
-    
+/*-------------------------
+  Smartphone adjustments
+---------------------------*/
+@media screen and (max-width: 767px){
+  .bannerBox__info p { color: #000;  font-size: 17.5px; text-align: center; }
 }
 
 
-
-
-/*-----------
-Smartphone
-------------*/
-@media screen and (max-width: 600px){
-    
-    .cardAuthor{width: 96%;margin-right: 10%;max-width: none;}
+@media (max-width: 1024px) and (min-width: 425px) {
+  .card { margin: 0.5em; }
 }
+
 

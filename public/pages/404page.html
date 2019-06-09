@@ -1,52 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>404Page</title>
-    
-    <link rel="stylesheet" href="404pageStyle.css">    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404Page</title>
+  <link rel="stylesheet" href="../assets/css/404pageStyle.css">    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
    
-   
-    <div class="presentation group">
-
-        <h1><b>Oh no a servant of the 404 error teleported you to Moria!!!</b></h1>
-        
-        <video controls>
-          <source src="signore360.mp4" type="video/mp4">
-        </video>
-        
-        <h2><b>You have to choose what to do:</b></h2>
-        
-        <div class="chooseBox group">
-            <a href="Home.html" class="choose__link">
-                <div class="choose1">
-                    <img src="fuggite-sciocchi.jpg" class="card__image" alt="...">  
-                    <h2>FLY, YOU FOOLS!</h2>
-                </div>
-            </a>
-
-             <a href="BookX.html" class="choose__link"> 
-                <div class="choose2">
-                    <img src="fightMordor.jpg" class="card__image" alt="...">  
-                    <h2>FIGHT!</h2>
-                </div> 
-            </a>
-        </div>
-        
+  <div class="wrapper">
+    <div class="container videoContainer">
+      <h1 class="text"><b>Oh no a servant of the 404 error teleported you to Moria!!!</b></h1>    
+      <video controls>
+        <source src="../assets/images/signore360.mp4" type="video/mp4">
+      </video>
     </div>
+    <div class="container">
+      <h2 class="text"><b>You have to choose what to do:</b></h2> 
+      <div class="chooseBox row justify-content-around">
+        <div class="chooseContainer col-md-5">
+          <a href="Home.html" class="chooseLink">
+            <div class="imageContainer">
+              <img src="../assets/images/fuggite-sciocchi.jpg" class="cardImage" alt="..." >
+            </div>
+            <h2 class="chooseText">FLY, YOU FOOLS!</h2>
+          </a>
+        </div>
+        <div class="chooseContainer col-md-5">
+          <a href="BookX.html" class="chooseLink"> 
+            <div class="imageContainer">
+              <img src="../assets/images/fightMordor.jpg" class="cardImage" alt="...">
+            </div> 
+            <h2 class="chooseText">FIGHT!</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      
 </body>
 </html>
