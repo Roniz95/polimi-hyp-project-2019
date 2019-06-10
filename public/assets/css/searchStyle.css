@@ -1,11 +1,11 @@
-/*-----------
-BOX FILTER
------------*/
+/*--------------
+  BOX FILTER
+----------------*/
 .searchBox { margin-top: 5%;  margin-left: 5%;  margin-right: 5%;  text-align: center; }
-.easySearchBox { width: 50%;  margin: 0% 25% 0.5em 25%;  display: flex;  justify-content: center;  align-items: center; }
+.easySearchBox { margin: 0% 2em 0.5em 2em;  display: flex;  justify-content: center;  align-items: center; }
 .searchBar { width: 80%;  padding-left: 0.5em;  padding-right: 0.5em;  margin-right: 2%; }
 .advancedSearchButton { font-size: 15px; }
-.advancedSearchBox { margin: 2em 0 1em 0;  padding: 1%;  text-align: center;  border: 1px solid #000;  justify-content: center;  align-items: center;  display: flex; }
+.advancedSearchBox { margin-top: 2em;  margin-bottom: 1em;  padding: 1%;  text-align: center;  border: 1px solid #000;  justify-content: center;  align-items: center;  display: flex; }
 .advancedSearch_hidden { display: none!important; }
 .groupDiv { width: 25%;  margin: 0.5em; }
 .groupDiv p { margin-bottom: 0; text-align: left;  font-weight: bold; }
@@ -28,40 +28,19 @@ BOX FILTER
 
 
 
-
-/*-----------
-Monitor small - ipad pro
-------------*/
-@media (max-width: 1700px){
-
-    /*.itemSearch{width: 29%;margin:2%;}
-    .cardBook__image{height: 320px;}
-    .cardAuthor__image{height: 320px;}*/
-}
-
-
-
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1000px){
-    .itemSearch{width: 43%;margin: 3%;}
-    .easySearchBox{width: 60%;margin: 0% 20%;}
-    .searchBar{width: 77%;margin-right: 3%;}
-    .cardBook__image{height: 320px;}
-    .cardAuthor__image{height: 320px;}
-
+/*--------------
+  adjustments
+----------------*/
+@media (max-width: 767px){
+  .advancedSearchBox { margin-left: 0.5em!important;  margin-right: 0.5em!important; }
+  .groupDiv { width: 90%; }
+  .box__checkbox { display: flex; justify-content: center; align-items: center;  width: 90%; text-align: center; }
+  .elemCheckbox { width: 90%; }
 }
 
 /*-----------
 Smartphone
 ------------*/
-@media (max-width: 500px){
-    .itemSearch{width: 96%;margin: 10% 2%;}
-    .easySearchBox{width: 80%;margin: 0% 10%;}
-    .searchBar{width: 75%;margin-right: 5%;}
-    .cardBook__image{height: 280px;}
-    .cardAuthor__image{height: 280px;}
-
-
+@media (max-width: 425px){
+  .easySearchBox { margin-left: 1em;  margin-right: 1em; }
 }
