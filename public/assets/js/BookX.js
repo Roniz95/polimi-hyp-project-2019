@@ -120,5 +120,5 @@ function SetBooks(books, id) {
 }
 
 function goToBook(){
-  window.location.href = 'BookX.html';
+  window.location.href = '/bookX';
 }

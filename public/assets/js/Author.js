@@ -142,5 +142,5 @@ $('#autocomplete').autocomplete({
 });
 
 function goToAuthor(){
-  window.location.href = 'AuthorX.html';
+  window.location.href = '/authorX';
 }

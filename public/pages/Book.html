@@ -6,6 +6,7 @@
     
     <link rel="stylesheet" href="../assets/css/standardStyle.css">
     <link rel="stylesheet" href="../assets/css/bookStyle.css">
+    <link rel="stylesheet" href="../assets/css/searchStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -29,22 +30,79 @@
   <section class="cover">
     <img src="../assets/images/book.jpg" class="cover__image" alt="img">
     <div class="cover__caption">
-      <h1>Book</h1>
+      <h1>Books</h1>
     </div>
   </section>
-   
+  
+  <!-- CHOICE SECTION -->
+  <div class="container">
+    <div class="row justify-content-center button_row">
+      <div class="col-lg-4 col-md-6 choice_container">
+        <button type="button" class="choice_button" id="search_book" onclick="select_searchBook()">Search for Books</button>
+      </div>
+      <div class="col-lg-4 col-md-6 choice_container">
+        <button type="button" class="choice_button button_active" id="book_of_the_month" onclick="select_bookOfTheMonth()" >Book of the month</button>
+      </div>        
+    </div>
+  </div>
+  
+  
+  <div id="searchBooks" class="container choice_hide">
+    
+    <div class="searchBox">
+      <div class="easySearchBox">
+        <input type="text" class="searchBar" placeholder="Insert title..">
+        <button class="btn btn-primary" type="button" onclick="searchBooksFromTitle()"><i class="fa fa-search"></i></button>
+      </div>
+      <button class="advancedSearchButton" onclick="select_advancedSearch()">Advanced Search</button> 
+    </div>
+    
+    <div class="row advancedSearchBox advancedSearch_hidden" id="advancedSearchId">
+        
+       <div class="groupDiv">
+          <p>Genre :</p>
+          <input type="text" class="advancedSearchBar" placeholder="Insert Genre..">
+        </div>
+        <div class="groupDiv">
+          <p>Themes :</p>
+          <input type="text" class="advancedSearchBar" placeholder="Insert Theme...">
+        </div>
+        <div class="groupDiv">
+          <p>Author :</p>
+          <input type="text" class="advancedSearchBar" placeholder="Insert Author...">
+        </div>
+       
+        <div class="box__checkbox">
+           <div class="elemCheckbox">
+             <input type="checkbox" name="bestSeller" value=""> Best Sellers
+           </div>
+           <div class="elemCheckbox">
+           <input type="checkbox" name="bestSeller" value=""> My favourites
+           </div>
+       </div>
+       <div class="buttonDiv">
+         <button class="btn btn-primary" type="button" onclick="searchBooksFromFilters()">Search Books<i class="fa fa-search"></i></button>
+       </div>
+    </div>
+    
+    <div id="bookResults" class="row justify-content-center"></div>
+  
+  </div>
+  
+  <div id="bookOfTheMonth">
   <div class="container bannerBox">
-    <h1>BOOK OF THE MONTH</h1>
+    <h1>TITOLO LIBRO DEL MESE</h1>
     <div class="row justify-content-center">  
       <div class="col-lg-4 col-md-5 bannerBox__image">
         <img src="../assets/images/harry1.jpg" class="banner__image" alt="img">
       </div>
       <div class="col-lg-8 col-md-12 bannerBox__info">
         <p>“Il nostro Paese, guidato dal primo governo nazionalpopulista dell’Europa occidentale, egemonizzato culturalmente e politicamente dalla nuova destra, rischia un declino inarrestabile. Rischia di rimanere isolato nell’Unione europea e diviso al suo interno, impaurito, incattivito e avvitato su se stesso. Impediremo il declino se sapremo cambiare. Riconoscendo senza reticenze gli errori e affrontando le ragioni delle sconfitte. Il primo passo sarà tornare a incontrarci, in tanti, per trovare insieme le soluzioni e costruire un’idea di società giusta.” L’Italia è entrata in una nuova fase molto pericolosa della sua storia repubblicana. Da quando la politica populista governa, tra promesse mancate e provvedimenti scellerati, miliardi di euro sono andati in fumo per l’innalzamento dello spread. La crescita si è fermata e va verso una flessione negativa. La disoccupazione giovanile è aumentata. Il debito ha raggiunto livelli record. Fuggono gli investitori, ma anche gli studenti. Senza confessarlo, si sta facendo largo una inquietante rottura storica della collocazione internazionale dell’Italia, con inedite e rischiose alleanze nel mondo delle democrazie illiberali. In poche settimane, da Paese primo fondatore del sogno europeo l’Italia si è trasformata in una mina vagante, considerata irresponsabile e del tutto inaffidabile. Nicola Zingaretti, segretario del Pd, in questi scritti e discorsi mostra che la posta in gioco è molto alta. È necessario fermare la deriva della politica italiana prima che sia troppo tardi. Stiamo attraversando una grande trasformazione e abbiamo bisogno di immaginare una nuova idea di società, giusta nei confronti delle persone, per garantire un futuro di libertà e uguaglianza all’Italia e all’Europa. “Ora è tempo di scegliere. Di combattere perché l’avvenire torni a essere un luogo della speranza, della solidarietà, della giustizia, della libertà, delle opportunità per tutti. Di offrire un futuro all’Italia e all’Europa.” La politica</p>
-        <a href="BookX.html" class="bannerBox__link">Al libro</a>
+        <a href="/bookX" class="bannerBox__link">Al libro</a>
       </div>
     </div>
   </div>
+  
     
   <div class="deckBook_title"><h6><b>RECOMMENDED</b></h6></div>
   <div id="recommendedBooks" class="deckBook"></div>
@@ -57,11 +115,13 @@
     
   <div class="deckBook_title"><h6><b>NEXT COMINGS</b></h6></div>
   <div id="nextComingBooks" class="deckBook"></div>
+  </div>
     
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
   
   <script src="../assets/js/Book.js"></script>
+  <script src="../assets/js/Search.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      

@@ -76,5 +76,5 @@ function setEvents(events, id){
 }
 
 function goToEvent(){
-  window.location.href = "EventX.html";
+  window.location.href = "/eventX";
 }

@@ -9,11 +9,21 @@ let pages = path.join(__dirname, '/public/pages/');
 
 //these are the endpoint for the pages, you need to use these for html href link (for example #href=/about-us)
 router.get('/', function(req, res ) {
-    res.sendFile(pages  + 'Home.html');
+    res.sendFile(pages  + 'index.html');
 });
+
 router.get('/about-us', function (req, res) {
     res.sendFile(pages + 'AboutUs.html');
 });
+
+router.get('/book', function (req, res) {
+   res.sendFile(pages + 'Book.html');
+});
+
+router.get('/bookX', function (req, res) {
+   res.sendFile(pages + 'BookX.html');
+});
+
 router.get('/contact', function (req, res) {
     res.sendFile(pages + 'Contact.html');
 });
@@ -21,12 +31,16 @@ router.get('/author', function (req, res) {
     res.sendFile(pages + 'Author.html');
 });
 
+router.get('/authorX', function (req, res) {
+   res.sendFile(pages + 'AuthorX.html');
+});
+
 router.get('/event', function (req, res){
    res.sendFile(pages + 'Event.html');
 });
 
-router.get('/search', function (req, res) {
-   res.sendFile(pages + 'Search.html');
+router.get('/eventX', function (req, res) {
+   res.sendFile(pages + 'EventX.html');
 });
 
 router.get('/backend/main.html', function (req, res){

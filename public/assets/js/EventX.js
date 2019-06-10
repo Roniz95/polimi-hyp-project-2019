@@ -113,11 +113,11 @@ function SetAuthors(authors, id) {
 }
 
 function goToBook(){
-  window.location.href = 'BookX.html';
+  window.location.href = '/bookX';
 }
 
 function goToAuthor(authorID){
-  var link = 'AuthorX.html?authorID='+authorID;
+  //var link = 'AuthorX.html?authorID='+authorID;
   //alert(link);
-  window.location.href = link; 
+  window.location.href = '/authorX'; 
 }

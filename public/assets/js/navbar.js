@@ -8,7 +8,7 @@ navbar.className = "navbar navbar-expand-lg navbar-dark";
 /* Navbar Logo */
 var brand = document.createElement('a');
 brand.className = "navbar-brand";
-brand.href = "Home.html";
+brand.href = "/";
 var logo = document.createElement('img');
 logo.src = "../assets/images/logo.png";
 logo.width = 50;
@@ -49,7 +49,7 @@ about.className = "nav-item"; //volendo potrei aggiungere la classe active
 /* link */
 var about_link = document.createElement('a');
 about_link.className = "nav-link";
-about_link.href = "AboutUs.html";
+about_link.href = "/about-us";
 var about_text = document.createTextNode('About us');
 about_link.append(about_text);
 about.appendChild(about_link);
@@ -63,7 +63,7 @@ book.className = "nav-item"; //volendo potrei aggiungere la classe active
 /* link */
 var book_link = document.createElement('a');
 book_link.className = "nav-link";
-book_link.href = "Book.html";
+book_link.href = "/book";
 var book_text = document.createTextNode('Books');
 book_link.append(book_text);
 book.appendChild(book_link);
@@ -77,7 +77,7 @@ author.className = "nav-item"; //volendo potrei aggiungere la classe active
 /* link */
 var author_link = document.createElement('a');
 author_link.className = "nav-link";
-author_link.href = "Author.html";
+author_link.href = "/author";
 var author_text = document.createTextNode('Authors');
 author_link.append(author_text);
 author.appendChild(author_link);
@@ -91,7 +91,7 @@ contact.className = "nav-item"; //volendo potrei aggiungere la classe active
 /* link */
 var contact_link = document.createElement('a');
 contact_link.className = "nav-link";
-contact_link.href = "Contact.html";
+contact_link.href = "/contact";
 var contact_text = document.createTextNode('Contacts');
 contact_link.append(contact_text);
 contact.appendChild(contact_link);
@@ -105,27 +105,13 @@ event.className = "nav-item"; //volendo potrei aggiungere la classe active
 /* link */
 var event_link = document.createElement('a');
 event_link.className = "nav-link";
-event_link.href = "Event.html";
+event_link.href = "/event";
 var event_text = document.createTextNode('Events');
 event_link.append(event_text);
 event.appendChild(event_link);
 /* link end */
 ul.appendChild(event);
 /* Events item end */
-
-/* Search item */
-var search = document.createElement('li');
-search.className = "nav-item"; //volendo potrei aggiungere la classe active
-/* link */
-var search_link = document.createElement('a');
-search_link.className = "nav-link";
-search_link.href = "Search.html";
-var search_text = document.createTextNode('Search');
-search_link.append(search_text);
-search.appendChild(search_link);
-/* link end */
-ul.appendChild(search);
-/* Search item end */
 
 external_div.appendChild(ul);
 /* List end */

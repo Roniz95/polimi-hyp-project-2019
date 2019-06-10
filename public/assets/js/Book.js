@@ -74,11 +74,12 @@ function fetchData() {
   
 }
 
+
 function SetBooks(books, id) {
   var deckBook = document.getElementById(id);
   var length = books.length < 8 ? books.length : 8; //oppure li restituisco tutti???
-  var i;
   
+  var i;
   for(i=0; i<length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
@@ -119,5 +120,20 @@ function SetBooks(books, id) {
 }
 
 function goToBook(){
-  window.location.href = 'BookX.html';
+  window.location.href = '/bookX';
+}
+
+
+function select_searchBook() {
+  document.getElementById("book_of_the_month").classList.remove("button_active");
+  document.getElementById("bookOfTheMonth").classList.toggle("choice_hide");
+  document.getElementById('search_book').classList.toggle("button_active");
+  document.getElementById('searchBooks').classList.remove("choice_hide");
+}
+
+function select_bookOfTheMonth() {
+  document.getElementById('search_book').classList.remove("button_active");
+  document.getElementById("searchBooks").classList.toggle("choice_hide");
+  document.getElementById("book_of_the_month").classList.toggle("button_active");
+  document.getElementById('bookOfTheMonth').classList.remove("choice_hide");
 }

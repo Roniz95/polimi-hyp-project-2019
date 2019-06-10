@@ -1,54 +1,28 @@
 /*-----------
-GENERAL
------------*/
-html,body{height:100%;width: 100%}
-body{background: #fff;}
-
-
-
-
-
-
-/*-----------
 BOX FILTER
 -----------*/
-
-.searchBox{width: 90%; height: auto;margin-top: 5%;margin-left: 5%;margin-right: 5%;text-align: center;}
-.easySearchBox{height: auto;width: 50%;margin: 0% 25%;}
-.searchBar{height: auto;width: 78%;margin-right: 2%; float: left;}
-
-.searchButtonMenu{width: 94%;margin: 3%;float: left;}
-
-.dropbtn {background-color: darkorange;color: white;padding: 16px;font-size: 16px;border: none;cursor: pointer;border-radius: 30%;}
-.dropdown {position: relative;display: inline-block;width: 20%;}
-.dropdown-content {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;ßz-index: 1;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #000;}
-.advancedSearchButton{width: auto;height: auto;font-size: 15px;}
-
-.advancedSearchBox{width: 90%; height: auto;margin:0% 5%;padding: 1%;text-align: center;border: 1px solid #000;display: none;}
-.box__slider{width:30%;margin: 0% 35%; height:  auto; float: left;}
-.sliderCost {-webkit-appearance: none; width: 100%; height: 100%; border-radius: 5px; background: grey; outline: none; opacity: 0.7; -webkit-transition: .2s; transition: opacity .2s;}
-.sliderCost::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: blue; cursor: pointer;}
-.box__slider p{font-size: 20px;text-align: center;}
-.box__checkbox{height: auto;width: 90%;text-align: left;margin: 0% 5%;}
-.elemCheckbox{margin-left: 3%;float: left;}
+.searchBox { margin-top: 5%;  margin-left: 5%;  margin-right: 5%;  text-align: center; }
+.easySearchBox { width: 50%;  margin: 0% 25% 0.5em 25%;  display: flex;  justify-content: center;  align-items: center; }
+.searchBar { width: 80%;  padding-left: 0.5em;  padding-right: 0.5em;  margin-right: 2%; }
+.advancedSearchButton { font-size: 15px; }
+.advancedSearchBox { margin: 2em 0 1em 0;  padding: 1%;  text-align: center;  border: 1px solid #000;  justify-content: center;  align-items: center;  display: flex; }
+.advancedSearch_hidden { display: none!important; }
+.groupDiv { width: 25%;  margin: 0.5em; }
+.groupDiv p { margin-bottom: 0; text-align: left;  font-weight: bold; }
+.advancedSearchBar { width: 100%;  padding-left: 0.5em;  padding-right: 0.5em; }
+.buttonDiv { width: 100%;  padding: 1em; }
+.buttonDiv button i { padding-left: 1em; }
+.box__checkbox { text-align: left;  margin: 0.5em; }
 
 
-.itemSearchBox{width: 90%; height: 88%; margin:2% 5%;min-height: 365px;}
-.itemTypeSearchBox{width: 100%; height: 100%; color: #000;float: left;background: darkorange;overflow-x: hidden; overflow-y: scroll;}
-
-
-.itemSearch{margin: 3%;width: 18.5%;height: auto;display: inline-block;flex: 0 0 auto;vertical-align: top;}
-
-
-.cardBook__image{width: 100%; height: 350px;border: 1px solid #000;}
-.cardBook__link{background: #fff;height: auto;border: 1px solid #000;}
-.cardBook__link a{color: #000;}
-
-.cardAuthor__image{width: 100%; ;height: 350px;background: #fff; border-radius: 40%;}
-.cardAuthor__body{background: #fff;height: auto;}
-.cardAuthor__body h5{font-size: 23px; text-align: center;background: #fff; color: #000;}
+/*---------------
+  BOOK RESULTS
+----------------*/
+#bookResults { margin: 1em 0;  }
+.bookDiv { width: 275px;  margin: 1em;  /*float: left;*/  flex: 0 0 auto;  border-radius: 2.5%;  border: 1px solid #ccc; }
+.book__image { width: 100%;  height: 300px;  border-top-left-radius: 2.5%;  border-top-right-radius: 2.5%; }
+.book__text { padding: 2%;  text-align: center;  font-size: 20px; }
+.book__border__bottom { border-bottom: 1px solid #ccc; }
 
 
 
@@ -60,9 +34,9 @@ Monitor small - ipad pro
 ------------*/
 @media (max-width: 1700px){
 
-    .itemSearch{width: 29%;margin:2%;}
+    /*.itemSearch{width: 29%;margin:2%;}
     .cardBook__image{height: 320px;}
-    .cardAuthor__image{height: 320px;}
+    .cardAuthor__image{height: 320px;}*/
 }
 
 

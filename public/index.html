@@ -1,13 +1,109 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Home</title>
+    
+    <link rel="stylesheet" href="/assets/css/standardStyle.css">
+    <link rel="stylesheet" href="/assets/css/homeStyle.css">
+    <link rel="stylesheet" href="/assets/css/bookStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- JQuery scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+  
+  <!-- NAVBAR -->
+  <script src="/assets/js/navbar.js"></script>
+      
+  <div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel1" data-slide-to="1"></li>
+      <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
+    <!-- script per carousel inner che prende eventi da DB -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/images/sfondo1.jpg" class="carousel__image" alt="img">
+        <div class="carousel-caption d-none d-md-block"> 
+          <h3>max lunghezza titolo:52 caratteri poi sfasa se il paragrafo è lungo 400 caratteri</h3>
+          <p>Per non far sfasare il testo con la risoluzione minima degli ipad è bene non superare i 400 caratteri</p>
+        </div>
+        <div class="cover__carousel"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/sfondo2.jpg" class="carousel__image" alt="img">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Second slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue moli</p>
+        </div>
+        <div class="cover__carousel"></div>
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/Sfondo3.jpg" class="carousel__image" alt="img">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>titolo non lunghissimo tipo dieci parole provasss aa</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+        <div class="cover__carousel"></div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
+   
+  <div class="presentation">
+    <p>
+      <b>I libri possono essere pericolosi.<br>I migliori devono avere impressa questa etichetta: “Questo potrebbe cambiare la vostra vita.”<br> Helen Exley</b>
+    </p>
+   </div>
+    
+  <div class="deckBook_title"><h6><b>NEW BOOK</b></h6></div>
+  <div id="newBooks" class="deckBook"></div>
+    
+    
+  <div class="presentation">
+    <p>
+      <b>“Chi non legge, a 70 anni avrà vissuto una sola vita: la propria.<br>Chi legge avrà vissuto 5000 anni: c’era quando Caino uccise Abele, quando Renzo sposò Lucia, quando Leopardi ammirava l’infinito … <br>perché la lettura è un’immortalità all’indietro”<br> Umberto Eco</b>
+    </p>
+   </div>
+    
+    
+  <div class="deckBook_title"><h6><b>BEST SELLER</b></h6></div>
+  <div id="bestSellers" class="deckBook"></div>
+    
+    
+  <div class="presentation">
+    <p>
+      <b>“Il libro è una cosa: lo si può mettere su un tavolo e guardarlo soltanto,<br>ma se lo apri e leggi diventa un mondo.”<br> Leonardo Sciascia </b>
+    </p>
+  </div>
+    
+    
+  <!-- FOOTER -->
+  <script src="/assets/js/footer.js"></script>
+   
+  <script src="/assets/js/Home.js"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+</body>
 </html>

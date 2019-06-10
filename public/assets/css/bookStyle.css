@@ -1,3 +1,9 @@
+.button_row { border-bottom: 1px solid #ccc; }
+.choice_container { text-align: center; margin-top: 1em; font-size: 30px; }
+.choice_button { border: none;  background: none; padding-top: 0.5em; padding-bottom: 0.5em; color: #ccc; }
+.button_active { color: #000; }
+.choice_hide { display: none!important; }
+
 /*-------------
   CARDS BOOK
 --------------*/
