@@ -20,9 +20,9 @@
 .bannerBox__link { color: red;  font-style: italic; }
 
 
-/*------------------------------
-  AUTHOR SEARCH & AUTOCOMPLETE
---------------------------------*/
+/*----------------
+  AUTHOR SEARCH
+------------------*/
 .title { padding: 2.5em 0; display: flex; justify-content: center; align-items: center; }
 .title h3 { text-align: center; }
 #author_list p { text-align: center; }
@@ -33,11 +33,6 @@
 #search_results_text { text-align: center;  font-size: 20px;  font-weight: bold; }
 #autocomplete { height: 100%; margin: 0 auto; width: 78.5%; padding: 0.25em 0.5em; border-radius: 0.25em; border: 1px solid #ccc; }
 #searchButton { /*padding: 0.34em 0.75em;*/ height: 100%; background-color: blue; color: #fff; font-weight: bold; border: none; border-radius: 0.25em; }
-.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
-.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #f0f0f0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
-
 
 /*--------------------
   Tablet adjustments
