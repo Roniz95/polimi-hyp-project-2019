@@ -317,8 +317,11 @@ logged_menu.id = "logged_menu";
 var myCart = document.createElement('a');
 myCart.className = "dropdown-item";
 myCart.href = "#";
+var cartIcon = document.createElement('i');
+cartIcon.className = "fa fa-shopping-cart drop_icon";
+myCart.appendChild(cartIcon);
 var myCart_Text = document.createTextNode('My Cart');
-myCart.append(myCart_Text);
+myCart.appendChild(myCart_Text);
 logged_menu.appendChild(myCart);
 /* My cart end */
 
@@ -326,8 +329,11 @@ logged_menu.appendChild(myCart);
 var myOrders = document.createElement('a');
 myOrders.className = "dropdown-item";
 myOrders.href = "#";
+var orderIcon = document.createElement('i');
+orderIcon.className = "fa fa-truck drop_icon";
+myOrders.appendChild(orderIcon);
 var myOrders_Text = document.createTextNode('My Orders');
-myOrders.append(myOrders_Text);
+myOrders.appendChild(myOrders_Text);
 logged_menu.appendChild(myOrders);
 /* My orders end */
 
