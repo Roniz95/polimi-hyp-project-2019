@@ -89,7 +89,7 @@ firstRow.appendChild(footer_About);
 
 /* COMPANY NAME start */
 var footer_Company = document.createElement('div');
-footer_Company.className = "footer__info col-md-6";
+footer_Company.className = "footer__info col-md-3";
 
 /* Title start */
 var company_Title = document.createElement('h5');
@@ -99,11 +99,30 @@ footer_Company.appendChild(company_Title);
 /* Title end */
 
 /* Name start */
-var p1 = document.createElement('p');
-var str1 = 'Informazioni societarie:Mondadori Retail S.p.A. | divisione online Società con unico azionista soggetta ad attività di direzione e coordinamento da parte di Arnoldo Mondadori Editore S.p.A. | Capitale Sociale: Euro 2.700.000 i.v. P. IVA 11022370156 | Cod. fisc. e Reg. Imprese Milano 00212560239 | REA Milano: 1428290';
-var p1_text = document.createTextNode(str1);
-p1.append(p1_text);
-footer_Company.appendChild(p1);
+/* List start */
+var company_list = document.createElement('ul');
+/* privacy policy start */
+var li_privacy = document.createElement('li');
+li_privacy.className = "footer__link";
+var privacyLink = document.createElement('a');
+privacyLink.href = "#";
+var t_privacy = document.createTextNode("Learn our privacy policy");
+privacyLink.append(t_privacy);
+li_privacy.appendChild(privacyLink);
+company_list.appendChild(li_privacy);
+/* privacy end */
+/* ordering and shipping start */
+var li_order = document.createElement('li');
+li_order.className = "footer__link";
+var orderingLink = document.createElement('a');
+orderingLink.href = "#"; //Ordering and shipping info page
+var t_ordering = document.createTextNode("Learn our ordering and shipping infos");
+orderingLink.append(t_ordering);
+li_order.appendChild(orderingLink);
+company_list.appendChild(li_order);
+/* contacts end */
+footer_Company.appendChild(company_list);
+/* List end */
 /* Name end */
 
 firstRow.appendChild(footer_Company);
@@ -150,7 +169,7 @@ footer.appendChild(footer_Social);
 /* COPYRIGHT start */
 var copyRight = document.createElement('p');
 copyRight.className = 'footer__copyright';
-var text = document.createTextNode('©Company name 2019');
+var text = document.createTextNode('© Company name 2019');
 copyRight.append(text);
 footer.appendChild(copyRight);
 /* COPYRIGHT end */

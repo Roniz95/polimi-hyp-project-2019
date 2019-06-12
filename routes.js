@@ -43,6 +43,10 @@ router.get('/eventX', function (req, res) {
    res.sendFile(pages + 'EventX.html');
 });
 
+router.get('/auth', function (req, res) {
+    res.sendFile(pages + 'Authentication.html');
+});
+
 router.get('/backend/main.html', function (req, res){
     res.sendFile(pages + 'main.html')
 });

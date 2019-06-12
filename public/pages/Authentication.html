@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+ <head>
+ 
+  <title>Authentication</title>
+  
+  <link rel="stylesheet" href="../assets/css/standardStyle.css">
+  <link rel="stylesheet" href="../assets/css/authenticationStyle.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+<body>
+ 
+  <!-- NAVBAR -->
+  <script src="../assets/js/navbar.js"></script>
+   
+  <div class="wrapper">
+    <div class="filter">
+      <div class="authentication_div">
+        <div class="signInUp_div">
+          <p id="signIn" class="sign_mode_active" onclick="select_SignIn()">SIGN IN</p>
+          <p id="signUp" onclick="select_SignUp()">SIGN UP</p>
+        </div>
+        <div id="signIn_form" class="floating-form">
+          <div class="floating-label">      
+            <input id="signIn_username" class="floating-input" type="text" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Username</label>
+          </div>
+          <div class="floating-label">      
+            <input id="signIn_password" class="floating-input password_input" type="password" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Password</label>
+            <i class="fa fa-lg fa-eye-slash password_icon" onclick="showHidePassword(this, 'signIn_password')"></i>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="signIn()">SIGN IN</button>
+        </div>
+        <div id="signUp_form" class="floating-form form_inactive">
+          <div class="floating-label">      
+            <input id="signUp_name" class="floating-input" type="text" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Name</label>
+          </div>
+          <div class="floating-label">      
+            <input id="signUp_surname" class="floating-input" type="text" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Surname</label>
+          </div>
+          <div class="floating-label">      
+            <input id="signUp_username" class="floating-input" type="text" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Username</label>
+          </div>
+          <div class="floating-label">      
+            <input id="signUp_email" class="floating-input" type="text" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Email</label>
+          </div>
+          <div class="floating-label">      
+            <input id="signUp_password" class="floating-input" type="password" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Password</label>
+            <i class="fa fa-lg fa-eye-slash password_icon" onclick="showHidePassword(this, 'signUp_password')"></i>
+          </div>
+          <div class="floating-label">      
+            <input id="signUp_conf_password" class="floating-input" type="password" placeholder=" ">
+            <span class="highlight"></span>
+            <label>Confirm password</label>
+            <i class="fa fa-lg fa-eye-slash password_icon" onclick="showHidePassword(this, 'signUp_conf_password')"></i>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="signUp()">SIGN UP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- FOOTER -->
+  <script src="../assets/js/footer.js"></script>
+   
+  <script src="../assets/js/Authentication.js"></script>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+</body>
+</html>

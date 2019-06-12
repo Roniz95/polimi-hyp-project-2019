@@ -1,0 +1,51 @@
+.wrapper { background: url('../images/sfondo4.jpg') no-repeat;  background-size: cover;  height: 90vh; }
+.filter { display: flex;  justify-content: center;  align-items: center; width: 100%; height: 100%; background-color: rgba(0,0,0,0.55); }
+
+.authentication_div { width: 30%; }
+.authentication_div p { /*text-align: center;*/ font-size: 25px; font-weight: bold; color: #fff;}
+.signInUp_div { display: flex; }
+.signInUp_div p { padding: 0 0.25em 0 0.25em;  margin: 0 1em 0 0;  color: rgba(255,255,255,0.5); }
+.signInUp_div p:hover { cursor: pointer; }
+.sign_mode_active { color: #fff!important; border-bottom: 2px solid darkorange; }
+.form_inactive { display: none; }
+
+.floating-form { text-align: left; }
+.floating-label { position: relative;  margin: 1.75em 0; }
+.floating-input { padding: 0.5em 0.75em;  /*display: block;*/  width: 100%;  background-color: transparent;  border: 1px solid #fff;  border-radius: 2.5em; color: #fff; }
+.floating-input:focus { outline: none;  border: 2px solid darkorange; color: darkorange; }
+
+label { color: #fff;  position: absolute;  pointer-events: none;  left: 1em;  top: 0.5em;  transition: 0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.floating-input:focus ~ label, .floating-input:focus ~ i { color: darkorange; }
+.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label { top: -18px;  font-size: 10.5px; }
+.highlight { position: absolute;  height: 50%;  width: 100%;  top: 0.625em;  left: 0;  pointer-events: none;  opacity: 0.5; }
+.password_input { padding: 0.5em 2.75em 0.5em 0.75em; }
+.password_icon { position: absolute;  top: 0.625em;  right: 0.75em; color: #fff;  margin: 0;  cursor: pointer; }
+
+.floating-form button { width: 100%;  border-radius: 2.5em;  background-color: darkorange;  border-color: darkorange;  font-weight: bold; }
+
+
+
+/* active state */
+.floating-input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* animation */
+@-webkit-keyframes inputHighlighter {
+	from { background: darkorange; }
+  to 	{ width:0;  background: transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background: darkorange; }
+  to 	{ width:0;  background: transparent; }
+}
+@keyframes inputHighlighter {
+	from { background: darkorange; }
+  to 	{ width:0;  background: transparent; }
+}

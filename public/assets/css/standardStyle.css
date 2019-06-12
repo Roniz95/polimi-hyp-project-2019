@@ -7,20 +7,10 @@ body { overflow-x: hidden; }
 .nav-item { padding-left: 12px; padding-right: 12px; height: 100%; }
 .nav-item:hover { background-color: #3498DB; }
 .nav-link { color: #fff!important; }
-#not_logged_menu { min-width: 275px; }
 #logged_menu { min-width: 275px; }
-.dropdown-menu { z-index: 1000; padding: 1rem!important }
-#dropdownMenuButton { height: 100%; border-radius: 0px; background-color: #333; border: none; padding-top: 8px; padding-bottom: 8px; }
-#dropdownMenuButton:hover, #dropdownMenuButton:focus { background-color: #3498DB; box-shadow: none;}
-.show_Menu { display: block; }
-.hide_Menu { display: none; }
-.sign_container { }
-hr { border-top-color: #ccc!important }
-.sign_div { text-align: center }
-#sign_in_form, #sign_up_form { display: none; }
-.form_visible { display: block!important; }
-.sign_button { border: none; background: none; font-size: 20; color: #ccc}
-.sign_button_active { color: #000!important; }
+.dropdown-menu { z-index: 1000; padding: 1rem!important; }
+#dropdownMenuButton, #notLogged_button { height: 100%; border-radius: 0px; background-color: #333; border: none; padding-top: 8px; padding-bottom: 8px; }
+#dropdownMenuButton:hover, #dropdownMenuButton:focus, #notLogged_button:hover, #notLogged_button:focus { background-color: #3498DB; box-shadow: none;}
 .dropdown-item { padding-left: 0px!important; }
 .drop_icon { padding-right: 0.5em;  }
 
@@ -28,15 +18,14 @@ hr { border-top-color: #ccc!important }
 /*----------
   FOOTER
 ------------*/
-.footer { background-color: #333;  width: 100%;  padding: 1%;  color: #fff;  margin-top: 80px; }
+.footer { background-color: #333;  width: 100%;  padding: 1%;  color: #fff;  /*margin-top: 80px;*/ border-top: 1px solid #fff; }
 .footer ul { list-style: none;  padding: 0;  margin-bottom: 0; }
 .footer li a { color: #fff; }
-.footer__service { text-align: center; }
-.footer__about { text-align: center; }
-.footer__social { text-align: center; padding: 1%; }
+.footer__service, .footer__about, .footer__info { text-align: center; }
+.footer__social { text-align: center; padding-top: 2em;  padding-bottom: 1em; }
 .footer__social a { font-size: 24px;  width: 40px;  height: 40px;  line-height: 35px;  display: inline-block;  text-align: center center;  border-radius: 50%; border: 1px solid #fff; margin: 0 8px;}
 .footer__copyright { width: 100%;  text-align: center;  font-style: italic;  font-size: 15px; }
-
+.footer__link { font-size: 12px; }
 
 /*----------
   COVER
