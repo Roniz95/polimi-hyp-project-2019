@@ -18,7 +18,6 @@
   
   <!-- JQuery Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   
 </head>
 
@@ -28,34 +27,50 @@
    <script src="../assets/js/navbar.js"></script>
     
   <div class="intro">
-    <h1><b>J. K. ROWLING</b></h1>
+    <h1><b id="authorNameID"><!-- data --></b></h1>
   </div>
+   
+  <!-- ORIENTATION INFO -->
+  <nav aria-label="breadcrumb">
+    <ol id="orientationInfoID" class="breadcrumb">
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <!-- data -->
+    </ol>
+  </nav>
     
    <div class="box container">
     <div class="box__image">
-      <img src="../assets/images/autore.jpg" class="box__img" alt="img">
+      <img id="authorImageID" class="box__img" alt="img">
     </div>
     <div class="box__info group">
-      <p>Nata a Yate, durante la sua infanzia Joanne dimostra una notevole e spiccata fantasia, divenendo autrice di numerosi racconti: a sei anni scrisse la storia di Rabbit, un coniglio malato di morbillo, mentre a dodici anni scrisse un romanzo che trattava di sette diamanti maledetti. Durante tutto il periodo scolastico conosce numerose persone che ispireranno diversi personaggi della saga di Harry Potter: il preside delle elementari diventa Albus Silente; il suo migliore amico, alla guida di una Ford Anglia, sarà ispiratore del rosso Ronald Weasley; e il suo professore di chimica, con cui non ha mai avuto brillanti rapporti, sarà d'ispirazione per il personaggio di Severus Piton. Rowling ascolta musica pop ed è appassionata di The Smiths e della cantante Siouxsie Sioux, il cui look ha adottato per diversi anni.
-      </p>
-      <a href="https://it.wikipedia.org/wiki/J._K._Rowling" class="box__info__link" target="_blank">Approfondisci</a>
+      <p id="authorBioID"><!-- data --></p>
+      <a id="authorLinkID" class="box__info__link" target="_blank">Learn More</a>
     </div>
   </div>
+   
+  <nav id="paginationID" aria-label="Page navigation example">
+    <ul  class="pagination justify-content-center">
+      <li class="page-item"><button type="button" class="page-link link_disabled" onclick="foo(-5)">&laquo;</button></li>
+      <li class="page-item"><button type="button" class="page-link link_disabled" onclick="foo(-1)">&lsaquo;</button></li>
+      <li class="page-item"><p id="counter" class="page-link" tabindex="1"><!-- data --></p></li>
+      <li class="page-item"><button type="button" class="page-link" onclick="foo(1)">&rsaquo;</button></li>
+      <li class="page-item"><button type="button" class="page-link" onclick="foo(5)">&raquo;</button></li>
+    </ul>
+  </nav>
     
-  <div class="deckBook_title"><h6><b>ALCUNI SUOI LIBRI</b></h6></div>
-  <div id="authorBook" class="deckBook"></div>
+  <div class="deckBook_title"><h6><b>AUTHOR'S BOOKS</b></h6></div>
+  <div id="authorBooks" class="deckBook"><!-- data --></div>
     
-  <div class="deckAuthor_title"><h6><b>ALTRI AUTORI</b></h6></div>
-  <div id='similarAuthor' class="deckAuthor"></div>
+  <div class="deckAuthor_title"><h6><b>SIMILAR AUTHORS</b></h6></div>
+  <div id='similarAuthor' class="deckAuthor"><!-- data --></div>
 
   <script src="../assets/js/AuthorX.js"></script>
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
-   
-  <!-- 
+  
+  <!-- JQuery Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      

@@ -38,6 +38,14 @@
     </div>
   </section>
   
+  <!-- ORIENTATIO INFO -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Books</li>
+    </ol>
+  </nav>
+  
   <!-- CHOICE SECTION -->
   <div class="container">
     <div class="row justify-content-center button_row">
@@ -80,7 +88,7 @@
              <input type="checkbox" id="bestSellersCheckBox" name="bestSeller" value=""> Best Sellers
            </div>
            <div class="elemCheckbox">
-           <input type="checkbox" id="myFavouritesCheckBox" name="bestSeller" value=""> My favourites
+           <input type="checkbox" id="newReleasesCheckBox" name="bestSeller" value=""> New Releases
            </div>
        </div>
        <div class="buttonDiv">
@@ -95,23 +103,25 @@
   
   <div id="bookOfTheMonth">
   <div class="container bannerBox">
-    <h1>TITOLO LIBRO DEL MESE</h1>
-    <div class="row justify-content-center">  
+    <h1 id="title_BOTM"><!-- data --></h1>
+    <div class="row justify-content-center content_BOTM">  
       <div class="col-lg-4 col-md-5 bannerBox__image">
-        <img src="../assets/images/harry1.jpg" class="banner__image" alt="img">
+        <img id="image_BOTM" class="banner__image" alt="img">
       </div>
-      <div class="col-lg-8 col-md-12 bannerBox__info">
-        <p>“Il nostro Paese, guidato dal primo governo nazionalpopulista dell’Europa occidentale, egemonizzato culturalmente e politicamente dalla nuova destra, rischia un declino inarrestabile. Rischia di rimanere isolato nell’Unione europea e diviso al suo interno, impaurito, incattivito e avvitato su se stesso. Impediremo il declino se sapremo cambiare. Riconoscendo senza reticenze gli errori e affrontando le ragioni delle sconfitte. Il primo passo sarà tornare a incontrarci, in tanti, per trovare insieme le soluzioni e costruire un’idea di società giusta.” L’Italia è entrata in una nuova fase molto pericolosa della sua storia repubblicana. Da quando la politica populista governa, tra promesse mancate e provvedimenti scellerati, miliardi di euro sono andati in fumo per l’innalzamento dello spread. La crescita si è fermata e va verso una flessione negativa. La disoccupazione giovanile è aumentata. Il debito ha raggiunto livelli record. Fuggono gli investitori, ma anche gli studenti. Senza confessarlo, si sta facendo largo una inquietante rottura storica della collocazione internazionale dell’Italia, con inedite e rischiose alleanze nel mondo delle democrazie illiberali. In poche settimane, da Paese primo fondatore del sogno europeo l’Italia si è trasformata in una mina vagante, considerata irresponsabile e del tutto inaffidabile. Nicola Zingaretti, segretario del Pd, in questi scritti e discorsi mostra che la posta in gioco è molto alta. È necessario fermare la deriva della politica italiana prima che sia troppo tardi. Stiamo attraversando una grande trasformazione e abbiamo bisogno di immaginare una nuova idea di società, giusta nei confronti delle persone, per garantire un futuro di libertà e uguaglianza all’Italia e all’Europa. “Ora è tempo di scegliere. Di combattere perché l’avvenire torni a essere un luogo della speranza, della solidarietà, della giustizia, della libertà, delle opportunità per tutti. Di offrire un futuro all’Italia e all’Europa.” La politica</p>
-        <a href="/bookX" class="bannerBox__link">Al libro</a>
+      <div class="col-lg-5 col-md-12 bannerBox__info">
+        <div class="row">
+          <p id="abstract_BOTM" class="col-12"><!-- data --></p>
+          <a id="link_BOTM" class=" col-12 bannerBox__link">To book</a>
+        </div>
       </div>
     </div>
   </div>
   
     
-  <div class="deckBook_title"><h6><b>RECOMMENDED</b></h6></div>
+  <div class="deckBook_title"><h6><b>OUR RECOMMENDEDATIONS</b></h6></div>
   <div id="recommendedBooks" class="deckBook"></div>
 
-  <div class="deckBook_title"><h6><b>TOP SELLER</b></h6></div>
+  <div class="deckBook_title"><h6><b>BEST SELLERS</b></h6></div>
   <div id="topSellersBooks" class="deckBook"></div>
     
   <div class="deckBook_title"><h6><b>CLASSICS</b></h6></div>

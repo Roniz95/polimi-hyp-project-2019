@@ -1,0 +1,82 @@
+[
+    { 
+      "id" : "0", 
+      "title" : "Harry Potter e la pietra filosofale",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry1.jpg"
+    },
+    { 
+      "id" : "1", 
+      "title" : "Harry Potter e la camera dei segreti",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry2.jpg"
+    },
+    { 
+      "id" : "2", 
+      "title" : "Harry Potter e la camera dei segreti",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry3.jpg"
+    },
+    { 
+      "id" : "3", 
+      "title" : "Harry Potter e il calice di Fuoco",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry4.jpg"
+    },
+    { 
+      "id" : "4", 
+      "title" : "Harry Potter e l'ordine della Fenice",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry5.jpg"
+    },
+    { 
+      "id" : "5", 
+      "title" : "Harry Potter e il principe mezzosangue",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry6.jpg"
+    },
+    { 
+      "id" : "6", 
+      "title" : "Harry Potter e i doni della morte",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry7.jpg"
+    },
+    { 
+      "id" : "7", 
+      "title" : "Harry Potter e la maledizione dell'erede",
+      "genre" : "Fantasy Novel",
+      "author1" : "J.K. Rowling",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/harry8.jpg"
+    }
+]

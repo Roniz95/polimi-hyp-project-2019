@@ -1,7 +1,4 @@
-var authors = [
-    { id: '1', name: 'Stephen', surname: 'King',  photo: '../assets/images/scrittore.jpg' },
-    { id: '2', name: 'Elena', surname: 'Ferrante', photo: '../assets/images/autore.jpg' }
-  ];
+var authorOfTheMonthID = 0;
 
 var authorNames= [
   /*{ value: 'test', data: '0001' },
@@ -55,6 +52,9 @@ function select_authorOfTheMonth() {
 $(document).ready(allAuthors())
 
 function allAuthors() {  
+  
+  setAuthor(authorOfTheMonthID);
+  
   //Call DB to retireve all authors data and initializate authorNames array 
   
   var i;
@@ -88,6 +88,22 @@ function allAuthors() {
       div.append(p);
       author_list.append(div);
     }
+}
+
+function setAuthor(id){
+  $.ajax({
+    url: '/author/'+id,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      if(data){
+        $('#name_AOTM').append(data.name);
+        $('#image_AOTM').attr("src", data.image);
+        $('#bio_AOTM').append(data.bio);
+        $('#link_AOTM').attr("href", "/authorX/"+data.id+"/authorOfTheMonth");
+      }
+    }
+  });
 }
 
 function searchAuthor() {

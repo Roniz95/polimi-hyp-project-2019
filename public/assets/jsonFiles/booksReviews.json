@@ -1,0 +1,90 @@
+{
+  "0": 
+    [ 
+      {
+        "username" : "fedecere94",
+        "stars" : 5,
+        "value" : "Awesome",
+        "comment" : "exciting, sensational, beautiful and engaging. I will certainly buy the sequel"
+      },
+      {
+        "username" : "aleRocco",
+        "stars" : 4,
+        "value" : "Very good",
+        "comment" : ""
+      },
+      {
+        "username" : "Roniz95",
+        "stars" : 4,
+        "value" : "Very good",
+        "comment" : ""
+      }
+    ],
+  
+  "1": [],
+  
+  "2": 
+    [ 
+      {
+        "username" : "aleRocco",
+        "stars" : 4,
+        "value" : "Very good",
+        "comment" : ""
+      },
+      {
+        "username" : "Roniz95",
+        "stars" : 3,
+        "value" : "Good",
+        "comment" : "overall nice, I expected something more but in general I can be satisfied with my purchase"
+      }
+    ],
+  
+  "3": 
+    [ 
+      {
+        "username" : "aleRocco",
+        "stars" : 2,
+        "value" : "Kindly Bad",
+        "comment" : "inconsistent, poorly written, non-engaging story. Having read the previous volumes I must say that this left me very bitter in my mouth. I hope it was a false step and that the next stories will return to the level of those previous ones"
+      },
+      {
+        "username" : "Roniz95",
+        "stars" : 2,
+        "value" : "Kindly Bad",
+        "comment" : "honestly I was expecting something more"
+      },
+      {
+        "username" : "fedecere94",
+        "stars" : 1,
+        "value" : "Bad",
+        "comment" : "very bad, full of plot holes. It left me very dissatisfied"
+      }
+    ],
+  
+  "4": [],
+  "5": [],
+  "6": [],
+  
+  "7": 
+    [ 
+      {
+        "username" : "fedecere94",
+        "stars" : 5,
+        "value" : "Awesome",
+        "comment" : ""
+      },
+      {
+        "username" : "aleRocco",
+        "stars" : 5,
+        "value" : "Awesome",
+        "comment" : "honestly I didn't think that after the conclusion of the saga this new adventure could be at the level of the previous ones. I had to change my mind. Really nice. Congratulations!"
+      },
+      {
+        "username" : "Roniz95",
+        "stars" : 5,
+        "value" : "Awesome",
+        "comment" : "Spettacolare, impressionante. Non pensavo che mi avrebbe appassionato come i libri della precedente saga"
+      }
+    ]
+  
+}

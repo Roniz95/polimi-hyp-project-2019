@@ -1,0 +1,41 @@
+{
+  "0":
+    { 
+      "id": "0", 
+      "username": "admin", 
+      "password": "admin", 
+      "name": "Admin", 
+      "surname": "Admin", 
+      "email": "admin@gmail.com" 
+    },
+  
+  "1":
+    { 
+      "id": "1", 
+      "username": "fedecere94", 
+      "password": "admin", 
+      "name": "Federico", 
+      "surname": "Reale", 
+      "email": "fedecere94@gmail.com" 
+    },
+  
+  "2":
+    { 
+      "id": "2", 
+      "username": "Roniz95", 
+      "password": "admin", 
+      "name": "Sergio", 
+      "surname": "Placanica", 
+      "email": "roniz95@gmail.com" 
+    },
+  
+  "3":
+    { 
+      "id": "3", 
+      "username": "aleRocco", 
+      "password": "admin", 
+      "name": "Alessandro", 
+      "surname": "Peruzzi", 
+      "email": "aleRocco@gmail.com" 
+    }
+}

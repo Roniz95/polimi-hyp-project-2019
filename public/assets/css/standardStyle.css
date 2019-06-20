@@ -53,6 +53,20 @@ body { overflow-x: hidden; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
 
+/*-------------------
+  OTIENTATION INFO
+---------------------*/
+.breadcrumb_link { color: darkorange!important; }
+
+
+/*-------------
+  PAGINATION
+---------------*/
+.page-link { color: #000!important }
+.link_active { color: darkorange!important }
+.link_disabled { color: #ccc!important }
+
+
 /*-----------
 Smartphone
 ------------*/

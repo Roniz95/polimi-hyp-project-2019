@@ -31,7 +31,7 @@ function signIn() {
   
   //DO BACK END SIGN IN --- al momento fittizio ---
   var request = new XMLHttpRequest();
-  request.open("GET", "../assets/js/users_prova_fede.json", false);
+  request.open("GET", "../assets/jsonFiles/users.json", false);
   request.send(null);
   var my_JSON_object = JSON.parse(request.responseText);
   var users = my_JSON_object.users;

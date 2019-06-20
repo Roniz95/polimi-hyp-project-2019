@@ -3,6 +3,7 @@
 .choice_button { border: none;  background: none; padding-top: 0.5em; padding-bottom: 0.5em; color: #ccc; }
 .button_active { color: #000; }
 .choice_hide { display: none!important; }
+#searchBooks { margin-bottom: 3em; }
 
 /*-------------
   CARDS BOOK
@@ -20,11 +21,12 @@
 -----------*/
 .bannerBox { margin: 2.5%;  padding: 0 1em; }
 .bannerBox h1 { text-align: center;  margin: 0;  padding: 0.25em; }
-.bannerBox__image { display: flex;  justify-content: center;  align-items: flex-start;  padding: 1em 0; }
-.banner__image { width: 100%;  object-fit: contain; }
-.bannerBox__info { padding: 1em 0; }
+.content_BOTM { margin-top: 1.5em; margin-bottom: 5em; }
+.bannerBox__image { height: 400px; }
+.banner__image { width: 100%; height: 100%;  object-fit: contain; }
+.bannerBox__info { padding: 1em 0;  align-items: center;  display: flex; }
 .bannerBox__info p { font-style: italic;  font-size: 17px; }
-.bannerBox__link { color: red;  float: right;  font-size: 23px; }
+.bannerBox__link { color: red;  text-align: right; font-size: 23px; }
 
 
 /*---------------------

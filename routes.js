@@ -20,19 +20,88 @@ router.get('/book', function (req, res) {
    res.sendFile(pages + 'Book.html');
 });
 
+/* go to book page */
 router.get('/bookX', function (req, res) {
-   res.sendFile(pages + 'BookX.html');
+  res.sendFile(pages + 'BookX.html');
 });
+
+/* retrieve book from db */
+router.get('/book/:id', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
+  res.json(books[req.params.id]);
+});
+
+/* retrieve all review of book from db */
+router.get('/bookReviews/:id', function (req, res) {
+  let booksReviews = require(__dirname + '/public/assets/jsonFiles/booksReviews.json');
+  res.json(booksReviews[req.params.id]);
+});
+
+/* retrieve all similar books of book from db */
+router.get('/bookSimilar/:id', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/similarBooks.json');
+  res.json(books[req.params.id]);
+});
+
+/* fetch all author's books */
+router.get('/authorBooks/:authorID', function (req, res) {
+  let authorBooks = require(__dirname + '/public/assets/jsonFiles/authorsBooks.json');
+  res.json(authorBooks[req.params.authorID]);
+});
+
+/* retrieve all bestSellers from db */
+router.get('/bestSellers', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
+  res.json(books);
+});
+
+/* retrieve all Classics from db */
+router.get('/classics', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
+  res.json(books);
+});
+
+/* retrieve Our recommendations from db */
+router.get('/ourRecommendations', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
+  res.json(books);
+});
+
+/* retrieve Next Comings from db */
+router.get('/nextComings', function (req, res) {
+  let books = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
+  res.json(books);
+});
+
+router.get('/bookX/:id/:from', function (req, res) {
+  res.redirect('/bookX?id='+req.params.id+'&from='+req.params.from);
+});
+
+router.get('/bookX/:id/:from/:searchID', function (req, res) {
+  res.redirect('/bookX?id='+req.params.id+'&from='+req.params.from+'&searchID='+req.params.searchID);
+});
+
 
 router.get('/contact', function (req, res) {
     res.sendFile(pages + 'Contact.html');
 });
+
 router.get('/author', function (req, res) {
     res.sendFile(pages + 'Author.html');
 });
 
+/* fetch author info */
+router.get('/author/:id', function (req, res) {
+  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
+  res.json(authors[req.params.id]);
+});
+
 router.get('/authorX', function (req, res) {
    res.sendFile(pages + 'AuthorX.html');
+});
+
+router.get('/authorX/:id/:from', function (req, res) {
+  res.redirect('/authorX?id='+req.params.id+'&from='+req.params.from);
 });
 
 router.get('/event', function (req, res){

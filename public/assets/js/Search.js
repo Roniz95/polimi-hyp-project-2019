@@ -104,17 +104,9 @@ function searchBooksFromFilters(){
   var theme = document.getElementById('themeSearchBar').value;
   var author = document.getElementById('authorSearchBar').value;
   var bestSellers = document.getElementById('bestSellersCheckBox').checked;
-  var myFavourite = document.getElementById('myFavouritesCheckBox').checked;
+  var newReleases = document.getElementById('newReleasesCheckBox').checked;
   
-  /*alert(
-    'genre: ' + (genre!='' ? genre : 'NO SELECTION') + '\n' +
-    'theme: ' + (theme!='' ? theme : 'NO SELECTION') + '\n' +
-    'author: ' + (author!='' ? author : 'NO SELECTION') + '\n' +
-    'bestSellers: ' + bestSellers + '\n' +
-    'myFavourite: ' + myFavourite
-  );*/
-  
-  if(genre!='' || theme!='' || author!='' || bestSellers || myFavourite){
+  if(genre!='' || theme!='' || author!='' || bestSellers || newReleases){
     var resultTitle = document.createElement('p');
     resultTitle.className = "result_title";
   
@@ -165,11 +157,11 @@ function searchBooksFromFilters(){
       div.appendChild(bestDiv);
     }
   
-    if(myFavourite){
+    if(newReleases){
       var favDiv = document.createElement('div');
       favDiv.className = 'result_div';
       var favB = document.createElement('b');
-      favB.textContent = 'My Favourites';
+      favB.textContent = 'New Releases';
       favDiv.appendChild(favB);
       div.appendChild(favDiv);
     }

@@ -2,27 +2,17 @@ $(document).ready(fetchData())
 
 function fetchData() {
   
-  //extract authorID
-  /*var parameters = location.search.substring(1).split('=');
-  var temp = unescape(parameters[1]);
-  var authorID = temp.substr(1, temp.length-2);
-  alert(authorID); //TO LEAVE*/
+  var parameters = location.search.substring(1).split('&');
   
-  //Call DB and retrieve all books of 'authorID'
-  var authorBook = [
-    { id: 1, title: 'Harry Potter e la pietra filosofale', img: '../assets/images/harry1.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 2, title: 'Harry Potter e la camera dei segreti', img: '../assets/images/HP2.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 3, title: 'Harry Potter e il prigioniero di Azkaban', img: '../assets/images/harry3.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 4, title: 'Harry Potter e il calice di fuoco', img: '../assets/images/harry4.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 5, title: 'Harry Potter e l\'ordine della fenice', img: '../assets/images/HP5.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 6, title: 'Harry Potter e il principe mezzosangue', img: '../assets/images/harry6.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 7, title: 'Harry Potter e i doni della morte', img: '../assets/images/harry7.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 8, title: 'Libro X', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-    { id: 9, title: 'Libro Y', img: '../assets/images/h8.jpg', genre: 'Comedy', author: 'J.K. Rowling' },
-    { id: 10, title: 'Libro Z', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-    { id: 11, title: 'Libro U', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-  ];
-  SetBooks(authorBook, 'authorBook');
+  /* currentAuthorID */
+  var idParam0 = parameters[0].split('=');
+  var currentAuthorID = unescape(idParam0[1]);
+  
+  /* from */
+  var idParam1 = parameters[1].split('=');
+  var from = unescape(idParam1[1]);
+  
+  setAuthor(currentAuthorID);
   
   //Call DB and retrieve similar authors of 'authorID'
   var similarAuthors = [
@@ -42,26 +32,48 @@ function fetchData() {
   
 }
 
-function SetBooks(books, id) {
-  var deckBook = document.getElementById(id);
-  var length = books.length < 8 ? books.length : 8; //oppure li restituisco tutti???
-  var i;
-  
-  for(i=0; i<length; i++){
-    
+function setAuthor(id){
+  $.ajax({
+    url: '/author/'+id,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      if(data){
+        $('#authorNameID').append(data.name);
+        $('#authorImageID').attr("src", data.image);
+        $('#authorBioID').append(data.bio);
+        $('#authorLinkID').attr("href", data.link);
+        fetchAuthorBooks(id, data.name);
+      }
+    }
+  });
+}
+
+function fetchAuthorBooks(authorID, authorName){
+  $.ajax({
+    url: '/authorBooks/'+authorID,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ SetBooks(data, 'authorBooks', authorName, authorID) } }
+  });
+}
+
+function SetBooks(booksIDs, elementID, bookTitle, bookID) {
+  var deckBook = document.getElementById(elementID); 
+  for(let i=0; i<booksIDs.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
-    div.setAttribute("onclick", "goToBook()");
-    
+    div.onclick = () => goToBook(booksIDs[i].id, elementID, bookTitle, bookID);
+          
     var img = document.createElement('img');
     img.className = 'cardBook__image';
-    img.src = books[i].img;
+    img.src = booksIDs[i].image;
     div.appendChild(img);
     
     var title = document.createElement('div');
     title.className = 'cardBook__link border__bottom';
     var b1 = document.createElement('b');
-    var t1 = document.createTextNode(books[i].title);
+    var t1 = document.createTextNode(booksIDs[i].title);
     b1.append(t1);
     title.appendChild(b1);
     div.appendChild(title);
@@ -69,23 +81,32 @@ function SetBooks(books, id) {
     var author = document.createElement('div');
     author.className = 'cardBook__link border__bottom';
     var b2 = document.createElement('b');
-    var t2 = document.createTextNode(books[i].author);
-    b2.append(t2);
+    createAuthorsList([booksIDs[i].author1, booksIDs[i].author2, booksIDs[i].author3, booksIDs[i].author4], b2);
     author.appendChild(b2);
     div.appendChild(author);
     
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    var t3 = document.createTextNode(books[i].genre);
+    var t3 = document.createTextNode(booksIDs[i].genre);
     b3.append(t3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
     deckBook.appendChild(div);
+  } 
+} 
+
+function createAuthorsList(authorsNames, element){
+  for(let i=0; i<authorsNames.length; i++){
+    if(authorsNames[i]!=""){
+      element.textContent = element.textContent + authorsNames[i];
+      var last = i==3 || authorsNames[i+1]=="";
+      if(!last){ element.textContent = element.textContent + ", "; }
+    }
   }
-  
 }
+
 
 
 function SetSimilarAuthors(authors) {
@@ -115,9 +136,13 @@ function SetSimilarAuthors(authors) {
 
 
 
-function goToBook(){
-  window.location.href = '/bookX';
+
+
+function goToBook(newBookID, from, name, id){
+  var str = from + "( of "+name+" )";
+  window.location.href = '/bookX/'+newBookID+'/'+str+'/'+id;
 }
+
 
 
 function goToAuthor(authorID){
