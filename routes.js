@@ -150,12 +150,6 @@ router.get('/similarAuthors/:authorID', function (req, res) {
   res.json(similarAuthors[req.params.authorID]);
 });
 
-/* FETCH author infos for autocomplete plugin */
-router.get('/autocomplete/authors', function (req, res) {
-  let autocompleteAuthors = require(__dirname + '/public/assets/jsonFiles/autocompleteAuthors.json');
-  res.json(autocompleteAuthors);
-});
-
 /* REDIRECT to authorX page from bookX or authorSearch */
 router.get('/authorX/:authorID/:from', function (req, res) {
   res.redirect('/authorX?id='+req.params.authorID+'&from='+req.params.from);
@@ -198,6 +192,24 @@ router.get('/users/:username', function (req, res){
   let users = require(__dirname + '/public/assets/jsonFiles/users.json'); 
   var user = users.filter(function(elem){ return elem.username===req.params.username })
   res.json(user);
+});
+
+/* FETCH author infos for AUTOCOMPLETE plugin */
+router.get('/autocomplete/authors', function (req, res) {
+  let autocompleteAuthors = require(__dirname + '/public/assets/jsonFiles/autocompleteAuthors.json');
+  res.json(autocompleteAuthors);
+});
+
+/* FETCH genre infos for AUTOCOMPLETE plugin */
+router.get('/autocomplete/genres', function (req, res) {
+  let autocompleteGenres = require(__dirname + '/public/assets/jsonFiles/autocompleteGenres.json');
+  res.json(autocompleteGenres);
+});
+
+/* FETCH themes infos for AUTOCOMPLETE plugin */
+router.get('/autocomplete/themes', function (req, res) {
+  let autocompleteThemes = require(__dirname + '/public/assets/jsonFiles/autocompleteThemes.json');
+  res.json(autocompleteThemes);
 });
 
 
