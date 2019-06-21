@@ -1,47 +1,3 @@
-function selectReviews(){
-  document.getElementById("reviews_btn").classList.toggle("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "block";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "none";
-}
-
-function selectInterview(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.toggle("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "block";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "none";
-}
-
-function selectNewReview(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.toggle("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "block";
-  document.getElementById("bookEventsId").style.display = "none";
-}
-
-function selectBookEvents(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.toggle("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "flex";
-}
-
 $(document).ready(fetchData())
 
 function fetchData() {
@@ -56,11 +12,15 @@ function fetchData() {
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
   
+  
   if(parameters.length>2){
+    
     if(from.substring(0,12)=='similarBooks'){
+      
       /* old book ID */
       var idParam2 = parameters[2].split("=");
       var oldBookID = unescape(idParam2[1]);
+      
       $.ajax({
         url: '/bookSimilar/'+oldBookID,
         type: 'GET',
@@ -70,9 +30,12 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched books similar to <b>&nbsp;\"" + from.substring(16, from.length-1) + "&nbsp;\"</b>";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
+      
     }else if(from.substring(0,11)=='authorBooks'){
       /* author ID */
       var idParam2 = parameters[2].split("=");
@@ -86,12 +49,56 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched <b>&nbsp;" + from.substring(16, from.length-1) + "</b>'s books";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
     }
-    else if(from.substring(0,5)=='search'){
-      //TO DO
+    else if(from=='searchFromTitle'){
+      var idParam2 = parameters[2].split("=");
+      var title = unescape(idParam2[1]);
+      $.ajax({
+        url: '/searchBooksFromTitle/'+title,
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+          if(data){
+            var str = JSON.stringify(data);
+            sessionStorage.setItem("bookList", str);
+            setPagination(data, currentBookID);
+            var orientationInfo = "you have searched books whose title contains <b>&nbsp;\"" + title + "\"</b>";
+            $('#orientationInfoID').append(orientationInfo);
+          }
+        }
+      });
+    }
+    else if(from=='searchFromFilters'){
+      var idParam2 = parameters[2].split("=");
+      var genre = unescape(idParam2[1]);
+      var idParam3 = parameters[3].split("=");
+      var author = unescape(idParam3[1]);
+      var idParam4 = parameters[4].split("=");
+      var theme = unescape(idParam4[1]);
+      var idParam5 = parameters[5].split("=");
+      var bs = unescape(idParam5[1]);
+      var idParam6 = parameters[6].split("=");
+      var nc = unescape(idParam6[1]);
+      
+      $.ajax({
+        url: '/searchBooksFromFilters/'+genre+'/'+theme+'/'+author+'/'+bs+'/'+nc,
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => { 
+          if(data){ 
+            var str = JSON.stringify(data);
+            sessionStorage.setItem("bookList", str);
+            setPagination(data, currentBookID);
+            var orientationInfo = "you have performed advanced search ( " + createFiltersString(genre, theme, author, bs, nc) + " )";
+            $('#orientationInfoID').append(orientationInfo);
+          } 
+        }
+      });
     }
   }
   else if(from=='recommendedBooks'){
@@ -104,6 +111,8 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched &nbsp;<b>Our recommendations</b>";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
@@ -118,6 +127,8 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched &nbsp;<b>Best Sellers</b>";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
@@ -132,6 +143,8 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched &nbsp;<b>Classics</b>";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
@@ -146,15 +159,17 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookID);
+            var orientationInfo = "you have searched &nbsp;<b>Next comings</b>";
+            $('#orientationInfoID').append(orientationInfo);
           }
         }
       });
   }
   else if(from=='bookOfTheMonth'){
     document.getElementById("paginationID").style.display = "none";
+    var orientationInfo = "you have searched &nbsp;<b>Book of the month</b>";
+    $('#orientationInfoID').append(orientationInfo);
   }
-  
-  setOrientationInfo(from);
   
   setBook(currentBookID);
   
@@ -170,11 +185,23 @@ function fetchData() {
 function setPagination(data, id){
   var i=0;
   while(data[i].id!=id && i<data.length){ i++ }
-  //alert(i);
   var counter = document.getElementById('counter');
   counter.tabIndex = i+1;
-  counter.textContent = " "+(i+1)+" / "+data.length; 
+  counter.textContent = " "+(i+1)+" / "+data.length;
+  paginationColors(i+1, data.length);
 }
+
+function createFiltersString(genre, theme, author, bestSellers, nextComings){
+  var str = "";
+  if(genre!="null"){ str+= ('&nbsp;genre:<b>&nbsp;' + genre + '</b>&nbsp;') }
+  if(theme!="null"){ str+= ('&nbsp;theme:<b>&nbsp;' + theme + '</b>&nbsp;') }
+  if(genre!="null"){ str+= ('&nbsp;author:<b>&nbsp;' + author + '</b>&nbsp;') }
+  if(bestSellers!="0"){ str+= ('&nbsp;<b>Best Sellers</b>&nbsp;') }
+  if(nextComings!="0"){ str+= ('&nbsp;<b>Next Comings</b>&nbsp;') }
+  return str;
+}
+
+
 
 function foo(dir){
   var str = sessionStorage.getItem('bookList');
@@ -182,41 +209,35 @@ function foo(dir){
   var counter = document.getElementById('counter');
   var tabIndex = counter.tabIndex;
   var newIndex = tabIndex + dir;
+  
   if(newIndex>=1 && newIndex<=data.length){
     counter.tabIndex = newIndex;
     counter.textContent = " "+newIndex+" / "+data.length; 
     setBook(data[newIndex-1].id);
-  }else{
-    //TO DO
+    paginationColors(newIndex, data.length);
   }
 }
 
-function setOrientationInfo(from){
-  var orientationInfo = document.getElementById('orientationInfoID');
-  if(from!='newReleases' && from!='bestSellers'){
-    /* book page */
-    var li1 = document.createElement('li');
-    li1.className = "breadcrumb-item";
-    var a1 = document.createElement('a');
-    a1.className = "breadcrumb_link";
-    a1.href = '/book';
-    a1.textContent = "Books";
-    li1.appendChild(a1);
-    orientationInfo.appendChild(li1);
-  }
-  /* book of the month */
-    var li2 = document.createElement('li');
-    li2.className = "breadcrumb-item active";
-    li2.setAttribute('aria-current', 'page');
-    if(from=='bookOfTheMonth'){ li2.textContent = "Book of the month"; }
-    else if(from.substr(0, 12)=='similarBooks'){ li2.textContent = "Similar books to \"" + from.substr(17, from.length-18) + "\""; }
-    else if(from.substr(0, 11)=='authorBooks'){ li2.textContent = from.substr(16, from.length-18) + "'s books"; }
-    else if(from=='recommendedBooks'){ li2.textContent = "Our Recommendations"; }
-    else if(from=='topSellersBooks'){ li2.textContent = "Best Sellers"; }
-    else if(from=='classicBooks'){ li2.textContent = "Classics"; }
-    else if(from=='nextComingBooks'){ li2.textContent = "Next Comings"; }
-    orientationInfo.appendChild(li2);
+function paginationColors(tabIndex, length){
+  var prev5 = document.getElementById('prev5_ID');
+  var prev1 = document.getElementById('prev1_ID');
+  var next1 = document.getElementById('next1_ID');
+  var next5 = document.getElementById('next5_ID');
+    
+  if(tabIndex==1){ prev1.classList.toggle('link_disabled'); }
+  else { prev1.classList.remove('link_disabled'); }
+    
+  if(tabIndex<=5){ prev5.classList.toggle('link_disabled'); }
+  else { prev5.classList.remove('link_disabled'); }
+    
+  if(tabIndex==length){ next1.classList.toggle('link_disabled'); }
+  else { next1.classList.remove('link_disabled'); }
+      
+  if(tabIndex>=length-5){ next5.classList.toggle('link_disabled'); }
+  else { next5.classList.remove('link_disabled'); }
 }
+
+
 
 function setBook(id){
   $.ajax({
@@ -237,6 +258,8 @@ function setBook(id){
         createThemesString(data.themes);
         $('#bookYearID').empty();
         $('#bookYearID').append(data.year);
+        $('#bookIsbnID').empty();
+        $('#bookIsbnID').append(data.isbn);
         $('#bookPriceID').empty();
         $('#bookPriceID').append(data.price);
         $('#bookPlotID').empty();
@@ -257,13 +280,12 @@ function setBook(id){
   });
 }
 
-         
 function createAuthorsLink(authorsNames){
   var td = document.getElementById('bookAuthorsID');
   for(let i=0; i<authorsNames.length; i++){
     if(authorsNames[i]){
       var a = document.createElement('a');
-      a.href = '/authorX'; //.id
+      a.href = '/authorX/'+ authorsNames[i].id + '/book'
       a.className = "box__link";
       a.textContent = authorsNames[i].name;
       td.appendChild(a);
@@ -371,6 +393,8 @@ function fetchSimilarBooks(id, title){
     });
 }
 
+
+
 function SetBooks(booksIDs, elementID, bookTitle, bookID) {
   var deckBook = document.getElementById(elementID); 
   for(let i=0; i<booksIDs.length; i++){
@@ -420,6 +444,13 @@ function createAuthorsList(authorsNames, element){
   }
 }
 
+function goToBook(newBookID, from, name, id){
+  var str = from + "( of "+name+" )";
+  window.location.href = '/bookX/'+newBookID+'/'+str+'/'+id;
+}
+
+
+
 function setEvents(events, id){
   var container = document.getElementById(id);
   var i;
@@ -453,8 +484,48 @@ function goToEvent(){
   window.location.href = "/eventX";
 }
 
-function goToBook(newBookID, from, name, id){
-  var str = from + "( of "+name+" )";
-  window.location.href = '/bookX/'+newBookID+'/'+str+'/'+id;
+
+
+function selectReviews(){
+  document.getElementById("reviews_btn").classList.toggle("btn__active");
+  document.getElementById("interview_btn").classList.remove("btn__active");
+  document.getElementById("new_review_btn").classList.remove("btn__active");
+  document.getElementById("book_events_btn").classList.remove("btn__active");
+  document.getElementById("reviewsId").style.display = "block";
+  document.getElementById("interviewId").style.display = "none";
+  document.getElementById("newReviewId").style.display = "none";
+  document.getElementById("bookEventsId").style.display = "none";
 }
 
+function selectInterview(){
+  document.getElementById("reviews_btn").classList.remove("btn__active");
+  document.getElementById("interview_btn").classList.toggle("btn__active");
+  document.getElementById("new_review_btn").classList.remove("btn__active");
+  document.getElementById("book_events_btn").classList.remove("btn__active");
+  document.getElementById("reviewsId").style.display = "none";
+  document.getElementById("interviewId").style.display = "block";
+  document.getElementById("newReviewId").style.display = "none";
+  document.getElementById("bookEventsId").style.display = "none";
+}
+
+function selectNewReview(){
+  document.getElementById("reviews_btn").classList.remove("btn__active");
+  document.getElementById("interview_btn").classList.remove("btn__active");
+  document.getElementById("new_review_btn").classList.toggle("btn__active");
+  document.getElementById("book_events_btn").classList.remove("btn__active");
+  document.getElementById("reviewsId").style.display = "none";
+  document.getElementById("interviewId").style.display = "none";
+  document.getElementById("newReviewId").style.display = "block";
+  document.getElementById("bookEventsId").style.display = "none";
+}
+
+function selectBookEvents(){
+  document.getElementById("reviews_btn").classList.remove("btn__active");
+  document.getElementById("interview_btn").classList.remove("btn__active");
+  document.getElementById("new_review_btn").classList.remove("btn__active");
+  document.getElementById("book_events_btn").classList.toggle("btn__active");
+  document.getElementById("reviewsId").style.display = "none";
+  document.getElementById("interviewId").style.display = "none";
+  document.getElementById("newReviewId").style.display = "none";
+  document.getElementById("bookEventsId").style.display = "flex";
+}

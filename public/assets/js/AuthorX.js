@@ -12,24 +12,7 @@ function fetchData() {
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
   
-  setAuthor(currentAuthorID);
-  
-  //Call DB and retrieve similar authors of 'authorID'
-  var similarAuthors = [
-    { id: 1, name: 'Elena Ferrante', img: '../assets/images/autore.jpg' },
-    { id: 2, name: 'Stephen King', img: '../assets/images/scrittore.jpg' },
-    { id: 3, name: 'Erri De Luca', img: '../assets/images/scrittore.jpg'},
-    { id: 4, name: 'Alessandro Baricco', img: '../assets/images/scrittore.jpg' },
-    { id: 5, name: 'George R. Martin', img: '../assets/images/scrittore.jpg' },
-    { id: 6, name: 'Oriana Fallaci', img: '../assets/images/autore.jpg' },
-    { id: 7, name: 'Marcus Heitz', img: '../assets/images/scrittore.jpg' },
-    { id: 8, name: 'Isaac Asimov', img: '../assets/images/scrittore.jpg' },
-    { id: 9, name: 'Tom Clancy', img: '../assets/images/scrittore.jpg' },
-    { id: 10, name: 'AutoreX', img: '../assets/images/autore.jpg' },
-    { id: 11, name: 'AutoreY', img: '../assets/images/autore.jpg' },
-  ];
-  SetSimilarAuthors(similarAuthors);
-  
+  setAuthor(currentAuthorID);  
 }
 
 function setAuthor(id){
@@ -44,6 +27,7 @@ function setAuthor(id){
         $('#authorBioID').append(data.bio);
         $('#authorLinkID').attr("href", data.link);
         fetchAuthorBooks(id, data.name);
+        fetchSimilarAuthors(id);
       }
     }
   });
@@ -107,18 +91,26 @@ function createAuthorsList(authorsNames, element){
   }
 }
 
-
+function fetchSimilarAuthors(id){
+  $.ajax({
+    url: '/similarAuthors/'+id,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ SetSimilarAuthors(data); } }
+  });
+}
 
 function SetSimilarAuthors(authors) {
   var deckAuthor = document.getElementById('similarAuthor');
-  var i;
-  for(i=0; i<authors.length; i++){
+  
+  for(let i=0; i<authors.length; i++){
     var div = document.createElement('div');
     div.className = "cardAuthor card-1";
-    div.addEventListener("click", goToAuthor.bind(null, authors[i].id));
+    div.onclick = () => goToAuthor(authors[i].id);
+    
     var img = document.createElement('img');
     img.className = 'cardAuthor__image';
-    img.src = authors[i].img;
+    img.src = authors[i].image;
     div.appendChild(img);
     
     var name = document.createElement('div');
@@ -131,12 +123,7 @@ function SetSimilarAuthors(authors) {
     
     deckAuthor.appendChild(div);
   }
-  
 }
-
-
-
-
 
 function goToBook(newBookID, from, name, id){
   var str = from + "( of "+name+" )";
@@ -144,9 +131,6 @@ function goToBook(newBookID, from, name, id){
 }
 
 
-
 function goToAuthor(authorID){
-  //var link = 'AuthorX.html?authorID='+authorID;
-  //alert(link);
-  window.location.href = '/authorX'; 
+  window.location.href = '/authorX/'+ authorID + '/similarAuthors'; 
 }

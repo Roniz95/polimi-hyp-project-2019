@@ -1,0 +1,12 @@
+[
+  { 
+    "id" : "0",
+    "name" : "J.K. Rowling",
+    "image" : "../assets/images/jkRowling.jpg"
+  },
+  { 
+    "id" : "1",
+    "name" : "George R.R. Martin",
+    "image" : "../assets/images/georgeMartin.jpg"
+  } 
+]

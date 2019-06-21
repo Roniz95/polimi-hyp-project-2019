@@ -17,7 +17,6 @@
     
     <!-- JQuery scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     
 </head>
 
@@ -28,7 +27,7 @@
   
   <!-- HEADER SECTION -->
   <section class="cover">
-    <img src="../assets/images/event.jpg" class="cover__image" alt="img">
+    <img id="eventImageID" class="cover__image" alt="img">
     <div class="cover__caption">
       <h1>Event</h1>
     </div>
@@ -36,22 +35,20 @@
    
   <div class="container eventBox">
     <div class="eventDescription">
-      <p class="event__title">TITOLO DELL'EVENTO</p>
-      <p>10 appuntamenti con scrittori di primo livello e il rum Zacapa ad accompagnare gli ospiti tra le pagine dei loro romanzi editi e inediti. Sono questi gli ingredienti di Zacapa calibro noir, la rassegna letteraria che dal 4 ottobre 2018 al 12 giugno 2019 propone a Milano con un ciclo di cene mensili aperte al pubblico.
-      Milano - Massimo Carlotto, Qiu Xiaolong, Hans Tuzzi, Alessandro Robecchi, Petros Markaris, Cecilia Scerbanenco, Alessia Gazzola, Björn Larsson, Chris Offutt e Carlo Lucarelli sono gli scrittori che ogni mese incontrano i lettori e gli appassionati del genere all’Osteria del Biliardo di Milano, per raccontare e commentare i loro romanzi insieme a Luca Crovi, giornalista e redattore presso la Sergio Bonelli Editore, e gli attori Gigio Alberti e Raffaella Boscolo che ne leggono dal vivo alcuni passaggi.
-      Milano - Un’occasione questa anche per approfondire il legame tra cibo e letteratura, che gli scrittori fanno incontrare tra le pagine delle loro opere creando vicende originali e inaspettate.</p>
+      <p id="eventTitleID" class="event__title"><!-- data --></p>
+      <p id="eventDescriptionID"><!-- data --></p>
     </div>
     <div class="row eventMaps">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22382.91713448314!2d9.207585421958374!3d45.4725305501851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6bb8231659f%3A0x53caa8832088b034!2sVilla+Necchi+Campiglio!5e0!3m2!1sit!2sit!4v1557509593681!5m2!1sit!2sit" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe id="eventMapID" frameborder="0" style="border:0" allowfullscreen></iframe>
       <div class="eventMaps__info">
-        <p>
-          <b>Milano, piazza leonardo 22</b><br>
-          <b>Number : </b>0332 739872<br>
-          <b>Mail : </b>nomeazienda@gmail.com<br>
-          <b>Event date : </b>20 giugno 2019<br>
-          <b>Event start : </b>9:00<br>
-          <b>Event finish : </b>12:00
-        </p>    
+        <div class="mapsInfo">
+          <p><b id="eventAddressID"><!-- data --></b></p>
+          <p id="eventNumberID"><b>Number : </b><!-- data --></p>
+          <p id="eventMailID"><b>Mail : </b><!-- data --></p>
+          <p id="eventDateID"><b>Event date : </b><!-- data --></p>
+          <p id="eventStartID"><b>Event start : </b><!-- data --></p>
+          <p id="eventEndID"><b>Event finish : </b><!-- data --></p>
+        </div>    
       </div>
     </div>
   </div> 
@@ -66,6 +63,9 @@
   <script src="../assets/js/footer.js"></script>
     
   <script src="../assets/js/EventX.js"></script>
+    
+  <!-- JQuery scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

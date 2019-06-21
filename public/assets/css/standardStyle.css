@@ -56,14 +56,15 @@ body { overflow-x: hidden; }
 /*-------------------
   OTIENTATION INFO
 ---------------------*/
+.orientation_info { background-color: #e9ecef; display: flex;  justify-content: center;  align-items: center;  width: 100%;  padding: 0.5em }
 .breadcrumb_link { color: darkorange!important; }
 
 
 /*-------------
   PAGINATION
 ---------------*/
-.page-link { color: #000!important }
-.link_active { color: darkorange!important }
+.page_link { color: #000!important }
+.page_link:hover { color: darkorange!important }
 .link_disabled { color: #ccc!important }
 
 

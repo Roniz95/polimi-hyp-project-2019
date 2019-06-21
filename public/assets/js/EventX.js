@@ -2,11 +2,17 @@ $(document).ready(fetchData())
 
 function fetchData() {
   
-  //extract bookID
-  /*var parameters = location.search.substring(1).split('=');
-  var temp = unescape(parameters[1]);
-  var bookID = temp.substr(1, temp.length-2);
-  alert(bookID); //TO LEAVE*/
+  var parameters = location.search.substring(1).split('&');
+  
+  /* currentEventID */
+  var idParam0 = parameters[0].split('=');
+  var currentEventID = unescape(idParam0[1]);
+  
+  /* from */
+  var idParam1 = parameters[1].split('=');
+  var from = unescape(idParam1[1]);
+  
+  setEvent(currentEventID);
   
   //Call DB and retrieve all books of 'eventID'
   var eventBooks = [
@@ -40,6 +46,38 @@ function fetchData() {
   ];
   SetAuthors(authors, 'eventAuthors');
   
+}
+
+function setEvent(id){
+  $.ajax({
+    url: '/event/'+id,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      if(data){
+        $('#eventTitleID').append(data.title);
+        $('#eventImageID').attr("src", data.image);
+        $('#eventDescriptionID').append(data.description);
+        $('#eventMapID').attr("src", data.mapSrc);
+        $('#eventAddressID').append(data.address);
+        $('#eventNumberID').append(data.phoneNumber);
+        $('#eventMailID').append(data.mail);
+        //var str = createDateString(data.date);
+        $('#eventDateID').append(createDateString(data.date));
+        $('#eventStartID').append(data.start);
+        $('#eventEndID').append(data.end);
+      }
+    }
+  });
+}
+
+function createDateString(data){
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = new Date(data);
+  var day = date.getDate();
+  var month = months[date.getMonth()];
+  var year = date.getFullYear();
+  return day + ' ' + month + ' ' + year;
 }
 
 

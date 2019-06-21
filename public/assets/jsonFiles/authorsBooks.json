@@ -82,6 +82,127 @@
     }
   ],
   
-  "1": []
+  "1": [
+    { 
+      "id" : "8", 
+      "title" : "Il trono di Spade",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
+    },
+    { 
+      "id" : "9", 
+      "title" : "Il grande inverno",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
+    },
+    { 
+      "id" : "10", 
+      "title" : "Il regno dei lupi",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
+    },
+    { 
+      "id" : "11", 
+      "title" : "La regina dei draghi",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
+    },
+    { 
+      "id" : "12", 
+      "title" : "Tempesta di spade",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
+    },
+    { 
+      "id" : "13", 
+      "title" : "I fiumi della guerra",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
+    },
+    { 
+      "id" : "14", 
+      "title" : "Il portale delle Tenebre",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
+    },
+    { 
+      "id" : "15", 
+      "title" : "Il dominio della regina",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
+    },
+    { 
+      "id" : "16", 
+      "title" : "L'ombra della profezia",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
+    },
+    { 
+      "id" : "17", 
+      "title" : "I guerrieri del ghiaccio",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
+    },
+    { 
+      "id" : "18", 
+      "title" : "I fuochi di Valyria",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
+    },
+    { 
+      "id" : "19", 
+      "title" : "La danza dei draghi",
+      "genre" : "Fantasy Novel",
+      "author1" : "George R.R. Martin",
+      "author2" : "",
+      "author3" : "",
+      "author4" : "",
+      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
+    }
+  ]
   
 }

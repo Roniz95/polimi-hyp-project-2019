@@ -149,5 +149,234 @@
         "abstract" : "È sempre stato difficile essere Harry Potter e non è molto più facile ora che è un impiegato del Ministero della Magia oberato di lavoro, marito e padre di tre figli in età scolare. Mentre Harry Potter fa i conti con un passato che si rifiuta di rimanere tale, il secondogenito Albus deve lottare con il peso dell'eredità famigliare che non ha mai voluto. Il passato e il presente si fondono minacciosamente e padre e figlio apprendono una scomoda verità: talvolta l'oscurità proviene da luoghi inaspettati. Basato su una storia originale di J.K. Rowling, John Tiffany e Jack Thorne. Un nuovo spettacolo diviso in parti uno e due. Il volume conterrà in un'unica edizione entrambe le parti. Età di lettura: da 12 anni.",
         "authorInterview" : "",
         "price" : "10.00€"
+      },
+  
+  "8":
+      { 
+        "id" : "8", 
+        "title" : "Il trono di Spade",
+        "year" : "1999",
+        "isbn": "9785271340871",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/ilTronoDiSpade_pt1.jpg",
+        "abstract" : "In una terra fuori dal mondo, dove le estati e gli inverni possono durare intere generazioni, sta per esplodere un immane conflitto. Sul Trono di Spade, nel Sud caldo e opulento, siede Robert Baratheon. L'ha conquistato dopo una guerra sanguinosa, togliendolo all'ultimo, folle re della dinastia Targaryen, i signori dei draghi. Ma il suo potere è ora minacciato: all'estremo Nord la Barriera - una muraglia eretta per difendere il regno da animali primordiali e, soprattutto, dagli Estranei - sembra vacillare. Si dice che gli Estranei siano scomparsi da secoli. Ma se è vero, chi sono quegli esseri con gli occhi così innaturalmente azzurri e gelidi, nascosti tra le ombre delle foreste, che rubano la vita o il sonno a chi ha la mala di incontrarli?",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "9":
+      { 
+        "id" : "9", 
+        "title" : "Il grande inverno",
+        "year" : "2000",
+        "isbn": "9788580418873",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/ilTronoDiSpade_pt2.jpg",
+        "abstract" : "Nella terra dove le stagioni possono durare intere generazioni, divampa la guerra tra la bella e corrotta regina Cersei Lannister e i lord dei Sette Regni fedeli ai coraggiosi signori di Grande Inverno. Intanto, nelle grandi pianure orientali, la principessa Daenerys Targaryen, ultima discendente della dinastia del Drago, si prepara con i suoi poteri straordinari alla riconquista del regno dei suoi avi. Ma la vera minaccia sono gli Estranei che avanzano da nord, esseri misteriosi, per secoli ritenuti a torto frutto della fantasia. Odiano la vita, il fuoco, il calore, l'estate, perché essi sono la morte, il freddo, il ghiaccio e l'inverno. La fine dell'estate è vicina e solo un nuovo prodigio potrà squarciare le tenebre.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "10":
+      { 
+        "id" : "10", 
+        "title" : "Il regno dei lupi",
+        "year" : "2001",
+        "isbn": "9788293059448",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/loScontroDeiRe_pt1.jpg",
+        "abstract" : "Nel cielo dei Sette Regni, travolti da una guerra devastatrice, appare una cometa dal sinistro colore rosso sangue. È forse questo un ennesimo segno di nuovi disastri a venire? Tutto sembrerebbe confermarlo. L'estate dell'abbondanza, durata dieci anni, sta per concludersi e sono ben quattro, ora, i condottieri che si contendono il Trono di Spade, in aperta guerra gli uni contro gli altri: il giovane e malefico Joffrey Baratheon, Robby Stark, i fratelli Stanlis e Rennly Baratheon e l'orgogliosa principessa Daenerys Targaryen, per la quale, forse, la cometa di sangue non è un presagio di tragedia ma un araldo di riscossa.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "11":
+      { 
+        "id" : "11", 
+        "title" : "La regina dei draghi",
+        "year" : "2001",
+        "isbn": "9788293059448",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/loScontroDeiRe_pt2.jpg",
+        "abstract" : "Mentre la cometa di sangue continua a brillare nel cielo dei Sette Regni, la guerra dei cinque re prosegue senza esclusione di colpi. Robb Stark conquista una vittoria dietro l'altra e l'astuto Tyrion Lannister fatica a tenere sotto controllo il proprio reame. Il crudele lord Tywin Lannister si prepara a marciare verso occidente per affrontare il giovane Stark, e intanto qualcuno tesse la sua inesorabile tela di morte: all'estremo Nord, oltre la Barriera, forze oscure vanno facendosi sempre più minacciose e sempre più incombenti. Solo Jon Snow, con un pugno di guardiani della notte, può difendere il regno degli uomini dall'invasione di barbari e giganti. Uno scontro da cui dipenderà l'esistenza stessa dei Sette Regni.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "12":
+      { 
+        "id" : "12", 
+        "title" : "Tempesta di spade",
+        "year" : "2002",
+        "isbn": "9788865461754",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/tempestaDiSpade_pt1.jpg",
+        "abstract" : "Dopo la morte di re Renly Baratheon gli avversari che si contendono il Trono di Spade sono ridotti a quattro; il gioco di alleanze, inganni e tradimenti si fa sempre più spietato, sempre più labirintico, e l'ambizione dei contendenti non ha limite. Sui quattro re e sui paesaggi già devastati dalla guerra incombe la più terribile delle minacce: gli Estranei, guerrieri soprannaturali che non temono la morte. Perché l'hanno già conosciuta... Gli indeboliti, dilaniati Guardiani della notte sanno che i loro giorni potrebbero essere contati. Spetterà a Jon Snow, il bastardo di Grande Inverno, ergersi per una disperata, eroica, ultima difesa. Forse, la guerra per il potere supremo è ancora tutta da giocare.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "13":
+      { 
+        "id" : "13", 
+        "title" : "I fiumi della guerra",
+        "year" : "2002",
+        "isbn": "9788865461754",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/tempestaDiSpade_pt2.jpg",
+        "abstract" : "Un autunno di brutali tempeste flagella città distrutte e campi devastati. Robb Stark, il giovane re del Nord, pianifica un assalto per riconquistare la terra che è sempre stata della sua stirpe, mentre sua sorella Arya lotta ferocemente per la sopravvivenza. A molte leghe di distanza, Jaime Lannister è costretto a fare i conti con la mutilazione inflittagli dalla compagnia di ventura dei Guitti Sanguinari, mentre nell'estremo Nord l'esercito del popolo libero cala inesorabile verso la mastodontica Barriera di ghiaccio. Gli indeboliti, dilaniati guardiani della notte sanno che i loro giorni potrebbero essere contati. Spetterà a Jon Snow, il bastardo di Grande Inverno, ergersi per un'ultima difesa, disperata ed eroica",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "14":
+      { 
+        "id" : "14", 
+        "title" : "Il portale delle Tenebre",
+        "year" : "2003",
+        "isbn": "9788865461754",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/tempestaDiSpade_pt3.jpg",
+        "abstract" : "Mentre l'inverno incombe sui Sette Regni, la Guerra dei Cinque Re sembra giunta alla sua conclusione. Con Robb Stark e tutto il suo esercito del nord annientati, con Balon Gryjoy inghiottito dalle acque e dalle rocce delle Isole di Ferro, il giovanissimo, demente Joffrey tiene ormai saldamente in pugno il Trono di spade. Il suo matrimonio con la splendida Margaery, unione che suggellerà l'alleanza tra i Lannister di Castel Granito e i Tyrell di Alto Giardino, è ormai prossimo. Ma l'oscura maledizione gettata sugli usurpatori da Stannis Baratheon per mano di Melisandre, ambigua sacerdotessa delle ombre, arriva a scatenarsi sulla Fortezza Rossa nel momento più inaspettato.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "15":
+      { 
+        "id" : "15", 
+        "title" : "Il dominio della regina",
+        "year" : "2006",
+        "isbn": "9789867088765",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg",
+        "abstract" : "La Guerra dei Cinque Re è finalmente vicina alla conclusione: la Casa Lannister e i suoi alleati appaiono vincitori. Eppure, nei Sette Regni, qualcosa ancora si agita ... Mentre corvi in forma umana si raccolgono per un festino di ceneri, nuovi, temerari complotti vengono orditi e nuove, pericolose alleanze prendono forma. In tutto questo, volti sorprendenti alcuni noti, altri imprevedibili - emergono dalla sinistra penombra delle lotte e del caos appena conclusi, per affrontare le sfide a venire. Nobili e comunardi, soldati e stregoni, assassini e profeti, si alleano per mettere in gioco il loro fato ... e la loro vita.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "16":
+      { 
+        "id" : "16", 
+        "title" : "L'ombra della profezia",
+        "year" : "2007",
+        "isbn": "9789867088765",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg",
+        "abstract" : "In spettrali campi di battaglia e tetre fortezze in rovina, fra città tramutate in cimiteri e terre ridotte a ossari, la spaventosa guerra dei cinque re volge ormai al termine. Eppure, in questa apparentemente consolidata \"pace del re\", nuove, inattese forze sono pronte a sferrare attacchi cruenti. Guidati dal famigerato re Occhio-di-corvo, gli uomini di ferro, eredi di un culto guerriero dimenticato da secoli, si sono lanciati all'invasione del sudovest del reame, costringendo la regina Cersei e il Trono di spade ad affrontare una nuova, inattesa prova di forza. E dalle brume di una memoria lasciata troppo a lungo sepolta, un'antica, sinistra profezia potrebbe minacciare la stessa regina. Non sembra esistere una fine al banchetto dei corvi. E, forse, l'ora del destino sta per scoccare perfino per le prede più inattaccabili.",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "17":
+      { 
+        "id" : "17", 
+        "title" : "I guerrieri del ghiaccio",
+        "year" : "2011",
+        "isbn": "9781415958339",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg",
+        "abstract" : "La tanto enfatizzata \"vittoria\" del leone di Lannister, che si è compiuta nell'\"Ombra della Profezia\", lascia dietro di sé un'interminabile scia di sangue. All'improvviso l'intera struttura di potere della dinastia dell'oro di Castel granito sembra crollare dalle fondamenta. Sepolto l'infame lord Tywin, assassinato dal proprio figlio nano, finita in catene la regina Cersei nelle segrete del rinato Credo dei Sette Dèi, seduto il piccolo Re Tommen su un trono di lame pronte a ucciderlo, il destino dell'intero continente occidentale è di nuovo in bilico. Sulla remota Barriera di ghiaccio, estrema difesa nord del reame contro nemici terribili e soprannaturali che calano dal gelo degli eoni, il temerario Jon Snow è costretto a consolidare a fil di spada il suo rango di lord comandante dei Guardiani della notte. Al di là del mare Stretto, mentre l'intrepida giovane regina Daenerys Targaryen continua a difendere il proprio dominio contro orde di nemici antichi e nuovi, dalle ombre del passato riemerge il furore fiammeggiante della sua stessa nobile casa. In fuga verso le città libere, risucchiato suo malgrado in un complotto che ha dell'inconcepibile, Tyrion Lannister, l'astuto Folletto regicida e parricida che tutti sembrano volere morto, potrebbe in realtà essere la chiave di volta della restaurazione della mai realmente estinta dinastia del Drago. Lanciato in una pericolosissima ricerca lungo un fiume tanto leggendario quanto letale, Tyrion è costretto ad affrontare avversari inaspettati...",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "18":
+      { 
+        "id" : "18", 
+        "title" : "I fuochi di Valyria",
+        "year" : "2012",
+        "isbn": "9781415958339",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg",
+        "abstract" : "Nella sanguinaria epopea della guerra dei Cinque re, Stannis Baratheon è impegnato in un'estenuante marcia nel gelo contro il traditore lord Bolton, mentre un inquietante vuoto di potere circonda il Trono di Spade a causa della prigionia di Cersei Lannister, ancora presa negli artigli di un risorto fanatismo religioso. Mai prima d'ora il continente occidentale è stato tanto duramente devastato e mortalmente indebolito, così da diventare facile terra di conquista da parte di nemici vicini e lontani. Nelle Isole di Ferro, il sinistro Euron Occhio di Corvo si prepara a lanciare una nuova invasione dal mare, mentre a Dorne, la marca più meridionale del reame, un principe solo all'apparenza in declino ordisce una cospirazione volta a un nuovo, imprevedibile ritorno dell'antica dinastia. Oltre il Mare Stretto, Daenerys Targaryen, orgogliosa e coraggiosa regina dei draghi, si piega a un subdolo matrimonio di convenienza nel nome di una pace incerta, senza con questo rinunciare al suo sogno di tornare sul trono che fu di Aegon il Conquistatore. Finito suo malgrado nelle mani lorde di sangue degli schiavisti di Yunkai, città nemica giurata di Daenerys, l'indistruttibile nano Tyrion Lannister è costretto a giocare il tutto per tutto per sopravvivere a un assedio disastroso. Nel frattempo, all'ombra della titanica Barriera di ghiaccio nell'estremo Nord del reame, il giovane Jon Snow, coraggioso lord comandante dei Guardiani della notte, concepisce una temeraria strategia...",
+        "authorInterview" : "",
+        "price" : "10.00€"
+      },
+  
+  "19":
+      { 
+        "id" : "19", 
+        "title" : "La danza dei draghi",
+        "year" : "2012",
+        "isbn": "9781415958339",
+        "publishingHouse" : "Oscar Mondadori",
+        "genre" : "Fantasy Novel",
+        "themes" : ["Power and corruption", "War"],
+        "author1" : {"id": "1", "name": "George R.R. Martin"},
+        "author2" : null,
+        "author3" : null,
+        "author4" : null,
+        "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg",
+        "abstract" : "Non c'è fine alla guerra dei cinque re: alimentato dall'infinita sete di potere di troppi condottieri e pretendenti, un insensato bagno di sangue continua a sconvolgere il cuore dei Sette Regni. Nel remoto nord, alla Barriera ormai travolta dalla furia dell'inverno, il giovane Jon Snow è costretto a compiere una scelta tanto temeraria quanto estrema. Una scelta che susciterà le ire dei suoi stessi confratelli e che potrebbe costargli molto più del rango di lord comandante dei Guardiani della notte. Ad Approdo del Re, nonostante il suo potere sia ormai disgregato, l'arrogante regina Cersei Lannister riconquista la libertà dalle segrete di una fanatica setta religiosa al prezzo di una pena infamante e ripugnante. Nel mare stretto, Victarion Greyjoy, brutale e sanguinario ammiraglio della Flotta di Ferro, sta facendo rotta verso la Baia degli Schiavisti per conquistare la mano di Daenerys Targaryen, Madre dei Draghi. Ma Victarion non è il solo a desiderare di occupare il trono di spade al fianco di Daenerys. Nella città di Meereen, tuttora sotto assedio, mentre il valoroso Barristan Selmy deve ordire un complotto contro l'ambiguo re Hizdahr, un principe dorniano ossessionato dalla furia dei draghi si lancia in un'impresa destinata a rivelarsi suicida. E tra le linee dell'assedio yunkai, Tyrion Lannister, l'immarcescibile Folletto, studia una strategia per creare una nuova, inaspettata forza d'invasione con la quale riconquistare i Sette Regni.",
+        "authorInterview" : "",
+        "price" : "10.00€"
       }
+  
 }

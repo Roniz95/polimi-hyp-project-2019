@@ -8,6 +8,7 @@
 .eventMaps iframe { width: 70%;  height: 350px; }
 .eventMaps__info { width: 30%;  color: #fff;  padding: 1em 0;  text-align: center;  display:flex;  justify-content: center;  align-items: center; }
 
+.mapsInfo p { width: 100%; margin: 0;  padding: 0.25em 0; }
 
 
 /*-----------
