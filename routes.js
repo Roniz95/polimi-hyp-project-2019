@@ -137,8 +137,8 @@ router.get('/searchBooksFromFilters/:genre/:theme/:author/:bestSellers/:nextComi
   //DA SISTEMARE
   //Genre, Theme, Author: if == "null" (the string contains the word null) means that this filter is not being selected  
   //Best Sellers, NextComings: "0"(the string 0) means filter not selected, "1"(the string 1) means filter selected
-  let results = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
-  res.json(results);
+  let results = require(__dirname + '/public/assets/jsonFiles/books.json');
+  res.json(results.books);
 });
 
 /* REDIRECT to bookX page from bookOfTheMonth, bestSellers, classics, ourRecommendations or nextComings */
