@@ -228,6 +228,12 @@ router.get('/event', function (req, res){
    res.sendFile(pages + 'Event.html');
 });
 
+router.get('/event/:eventId', function (req, res) {
+    res.send();
+});
+
+router.get('/search', function (req, res) {
+   res.sendFile(pages + 'Search.html');
 /* EVENTX PAGE */
 router.get('/eventX', function (req, res) {
    res.sendFile(pages + 'EventX.html');
