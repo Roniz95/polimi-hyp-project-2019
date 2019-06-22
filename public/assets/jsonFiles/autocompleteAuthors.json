@@ -1,8 +1,7 @@
 {
-  "query": "Unit",
   "suggestions" : 
     [
-      { "data" : "0", "value" : "J.K. Rowling" },
-      { "data" : "1", "value" : "George R. R. Martin" }
+      { "value" : "J.K. Rowling", "data" : "0" },
+      { "value" : "George R. R. Martin", "data" : "1" }
     ]
 }

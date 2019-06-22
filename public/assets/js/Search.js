@@ -1,81 +1,44 @@
-var genres = [
-  "test",
-  "apple",
-  "orange",
-  "marco",
-  "giovanni",
-  "comodino",
-  "servizio",
-  "collider",
-  "attico",
-  "sottomesso",
-  "sottopasso",
-  "caviglia",
-  "termosifone",
-  "forchetta"
-];
+/*------------------------
+  AUTOCOMPLETE Lookups
+-------------------------*/
 
-var themes = [
-  "test",
-  "apple",
-  "orange",
-  "marco",
-  "giovanni",
-  "comodino",
-  "servizio",
-  "collider",
-  "attico",
-  "sottomesso",
-  "sottopasso",
-  "caviglia",
-  "termosifone",
-  "forchetta"
-];
+/* Genres */
+$.ajax({
+  url: '/autocomplete/genres',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data) { $('#genreSearchBar').autocomplete({ lookup: data.suggestions }) }
+});
 
-var authors = [
-  "test",
-  "apple",
-  "orange",
-  "marco",
-  "giovanni",
-  "comodino",
-  "servizio",
-  "collider",
-  "attico",
-  "sottomesso",
-  "sottopasso",
-  "caviglia",
-  "termosifone",
-  "forchetta"
-];
+/* Themes */
+$.ajax({
+  url: '/autocomplete/themes',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data) { $('#themeSearchBar').autocomplete({ lookup: data.suggestions }) } 
+});
+
+/* Authors */
+$.ajax({
+  url: '/autocomplete/authors',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data) { $('#authorSearchBar').autocomplete({ lookup: data.suggestions }) }
+});
 
 
 
-$(document).ready(fetchData())
 
-function fetchData(){
-  $('#genreSearchBar').autocomplete({
-    lookup: genres
-  });
+/*------------------
+  SEARCH FUNCTIONS
+--------------------*/
 
-  $('#themeSearchBar').autocomplete({
-    lookup: themes
-  });
-
-  $('#authorSearchBar').autocomplete({
-    lookup: authors
-  });
-  
-  
+/* Called when user clicks advanced search button */
+function select_advancedSearch(){ 
+  document.getElementById("advancedSearchId").classList.toggle('advancedSearch_hidden'); 
 }
 
-
-
-function select_advancedSearch(){
-  document.getElementById("advancedSearchId").classList.toggle('advancedSearch_hidden');
-}
-
-
+/* Called when user clicks search from title button */
 function searchBooksFromTitle(){
   var title = document.getElementById('bookTitle').value;
   
@@ -104,6 +67,7 @@ function searchBooksFromTitle(){
   }
 }
 
+/* Called when user clicks search from filters button */
 function searchBooksFromFilters(){
   var genre = document.getElementById('genreSearchBar').value;
   var theme = document.getElementById('themeSearchBar').value;
@@ -200,6 +164,14 @@ function searchBooksFromFilters(){
   }
 }
 
+
+
+
+/*-----------------------
+  SET RESULTS FUNCTIONS
+-------------------------*/
+
+/* Set Results from search from title */
 function SetResults1(books, titleInserted) {
   var deckBook = document.getElementById('bookResults');
   if(books.length>0){
@@ -247,6 +219,7 @@ function SetResults1(books, titleInserted) {
   }
 }
 
+/* Set Results from search from filters */
 function SetResults2(books, genreX, authorX, themeX, bs, nc) {
   var deckBook = document.getElementById('bookResults');
   if(books.length>0){
@@ -294,7 +267,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
   }
 }
 
-
+/* create a string containing all authors names */
 function createAuthorsList(authorsNames, element){
   for(let i=0; i<authorsNames.length; i++){
     if(authorsNames[i]!=""){
@@ -306,10 +279,19 @@ function createAuthorsList(authorsNames, element){
 }
 
 
+
+
+/*---------------------
+  REDIRECT FUNCTIONS
+-----------------------*/
+
+/* Redirect to BookX page from search from title */
 function goToBook1(newBookID, title){
   window.location.href = '/bookTitle/'+newBookID+'/'+title;
 }
 
+/* Redirect to BookX page from search from filters */
 function goToBook2(newBookID, genre, author, theme, bs, nc){
   window.location.href = '/bookFilters/'+newBookID+'/'+genre+'/'+author+'/'+theme+'/'+bs+'/'+nc;
 }
+

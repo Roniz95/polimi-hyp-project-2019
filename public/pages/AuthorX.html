@@ -31,12 +31,7 @@
   </div>
    
   <!-- ORIENTATION INFO -->
-  <nav aria-label="breadcrumb">
-    <ol id="orientationInfoID" class="breadcrumb">
-      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
-      <!-- data -->
-    </ol>
-  </nav>
+  <div id="orientationInfoID" class="orientation_info"><!-- data --></div>
     
    <div class="box container">
     <div class="box__image">
@@ -48,13 +43,14 @@
     </div>
   </div>
    
+  <!-- PAGINATION -->
   <nav id="paginationID" aria-label="Page navigation example">
     <ul  class="pagination justify-content-center">
-      <li class="page-item"><button type="button" class="page-link link_disabled" onclick="foo(-5)">&laquo;</button></li>
-      <li class="page-item"><button type="button" class="page-link link_disabled" onclick="foo(-1)">&lsaquo;</button></li>
-      <li class="page-item"><p id="counter" class="page-link" tabindex="1"><!-- data --></p></li>
-      <li class="page-item"><button type="button" class="page-link" onclick="foo(1)">&rsaquo;</button></li>
-      <li class="page-item"><button type="button" class="page-link" onclick="foo(5)">&raquo;</button></li>
+      <li class="page-item"><button id="prev5_ID" type="button" class="page-link" onclick="changePage(-5)">&laquo;</button></li>
+      <li class="page-item"><button id="prev1_ID" type="button" class="page-link" onclick="changePage(-1)">&lsaquo;</button></li>
+      <li class="page-item"><p id="counter" class="page-link pagination_text" disabled tabindex="1"><!-- data --></p></li>
+      <li class="page-item"><button id="next1_ID" type="button" class="page-link" onclick="changePage(1)">&rsaquo;</button></li>
+      <li class="page-item"><button id="next5_ID" type="button" class="page-link" onclick="changePage(5)">&raquo;</button></li>
     </ul>
   </nav>
     

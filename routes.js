@@ -38,6 +38,12 @@ router.get('/book/:bookID', function (req, res) {
   res.json(books[req.params.bookID]);
 });
 
+/* FETCH all book's authors */
+router.get('/bookAuthors/:bookID', function (req, res) {
+  let booksAuthors = require(__dirname + '/public/assets/jsonFiles/booksAuthors.json');
+  res.json(booksAuthors[req.params.bookID]);
+});
+
 /* FETCH all reviews of a book */
 router.get('/bookReviews/:bookID', function (req, res) {
   let booksReviews = require(__dirname + '/public/assets/jsonFiles/booksReviews.json');
@@ -150,9 +156,14 @@ router.get('/similarAuthors/:authorID', function (req, res) {
   res.json(similarAuthors[req.params.authorID]);
 });
 
-/* REDIRECT to authorX page from bookX or authorSearch */
+/* REDIRECT to authorX page from authorOfTheMonth or authorSearch */
 router.get('/authorX/:authorID/:from', function (req, res) {
   res.redirect('/authorX?id='+req.params.authorID+'&from='+req.params.from);
+});
+
+/* REDIRECT to authorX page from bookX or similarAuthors */
+router.get('/authorX/:authorID/:from/:searchID', function (req, res) {
+  res.redirect('/authorX?id='+req.params.authorID+'&from='+req.params.from+'&searchID='+req.params.searchID);
 });
 
 /* ALL EVENTS PAGE */

@@ -63,10 +63,10 @@ body { overflow-x: hidden; }
 /*-------------
   PAGINATION
 ---------------*/
-.page_link { color: #000!important }
-.page_link:hover { color: darkorange!important }
-.link_disabled { color: #ccc!important }
-
+.page-link { color: #000!important }
+.page-link:hover { color: darkorange!important }
+.page-link[disabled], .page-link[disabled]:hover { background-color: white!important;  color: #ccc!important }
+.pagination_text[disabled], .pagination_text[disabled]:hover { background-color: white;  color: #000!important }
 
 /*-----------
 Smartphone

@@ -1,7 +1,7 @@
 $(document).ready(fetchData())
 
+//TO BE MODIFIED when events will be added
 function fetchData() {
-  
   var parameters = location.search.substring(1).split('&');
   
   /* currentBookID */
@@ -12,9 +12,8 @@ function fetchData() {
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
   
-  
+  /* other url parameters */
   if(parameters.length>2){
-    
     if(from.substring(0,12)=='similarBooks'){
       
       /* old book ID */
@@ -36,7 +35,8 @@ function fetchData() {
         }
       });
       
-    }else if(from.substring(0,11)=='authorBooks'){
+    }
+    else if(from.substring(0,11)=='authorBooks'){
       /* author ID */
       var idParam2 = parameters[2].split("=");
       var authID = unescape(idParam2[1]);
@@ -173,6 +173,7 @@ function fetchData() {
   
   setBook(currentBookID);
   
+  /* Will be updated when events are inserted */
   var bookEvents = [
     { id: 1, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
     { id: 2, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
@@ -182,15 +183,67 @@ function fetchData() {
   
 }
 
+
+
+
+/*-----------------------
+  PAGINATION FUNCTIONS
+------------------------*/
+
+/* Called when user clicks one of the pagination buttons */
+function changePage(dir){
+  var str = sessionStorage.getItem('bookList');
+  var data = JSON.parse(str);
+  var counter = document.getElementById('counter');
+  var tabIndex = counter.tabIndex;
+  var newIndex = tabIndex + dir;
+  
+  if(newIndex>=1 && newIndex<=data.length){
+    counter.tabIndex = newIndex;
+    counter.textContent = " "+newIndex+" / "+data.length; 
+    setBook(data[newIndex-1].id);
+    paginationStyle(newIndex, data.length);
+  }
+}
+
+/* Set pagination data */
 function setPagination(data, id){
   var i=0;
   while(data[i].id!=id && i<data.length){ i++ }
   var counter = document.getElementById('counter');
   counter.tabIndex = i+1;
   counter.textContent = " "+(i+1)+" / "+data.length;
-  paginationColors(i+1, data.length);
+  paginationStyle(i+1, data.length);
 }
 
+/* Set pagination style on page changing */
+function paginationStyle(tabIndex, length){
+  var prev5 = document.getElementById('prev5_ID');
+  var prev1 = document.getElementById('prev1_ID');
+  var next1 = document.getElementById('next1_ID');
+  var next5 = document.getElementById('next5_ID');
+    
+  if(tabIndex==1){ prev1.disabled = true; }
+  else { prev1.disabled = false; }
+    
+  if(tabIndex<=5){ prev5.disabled = true; }
+  else { prev5.disabled = false; }
+    
+  if(tabIndex==length){ next1.disabled = true; }
+  else { next1.disabled = false; }
+      
+  if(tabIndex>length-5){ next5.disabled = true; }
+  else { next5.disabled = false; }
+}
+
+
+
+
+/*-----------------------------
+  ORIENTATION INFO FUNCTIONS
+------------------------------*/
+
+/* Create string to be displayed in orientation info when redirected from advanced search */
 function createFiltersString(genre, theme, author, bestSellers, nextComings){
   var str = "";
   if(genre!="null"){ str+= ('&nbsp;genre:<b>&nbsp;' + genre + '</b>&nbsp;') }
@@ -203,42 +256,12 @@ function createFiltersString(genre, theme, author, bestSellers, nextComings){
 
 
 
-function foo(dir){
-  var str = sessionStorage.getItem('bookList');
-  var data = JSON.parse(str);
-  var counter = document.getElementById('counter');
-  var tabIndex = counter.tabIndex;
-  var newIndex = tabIndex + dir;
-  
-  if(newIndex>=1 && newIndex<=data.length){
-    counter.tabIndex = newIndex;
-    counter.textContent = " "+newIndex+" / "+data.length; 
-    setBook(data[newIndex-1].id);
-    paginationColors(newIndex, data.length);
-  }
-}
 
-function paginationColors(tabIndex, length){
-  var prev5 = document.getElementById('prev5_ID');
-  var prev1 = document.getElementById('prev1_ID');
-  var next1 = document.getElementById('next1_ID');
-  var next5 = document.getElementById('next5_ID');
-    
-  if(tabIndex==1){ prev1.classList.toggle('link_disabled'); }
-  else { prev1.classList.remove('link_disabled'); }
-    
-  if(tabIndex<=5){ prev5.classList.toggle('link_disabled'); }
-  else { prev5.classList.remove('link_disabled'); }
-    
-  if(tabIndex==length){ next1.classList.toggle('link_disabled'); }
-  else { next1.classList.remove('link_disabled'); }
-      
-  if(tabIndex>=length-5){ next5.classList.toggle('link_disabled'); }
-  else { next5.classList.remove('link_disabled'); }
-}
+/*------------------------
+  CURRENT BOOK FUNCTIONS
+--------------------------*/
 
-
-
+/* Set current book data */
 function setBook(id){
   $.ajax({
     url: '/book/'+id,
@@ -249,7 +272,7 @@ function setBook(id){
         $('#bookTitleID').text(data.title);
         $('#bookImageID').attr("src", data.image);
         $('#bookAuthorsID').empty();
-        createAuthorsLink([data.author1, data.author2, data.author3, data.author4]);
+        createAuthorsLink([data.author1, data.author2, data.author3, data.author4], data.title, id);
         $('#bookPublishingHouseID').empty();
         $('#bookPublishingHouseID').append(data.publishingHouse);
         $('#bookGenreID').empty();
@@ -280,12 +303,13 @@ function setBook(id){
   });
 }
 
-function createAuthorsLink(authorsNames){
+/* Add to page all links of book's authors */
+function createAuthorsLink(authorsNames, bookTitle, bookID){
   var td = document.getElementById('bookAuthorsID');
   for(let i=0; i<authorsNames.length; i++){
     if(authorsNames[i]){
       var a = document.createElement('a');
-      a.href = '/authorX/'+ authorsNames[i].id + '/book'
+      a.href = '/authorX/'+ authorsNames[i].id + '/book('+ bookTitle +')/' + bookID;
       a.className = "box__link";
       a.textContent = authorsNames[i].name;
       td.appendChild(a);
@@ -295,6 +319,7 @@ function createAuthorsLink(authorsNames){
   }
 }
 
+/* Add to page all book's themes */
 function createThemesString(themes){
   var td = document.getElementById('bookThemesID');
   var str = "";
@@ -305,6 +330,7 @@ function createThemesString(themes){
   td.append(str);
 }
 
+/* Fetch book's review from db */
 function fetchBookReviews(id){
   $.ajax({
     url: '/bookReviews/'+id,
@@ -317,6 +343,7 @@ function fetchBookReviews(id){
   });
 }
 
+/* Called if book has reviews */
 function setReviews(reviews){
   var review = document.getElementById('reviewsId');
   var h1 = document.createElement('h1');
@@ -364,6 +391,7 @@ function setReviews(reviews){
   }
 }
 
+/* Called if book has no reviews */
 function noReview(){
   var review = document.getElementById('reviewsId');
   var h1 = document.createElement('h1');
@@ -375,6 +403,55 @@ function noReview(){
   review.appendChild(p);
 }
 
+//TO BE MODIFIED when events will be added
+/* Fetch events where the book will be presented (TO DO) */
+function fetchBookEvents(){
+  //TO DO
+}
+
+/* Set the events where the book will be presented */
+function setEvents(events, id){
+  var container = document.getElementById(id);
+  var i;
+  for(i=0; i<events.length; i++){
+    var div = document.createElement('div');
+    div.className = "event card-1";
+    div.setAttribute("onclick", "goToEvent()");
+    var img = document.createElement('img');
+    img.className = "event_image";
+    img.src = events[i].img;
+    div.appendChild(img);
+    var title = document.createElement('p');
+    title.className = "eventBox_borderBottom";
+    var title_txt = document.createTextNode(events[i].title);
+    title.append(title_txt);
+    div.appendChild(title);
+    var city = document.createElement('p');
+    city.className = "eventBox_borderBottom";
+    var city_txt = document.createTextNode(events[i].city);
+    city.append(city_txt);
+    div.appendChild(city);
+    var date = document.createElement('p');
+    var date_txt = document.createTextNode(events[i].date);
+    date.append(date_txt);
+    div.appendChild(date);
+    container.appendChild(div);
+  }
+}
+
+/* Redirect to eventX page */
+function goToEvent(){
+  window.location.href = "/eventX";
+}
+
+
+
+
+/*------------------------
+  OTHER BOOKS FUNCTIONS
+-------------------------*/
+
+/* Fetch all author's books from db */
 function fetchAuthorBooks(authorID, authorName){
   $.ajax({
       url: '/authorBooks/'+authorID,
@@ -384,6 +461,7 @@ function fetchAuthorBooks(authorID, authorName){
     });
 }
 
+/* Fetch all similar books from db */
 function fetchSimilarBooks(id, title){
   $.ajax({
       url: '/bookSimilar/'+id,
@@ -393,8 +471,7 @@ function fetchSimilarBooks(id, title){
     });
 }
 
-
-
+/* Set the results of the Fetch functions above to page */
 function SetBooks(booksIDs, elementID, bookTitle, bookID) {
   var deckBook = document.getElementById(elementID); 
   for(let i=0; i<booksIDs.length; i++){
@@ -434,6 +511,7 @@ function SetBooks(booksIDs, elementID, bookTitle, bookID) {
   } 
 }  
 
+/* Set author names list to the books card */
 function createAuthorsList(authorsNames, element){
   for(let i=0; i<authorsNames.length; i++){
     if(authorsNames[i]!=""){
@@ -444,6 +522,7 @@ function createAuthorsList(authorsNames, element){
   }
 }
 
+/* Redirect to bookX page from one of the 2 sliders */
 function goToBook(newBookID, from, name, id){
   var str = from + "( of "+name+" )";
   window.location.href = '/bookX/'+newBookID+'/'+str+'/'+id;
@@ -451,41 +530,12 @@ function goToBook(newBookID, from, name, id){
 
 
 
-function setEvents(events, id){
-  var container = document.getElementById(id);
-  var i;
-  for(i=0; i<events.length; i++){
-    var div = document.createElement('div');
-    div.className = "event card-1";
-    div.setAttribute("onclick", "goToEvent()");
-    var img = document.createElement('img');
-    img.className = "event_image";
-    img.src = events[i].img;
-    div.appendChild(img);
-    var title = document.createElement('p');
-    title.className = "eventBox_borderBottom";
-    var title_txt = document.createTextNode(events[i].title);
-    title.append(title_txt);
-    div.appendChild(title);
-    var city = document.createElement('p');
-    city.className = "eventBox_borderBottom";
-    var city_txt = document.createTextNode(events[i].city);
-    city.append(city_txt);
-    div.appendChild(city);
-    var date = document.createElement('p');
-    var date_txt = document.createTextNode(events[i].date);
-    date.append(date_txt);
-    div.appendChild(date);
-    container.appendChild(div);
-  }
-}
 
-function goToEvent(){
-  window.location.href = "/eventX";
-}
+/*---------------
+  CHOICE FUNCTIONS
+-----------------*/
 
-
-
+/* Called when user clicks Reviews button */
 function selectReviews(){
   document.getElementById("reviews_btn").classList.toggle("btn__active");
   document.getElementById("interview_btn").classList.remove("btn__active");
@@ -497,6 +547,7 @@ function selectReviews(){
   document.getElementById("bookEventsId").style.display = "none";
 }
 
+/* Called when user clicks Intervies button */
 function selectInterview(){
   document.getElementById("reviews_btn").classList.remove("btn__active");
   document.getElementById("interview_btn").classList.toggle("btn__active");
@@ -508,6 +559,7 @@ function selectInterview(){
   document.getElementById("bookEventsId").style.display = "none";
 }
 
+/* Called when user clicks New Reviews button */
 function selectNewReview(){
   document.getElementById("reviews_btn").classList.remove("btn__active");
   document.getElementById("interview_btn").classList.remove("btn__active");
@@ -519,6 +571,7 @@ function selectNewReview(){
   document.getElementById("bookEventsId").style.display = "none";
 }
 
+/* Called when user clicks Book's events button */
 function selectBookEvents(){
   document.getElementById("reviews_btn").classList.remove("btn__active");
   document.getElementById("interview_btn").classList.remove("btn__active");
