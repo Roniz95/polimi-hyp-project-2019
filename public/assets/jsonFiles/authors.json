@@ -1,5 +1,5 @@
 {
-  "0": 
+  "authors": [
     { 
       "id" : "0",
       "name" : "J.K. Rowling",
@@ -7,13 +7,68 @@
       "link" : "https://it.wikipedia.org/wiki/J._K._Rowling",
       "bio" : "Nata a Yate, durante la sua infanzia Joanne dimostra una notevole e spiccata fantasia, divenendo autrice di numerosi racconti: a sei anni scrisse la storia di Rabbit, un coniglio malato di morbillo, mentre a dodici anni scrisse un romanzo che trattava di sette diamanti maledetti. Durante tutto il periodo scolastico conosce numerose persone che ispireranno diversi personaggi della saga di Harry Potter: il preside delle elementari diventa Albus Silente; il suo migliore amico, alla guida di una Ford Anglia, sarà ispiratore del rosso Ronald Weasley; e il suo professore di chimica, con cui non ha mai avuto brillanti rapporti, sarà d'ispirazione per il personaggio di Severus Piton. Rowling ascolta musica pop ed è appassionata di The Smiths e della cantante Siouxsie Sioux, il cui look ha adottato per diversi anni."
     },
-    
-  "1": 
     { 
       "id" : "1",
-      "name" : "George R. R. Martin",
+      "name" : "George R.R. Martin",
       "image" : "../assets/images/georgeMartin.jpg",
       "link" : "https://it.wikipedia.org/wiki/George_R._R._Martin",
       "bio" : "George Raymond Richard Martin, pseudonimo di George Raymond Martin (Bayonne, 20 settembre 1948), è uno scrittore di fantasy, di horror e di fantascienza statunitense. È famoso soprattutto per il ciclo delle Cronache del ghiaccio e del fuoco; ha lavorato inoltre come sceneggiatore e produttore. Le sue opere sono solitamente firmate come George R. R. Martin. Martin è stato selezionato dalla rivista Time come uno dei \"2011 Time 100\", una lista delle 100 \"persone più influenti del pianeta\". Martin vive a Santa Fe (Nuovo Messico). È un membro del Science Fiction and Fantasy Writers of America (di cui è stato direttore regionale dal 1977 al 1979 e vicepresidente dal 1996 al 1998) e del Writers Guild of America. Le sue opere sono state tradotte in tedesco, francese, italiano, spagnolo, svedese, norvegese, olandese, giapponese, portoghese, croato, russo, polacco, rumeno, ungherese, finlandese ed esperanto."
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Jack_Whyte",
+      "bio" : "Originario del Renfrewshire, è nato e cresciuto in Scozia ma vive in Canada dal 1967, dopo aver studiato in Inghilterra e in Francia. Risiede a Kelowna, Columbia Britannica. Emigrato in Canada nominalmente per fare l'insegnante liceale di inglese, ha in realtà fatto di tutto, dal cantante e intrattenitore professionista al copywriter, fino al 1995, quando le vendite dei suoi libri gli hanno permesso di diventare scrittore a tempo pieno."
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg",
+      "link" : "https://en.wikipedia.org/wiki/Douglas_Jackson_(author)",
+      "bio" : "Douglas Jackson (born 1956) is a Scottish novelist. Jackson grew up in the town of Jedburgh in the Scottish Borders. A journalist on local and national newspapers for 36 years, Jackson left The Scotsman where he was Assistant Editor, in 2009 to become a full-time writer."
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Ferruccio_de_Bortoli",
+      "bio" : "Ferruccio de Bortoli (Milano, 20 maggio 1953) è un giornalista italiano. È stato due volte direttore del Corriere della Sera, dal 1997 al 2003 e dal 2009 al 2015, nonché direttore del Sole 24 Ore dal 2005 al 2009. Dal 2015 è presidente dell'Associazione Vidas di Milano. Attualmente è presidente della casa editrice Longanesi."
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg",
+      "link" : "https://it.wikipedia.org/wiki/J._R._R._Tolkien",
+      "bio" : "John Ronald Reuel Tolkien (Bloemfontein, 3 gennaio 1892 – Bournemouth, 2 settembre 1973) è stato uno scrittore, filologo, glottoteta, accademico e linguista britannico. Importante studioso della lingua anglosassone, è l'autore de Il Signore degli Anelli e di altre celebri opere riconosciute come pietre miliari del genere fantasy, quali Lo Hobbit e Il Silmarillion. Fu Rawlinson and Bosworth Professor di antico inglese dal 1925 al 1945 e Merton Professor di lingua e letteratura inglese dal 1945 al 1959 presso l'Università di Oxford, dove contribuì alla creazione del New Oxford English Dictionary. Fu amico intimo di C. S. Lewis, insieme al quale fu membro di un informale gruppo letterario conosciuto come Inklings e fu membro anche della Royal Society of Literature. Nel 1961 Lewis segnalò Tolkien alla giuria del Premio Nobel per la letteratura, che però lo scartò, perché la sua scrittura venne definita \"prosa di seconda categoria\". Nel 1972 Tolkien ricevette la laurea honoris causa all'Università di Oxford e fu insignito dalla regina Elisabetta dell'onorificenza di Commendatore dell'Ordine dell'Impero Britannico."
+    },
+    { 
+      "id" : "6",
+      "name" : "Markus Heitz",
+      "image" : "../assets/images/markusHeitz.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Markus_Heitz",
+      "bio" : "All'università ha studiato letteratura tedesca e storia, e dal 2000 lavora come giornalista freelance. Grazie allo straordinario successo ottenuto in patria nel 2003 con Le cinque stirpi (Die Zwerge), primo capitolo de La Saga della Terra Nascosta, incentrata sulle vicende dell'omonima terra fantastica e dei suoi abitanti, Heitz oggi è l'autore fantasy più letto in Germania."
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Dacia_Maraini",
+      "bio" : "Primogenita dello scrittore ed etnologo toscano di origini ticinesi Fosco Maraini e della principessa e pittrice palermitana Topazia Alliata, appartenente all'antico casato siciliano di origini pisane degli Alliata di Salaparuta. La nonna materna, Oria Maria Amelia \"Sonia\" Ortúzar Ovalle de Olivares (1892-1981), era una cantante lirica che non poté esordire e figlia di un diplomatico cileno. La nonna paterna di Dacia era la scrittrice Cornelia Edith \"Yoï\" Crosse (1877-1944), per metà polacca e per metà inglese, nata a Tállya in Ungheria e trasferitasi in Inghilterra durante l'adolescenza. Dacia trascorse l'infanzia in Giappone dove i genitori si stabilirono dal 1939 al 1945 e dove nacquero le sue sorelle Yuki e Antonella detta Toni. Lì, dal 1943 al 1945, la famiglia fu internata in un campo di concentramento giapponese, dove patì la fame. Al ritorno in Italia, la famiglia si trasferì in Sicilia, presso i nonni materni, nella Villa Valguarnera di Bagheria, e in seguito, a Roma. Quindi, il padre Fosco tornò a Firenze. Dopo la separazione dei genitori, a 18 anni Dacia raggiunse il padre, che nel frattempo si era trasferito a Roma. Nel 1959 si sposa con Lucio Pozzi, pittore milanese da cui si divide dopo quattro anni, nel 1963 il matrimonio viene annullato. In seguito fu a lungo compagna di Alberto Moravia, con cui visse dal 1962 al 1978. È vegetariana e si è espressa pubblicamente in favore dei diritti animali."
+    },
+    { 
+      "id" : "8",
+      "name" : "Alessandro Baricco",
+      "image" : "../assets/images/alessandroBaricco.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Alessandro_Baricco",
+      "bio" : "Dopo aver frequentato il Liceo Classico \"Vittorio Alfieri\", si è laureato in Filosofia presso l'Università degli Studi di Torino con una tesi in Estetica (relatore Gianni Vattimo). Ha iniziato la propria carriera di scrittore pubblicando alcuni saggi di critica musicale, come Il genio in fuga (1988), su Rossini, e L'anima di Hegel e le mucche del Wisconsin (1992), sul rapporto tra musica e modernità. Collabora come critico musicale per Repubblica e sulla pagina culturale per La Stampa. Fu tra i primi conduttori della trasmissione Radio Tre Suite su Rai Radio Tre. Nel 1994 ha fondato a Torino la Scuola Holden, una scuola di storytelling e arti performative di cui è preside. Alessandro Baricco ha due figli ed è un grande appassionato del Torino F.C."
+    },
+    { 
+      "id" : "9",
+      "name" : "Fabio Volo",
+      "image" : "../assets/images/fabioVolo.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Fabio_Volo",
+      "bio" : "Fabio Volo, nome d'arte di Fabio Bonetti (Calcinate, 23 giugno 1972), è un attore, scrittore, conduttore radiofonico conduttore televisivo e sceneggiatore italiano. Presente nei vari campi dei media italiani, ha raggiunto la notorietà in radio e in televisione, per poi diventare conosciuto anche nel mondo del cinema e nel campo letterario: nel 2011 i suoi romanzi sono arrivati a vendere oltre 5 milioni di copie nella sola Italia e sono stati tradotti anche in altre lingue."
     }
+  ]
 }

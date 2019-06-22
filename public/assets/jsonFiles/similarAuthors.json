@@ -4,14 +4,278 @@
       "id" : "1",
       "name" : "George R.R. Martin",
       "image" : "../assets/images/georgeMartin.jpg"
-    } 
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    }
   ],
   
   "1": [
     { 
       "id" : "0",
-      "name" : "J.K.Rowling",
+      "name" : "J.K. Rowling",
       "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    }
+  ],
+  
+  "2": [
+    { 
+      "id" : "0",
+      "name" : "J.K. Rowling",
+      "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    },
+    { 
+      "id" : "8",
+      "name" : "Alessandro Baricco",
+      "image" : "../assets/images/alessandroBaricco.jpg"
+    },
+    { 
+      "id" : "9",
+      "name" : "Fabio Volo",
+      "image" : "../assets/images/fabioVolo.jpg"
+    } 
+  ],
+  
+  "3": [
+    { 
+      "id" : "1",
+      "name" : "George R.R. Martin",
+      "image" : "../assets/images/georgeMartin.jpg"
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    },
+    { 
+      "id" : "6",
+      "name" : "Markus Heitz",
+      "image" : "../assets/images/markusHeitz.jpg"
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg"
+    }
+  ],
+  
+  "4": [
+    { 
+      "id" : "0",
+      "name" : "J.K. Rowling",
+      "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg"
+    },
+    { 
+      "id" : "9",
+      "name" : "Fabio Volo",
+      "image" : "../assets/images/fabioVolo.jpg"
+    } 
+  ],
+  
+  "5": [
+    { 
+      "id" : "0",
+      "name" : "J.K. Rowling",
+      "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "1",
+      "name" : "George R.R. Martin",
+      "image" : "../assets/images/georgeMartin.jpg"
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg"
+    }
+  ],
+  
+  "6": [
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg"
+    },
+    { 
+      "id" : "8",
+      "name" : "Alessandro Baricco",
+      "image" : "../assets/images/alessandroBaricco.jpg"
+    } 
+  ],
+  
+  "7": [
+    { 
+      "id" : "0",
+      "name" : "J.K. Rowling",
+      "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "1",
+      "name" : "George R.R. Martin",
+      "image" : "../assets/images/georgeMartin.jpg"
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "8",
+      "name" : "Alessandro Baricco",
+      "image" : "../assets/images/alessandroBaricco.jpg"
+    }
+  ],
+  
+  "8": [
+    { 
+      "id" : "0",
+      "name" : "J.K. Rowling",
+      "image" : "../assets/images/jkRowling.jpg"
+    },
+    { 
+      "id" : "1",
+      "name" : "George R.R. Martin",
+      "image" : "../assets/images/georgeMartin.jpg"
+    },
+    { 
+      "id" : "2",
+      "name" : "Jack Whyte",
+      "image" : "../assets/images/jackWhyte.jpg"
+    },
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "9",
+      "name" : "Fabio Volo",
+      "image" : "../assets/images/fabioVolo.jpg"
+    }
+  ],
+  
+  "9": [
+    { 
+      "id" : "3",
+      "name" : "Douglas Jackson",
+      "image" : "../assets/images/douglasJackson.jpg"
+    },
+    { 
+      "id" : "4",
+      "name" : "Ferruccio de Bortoli",
+      "image" : "../assets/images/ferruccioDeBortoli.jpg"
+    },
+    { 
+      "id" : "5",
+      "name" : "J.R.R. Tolkien",
+      "image" : "../assets/images/tolkien.jpg"
+    },
+    { 
+      "id" : "7",
+      "name" : "Dacia Maraini",
+      "image" : "../assets/images/daciaMaraini.jpg"
+    },
+    { 
+      "id" : "8",
+      "name" : "Alessandro Baricco",
+      "image" : "../assets/images/alessandroBaricco.jpg"
     }
   ]
   

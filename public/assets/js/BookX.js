@@ -512,11 +512,11 @@ function SetBooks(booksIDs, elementID, bookTitle, bookID) {
 }  
 
 /* Set author names list to the books card */
-function createAuthorsList(authorsNames, element){
-  for(let i=0; i<authorsNames.length; i++){
-    if(authorsNames[i]!=""){
-      element.textContent = element.textContent + authorsNames[i];
-      var last = i==3 || authorsNames[i+1]=="";
+function createAuthorsList(authors, element){
+  for(let i=0; i<authors.length; i++){
+    if(authors[i]){
+      element.textContent = element.textContent + authors[i].name;
+      var last = i==3 || !authors[i+1];
       if(!last){ element.textContent = element.textContent + ", "; }
     }
   }

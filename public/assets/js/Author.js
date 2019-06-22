@@ -1,19 +1,23 @@
+/*------------------------
+  AUTOCOMPLETE Lookups
+-------------------------*/
+
+/* Authors */
+$.ajax({
+  url: '/autocomplete/authors',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data) { $('#autocomplete').autocomplete({ lookup: data.suggestions }) }
+});
+
+
+
+
 var authorOfTheMonthID = 0; //Fixed choice for author of the month
 
 $(document).ready(fetchData())
 
 function fetchData() {
-  $('#autocomplete').autocomplete({
-    serviceUrl: '/autocomplete/authors',
-    onSelect: function (suggestion) {
-		  $.ajax({
-        url: '/author/'+suggestion.data,
-        type: 'GET',
-        dataType: 'json',
-        success: (data) => { if(data){ setAuthorList([data], data.name); } }
-      });
-	 }
-  });
   setAuthor(authorOfTheMonthID);
   SetAllAuthors();
 }

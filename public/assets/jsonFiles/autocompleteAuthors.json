@@ -2,6 +2,14 @@
   "suggestions" : 
     [
       { "value" : "J.K. Rowling", "data" : "0" },
-      { "value" : "George R. R. Martin", "data" : "1" }
+      { "value" : "George R. R. Martin", "data" : "1" },
+      { "value" : "Jack Whyte", "data" : "2" },
+      { "value" : "Douglas Jackson", "data" : "3" },
+      { "value" : "Ferruccio de Bortoli", "data" : "4" },
+      { "value" : "J.R.R. Tolkien", "data" : "5" },
+      { "value" : "Markus Heitz", "data" : "6" },
+      { "value" : "Dacia Maraini", "data" : "7" },
+      { "value" : "Alessandro Baricco", "data" : "8" },
+      { "value" : "Fabio Volo", "data" : "9" }
     ]
 }
