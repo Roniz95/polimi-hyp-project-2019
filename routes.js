@@ -4,10 +4,8 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const _ = require("lodash");
 const process = require("process");
-
+app = require('./index');
 let pages = path.join(__dirname, '/public/pages/');
-
-
 
 
 /*--------------------
@@ -233,21 +231,22 @@ router.get('/event/:eventId', function (req, res) {
 });
 
 router.get('/search', function (req, res) {
-   res.sendFile(pages + 'Search.html');
-/* EVENTX PAGE */
+  res.sendFile(pages + 'Search.html');
+  /* EVENTX PAGE */
+});
 router.get('/eventX', function (req, res) {
    res.sendFile(pages + 'EventX.html');
 });
 
 /* FETCH a specific event */
 router.get('/event/:eventID', function (req, res){
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json'); 
+  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
   res.json(events[req.params.eventID]);
 });
 
 /* FETCH all books presented at the event */
 router.get('/eventBook/:eventID', function (req, res){
-  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json'); 
+  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
   res.json(eventsBooks[req.params.eventID]);
 });
 
@@ -270,7 +269,7 @@ router.get('/auth', function (req, res) {
 
 /* FETCH a specific user */
 router.get('/users/:username', function (req, res){
-  let users = require(__dirname + '/public/assets/jsonFiles/users.json'); 
+  let users = require(__dirname + '/public/assets/jsonFiles/users.json');
   var user = users.filter(function(elem){ return elem.username===req.params.username })
   res.json(user);
 });
