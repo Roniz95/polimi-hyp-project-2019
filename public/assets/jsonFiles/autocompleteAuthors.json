@@ -1,15 +1,23 @@
 {
   "suggestions" : 
     [
-      { "value" : "J.K. Rowling", "data" : "0" },
-      { "value" : "George R. R. Martin", "data" : "1" },
-      { "value" : "Jack Whyte", "data" : "2" },
-      { "value" : "Douglas Jackson", "data" : "3" },
-      { "value" : "Ferruccio de Bortoli", "data" : "4" },
-      { "value" : "J.R.R. Tolkien", "data" : "5" },
-      { "value" : "Markus Heitz", "data" : "6" },
-      { "value" : "Dacia Maraini", "data" : "7" },
-      { "value" : "Alessandro Baricco", "data" : "8" },
-      { "value" : "Fabio Volo", "data" : "9" }
+      { "value" : "J.K. Rowling", "data" : 0 },
+      { "value" : "George R. R. Martin", "data" : 1 },
+      { "value" : "Jack Whyte", "data" : 2 },
+      { "value" : "Glenn Cooper", "data" : 3 },
+      { "value" : "Gillian Flynn", "data" : 4 },
+      { "value" : "J.R.R. Tolkien", "data" : 5 },
+      { "value" : "Markus Heitz", "data" : 6 },
+      { "value" : "Chiara Francini", "data" : 7 },
+      { "value" : "Alessandro D'Avenia", "data" : 8 },
+      { "value" : "H.P. Lovercraft", "data" : 9 },
+      { "value" : "Charles Nodier", "data" : 10 },
+      { "value" : "Saki", "data" : 11 },
+      { "value" : "James Patterson", "data" : 12 },
+      { "value" : "Howard Roughan", "data" : 13 },
+      { "value" : "Alan Moore", "data" : 14 },
+      { "value" : "Kevin O'Neil", "data" : 15 },
+      { "value" : "Maria Rita Parsi", "data" : 16 },
+      { "value" : "Salvatore Giannella", "data" : 17 }
     ]
 }

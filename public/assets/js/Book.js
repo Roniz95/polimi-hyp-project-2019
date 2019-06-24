@@ -1,18 +1,18 @@
-var bookOfTheMonthID = 0;
+var bookOfTheMonthISBN = 9781781103852;
 
 $(document).ready(fetchData())
 
 function fetchData() {
-  setBook(bookOfTheMonthID);
+  setBook(bookOfTheMonthISBN);
   setRecommendedBooks();
   setBestSellers();
   setClassics();
-  setNextComings();
+  setNewReleases();
 }
 
-function setBook(id){
+function setBook(bookISBN){
   $.ajax({
-    url: '/book/'+id,
+    url: '/book/' + bookISBN,
     type: 'GET',
     dataType: 'json',
     success: (data) => {
@@ -20,7 +20,7 @@ function setBook(id){
         $('#title_BOTM').append(data.title);
         $('#image_BOTM').attr("src", data.image);
         $('#abstract_BOTM').append(data.abstract);
-        $('#link_BOTM').attr("href", "/bookX/"+data.id+"/bookOfTheMonth");
+        $('#link_BOTM').attr("href", "/bookX/"+data.isbn+"/bookOfTheMonth");
       }
     }
   });
@@ -53,9 +53,9 @@ function setClassics(){
   });
 }
 
-function setNextComings(){
+function setNewReleases(){
   $.ajax({
-    url: '/nextComings',
+    url: '/newReleases',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ SetBooks(data, 'nextComingBooks') } }
@@ -86,7 +86,7 @@ function SetBooks(books, elementID) {
     var author = document.createElement('div');
     author.className = 'cardBook__link border__bottom';
     var b2 = document.createElement('b');
-    createAuthorsList([books[i].author1, books[i].author2, books[i].author3, books[i].author4], b2);
+    createAuthorsList(books[i].isbn, b2);
     author.appendChild(b2);
     div.appendChild(author);
     
@@ -103,14 +103,21 @@ function SetBooks(books, elementID) {
   
 }
 
-function createAuthorsList(authors, element){
-  for(let i=0; i<authors.length; i++){
-    if(authors[i]){
-      element.textContent = element.textContent + authors[i].name;
-      var last = i==3 || !authors[i+1];
-      if(!last){ element.textContent = element.textContent + ", "; }
+/* Set author names list to the books card */
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/bookAuthors/' + bookISBN,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].name;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
     }
-  }
+  });
 }
 
 function goToBookPage(newBookID, from){

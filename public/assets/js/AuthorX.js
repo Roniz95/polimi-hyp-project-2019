@@ -27,7 +27,6 @@ function fetchData() {
       dataType: 'json',
       success: (data) => { 
         if(data){
-          console.log(data);
           var str = JSON.stringify(data);
           sessionStorage.setItem("authorList", str);
           setPagination(data, currentAuthorID);
@@ -47,7 +46,6 @@ function fetchData() {
       dataType: 'json',
       success: (data) => { 
         if(data){
-          console.log(data);
           var str = JSON.stringify(data);
           sessionStorage.setItem("authorList", str);
           setPagination(data, currentAuthorID);
@@ -121,8 +119,9 @@ function changePage(dir){
 
 /* Set pagination data */
 function setPagination(data, id){
+  var authID = parseInt(id);
   var i=0;
-  while(data[i].id!=id && i<data.length){ i++ }
+  while(data[i].id!=authID && i<data.length){ i++ }
   var counter = document.getElementById('counter');
   counter.tabIndex = i+1;
   counter.textContent = " "+(i+1)+" / "+data.length;
@@ -186,12 +185,12 @@ function fetchAuthorBooks(authorID, authorName){
   });
 }
 
-function SetBooks(booksIDs, elementID, bookTitle, bookID) {
+function SetBooks(booksIDs, elementID, bookTitle, searchID) {
   var deckBook = document.getElementById(elementID); 
   for(let i=0; i<booksIDs.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
-    div.onclick = () => goToBook(booksIDs[i].id, elementID, bookTitle, bookID);
+    div.onclick = () => goToBook(booksIDs[i].isbn, elementID, bookTitle, searchID);
           
     var img = document.createElement('img');
     img.className = 'cardBook__image';
@@ -209,7 +208,7 @@ function SetBooks(booksIDs, elementID, bookTitle, bookID) {
     var author = document.createElement('div');
     author.className = 'cardBook__link border__bottom';
     var b2 = document.createElement('b');
-    createAuthorsList([booksIDs[i].author1, booksIDs[i].author2, booksIDs[i].author3, booksIDs[i].author4], b2);
+    createAuthorsList(booksIDs[i].isbn, b2);
     author.appendChild(b2);
     div.appendChild(author);
     
@@ -225,26 +224,34 @@ function SetBooks(booksIDs, elementID, bookTitle, bookID) {
   } 
 } 
 
-function createAuthorsList(authors, element){
-  for(let i=0; i<authors.length; i++){
-    if(authors[i]){
-      element.textContent = element.textContent + authors[i].name;
-      var last = i==3 || !authors[i+1];
-      if(!last){ element.textContent = element.textContent + ", "; }
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/bookAuthors/' + bookISBN,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].name;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
     }
-  }
+  });
 }
+
+
 
 function fetchSimilarAuthors(id, authorName){
   $.ajax({
     url: '/similarAuthors/'+id,
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetSimilarAuthors(data, authorName, id); } }
+    success: (data) => { if(data){ setSimilarAuthors(data, authorName, id); } }
   });
 }
 
-function SetSimilarAuthors(authors, authorName, authorID) {
+function setSimilarAuthors(authors, authorName, authorID) {
   var deckAuthor = document.getElementById('similarAuthor');
   
   for(let i=0; i<authors.length; i++){
@@ -269,11 +276,12 @@ function SetSimilarAuthors(authors, authorName, authorID) {
   }
 }
 
-function goToBook(newBookID, from, name, id){
-  var str = from + "( of "+name+" )";
-  window.location.href = '/bookX/'+newBookID+'/'+str+'/'+id;
-}
 
+
+function goToBook(newBookISBN, from, name, isbn){
+  var str = from + "( of "+name+" )";
+  window.location.href = '/bookX/'+newBookISBN+'/'+str+'/'+isbn;
+}
 
 function goToAuthor(authorID, authorName, oldAuthorID){
   window.location.href = '/authorX/'+ authorID + '/similarAuthors(' + authorName + ')/' + oldAuthorID; 

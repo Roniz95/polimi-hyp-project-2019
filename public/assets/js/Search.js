@@ -178,7 +178,7 @@ function SetResults1(books, titleInserted) {
     for(let i=0; i<books.length; i++){
       var div = document.createElement('div');
       div.className = "bookDiv card-1";
-      div.onclick = () => goToBook1(books[i].id, titleInserted);
+      div.onclick = () => goToBook1(books[i].isbn, titleInserted);
     
       var img = document.createElement('img');
       img.className = 'book__image';
@@ -196,7 +196,7 @@ function SetResults1(books, titleInserted) {
       var author = document.createElement('div');
       author.className = 'book__text book__border__bottom';
       var b2 = document.createElement('b');
-      createAuthorsList([books[i].author1, books[i].author2, books[i].author3, books[i].author4], b2);
+      createAuthorsList(books[i].isbn, b2);
       author.appendChild(b2);
       div.appendChild(author);
     
@@ -226,7 +226,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
     for(let i=0; i<books.length; i++){
       var div = document.createElement('div');
       div.className = "bookDiv card-1";
-      div.onclick = () => goToBook2(books[i].id, genreX, authorX, themeX, bs, nc);
+      div.onclick = () => goToBook2(books[i].isbn, genreX, authorX, themeX, bs, nc);
     
       var img = document.createElement('img');
       img.className = 'book__image';
@@ -244,7 +244,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
       var author = document.createElement('div');
       author.className = 'book__text book__border__bottom';
       var b2 = document.createElement('b');
-      createAuthorsList([books[i].author1, books[i].author2, books[i].author3, books[i].author4], b2);
+      createAuthorsList(books[i].isbn, b2);
       author.appendChild(b2);
       div.appendChild(author);
     
@@ -267,15 +267,21 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
   }
 }
 
-/* create a string containing all authors names */
-function createAuthorsList(authors, element){
-  for(let i=0; i<authors.length; i++){
-    if(authors[i]){
-      element.textContent = element.textContent + authors[i].name;
-      var last = i==3 || !authors[i+1];
-      if(!last){ element.textContent = element.textContent + ", "; }
+/* Set author names list to the books card */
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/bookAuthors/' + bookISBN,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].name;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
     }
-  }
+  });
 }
 
 
@@ -286,12 +292,12 @@ function createAuthorsList(authors, element){
 -----------------------*/
 
 /* Redirect to BookX page from search from title */
-function goToBook1(newBookID, title){
-  window.location.href = '/bookTitle/'+newBookID+'/'+title;
+function goToBook1(newBookISBN, title){
+  window.location.href = '/bookTitle/'+newBookISBN+'/'+title;
 }
 
 /* Redirect to BookX page from search from filters */
-function goToBook2(newBookID, genre, author, theme, bs, nc){
-  window.location.href = '/bookFilters/'+newBookID+'/'+genre+'/'+author+'/'+theme+'/'+bs+'/'+nc;
+function goToBook2(newBookISBN, genre, author, theme, bs, nc){
+  window.location.href = '/bookFilters/'+newBookISBN+'/'+genre+'/'+author+'/'+theme+'/'+bs+'/'+nc;
 }
 

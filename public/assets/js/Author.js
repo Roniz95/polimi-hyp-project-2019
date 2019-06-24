@@ -104,8 +104,13 @@ function setAuthorList(authorList, stringSearched){
   var author_list = document.getElementById('author_list');
   while (author_list.firstChild) { author_list.removeChild(author_list.firstChild); }
   
+  var pTitle = document.createElement('p');
+  if(stringSearched=='allAuthors'){ pTitle.innerHTML = "<b>ALL AUTHORS</b>"; }
+  else{ pTitle.innerHTML = "Results for <b>" + stringSearched + '</b>'; }
+  pTitle.className = "col-12";
+  author_list.appendChild(pTitle);
+  
   if(authorList.length>0){
-    
     for (let i=0; i<authorList.length; i++) {
       var div = document.createElement('div');
       div.className = "card card-1";

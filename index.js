@@ -20,7 +20,7 @@ let jsonPath = __dirname + "/public/assets/jsonFiles/";
 //------------variables that stores json----------
 let booksList = require(jsonPath + 'books.json');
 let authorsList = require(jsonPath + 'authors.json');
-let authorsOfList = require(jsonPath + "authorOf.json");
+let authorsOfList = require(jsonPath + "authorsOf.json");
 
 
 function initSqlDBVar()  {
@@ -45,7 +45,7 @@ function createDB() {
             app.sqlDB.schema.createTable("books", table => {
                 table.string('isbn').primary();
                 table.string('title');
-                table.integer('year');
+                table.integer('publishingDate');
                 table.string('publishingHouse');
                 table.string('genre');
                 table.string('image');

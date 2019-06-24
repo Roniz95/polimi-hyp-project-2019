@@ -2,7 +2,7 @@ $(document).ready(fetchData())
 
 function fetchData() {
   setBestSellers();
-  setNextComings();
+  setNewReleases();
 }
 
 
@@ -15,9 +15,9 @@ function setBestSellers(){
   });
 }
 
-function setNextComings(){
+function setNewReleases(){
   $.ajax({
-    url: '/nextComings',
+    url: '/newReleases',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ SetBooks(data, 'nextComingBooks') } }
@@ -29,7 +29,7 @@ function SetBooks(books, elementID) {
   for(let i=0; i<books.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
-    div.onclick = () => goToBookPage(books[i].id, elementID);
+    div.onclick = () => goToBookPage(books[i].isbn, elementID);
     
     var img = document.createElement('img');
     img.className = 'cardBook__image';
@@ -47,7 +47,7 @@ function SetBooks(books, elementID) {
     var author = document.createElement('div');
     author.className = 'cardBook__link border__bottom';
     var b2 = document.createElement('b');
-    createAuthorsList([books[i].author1, books[i].author2, books[i].author3, books[i].author4], b2);
+    createAuthorsList(books[i].isbn, b2);
     author.appendChild(b2);
     div.appendChild(author);
     
@@ -64,16 +64,22 @@ function SetBooks(books, elementID) {
   
 }
 
-function createAuthorsList(authors, element){
-  for(let i=0; i<authors.length; i++){
-    if(authors[i]){
-      element.textContent = element.textContent + authors[i].name;
-      var last = i==3 || !authors[i+1];
-      if(!last){ element.textContent = element.textContent + ", "; }
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/bookAuthors/' + bookISBN,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].name;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
     }
-  }
+  });
 }
 
-function goToBookPage(newBookID, from){
-  window.location.href = '/bookX/'+newBookID+'/'+from;
+function goToBookPage(newBookISBN, from){
+  window.location.href = '/bookX/'+newBookISBN+'/'+from;
 }

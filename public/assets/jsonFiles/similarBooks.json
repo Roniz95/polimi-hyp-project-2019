@@ -1,1942 +1,776 @@
-{
-  "0": [ 
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+[
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9783551559012,
+    "similarISBN": 9781781105122
+  },
   
-  "1": [
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9780320048432,
+    "similarISBN": 9781781105122
+  },
   
-  "2": [ 
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9781781103852,
+    "similarISBN": 9781781105122
+  },
   
-  "3": [ 
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9789985312094,
+    "similarISBN": 9781781105122
+  },
   
-  "4": [
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9780747569640,
+    "similarISBN": 9781781105122
+  },
   
-  "5": [
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9788202523305
+  },
+  {
+    "isbn": 9781781105702,
+    "similarISBN": 9781781105122
+  },
   
-  "6": [
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "7", 
-      "title" : "Harry Potter e la maledizione dell'erede",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry8.jpg"
-    }
-  ],
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9788202523305,
+    "similarISBN": 9781781105122
+  },
   
-  "7": [
-    { 
-      "id" : "0", 
-      "title" : "Harry Potter e la pietra filosofale",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry1.jpg"
-    },
-    { 
-      "id" : "1", 
-      "title" : "Harry Potter e la camera dei segreti",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry2.jpg"
-    },
-    { 
-      "id" : "2", 
-      "title" : "Harry Potter e il prigioniero di Azkaban",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry3.jpg"
-    },
-    { 
-      "id" : "3", 
-      "title" : "Harry Potter e il calice di fuoco",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry4.jpg"
-    },
-    { 
-      "id" : "4", 
-      "title" : "Harry Potter e l'ordine della fenice",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry5.jpg"
-    },
-    { 
-      "id" : "5", 
-      "title" : "Harry Potter e il principe mezzosangue",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry6.jpg"
-    },
-    { 
-      "id" : "6", 
-      "title" : "Harry Potter e i doni della morte",
-      "genre" : "Fantasy Novel",
-      "author1" : "J.K. Rowling",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/harry7.jpg"
-    }
-  ],
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9783551559012
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9780320048432
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9781781103852
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9789985312094
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9780747569640
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9781781105702
+  },
+  {
+    "isbn": 9781781105122,
+    "similarISBN": 9788202523305
+  },
   
-  "8": [
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
   
-  "9": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
   
-  "10": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9785271340871,
+    "similarISBN": 9781415958384
+  },
   
-  "11": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788580418873,
+    "similarISBN": 9781415958384
+  },
   
-  "12": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788293059448,
+    "similarISBN": 9781415958384
+  },
   
-  "13": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788293059476,
+    "similarISBN": 9781415958384
+  },
   
-  "14": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788865461754,
+    "similarISBN": 9781415958384
+  },
   
-  "15": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788865461321,
+    "similarISBN": 9781415958384
+  },
   
-  "16": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9788863761754,
+    "similarISBN": 9781415958384
+  },
   
-  "17": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9789867088765,
+    "similarISBN": 9781415958384
+  },
   
-  "18": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "19", 
-      "title" : "La danza dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt3.jpg"
-    }
-  ],
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9789867088471,
+    "similarISBN": 9781415958384
+  },
   
-  "19": [
-    { 
-      "id" : "8", 
-      "title" : "Il trono di Spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "9", 
-      "title" : "Il grande inverno",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilTronoDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "10", 
-      "title" : "Il regno dei lupi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt1.jpg"
-    },
-    { 
-      "id" : "11", 
-      "title" : "La regina dei draghi",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/loScontroDeiRe_pt2.jpg"
-    },
-    { 
-      "id" : "12", 
-      "title" : "Tempesta di spade",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt1.jpg"
-    },
-    { 
-      "id" : "13", 
-      "title" : "I fiumi della guerra",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt2.jpg"
-    },
-    { 
-      "id" : "14", 
-      "title" : "Il portale delle Tenebre",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/tempestaDiSpade_pt3.jpg"
-    },
-    { 
-      "id" : "15", 
-      "title" : "Il dominio della regina",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt1.jpg"
-    },
-    { 
-      "id" : "16", 
-      "title" : "L'ombra della profezia",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/ilBanchettoDeiCorvi_pt2.jpg"
-    },
-    { 
-      "id" : "17", 
-      "title" : "I guerrieri del ghiaccio",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt1.jpg"
-    },
-    { 
-      "id" : "18", 
-      "title" : "I fuochi di Valyria",
-      "genre" : "Fantasy Novel",
-      "author1" : "George R.R. Martin",
-      "author2" : "",
-      "author3" : "",
-      "author4" : "",
-      "image" : "../assets/images/unaDanzaConIDraghi_pt2.jpg"
-    }
-  ]
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9781415958977
+  },
+  {
+    "isbn": 9781415958339,
+    "similarISBN": 9781415958384
+  },
   
-}
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9781415958977,
+    "similarISBN": 9781415958384
+  },
+  
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9785271340871
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788580418873
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788293059448
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788293059476
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788865461754
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788865461321
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9788863761754
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9789867088765
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9789867088471
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9781415958339
+  },
+  {
+    "isbn": 9781415958384,
+    "similarISBN": 9781415958977
+  }
+  
+]

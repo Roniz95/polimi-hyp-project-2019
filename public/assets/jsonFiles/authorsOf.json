@@ -1,0 +1,142 @@
+[
+  {
+    "isbn": 9783551559012,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9780320048432,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781781103852,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9789985312094,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9780747569640,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781781105702,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788202523305,
+    "author1_id": 0,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781781105122,
+    "author1_id": 0,
+    "author2_id": 18,
+    "author3_id": 19,
+    "author4_id": null
+  },
+  {
+    "isbn": 9785271340871,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788580418873,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788293059448,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788293059476,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788865461754,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788865461321,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9788863761754,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9789867088765,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9789867088471,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781415958339,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781415958977,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  },
+  {
+    "isbn": 9781415958384,
+    "author1_id": 1,
+    "author2_id": null,
+    "author3_id": null,
+    "author4_id": null
+  }
+]

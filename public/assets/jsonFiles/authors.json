@@ -2,72 +2,141 @@
     { 
       "id" : 0,
       "name" : "J.K. Rowling",
-      "image" : "../assets/images/jkRowling.jpg",
+      "image" : "../assets/images/authors/jkRowling.jpg",
       "link" : "https://it.wikipedia.org/wiki/J._K._Rowling",
       "bio" : "Nata a Yate, durante la sua infanzia Joanne dimostra una notevole e spiccata fantasia, divenendo autrice di numerosi racconti: a sei anni scrisse la storia di Rabbit, un coniglio malato di morbillo, mentre a dodici anni scrisse un romanzo che trattava di sette diamanti maledetti. Durante tutto il periodo scolastico conosce numerose persone che ispireranno diversi personaggi della saga di Harry Potter: il preside delle elementari diventa Albus Silente; il suo migliore amico, alla guida di una Ford Anglia, sarà ispiratore del rosso Ronald Weasley; e il suo professore di chimica, con cui non ha mai avuto brillanti rapporti, sarà d'ispirazione per il personaggio di Severus Piton. Rowling ascolta musica pop ed è appassionata di The Smiths e della cantante Siouxsie Sioux, il cui look ha adottato per diversi anni."
     },
     { 
       "id" : 1,
       "name" : "George R.R. Martin",
-      "image" : "../assets/images/georgeMartin.jpg",
+      "image" : "../assets/images/authors/georgeMartin.jpg",
       "link" : "https://it.wikipedia.org/wiki/George_R._R._Martin",
       "bio" : "George Raymond Richard Martin, pseudonimo di George Raymond Martin (Bayonne, 20 settembre 1948), è uno scrittore di fantasy, di horror e di fantascienza statunitense. È famoso soprattutto per il ciclo delle Cronache del ghiaccio e del fuoco; ha lavorato inoltre come sceneggiatore e produttore. Le sue opere sono solitamente firmate come George R. R. Martin. Martin è stato selezionato dalla rivista Time come uno dei \"2011 Time 100\", una lista delle 100 \"persone più influenti del pianeta\". Martin vive a Santa Fe (Nuovo Messico). È un membro del Science Fiction and Fantasy Writers of America (di cui è stato direttore regionale dal 1977 al 1979 e vicepresidente dal 1996 al 1998) e del Writers Guild of America. Le sue opere sono state tradotte in tedesco, francese, italiano, spagnolo, svedese, norvegese, olandese, giapponese, portoghese, croato, russo, polacco, rumeno, ungherese, finlandese ed esperanto."
     },
     { 
       "id" : 2,
       "name" : "Jack Whyte",
-      "image" : "../assets/images/jackWhyte.jpg",
+      "image" : "../assets/images/authors/jackWhyte.jpg",
       "link" : "https://it.wikipedia.org/wiki/Jack_Whyte",
       "bio" : "Originario del Renfrewshire, è nato e cresciuto in Scozia ma vive in Canada dal 1967, dopo aver studiato in Inghilterra e in Francia. Risiede a Kelowna, Columbia Britannica. Emigrato in Canada nominalmente per fare l'insegnante liceale di inglese, ha in realtà fatto di tutto, dal cantante e intrattenitore professionista al copywriter, fino al 1995, quando le vendite dei suoi libri gli hanno permesso di diventare scrittore a tempo pieno."
     },
     { 
       "id" : 3,
-      "name" : "Douglas Jackson",
-      "image" : "../assets/images/douglasJackson.jpg",
-      "link" : "https://en.wikipedia.org/wiki/Douglas_Jackson_(author)",
-      "bio" : "Douglas Jackson (born 1956) is a Scottish novelist. Jackson grew up in the town of Jedburgh in the Scottish Borders. A journalist on local and national newspapers for 36 years, Jackson left The Scotsman where he was Assistant Editor, in 2009 to become a full-time writer."
+      "name" : "Glenn Cooper",
+      "image" : "../assets/images/authors/glennCooper.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Glenn_Cooper",
+      "bio" : "Glenn Cooper (White Plains, 8 gennaio 1953) è uno scrittore, archeologo, sceneggiatore e produttore cinematografico statunitense. I suoi libri sono stati tradotti in 31 lingue e, sino al 2014, hanno venduto oltre sei milioni di copie."
     },
     { 
       "id" : 4,
-      "name" : "Ferruccio de Bortoli",
-      "image" : "../assets/images/ferruccioDeBortoli.jpg",
-      "link" : "https://it.wikipedia.org/wiki/Ferruccio_de_Bortoli",
-      "bio" : "Ferruccio de Bortoli (Milano, 20 maggio 1953) è un giornalista italiano. È stato due volte direttore del Corriere della Sera, dal 1997 al 2003 e dal 2009 al 2015, nonché direttore del Sole 24 Ore dal 2005 al 2009. Dal 2015 è presidente dell'Associazione Vidas di Milano. Attualmente è presidente della casa editrice Longanesi."
+      "name" : "Gillian Flynn",
+      "image" : "../assets/images/authors/gillianFlynn.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Gillian_Flynn",
+      "bio" : "Gillian Flynn (Kansas City, 24 febbraio 1971) è una scrittrice e sceneggiatrice statunitense. Flynn ha pubblicato tre romanzi thriller: Sulla pelle, Nei luoghi oscuri e L'amore bugiardo da cui sono stati tratti due adattamenti cinematografici, L'amore bugiardo - Gone Girl (Gone Girl) e Dark Places - Nei luoghi oscuri (Dark Places), ed uno televisivo, Sharp Objects."
     },
     { 
       "id" : 5,
       "name" : "J.R.R. Tolkien",
-      "image" : "../assets/images/tolkien.jpg",
+      "image" : "../assets/images/authors/tolkien.jpg",
       "link" : "https://it.wikipedia.org/wiki/J._R._R._Tolkien",
       "bio" : "John Ronald Reuel Tolkien (Bloemfontein, 3 gennaio 1892 – Bournemouth, 2 settembre 1973) è stato uno scrittore, filologo, glottoteta, accademico e linguista britannico. Importante studioso della lingua anglosassone, è l'autore de Il Signore degli Anelli e di altre celebri opere riconosciute come pietre miliari del genere fantasy, quali Lo Hobbit e Il Silmarillion. Fu Rawlinson and Bosworth Professor di antico inglese dal 1925 al 1945 e Merton Professor di lingua e letteratura inglese dal 1945 al 1959 presso l'Università di Oxford, dove contribuì alla creazione del New Oxford English Dictionary. Fu amico intimo di C. S. Lewis, insieme al quale fu membro di un informale gruppo letterario conosciuto come Inklings e fu membro anche della Royal Society of Literature. Nel 1961 Lewis segnalò Tolkien alla giuria del Premio Nobel per la letteratura, che però lo scartò, perché la sua scrittura venne definita \"prosa di seconda categoria\". Nel 1972 Tolkien ricevette la laurea honoris causa all'Università di Oxford e fu insignito dalla regina Elisabetta dell'onorificenza di Commendatore dell'Ordine dell'Impero Britannico."
     },
     { 
       "id" : 6,
       "name" : "Markus Heitz",
-      "image" : "../assets/images/markusHeitz.jpg",
+      "image" : "../assets/images/authors/markusHeitz.jpg",
       "link" : "https://it.wikipedia.org/wiki/Markus_Heitz",
       "bio" : "All'università ha studiato letteratura tedesca e storia, e dal 2000 lavora come giornalista freelance. Grazie allo straordinario successo ottenuto in patria nel 2003 con Le cinque stirpi (Die Zwerge), primo capitolo de La Saga della Terra Nascosta, incentrata sulle vicende dell'omonima terra fantastica e dei suoi abitanti, Heitz oggi è l'autore fantasy più letto in Germania."
     },
     { 
       "id" : 7,
-      "name" : "Dacia Maraini",
-      "image" : "../assets/images/daciaMaraini.jpg",
-      "link" : "https://it.wikipedia.org/wiki/Dacia_Maraini",
-      "bio" : "Primogenita dello scrittore ed etnologo toscano di origini ticinesi Fosco Maraini e della principessa e pittrice palermitana Topazia Alliata, appartenente all'antico casato siciliano di origini pisane degli Alliata di Salaparuta. La nonna materna, Oria Maria Amelia \"Sonia\" Ortúzar Ovalle de Olivares (1892-1981), era una cantante lirica che non poté esordire e figlia di un diplomatico cileno. La nonna paterna di Dacia era la scrittrice Cornelia Edith \"Yoï\" Crosse (1877-1944), per metà polacca e per metà inglese, nata a Tállya in Ungheria e trasferitasi in Inghilterra durante l'adolescenza. Dacia trascorse l'infanzia in Giappone dove i genitori si stabilirono dal 1939 al 1945 e dove nacquero le sue sorelle Yuki e Antonella detta Toni. Lì, dal 1943 al 1945, la famiglia fu internata in un campo di concentramento giapponese, dove patì la fame. Al ritorno in Italia, la famiglia si trasferì in Sicilia, presso i nonni materni, nella Villa Valguarnera di Bagheria, e in seguito, a Roma. Quindi, il padre Fosco tornò a Firenze. Dopo la separazione dei genitori, a 18 anni Dacia raggiunse il padre, che nel frattempo si era trasferito a Roma. Nel 1959 si sposa con Lucio Pozzi, pittore milanese da cui si divide dopo quattro anni, nel 1963 il matrimonio viene annullato. In seguito fu a lungo compagna di Alberto Moravia, con cui visse dal 1962 al 1978. È vegetariana e si è espressa pubblicamente in favore dei diritti animali."
+      "name" : "Chiara Francini",
+      "image" : "../assets/images/authors/chiaraFrancini.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Chiara_Francini",
+      "bio" : "Nata a Firenze e cresciuta a Campi Bisenzio, si è laureata all'Università degli Studi di Firenze, in lettere con una tesi in italianistica con il punteggio di 110 e lode[3]. La sua formazione artistica inizia al Teatro della Limonaia, di Sesto Fiorentino, diretto da Barbara Nativi. Sotto la sua direzione recita in Noccioline, un testo di Fausto Paravidino. Per due anni consecutivi è nello spettacolo Faccia da comico al Teatro Ambra Jovinelli di Roma, con la direzione artistica di Serena Dandini. Approda in televisione grazie a Marco Giusti, che le offre due ruoli fissi nei suoi programmi BlaBlaBla e Stracult ; vengono poi Radio Sex, di Alessandro Baracco, e Le ragazze di San Frediano, per la regia di Vittorio Sindoni; infine nel 2007 è Marzia Meniconi, una delle protagoniste di Gente di mare 2."
     },
     { 
       "id" : 8,
-      "name" : "Alessandro Baricco",
-      "image" : "../assets/images/alessandroBaricco.jpg",
-      "link" : "https://it.wikipedia.org/wiki/Alessandro_Baricco",
-      "bio" : "Dopo aver frequentato il Liceo Classico \"Vittorio Alfieri\", si è laureato in Filosofia presso l'Università degli Studi di Torino con una tesi in Estetica (relatore Gianni Vattimo). Ha iniziato la propria carriera di scrittore pubblicando alcuni saggi di critica musicale, come Il genio in fuga (1988), su Rossini, e L'anima di Hegel e le mucche del Wisconsin (1992), sul rapporto tra musica e modernità. Collabora come critico musicale per Repubblica e sulla pagina culturale per La Stampa. Fu tra i primi conduttori della trasmissione Radio Tre Suite su Rai Radio Tre. Nel 1994 ha fondato a Torino la Scuola Holden, una scuola di storytelling e arti performative di cui è preside. Alessandro Baricco ha due figli ed è un grande appassionato del Torino F.C."
+      "name" : "Alessandro D'Avenia",
+      "image" : "../assets/images/authors/alessandroAvenia.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Alessandro_D%27Avenia",
+      "bio" : "D'Avenia nasce il 2 maggio 1977, a Palermo, da Rita e Giuseppe, terzo di 6 figli. Nel 1990 frequenta il liceo classico Vittorio Emanuele II di Palermo, dove incontra padre Pino Puglisi (insegnava religione nello stesso istituto) dalla cui figura viene fortemente influenzato. Nel 2000 si laurea in lettere classiche alla Sapienza di Roma, relatore Luigi Enrico Rossi; poi vince il dottorato di ricerca, a Siena, completandolo nel 2004, con una tesi sulle sirene in Omero e sul loro rapporto con le Muse, nel mondo antico. Fonda una compagnia teatrale dilettante e gira un cortometraggio. Nel 2006 frequenta, a Milano, un master in produzione cinematografica, all'Università Cattolica del Sacro Cuore. Ha partecipato a diverse edizioni dei Colloqui fiorentini. Insegna lettere al Collegio San Carlo di Milano. La sua attività di scrittore inizia contemporaneamente a quella di insegnante."
     },
     { 
       "id" : 9,
-      "name" : "Fabio Volo",
-      "image" : "../assets/images/fabioVolo.jpg",
-      "link" : "https://it.wikipedia.org/wiki/Fabio_Volo",
-      "bio" : "Fabio Volo, nome d'arte di Fabio Bonetti (Calcinate, 23 giugno 1972), è un attore, scrittore, conduttore radiofonico conduttore televisivo e sceneggiatore italiano. Presente nei vari campi dei media italiani, ha raggiunto la notorietà in radio e in televisione, per poi diventare conosciuto anche nel mondo del cinema e nel campo letterario: nel 2011 i suoi romanzi sono arrivati a vendere oltre 5 milioni di copie nella sola Italia e sono stati tradotti anche in altre lingue."
+      "name" : "H.P. Lovercraft",
+      "image" : "../assets/images/authors/lovercraft.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Howard_Phillips_Lovecraft",
+      "bio" : "(Providence, Rhode Island, 1890-1937) scrittore statunitense. Influenzato da Poe e dalla tradizione «gotica», pubblicò su riviste specializzate le sue storie di orrore e di fantascienza, raccolte in volume soltanto dopo la morte, quando fu finalmente annoverato tra i geniali creatori del «fantastico» contemporaneo. Il richiamo di Chthulhu (The call of Chthulhu, 1929) è il più famoso di una serie di racconti in cui compaiono i Grandi Anziani, divinità preistoriche in grado di superare le barriere spazio-temporali, mentre La casa delle streghe (The dreams in the witch house, 1932) narra la storia di uno studente di fisica quantica che dalla propria stanza s’inoltra negli abissi di un’America visionaria. Tra le altre opere più note sono L’orrore di Dunwich (The Dunwich horror, 1927) e Le montagne della follia (At the mountains of madness, 1936) che si apre su paurosi paesaggi onirici, rivelando il debito di L. verso il Gordon Pym di Poe. L. è anche l’autore di un importante saggio sul «fantastico», L’orrore soprannaturale in letteratura (Supernatural horror in literature, 1927)."
+    },
+    { 
+      "id" : 10,
+      "name" : "Charles Nodier",
+      "image" : "../assets/images/authors/nodier.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Charles_Nodier",
+      "bio" : "(Besançon 1780 - Parigi 1844) scrittore francese. Curioso di tutto, fu entomologo, bibliofilo, filologo, giornalista e critico spesso soggetto a ripensamenti; declamazioni libertarie si riscontrano nel primo romanzo I proscritti (Les proscrits, 1802), suggestioni wertheriane nel successivo romanzo Il pittore di Salisburgo (Le peintre de Salzbourg, 1803), reminiscenze libertine settecentesche nel racconto L’ultimo capitolo del mio romanzo (Le dernier chapitre de mon roman, 1803). Dalle posizioni di critico classicista passò, verso il 1818-20, a un sicuro anche se discreto impegno romantico. Egli ha un posto notevole nella storia della cultura anche come fondatore del «primo cenacolo» romantico. E se, sotto l’influenza dei Masnadieri di Schiller, pubblicò un altro romanzo libertario, Jean Sbogar (1818), trovò poi uno spazio alla sua sensibilità vibratile e inquieta nella composizione di Smarra ovvero i Demoni della notte (Smarra ou les Démons de la nuit, 1821), romanzo nel gusto di un romanticismo frenetico e macabro, in cui si esprime anche un’originale consapevolezza dello stato onirico come straordinario metodo di conoscenza. Il racconto Trilby ovvero il folletto d’Argail (Trilby ou le Lutin d’Argail, 1822) riconferma tale originalità dello scrittore, che assume il sogno come stato paritario e compensatorio rispetto alla realtà della veglia. Nel 1824 N. fu nominato bibliotecario dell’Arsenal e ben presto il salotto letterario omonimo lo vide ospite amabile e punto di riferimento per i romantici; ma verso il 1830 cominciò per N. un periodo critico, caratterizzato da turbe nervose che le difficoltà economiche e le frustrazioni affettive contribuirono ad accentuare. La sua attività saggistica di questi anni, raccolta nelle Fantasticherie (Rêveries, 1832), esprime amarezza e un pessimismo talora visionario; la strada della salvezza è invece individuata in opere fantastiche, troppo spesso giudicate, riduttivamente, semplici fiabe. Con La fata delle briciole (La fée aux miettes, 1832), Inès de Las Sierras (1837), La novena della Candelora (La neuvaine de la Chandeleur, 1838), per citare solo alcuni «contes», N. ha dato un notevole contributo alla letteratura fantastica, ricco di implicazioni drammatiche."
+    },
+    { 
+      "id" : 11,
+      "name" : "Saki",
+      "image" : "../assets/images/authors/saki.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Saki_(scrittore)",
+      "bio" : "(Akyab, Birmania, 1870 - Beaumont-Hamel, Francia, 1916) scrittore inglese. Considerato un maestro del racconto breve, pubblicò numerose raccolte, come Reginald (1904); Le cronache di Clovis (The chronicles of Clovis, 1912); Bestie e superbestie (Beasts and super-beasts, 1914). Scrisse un solo, breve, estroso romanzo tragicomico: L’insopportabile Bassington (The unbearable Bassington, 1912). Alcuni dei suoi racconti, dosatissimi negli effetti e nel linguaggio, sono minuscoli capolavori dell’orrore: in essi lo scrittore mette in luce con straordinaria economia di mezzi la crudeltà dell’uomo, e spesso anche quella dei bambini. S. morì combattendo sul fronte francese."
+    },
+    { 
+      "id" : 12,
+      "name" : "James Patterson",
+      "image" : "../assets/images/authors/jamesPatterson.jpg",
+      "link" : "https://it.wikipedia.org/wiki/James_Patterson",
+      "bio" : "James Patterson (Newburgh, 22 marzo 1947) è uno scrittore statunitense. Considerato uno dei più importanti autori di thriller del nostro tempo, è noto in particolar modo per le serie di Alex Cross, Le donne del club omicidi, Maximum Ride, Michael Bennett, Daniel X, Witch & Wizard, NYPD Red e la serie Private. Scrive anche, spesso avvalendosi della collaborazione di altri scrittori, libri romantici come Domeniche da Tiffany, Matrimonio a sorpresa, Il diario di Suzanne o A Jennifer con amore. Ha scritto anche serie per ragazzi come Scuola Media. Ha raggiunto la fama internazionale soprattutto a partire dal 1993 con la pubblicazione di Ricorda Maggie Rose, che ha dato il via alla fortunata serie di Alex Cross. Nella sua carriera ha venduto oltre 355 milioni di copie dei suoi libri, divenendo lo scrittore più ricco del mondo."
+    },
+    { 
+      "id" : 13,
+      "name" : "Howard Roughan",
+      "image" : "../assets/images/authors/howardRoughan.jpg",
+      "link" : "https://en.wikipedia.org/wiki/Howard_Roughan",
+      "bio" : "Howard Roughan is an American author. He has two novels in print: The Up and Comer (2001) and The Promise of a Lie (2004). Roughan also co-wrote the novels Honeymoon, You've Been Warned, Sail, and Don't Blink with best-selling author James Patterson."
+    },
+    { 
+      "id" : 14,
+      "name" : "Alan Moore",
+      "image" : "../assets/images/authors/alanMoore.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Alan_Moore",
+      "bio" : "Alan Moore (Northampton, 18 novembre 1953) è un fumettista, scrittore, compositore, cantautore e occultista britannico. Riconosciuto autore di capolavori dei fumetti come Watchmen, V for Vendetta e The Killing Joke è anche scrittore di romanzi e musicista. Da alcune sue opere a fumetti sono state tratti famosi lungometraggi negli anni 2000."
+    },
+    { 
+      "id" : 15,
+      "name" : "Kevin O'Neil",
+      "image" : "../assets/images/authors/kevinOneil.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Kevin_O%27Neill_(fumettista)",
+      "bio" : "Kevin O'Neill (1953) è un fumettista britannico. È principalmente conosciuto per aver lavorato su fumetti come La Lega degli Straordinari Gentlemen (con Alan Moore), Marshal Law e Nemesis the Warlock (con Pat Mills). Nel 2003, il secondo volume di La Lega degli Straordinari Gentlemen ha fatto guadagnare a O'Neill il premio Eisner Award come \"migliore miniserie\" dell'anno."
+    },
+    { 
+      "id" : 16,
+      "name" : "Maria Rita Parsi",
+      "image" : "../assets/images/authors/mariaRitaParsi.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Maria_Rita_Parsi",
+      "bio" : "Maria Rita Parsi di Lodrone (Roma, 5 agosto 1947) è una scrittrice, psicologa e psicoterapeuta italiana. È diventata nota al grande pubblico alla fine degli anni settanta con la pubblicazione di Animazione in Borgata (Savelli, 1976) a cui ha fatto seguito un best-seller sugli adolescenti difficili: Lo scarico (Savelli, 1978), pubblicato l'anno successivo anche in Germania col titolo di Abfall (Rowohlt, 1979) riscuotendo un grande successo. Negli anni novanta ha dato alle stampe I quaderni delle bambine, una raccolta di testimonianze di casi di violenza. Collabora a molti quotidiani e periodici con rubriche settimanali ed ha partecipato a numerose trasmissioni televisive in qualità di esperta di psicologia e opinionista. Al suo attivo ha numerose pubblicazioni di tipo scientifico e divulgativo. Nel 1986 è stata insignita del titolo di Cavaliere dell'Ordine al merito della Repubblica Italiana."
+    },
+    { 
+      "id" : 17,
+      "name" : "Salvatore Giannella",
+      "image" : "../assets/images/authors/giannella.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Salvatore_Giannella",
+      "bio" : "Dopo gli studi classici, si laurea in lettere moderne. Inizia la carriera giornalistica collaborando con il settimanale «Oggi». Partecipa a Genova all'esperimento di un giornale gestito in cooperativa, «Il lunedì». Nel 1974 ottiene l'iscrizione all'albo dei giornalisti come professionista. Nel 1975 è chiamato all'«Europeo» da Tommaso Giglio. Si trasferisce a Milano, dove vive tuttora. Nel 1984 viene chiamato alla direzione di «Genius», il mensile scientifico del Gruppo L'Espresso. L'anno seguente torna all'«Europeo» nelle vesti di direttore (1985-1986). Nel 1986 viene scelto da Giorgio Mondadori per dirigere «Airone», il primo e più diffuso mensile di natura e civiltà. Lascia «Airone» nel 1994 e crea l’Editoriale Delfi, struttura specializzata in progetti ed eventi, servizi e realizzazioni per l'editoria e per l'economia dei turismi[non chiaro]. Dal 1997 è tra le principali firme di «Oggi» per i temi della cultura e delle scienze. Nel 1999 scrive il libro L’Arca dell’Arte, in collaborazione con lo storico pesarese Pier Damiano Mandelli, per raccontare la storia di Pasquale Rotondi, soprintendente delle Marche che nel corso della seconda guerra mondiale diede rifugio e salvezza nel Montefeltro marchigiano a oltre seimila opere d'arte. Al nome di Rotondi lega il Premio internazionale ai salvatori dell’arte, che si assegna tuttora ogni anno a Sassocorvaro (PU). Allo stesso salvataggio dedica la sceneggiatura del film-documentario per Rai Educational La lista di Pasquale Rotondi, che vince il premio della Presidenza della Repubblica all'Art Doc Film Festival di Roma 2005 come «miglior film dedicato all'arte italiana». Per la stessa Rai Educational scrive la sceneggiatura del film Odissea negli abissi dedicato a Vassilj Arkhipov, il capitano della marina sovietica che durante la Crisi dei missili di Cuba con il suo NO al lancio di un missile atomico dal sottomarino assediato evitò lo scoppio della terza guerra mondiale."
+    },
+    { 
+      "id" : 18,
+      "name" : "John Tiffany",
+      "image" : "../assets/images/authors/johnTiffany.jpg",
+      "link" : "https://it.wikipedia.org/wiki/John_Tiffany",
+      "bio" : "John Tiffany (27 giugno 1971) è un regista teatrale britannico. Regista teatrale britannico, nato nel 1971, diresse produzioni di successo internazionali come Black Watch e Once. Pluripremiato e di grande successo sia nel West End che a Broadway. Cresciuto a Marsden, vicino Huddersfield, da madre infermiera e padre ingegnere. Inizialmente studiò biologia all'Università di Glasgow ma poi cambiò e iniziò a studiare teatro. Divenne direttore letterario presso il teatro di Edimburgo dal 1997 al 2001. È dichiaratamente omosessuale."
+    },
+    { 
+      "id" : 19,
+      "name" : "Jack Thorne",
+      "image" : "../assets/images/authors/jackThorne.jpg",
+      "link" : "https://it.wikipedia.org/wiki/Jack_Thorne",
+      "bio" : "Nacque a Bristol, in Inghilterra. Ha scritto per la radio, per il teatro e per il cinema, in particolare si ricordano gli show televisivi Skins, Cast-offs, This Is England '86, This Is England '88, This Is England '90, The fades, The Last Panthers e il lungometraggio The Scouting Book for Boys. Particolare rilevanza ha ottenuto una delle sue ultime opere: ha scritto, infatti, il testo teatrale della nuova storia della saga di Harry Potter, Harry Potter e la maledizione dell'erede, operazione compiuta insieme a J. K. Rowling, madre del fortunato maghetto, e a John Tiffany. Dall'agosto 2016 questo spettacolo è in scena a Londra, con uno straordinario successo."
     }
   ]
-
