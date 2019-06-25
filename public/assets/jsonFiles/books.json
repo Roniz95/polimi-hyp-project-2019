@@ -1,4 +1,5 @@
 [
+  
     {
       "isbn": 9783551559012,
       "title" : "Harry Potter e la pietra filosofale",
@@ -87,6 +88,9 @@
       "authorInterview" : "",
       "price" : 10.00
     },
+  
+  
+  
     {
       "isbn": 9785271340871,
       "title" : "Il trono di Spade",
@@ -218,6 +222,631 @@
       "abstract" : "Non c'è fine alla guerra dei cinque re: alimentato dall'infinita sete di potere di troppi condottieri e pretendenti, un insensato bagno di sangue continua a sconvolgere il cuore dei Sette Regni. Nel remoto nord, alla Barriera ormai travolta dalla furia dell'inverno, il giovane Jon Snow è costretto a compiere una scelta tanto temeraria quanto estrema. Una scelta che susciterà le ire dei suoi stessi confratelli e che potrebbe costargli molto più del rango di lord comandante dei Guardiani della notte. Ad Approdo del Re, nonostante il suo potere sia ormai disgregato, l'arrogante regina Cersei Lannister riconquista la libertà dalle segrete di una fanatica setta religiosa al prezzo di una pena infamante e ripugnante. Nel mare stretto, Victarion Greyjoy, brutale e sanguinario ammiraglio della Flotta di Ferro, sta facendo rotta verso la Baia degli Schiavisti per conquistare la mano di Daenerys Targaryen, Madre dei Draghi. Ma Victarion non è il solo a desiderare di occupare il trono di spade al fianco di Daenerys. Nella città di Meereen, tuttora sotto assedio, mentre il valoroso Barristan Selmy deve ordire un complotto contro l'ambiguo re Hizdahr, un principe dorniano ossessionato dalla furia dei draghi si lancia in un'impresa destinata a rivelarsi suicida. E tra le linee dell'assedio yunkai, Tyrion Lannister, l'immarcescibile Folletto, studia una strategia per creare una nuova, inaspettata forza d'invasione con la quale riconquistare i Sette Regni.",
       "authorInterview" : "",
       "price" : 10.00
+    },
+  
+  
+  
+    {
+      "isbn": 9788817093750,
+      "title" : "Non parlare con la bocca piena",
+      "publishingDate" : "04-27-2017",
+      "publishingHouse" : "Rizzoli",
+      "genre" : "Social Novel",
+      "image" : "../assets/images/books/nonParlareConLaBoccaPiena.jpg",
+      "abstract" : "Al terzo giro dell'isolato Chiara si rende conto di aver scelto probabilmente il momento peggiore, con la luce più bella di Roma, per lasciare. Del resto non esiste un'ora perfetta per la fuga perfetta. Da bambina le bastava il tempo di una mela - i bocconi piccoli - per raggiungere la sua cameretta partendo da scuola. Quanto sarebbe stato più facile adesso arrivare in quella casa a piedi, a undici anni, con le bucce verdi ancora tra i denti...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788817099707,
+      "title" : "Mia madre non lo deve sapere",
+      "publishingDate" : "05-08-2018",
+      "publishingHouse" : "Rizzoli",
+      "genre" : "Social Novel",
+      "image" : "../assets/images/books/miaMadreNonLoDeveSapere.jpg",
+      "abstract" : "Ho trentasei anni. Ma ho proprio bisogno di te. Di un Diario. Lo so che fa tanto Anna Frank, ma qui, nell'alloggio, da ieri siamo uno, o meglio, una di troppo. Ricordo che da piccola scrivere mi pacificava, rendeva piccino anche il dolore più straboccante. Ti chiamerò Lola. Fa un po' mignotta, ma sono in un periodo in cui ho tanto bisogno di sole, siesta e Almodovar. Mi domando: cosa è venuta a fare Eleonora? Non parla. Annuisce solo, maligna, e beve del tè, macchiato con lacrime che escono copiose da una piccola ampolla d'argento impressa di pietre, pietruzze e doboloni. Una paura. Federico mi guarda come una che si è fatta una messa in piega da un parrucchiere cinese. Tua Chiara, una ragazza tanto sfortunata.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788817118958,
+      "title" : "Un anno felice",
+      "publishingDate" : "06-25-2019",
+      "publishingHouse" : "Rizzoli",
+      "genre" : "Social Novel",
+      "image" : "../assets/images/books/unAnnoFelice.jpg",
+      "abstract" : "Tanto che a volte non ne distinguono bene il volto. Melania, lunghi capelli mossi color castagna e due sopracciglia pennellate alla Rossella O'Hara, abita in centro a Firenze con la sua amica Franca. Potrebbero sembrare due studentesse fuori sede. In realtà sono solo due ragazze fuori corso a cui finora il tanto studio ha portato arguzia e cultura, ma non un principe azzurro. Per Melania, però, tutto cambia in un giorno di maggio, in cui si ritrova a pagare un caffè ad Axel, un giovane straniero atterrato lì da chissà quale altro mondo. Ha un volto da etrusco, ma è svedese. Corre, ma non è in fuga. Stenta a rispondere, ma non perché gli manchino le parole. La bellezza sfacciata di Firenze e il cuore colorato di Melania danno esca al fuoco dell'amore, un calore che a lei scoppia dentro e che lui desidera da sempre. Poi, si sa, la passione si impone sulla vita: perciò, quando Axel deve ritornare in Svezia, Melania decide di seguirlo, lasciando tutto, lavoro, amici, rassicuranti consuetudini e quotidiane certezze. Ma come distinguere il volto del vero Amore, quell'amore che è una tela da tessere insieme? E come non lasciarsi confondere da fantasmi evanescenti e dalla proiezione dei propri sogni? Dopo il successo dei suoi primi due romanzi che scandagliavano i temi delle nuove famiglie e della relazione madre-figlia, Chiara Francini si cimenta in una prova narrativa più ambiziosa percorrendo l'evoluzione di un amore che prende una piega sbagliata, una trappola spietata in cui tante donne cadono accecate da sentimenti sinceri e dai veli dell'autoillusione. Ne scaturisce un racconto magnetico, con un formidabile crescendo drammatico, personaggi convincenti e una prosa originale che definiscono Chiara Francini come una scrittrice vera e matura.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+    {
+      "isbn": 9788856609714,
+      "title" : "La pietra del cielo",
+      "publishingDate" : "10-06-2009",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_1.jpg",
+      "abstract" : "Gaio Publio Varro, veterano delle legioni africane, al termine di una lunga carriera militare torna nella sua terra natale: la Britannia. È l'anno del Signore 369 quando lascia l'esercito romano e decide di riprendere l'attività che fu dei suoi avi: il fabbro.  Anni prima, suo nonno, con il ferro estratto da una pietra \"caduta dal cielo\", aveva creato armi che si conservano affilate e lucenti come nessun altra. Combattente, politico, uomo di grande fascino, Publio Varro affronta mille  vicissitudini, giungendo a prosciugare un intero lago per ritrovare quelle pietre misteriose e forgiare una spada leggendaria: Excalibur. Lui ancora non sa che quella spada segnerà il destino di un suo diretto discendente, il futuro re di tutta la Britannia, Artù.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838410192,
+      "title" : "La spada che canta",
+      "publishingDate" : "10-10-2010",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_2.jpg",
+      "abstract" : "L'impero romano va disgregandosi e la Britannia Romana sta per inabissarsi nella lunga notte dei secoli bui. Barbari venuti dal Nord invadono l'isola da oriente e settentrione, con inaudita ferocia. Publio Varro e sua moglie Luceia, insieme all'amico Caio Britannico, si battono per costruire un ultimo baluardo di legge e conoscenza davanti al buio che avanza. Non possono saperlo, ma un giorno, molti anni dopo la loro morte, il rozzo fortino che difendono a prezzo della loro stessa vita diverrà la leggendaria reggia di Camelot. Come una spada nel fuoco, così nel sangue e nella violenza, nel ferro e nella passione si va forgiando la Britannia di Artù, di Merlino e dei mitici Cavalieri della Tavola Rotonda.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838482007,
+      "title" : "La stirpe dell'aquila",
+      "publishingDate" : "09-23-2011",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_3.jpg",
+      "abstract" : "Nel fortino di Camelot i coloni romani, dopo la ritirata delle legioni, richiamate in Patria per difendere altrove la salvezza dell'Impero, resistono agli assalti delle tribù barbare. Il mondo che tanti avevano conosciuto è destinato a scomparire, preda di nemici che ambiscono a sopraffare quelle terre. Il nuovo comandante dell'insediamento è Merlino Britannico, un capo giusto e capace, e tutti, celti e romani, si affidano a lui in questo delicato momento. Al suo fianco il cugino Uther Pendragon, futuro padre di Artù. I due valorosi condottieri sono nati lo stesso giorno e la loro amicizia ha radici salde e profonde. Sono come le due facce di una stessa moneta: Uther è il guerriero instancabile, Merlino il sottile stratega. Finché saranno insieme nessuno riuscirà a impadronirsi di Camelot. Ma un crimine esecrabile, un gesto che attenta alla vita stessa di Merlino, traccerà un solco profondo tra di loro e metterà a repentaglio la sopravvivenza della Colonia e il futuro dell'intera nazione britannica.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838473623,
+      "title" : "Il sogno di Merlino",
+      "publishingDate" : "10-01-2012",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_4.jpg",
+      "abstract" : "Una barca vaga alla deriva di fronte alle coste della Cornovaglia. A bordo, stanchi e affamati, un uomo e un neonato: Merlino Britannico e il piccolo Artù di Pendragon, il futuro guardiano della mitica Excalibur. In compagnia del fanciullo che il destino gli ha ordinato di proteggere, Merlino dovrà attraversare la turbolenta Britannia del V secolo e combattere ogni sorta di nemici. Non solo quelli esterni alla colonia di Camulod ma anche quelli, ben più pericolosi, che credeva suoi alleati.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838485664,
+      "title" : "Il forte sul fiume",
+      "publishingDate" : "10-05-2013",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_5.jpg",
+      "abstract" : "Caio Merlino Britannico, dopo un fallito attentato alla vita del piccolo Artù, è fuggito da Camelot. Navigando verso nord, i fuggitivi giungono nel porto neutrale di Ravenglass, il cui re è Derek, l'uomo che ha ucciso il padre di Artù e violentato sua madre. Merlino deve reprimere l'odio che porta a quell'uomo e arriverà addirittura a salvargli la vita. In cambio si farà concedere un vecchio fortino abbandonato dai romani. Lì nascosto, Merlino educherà e addestrerà il giovane Artù di Pendragon.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838483288,
+      "title" : "Il segno di Excalibur",
+      "publishingDate" : "10-14-2014",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_6.jpg",
+      "abstract" : "Artù è ormai giunto al termine del suo apprendistato e, con la spada ricevuta in dono da Merlino, si accinge ad affrontare la sua prima campagna militare in difesa della Cambria. Ma la furia di Peter Ironhair, nemico giurato dei Pendragon, non è il solo ostacolo sul cammino del giovane Artù, costretto a districarsi in una fitta maglia di congiure e intrighi. Merlino è vittima di una terribile imboscata che lo segnerà per sempre, trasformandolo nel personaggio di innumerevoli leggende: il terribile stregone. Solo lui saprà liberare le terre a ovest di Camelot dal deforme e gigantesco mostro Carthac, solo lui sarà in grado di far estrarre ad Artù la mitica Excalibur dalla roccia, consacrandolo così Alto Re di tutta la Britannia. Ma dure prove attendono il giovane sovrano, che, alla testa di tutte le tribù celtiche, dovrà opporsi alla più grande invasione che abbia mai minacciato l'isola.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838482939,
+      "title" : "Le porte di Camelot",
+      "publishingDate" : "09-16-2015",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_7.jpg",
+      "abstract" : "Un macabro benvenuto aspetta Veronica Varro al suo arrivo in Cambria, regno del suocero Ullic. Gabbie di legno sospese su un'enorme fossa di fuoco e all'interno di esse centinaia di uomini destinati a bruciare vivi. L'orrore di quella notte strappa a Veronica una muta promessa: avrebbe sottratto il figlio a quella barbarie. Così l'infanzia di Uther, futuro padre di Artù, trascorre divisa tra l'oscura e rude Cambria e Camelot, la raffinata corte materna. AI suo fianco, il cugino Merlino, inseparabile amico e compagno di giochi. Ma la vita ben presto gli imporrà una difficile scelta.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788838485695,
+      "title" : "La donna di Avalon",
+      "publishingDate" : "10-03-2016",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/cronacheDiCamelot_8.jpg",
+      "abstract" : "Merlino e Uther un tempo erano stati compagni inseparabili. Una volta cresciuti, c'è solo una persona che Merlino abbia amato di più: sua moglie Cassandra. Aveva giurato di proteggerla da ogni pericolo, lei e il figlio che portava in grembo, ma il giorno in cui una mano feroce le si era scagliata contro non ne era stato capace. Quel drammatico episodio segna profondamente il suo animo, inaridendolo e istillandovi un odio implacabile. È Uther il primo a pagarne le conseguenze. Per gli amici di un tempo, le strade si separano. Merlino diventerà uno stregone sempre più potente, mentre Uther, salito al trono della Cambria, dovrà affrontare altre difficili prove, in un gioco complesso di tradimenti e alleanze; fino alla nascita di suo figlio, cui sarà dato il nome di Artù. Ed è da qui che inizia la leggenda.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788822732996,
+      "title" : "La fratellanza dell'impero",
+      "publishingDate" : "06-25-2019",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Historic Novel",
+      "image" : "../assets/images/books/laFratellanzaDellImpero.jpg",
+      "abstract" : "IV secolo d.C. Il giovane aristocratico romano Quinto Varro è in fuga dal massacro di tutta la sua famiglia. Solo lui e uno zio sono riusciti a sfuggire alla furia degli assassini e intende scoprire chi ha ordito il complotto per avere la sua vendetta. Così, incerto su chi sia meritevole di fiducia, decide di rifugiarsi nella remota Londinium, in Britannia. Teme per la sua vita e il dolore per la perdita dei suoi cari lo tormenta. Quando incontra una giovane donna irlandese di nome Lydia, le loro vite si intrecciano e il padre della ragazza si offre di trovargli un lavoro come fabbro. La copertura perfetta per pianificare la vendetta. Ma gli assassini non hanno dimenticato Quinto e sono sulle tracce del giovane per completare, una volta per tutte, lo sterminio della sua famiglia. A salvargli la vita e a conquistarsi la sua fiducia è un uomo che, come lui, ha un conto in sospeso con chi si nasconde dietro la cospirazione. Quinto non sa che la verità che cerca potrebbe essere molto più sconvolgente di quanto immagina.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+    {
+      "isbn": 9788850221257,
+      "title" : "Le cinque stirpi",
+      "publishingDate" : "05-11-2006",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/terraNascosta_1.jpg",
+      "abstract" : "La Terra Nascosta è circondata da una catena montuosa pressoché impenetrabile, nella quale si aprono soltanto cinque passaggi, difesi dalle cinque stirpi di nani. All’interno, uomini, elfi e nani vivono in armonia, governati e protetti dai sei maghi che, grazie alla potenza congiunta della loro energia, controllano le porte d’accesso, sbarrando così la strada al male. Improvvisamente, però, la porta che chiude il Passo Settentrionale viene aperta e un esercito di orchi e albi - creature simile agli elfi, ma votate al male - comincia a infiltrarsi e a soggiogare parte dei territori. Tuttavia le forze oscure sanno che, per conquistare il dominio assoluto della Terra Nascosta, devono spezzare l’unione dei maghi e individuano colui che può tradire gli altri: Nudin, uno stregone ambizioso e assetato di conoscenza, che cede alle lusinghe dell’ombra. Adesso le orde degli invasori possono dilagare e ai popoli della Terra Nascosta non rimane che un’unica speranza: secondo un’antica leggenda, infatti, la sola arma che può uccidere un mago posseduto dallo spirito del male è la Lama di Fuoco, un’ascia costituita dai metalli più preziosi, che deve essere forgiata col fuoco del drago e battuta in una fucina sotterranea. Spetterà a Tungdil, un nano educato dal potente mago Lot-Ionan, affrontare un viaggio ricco di insidie e pericoli per compiere quella missione estrema.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850221639,
+      "title" : "La guerra dei nani",
+      "publishingDate" : "06-03-2010",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/terraNascosta_2.jpg",
+      "abstract" : "Dopo la vittoriosa guerra contro lo stregone Nudin, torna la prosperità per i popoli della Terra Nascosta e nasce un'inedita alleanza tra nani, elfi e uomini. Tungdil, l'eroe dell'epica battaglia di Giogonero, è pronto a ripopolare le caverne del regno dei Quinti insieme con gli elementi più validi delle cinque stirpi e a stringere un patto con Balyndis; la nana che ha forgiato la Lama di Fuoco. Ma la storia d'amore di Tungdil e il suo ruolo di guida dei nani sono messi alla prova da una doppia minaccia: i mezz'orchi sopravvissuti al conflitto hanno scoperto un'acqua che dona l'immortalità, e il passaggio di una cometa semina morte e distruzione, annunciando il compimento di un'antica profezia. E non solo. Gli spietati nani della stirpe dei Terzi tramano per annientare le altre stirpi scatenando una guerra fratricida. Tungdil dovrà impugnare di nuovo la Lama di Fuoco e intraprendere un viaggio che lo porterà a incontrare nuovi amici, affrontare vecchi avversari ma anche a scoprire l'oscuro segreto che si cela dietro la propria nascita e il proprio retaggio.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850222667,
+      "title" : "La vendetta dei nani",
+      "publishingDate" : "09-23-2010",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/terraNascosta_3.jpg",
+      "abstract" : "La pace della Terra Nascosta è minata da insidie su più fronti. Orribili creature perpetrano strani furti che si sovrappongono a quelli dei Sotteranei, mentre i Terzi imbracciano le armi contro tutti i popoli della Terra Nascosta. Per risolvere la situazione Tungdil Manodoro, dovrà intraprendere un difficile viaggio verso le Terre dell'Aldilà.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850224012,
+      "title" : "Il destino dei nani",
+      "publishingDate" : "01-27-2011",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/terraNascosta_4.jpg",
+      "abstract" : "La Forra Oscura è stata sigillata e la Terra Nascosta è salva, anche se questa volta il prezzo da pagare è stato molto alto: Tungdil Manodoro, ferito al cuore, è rimasto intrappolato in quel mare grigio. Inoltre nuovi pericoli incombono: gli albi e i draghi sopravvissuti imperversano per i regni, terrorizzando la popolazione, e la barriera protettiva che divide la Terra Nascosta dalla Forra Oscura è sempre più debole. Boïndil e Goda la sorvegliano giorno e notte, tuttavia l'inevitabile non può essere fermato: il diamante che irradia il potere magico dello scudo si disintegra e un esercito di creature del male, guidato dal Kordrion, attacca la guarnigione di nani. Da quell'ammasso di mostri, però, emerge una figura del tutto simile a Tungdil Manodoro. Ma è davvero lui, di ritorno dalla Forra Oscura, oppure si tratta di un essere malvagio, celato sotto le sembianze dell'eroe che aveva sacrificato la propria vita per salvare i compagni? Al colmo della gioia per aver ritrovato il vecchio amico, il Rabbioso non ha dubbi sull'identità di Tungdil, mentre Goda è più diffidente e teme che la Forra Oscura abbia mutato lo spirito di colui che ha forgiato la Lama di Fuoco...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850251414,
+      "title" : "Il trionfo dei nani",
+      "publishingDate" : "10-13-2016",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/terraNascosta_5.jpg",
+      "abstract" : "Il regno degli albi è caduto. Sulle sue ceneri, l'imperatore dei nani Boïindil ha dato ordine di piantare alberi sacri, affinché le radici sigillassero il male e proteggessero uomini, elfi e nani. E così è stato per lungo tempo, fino al giorno dell'arrivo di Sha'taï. Sembra una giovane umana, eppure è stata trovata in territorio elfico e parla la lingua degli albi. Non ha nessun potere magico, ma è riuscita a sopravvivere nella Terra dell'Aldilà, un luogo selvaggio e pericoloso, da cui nemmeno i nani più valorosi hanno fatto ritorno. Inoltre, da quando è ospite presso la corte della regina degli uomini, una profonda crepa si è aperta nel bosco sacro che difende la Terra Nascosta e orde di albi inferociti hanno seminato il panico, giungendo perfino ad attentare alla vita della regina. Possibile che quella ragazzina sia la causa di tutto? O forse è l'arma decisiva contro quell'oscura minaccia? Per la prima volta nella sua vita, Boïindil è divorato dai dubbi. Una sola cosa è certa: è giunto il momento di tornare a combattere...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850238965,
+      "title" : "La leggenda degli albi",
+      "publishingDate" : "04-30-2015",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/leggendeAlbi_1.jpg",
+      "abstract" : "Per secoli, gli uomini, gli elfi e i nani hanno prosperato nella Terra Nascosta, una regione circondata da una catena montuosa pressoché impenetrabile, le cui uniche vie d'accesso sono sbarrate da un potente incantesimo e difese da cinque stirpi di nani. E, per secoli, i loro nemici, gli albi, creature simili agli elfi, ma d'indole malvagia e dagli occhi completamente neri, hanno atteso. Ma ora la loro pazienza sta per essere premiata. Gli Eterni, i sovrani degli albi, hanno infatti scoperto che il Demone di Nebbia, un essere in grado di spezzare qualsiasi sortilegio, si è nascosto nella remota regione di nord-ovest, e hanno quindi deciso di inviare laggiù due guerrieri per convincere il demone a combattere al loro fianco. Tuttavia i due albi - Caphalor e Sinthoras - non potrebbero essere più diversi. Il primo, mite e idealista, è contrario alla guerra contro i nani, perché essa lo terrebbe lontano dalla sua adorata famiglia; il secondo, temerario e borioso, vorrebbe invece iniziare al più presto una sanguinaria invasione, per ridurre in schiavitù tutti gli abitanti della Terra Nascosta. Se vorranno sopravvivere alla pericolosa missione, i due albi dovranno imparare a mettere da parte le loro divergenze e ad aiutarsi a vicenda, anche se la smodata ambizione di Sinthoras sta già prendendo forma in un piano inteso a volgere l'immenso potere del demone a proprio vantaggio...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850236978,
+      "title" : "La battaglia degli albi",
+      "publishingDate" : "04-30-2015",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/leggendeAlbi_2.jpg",
+      "abstract" : "Sono partiti guerrieri, sono tornati eroi: grazie alla loro scaltrezza, Caphalor e Sinthoras hanno stretto un patto col Demone di Nebbia e lo hanno convinto a spezzare l'incantesimo che difendeva la Porta di Pietra, aprendo così l'unica via d'accesso alla Terra Nascosta a un imponente esercito di albi, orchi e giganti. Quando avranno sbaragliato anche le ultime difese dei nani, Caphalor e Sinthoras potranno finalmente preparare l'attacco contro il loro vero obiettivo: gli odiati elfi. Tuttavia, dopo le prime, esaltanti vittorie, i due albi si rendono conto che l'offensiva non ha avuto il successo sperato e che ben presto si ritroveranno a combattere una lenta e sanguinosa guerra di conquista. Mentre all'orizzonte si staglia l'ombra di una terribile minaccia: il Demone di Nebbia, infatti, non è più intenzionato a sottostare al volere degli albi e, da prezioso alleato, è diventato il loro nemico più pericoloso. Accecato dalla brama di potere, sta radunando un'orda di maghi e di potentissimi Alchemicanti - i custodi di una sostanza in grado di ridurre in cenere perfino l'acciaio -, che presto marcerà sulla capitale del regno degli albi, per fare di lui il signore assoluto di tutte le razze...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850250325,
+      "title" : "La vendetta degli albi",
+      "publishingDate" : "10-30-2014",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/leggendeAlbi_3.jpg",
+      "abstract" : "La Forra Oscura. È in quel luogo selvaggio e pericoloso, da cui nessuno è mai uscito vivo, che sono stati esiliati Sisaroth e Firûsha. Un tempo considerati tra gli albi più valorosi e stimati del regno, i figli del governatore dello Dsûn Sòmran sono stati accusati di omicidio e condannati a un destino peggiore della morte. Nessuno è riuscito a dimostrare la loro innocenza, eppure qualcuno è ancora convinto che si tratti di un complotto orchestrato per minare il potere del padre: Tirîgon, il loro fratello. Pronto a tutto pur di riabilitare il nome del suo casato, il giovane albo ha un'unica strada da seguire, quella che s'inoltra nel cuore della Forra Oscura, un mondo ostile e popolato di mostri, dove ogni passo potrebbe essere l'ultimo. E infatti Tirîgon si rende subito conto di non avere nessuna speranza di ritrovare i fratelli da solo: ha bisogno di una guida. Ma l'unico aiuto che gli viene offerto è quello di un indomito guerriero della stirpe dei nani, da secoli in lotta contro gli albi. Tirîgon dovrà quindi fare una scelta: affidarsi al peggior nemico del suo popolo, o rischiare di vagare per sempre in quel labirinto di tenebre...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842926405,
+      "title" : "L'ira' degli albi",
+      "publishingDate" : "11-02-2017",
+      "publishingHouse" : "Nord",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/leggendeAlbi_4.jpg",
+      "abstract" : "Dopo anni di guerre, le cinque stirpi di nani della Terra Nascosta hanno sconfitto gli eserciti degli albi grazie all'aiuto di Aiphatòn, l'imperatore albico che ha scelto di schierarsi contro la propria gente. Mentre i nani, gli uomini e gli elfi iniziano a ricostruire i loro regni, inaugurando un'epoca di prosperità, Aiphatòn è convinto invece che la sua missione non sia ancora conclusa. Per lui non ci sarà pace finché anche gli ultimi albi fuggiaschi non saranno eliminati. E il suo desiderio sembra avverarsi quando un incantesimo lo catapulta nella Terra dell'Aldilà, dove scopre due città albiche: Dsòn Elhàtor, la Sublime, situata su un'isola, e Dsôn Dàkiòn, la Fiera, annidata tra le montagne. Conoscendo la natura infida e malvagia del suo popolo, Aiphatòn è sicuro che basterà sfruttare la rivalità esistente tra le città per spingere i due sovrani ad annientarsi a vicenda. Tuttavia, proprio quando Aiphatòn sta per mettere in pratica il suo piano, una nuova minaccia stende la sua ombra oscura, un Male che non può essere contrastato né dai nani né dagli elfi, né tantomeno dagli uomini. Possibile che l'ultima speranza siano proprio gli albi? E riuscirà Aiphatòn a convincerli a combattere in difesa dei loro acerrimi nemici, o saranno loro a riportare nel gregge il guerriero ribelle? Ora più che mai, il destino della Terra Nascosta è appeso a un filo...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788804666578,
+      "title" : "Bianca come il latte, rossa come il sangue",
+      "publishingDate" : "05-18-2016",
+      "publishingHouse" : "Oscar Mondadori",
+      "genre" : "Sentimental Novel",
+      "image" : "../assets/images/books/biancaComeIlLatteRossaComeIlSangue.jpg",
+      "abstract" : "Leo è un sedicenne come tanti: ama le chiacchiere con gli amici, il calcetto, le scorribande in motorino e vive in perfetta simbiosi con il suo iPod. Le ore passate a scuola sono uno strazio, i professori \"una specie protetta che speri si estingua definitivamente\". Così, quando arriva un nuovo supplente di storia e filosofia, lui si prepara ad accoglierlo con cinismo e palline inzuppate di saliva. Ma questo giovane insegnante è diverso: una luce gli brilla negli occhi quando spiega, quando sprona gli studenti a vivere intensamente, a cercare il proprio sogno. Leo sente in sé la forza di un leone, ma c'è un nemico che lo atterrisce: il bianco. Il bianco è l'assenza, tutto ciò che nella sua vita riguarda la privazione e la perdita è bianco. Il rosso invece è il colore dell'amore, della passione, del sangue; rosso è il colore dei capelli di Beatrice. Perché un sogno Leo ce l'ha e si chiama Beatrice, anche se lei ancora non lo sa. Leo ha anche una realtà, più vicina, e, come tutte le presenze vicine, più difficile da vedere: Silvia è la sua realtà affidabile e serena. Quando scopre che Beatrice è ammalata e che la malattia ha a che fare con quel bianco che tanto lo spaventa, Leo dovrà scavare a fondo dentro di sé, sanguinare e rinascere, per capire che i sogni non possono morire e trovare il coraggio di credere in qualcosa di più grande.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788804666707,
+      "title" : "Cose che nessuno sa",
+      "publishingDate" : "05-24-2016",
+      "publishingHouse" : "Oscar Mondadori",
+      "genre" : "Sentimental Novel",
+      "image" : "../assets/images/books/coseCheNessunoSa.jpg",
+      "abstract" : "Margherita ha quattordici anni e sta per varcare una soglia magica e misteriosa: l'inizio del liceo. Un mondo nuovo da esplorare e conquistare, sapendo però di poter contare sulle persone che la amano. Ma un giorno, tornata a casa, ascolta un messaggio nella segreteria telefonica: è di suo padre, che non tornerà più a casa. Margherita ancora non sa che affrontando questo dolore si trasformerà a poco a poco in una donna, proprio come una splendida perla fiorisce nell'ostrica per l'attacco di un predatore marino. Accanto a lei ci sono la madre, il fratellino vivace e sensibile e l'irriverente nonna Teresa. E poi Marta, la compagna di banco sempre sorridente, e Giulio, il ragazzo più cupo e affascinante della scuola. Ma sarà un professore, un giovane uomo alla ricerca di sé eppure capace di ascoltare le pulsazioni della vita nelle pagine dei libri, a indicare a Margherita il coraggio di Telemaco nell'\"Odissea\": così che il viaggio sulle tracce del padre possa cambiare il suo destino.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788804666653,
+      "title" : "Ciò che inferno non è",
+      "publishingDate" : "05-18-2016",
+      "publishingHouse" : "Oscar Mondadori",
+      "genre" : "Sentimental Novel",
+      "image" : "../assets/images/books/cioCheInfernoNonE.jpg",
+      "abstract" : "Federico ha diciassette anni e il cuore pieno di domande alle quali la vita non ha ancora risposto. La scuola è finita, l'estate gli si apre davanti come la sua città abbagliante e misteriosa, Palermo. Mentre si prepara a partire per una vacanza-studio a Oxford, Federico incontra \"3P\", il prof di religione: lo chiamano così perché il suo nome è padre Pino Puglisi, e lui non se la prende, sorride. 3P lancia al ragazzo l'invito a dargli una mano con i bambini del suo quartiere, prima della partenza. Quando Federico attraversa il passaggio a livello che separa Brancaccio dal resto della città, ancora non sa che in quel preciso istante comincia la sua nuova vita. La sera torna a casa senza bici, con il labbro spaccato e la sensazione di avere scoperto una realtà totalmente estranea eppure che lo riguarda da vicino. È l'intrico dei vicoli controllati da uomini che portano soprannomi come il Cacciatore, 'u Turco, Madre Natura, per i quali il solo comandamento da rispettare è quello dettato da Cosa Nostra. Ma sono anche le strade abitate da Francesco, Maria, Dario, Serena, Totò e tanti altri che non rinunciano a sperare in una vita diversa. Alessandro D'Avenia narra una lunga estate in cui tutto sembra immobile eppure tutto si sta trasformando, e ridà vita a un uomo straordinario, che in queste pagine dialoga insieme a noi con la sua voce pacata e mai arresa, con quel sorriso che non si spense nemmeno di fronte al suo assassino.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788804665793,
+      "title" : "L' arte di essere fragili. Come Leopardi può salvarti la vita",
+      "publishingDate" : "10-31-2016",
+      "publishingHouse" : "Oscar Mondadori",
+      "genre" : "Sentimental Novel",
+      "image" : "../assets/images/books/arteDiEssereFragili.jpg",
+      "abstract" : "\"Esiste un metodo per la felicità duratura? Si può imparare il faticoso mestiere di vivere giorno per giorno in modo da farne addirittura un'arte della gioia quotidiana?\" Sono domande comuni, ognuno se le sarà poste decine di volte, senza trovare risposte. Eppure la soluzione può raggiungerci, improvvisa, grazie a qualcosa che ci accade, grazie a qualcuno. In queste pagine Alessandro D'Avenia racconta il suo metodo per la felicità e l'incontro decisivo che glielo ha rivelato: quello con Giacomo Leopardi. Leopardi è spesso frettolosamente liquidato come pessimista e sfortunato. Fu invece un giovane uomo affamato di vita e di infinito, capace di restare fedele alla propria vocazione poetica e di lottare per affermarla, nonostante l'indifferenza e perfino la derisione dei contemporanei. Nella sua vita e nei suoi versi, D'Avenia trova folgorazioni e provocazioni, nostalgia ed energia vitale. E ne trae lo spunto per rispondere ai tanti e cruciali interrogativi che da molti anni si sente rivolgere da ragazzi di ogni parte d'Italia, tutti alla ricerca di se stessi e di un senso profondo del vivere. Domande che sono poi le stesse dei personaggi leopardiani: Saffo e il pastore errante, Nerina e Silvia, Cristoforo Colombo e l'Islandese... Domande che non hanno risposte semplici, ma che, come una bussola, se non le tacitiamo possono orientare la nostra esistenza.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788804681571,
+      "title" : "Ogni storia è una storia d'amore",
+      "publishingDate" : "10-31-2017",
+      "publishingHouse" : "Oscar Mondadori",
+      "genre" : "Sentimental Novel",
+      "image" : "../assets/images/books/ogniStoriaEunaStoriaDamore.jpg",
+      "abstract" : "L’amore salva? Quante volte ce lo siamo chiesti, avvertendo al tempo stesso l’urgenza della domanda e la difficoltà di dare una risposta definitiva? Ed è proprio l’interrogativo fondante che Alessandro D’Avenia si pone in apertura di queste pagine, invitandoci a incamminarci con lui alla ricerca di risposte. In questo libro straordinario incontriamo anzitutto una serie di donne, accomunate dal fatto di essere state compagne di vita di grandi artisti: muse, specchi della loro inquietudine e spesso scrittrici, pittrici e scultrici loro stesse, argini all’istinto di autodistruzione, devote assistenti, o invece avversarie, anime inquiete incapaci di trovare pace. Ascoltiamo la frustrazione di Fanny, che Keats magnificava in versi ma con la quale non seppe condividere nemmeno un giorno di quotidianità, ci commuove la caparbietà di Tess Gallagher, poetessa che di Raymond Carver amava tutto e riuscì a portare un po’ di luce nei giorni della sua malattia, ci sconvolge la disperazione di Jeanne Modigliani, ammiriamo i segreti e amorevoli interventi di Alma Hitchcock, condividiamo l’energia quieta e solida di Edith Tolkien. Alessandro D’Avenia cerca di dipanare il gomitolo di tante diversissime storie d’amore, e di intrecciare il filo narrativo che le unisce, in un ordito ricco e cangiante. Per farlo, come un filomito, un “filosofo del mito”, si rivolge all’archetipo di ogni storia d’amore: Euridice e Orfeo. Un mito che svolge la sua funzione di filo (e in greco antico per indicare “filo” e “racconto” si usavano due parole molto simili, mitos e mythos) perché contempla tutte le tappe di una storia d’amore, tra i due poli opposti del disamore (l’egoismo del poeta che alla donna preferisce il proprio canto) e dell’amore stesso (il sacrificio di sé in nome dell’altro). Ogni storia è una storia d’amore è così un libro che muove dalla meraviglia e sa restituire meraviglia al lettore. Perché ancora una volta D’Avenia ci incanta e ci sorprende, riuscendo nell’impresa di coniugare il godimento puro del racconto e il piacere della scoperta. E con slancio ricerca nella letteratura – le storie che alcuni uomini, nel tempo, hanno raccontato su se stessi e l’umanità a cui appartengono – risposte suggestive e potenti, ma anche concrete e vitali. Per poi offrirle in dono ai lettori, schiudendo uno spiraglio da cui lasciar filtrare bagliori di meraviglia nel nostro vivere quotidiano, per rinnovarlo completamente nella certezza che “noi siamo e diventiamo le storie che sappiamo ricordare e raccontare a noi stessi”.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788845268342,
+      "title" : "Lo Hobbit. Un viaggio inaspettato",
+      "publishingDate" : "06-20-2012",
+      "publishingHouse" : "Bompiani",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/loHobbit.jpg",
+      "abstract" : "Pubblicato per la prima volta nel 1937, Lo Hobbit è per i lettori di tutto il mondo il primo capitolo del Signore degli Anelli, uno dei massimi cicli narrativi del XX secolo. Protagonisti della vicenda sono, per l'appunto, gli hobbit, piccoli esseri \"dolci come il miele e resistenti come le radici di alberi secolari\", che vivono con semplicità e saggezza in un idillico scenario di campagna: la Contea. La placida esistenza degli hobbit viene turbata quando il mago Gandalf e tredici nani si presentano alla porta dell'ignaro Bilbo Baggins e lo trascinano in una pericolosa avventura. Lo scopo è la riconquista di un leggendario tesoro, custodito da Smaug, un grande e temibile drago. Bilbo, riluttante, si imbarca nell'impresa, inconsapevole che lungo il cammino s'imbatterà in una strana creatura di nome Gollum. Questa edizione vede la nuova traduzione della Società Tolkieniana Italiana, e le splendide illustrazioni di Alan Lee.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788845270741,
+      "title" : "Il Signore degli Anelli. La compagnia dell'anello.",
+      "publishingDate" : "06-20-2012",
+      "publishingHouse" : "Bompiani",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/signoreAnelli_1.jpg",
+      "abstract" : "In questo primo romanzo della trilogia di Tolkien, il lettore conosce gli Hobbit, minuscoli esseri saggi e longevi. Frodo, venuto in possesso dell'Anello del Potere, è costretto a partire per il paese delle tenebre. Un gruppo di Hobbit lo accompagna e, strada facendo, si associano alla compagnia altri esseri: Elfi, Nani e Uomini, anch'essi legati al destino di Frodo. Le tappe del cammino li conducono attraverso molte esperienze diverse, finché la scomparsa di Gandalf, trascinato negli abissi da un'orrenda creatura, li lascia senza guida. Così si scioglie la Compagnia dell'Anello e i suoi membri si disperdono, minacciati da forze tenebrose, mentre la meta sembra disperatamente allontanarsi. Introduzione di Elémire Zolla. Prefazione alla seconda edizione inglese di J. R. R. Tolkien.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788845270758,
+      "title" : "Il Signore degli Anelli. Le due torri.",
+      "publishingDate" : "06-20-2012",
+      "publishingHouse" : "Bompiani",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/signoreAnelli_2.jpg",
+      "abstract" : "In questo secondo romanzo della trilogia di Tolkien, gli amici della Compagnia dell'Anello lottano separati. Merry e Pipino sono fatti prigionieri dalle forze del Male, ma riescono a fuggire e trovano soccorso in uno strano mondo di esseri giganteschi, mezzo vegetali e mezzo umani. Aragorn, un enigmatico personaggio che si era unito alla Compagnia all'inizio dell'impresa, stringe alleanza con i guerrieri di Rohan, un popolo fiero che per secoli ha resistito all'assalto delle tenebre. Frattanto Frodo e il devoto Sam si imbattono in Gollum, un viscido essere che era stato l'antico possessore dell'Anello, e lo costringono a condurli verso Monte Fato. Ma spaventose creature li attendono al varco e il loro cammino si interrompe tragicamente. Prefazione alla seconda edizione inglese di J. R. R. Tolkien.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788845270765,
+      "title" : "Il Signore degli Anelli. Il ritorno del re.",
+      "publishingDate" : "06-20-2012",
+      "publishingHouse" : "Bompiani",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/signoreAnelli_3.jpg",
+      "abstract" : "Nel terzo romanzo della trilogia di Tolkien, Aragorn e i suoi amici giungono a Gondor, relitto dell'antico Regno degli Uomini: è il mondo del Bene, in piena decadenza. Mentre Frodo e Sam riprendono il difficile cammino verso Monte Fato, nelle pianure presso la capitale di Gondor si scontrano le forze del Bene e del Male. Quando il Male sembra avere il sopravvento, Frodo riesce a far cadere l'Anello nel cratere di Monte Fato. In quel momento l'Occhio malefico, che ha continuato a fissare il mondo, si chiude e una gran pace scende sulle cose. La Compagnia dell'Anello si riunisce e gli Hobbit ritornano a casa, incontrando ancora qualche traccia del Male... Prefazione alla seconda edizione inglese di J. R. R. Tolkien.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788845272400,
+      "title" : "Il Silmarillion",
+      "publishingDate" : "01-23-2013",
+      "publishingHouse" : "Bompiani",
+      "genre" : "Fantasy Novel",
+      "image" : "../assets/images/books/simarillion.jpg",
+      "abstract" : "Il Silmarillion, iniziato nel 1917 e la cui elaborazione è stata proseguita da Tolkien fino alla morte, rappresenta il tronco da cui si sono diramate tutte le sue successive opere narrative. \"Opera prima\", dunque, essa costituisce il repertorio mitico di Tolkien, quello da cui è derivata la filiazione delle sue favole: Lo Hobbit, Il Signore degli Anelli, Il cacciatore di Draghi. Il Silmarillion, che comprende cinque racconti legati come i capitoli di un'unica storia sacra, narra la parabola di una caduta: dalla \"musica degli inizi\", il momento cosmogonico, alla guerra di Elfi e Uomini contro l'Avversario. L'ultimo dei racconti costituisce l'antecedente immediato del Signore degli Anelli.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+
+  
+  
+  
+    {
+      "isbn": 9788868367695,
+      "title" : "Nei luoghi oscuri",
+      "publishingDate" : "12-02-2014",
+      "publishingHouse" : "PIEMME",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/neiLuoghiOscuri.jpg",
+      "abstract" : "Libby aveva sette anni quando la madre e le sorelle furono uccise in un rito satanico. Fu lei ad accusare suo fratello Ben di essere l'autore della strage. Ventiquattro anni dopo, Ben è in carcere e Libby viene rintracciata dal Kill Club, una società segreta di \"feticisti del crimine\" i cui soci sono convinti dell'innocenza di Ben. La donna accetterà di scavare nel proprio passato, ma ciò che la attende sono ricordi bui e sconvolgenti, che lentamente riaffiorano nella sua mente, e un presente denso di minacce.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788817088459,
+      "title" : "L'amore bugiardo",
+      "publishingDate" : "06-16-2016",
+      "publishingHouse" : "BUR Biblioteca Univ. Rizzoli",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/amoreBugiardo.jpg",
+      "abstract" : "Amy e Nick si incontrano a una festa in una gelida sera di gennaio. Uno scambio di sguardi ed è subito amore. Lui la conquista con il sorriso sornione, l'accento ondulato del Missouri, il fisico statuario. Lei è la ragazza perfetta, bella, spigliata, battuta pronta, il tipo che non si preoccupa se bevi una birra di troppo con gli amici. Sono felici, innamorati, pieni di futuro. Qualche anno dopo però tutto è cambiato. Da Brooklyn a North Carthage, Missouri. Da giovani professionisti in carriera a coppia alla deriva. Amy e Nick hanno perso il lavoro e sono stati costretti a reinventarsi: lui proprietario del bar di quartiere accanto alla sorella Margo, lei casalinga in una città di provincia anonima e sperduta. Fino a che, la mattina del loro quinto anniversario, Amy scompare. È in quel momento, con le tracce di sangue e i segni di colluttazione a sfregiare la simmetria del salotto, che la vera storia del matrimonio di Amy e Nick ha inizio. Che fine ha fatto Amy? Quale segreto nasconde il diario che teneva con tanta cura? Chi è davvero Nick Dunne? Un marito devoto schiacciato dall'angoscia, o un cinico mentitore e violento, forse addirittura un assassino? Raccontato dalle voci alternate di Nick e Amy, \"L'amore bugiardo\" è una incursione nel lato oscuro del matrimonio. Un thriller costruito su una serie di rovesciamenti e colpi di scena che costringerà il lettore a chiedersi se davvero sia possibile conoscere la persona che gli dorme accanto.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788817087735,
+      "title" : "Un buon presagio",
+      "publishingDate" : "06-16-2016",
+      "publishingHouse" : "Rizzoli",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/unBuonPresagio.jpg",
+      "abstract" : "Una donna intraprendente cerca di sopravvivere grazie a diversi lavori, più o meno disonesti. In un piovoso mattino di aprile sta leggendo l'aura a un cliente in un anonimo bugigattolo quando Susan Burke varca la soglia. La narratrice scansiona subito la bella donna come infelice e in cerca di emozioni forti. Quando la \"sensitiva\" visita l'inquietante casa vittoriana di Susan realizza che non deve più fingere di credere negli spiriti. Miles, il figliastro di Susan, con i suoi comportamenti disturbati e violenti confonde la realtà. I tre sono presto coinvolti in una lotta inquietante per scoprire dove si annidi davvero il diavolo e cosa, se mai sia possibile, può essere fatto per salvarsi.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788817141673,
+      "title" : "Sharp objects",
+      "publishingDate" : "06-25-2019",
+      "publishingHouse" : "BUR Biblioteca Univ. Rizzoli",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/sharpObjects.jpg",
+      "abstract" : "Sono passati otto anni da quando Camille, giornalista di cronaca nera a Chicago, ha lasciato Wind Gap, la piccola e soffocante cittadina del Missouri in cui è cresciuta. Ma ora è il suo lavoro a chiederle di tornare: deve seguire il caso della piccola Natalie Keene, scomparsa poco dopo la sparizione di un'altra bambina poi rinvenuta strangolata nel letto di un torrente. Anche il cadavere di Natalie viene presto ritrovato, e l'intera comunità di Wind Gap deve arrendersi all'evidenza che le bimbe sono vittime della stessa mano: è un unico, macabro dettaglio a rivelarlo. Camille si trova così a indagare sul caso, provando nel contempo ad arginare i ricordi e i motivi che l'hanno spinta a fuggire da quella cittadina bigotta e pettegola. Ma soprattutto è costretta ad affrontare di nuovo sua madre, donna fredda e manipolatrice. Thriller sofisticato e dal ritmo pulsante, il romanzo di Gillian Flynn indaga i risvolti più oscuri dei legami familiari e mette in scena una protagonista che indaga l'inferno con occhi nuovi.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788850240166,
+      "title" : "La biblioteca dei morti",
+      "publishingDate" : "06-25-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/bibliotecaMorti_1.jpg",
+      "abstract" : "Questo romanzo comincia nel dicembre 782 in un'abbazia sull'isola di Vectis (Inghilterra), quando il piccolo Octavus, accolto dai monaci per pietà, prende una pergamena e inizia a scrivere un'interminabile serie di nomi affiancati da numeri. Un elenco enigmatico e inquietante. Questo romanzo comincia il 12 febbraio 1947, a Londra, quando Winston Churchill prende una decisione che peserà sulla sua coscienza sino alla fine dei suoi giorni. Una decisione atroce ma necessaria. Questo romanzo comincia il 10 luglio 1947, a Washington, quando Harry Truman, il presidente della prima bomba atomica, scopre un segreto che, se divulgato, scatenerebbe il panico nel mondo intero. Un segreto lontano e vicinissimo. Questo romanzo comincia il 21 maggio 2009, a New York, quando il giovane banchiere David Swisher riceve una cartolina su cui ci sono una bara e la data di quel giorno. Poco dopo, muore. E la stessa cosa succede ad altre cinque persone. Un destino crudele e imprevedibile. \"Questo romanzo è cominciato e forse tutti noi ci siamo dentro, anche se non lo sappiamo. Perché non esiste nulla di casuale. Perché la nostra strada è segnata. Perché il destino è scritto. Nella Biblioteca dei Morti.\"",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850240173,
+      "title" : "Il libro delle anime",
+      "publishingDate" : "06-25-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/bibliotecaMorti_2.jpg",
+      "abstract" : "È un semplice libro antico, ma custodisce un segreto. Un segreto che è stato scritto col sangue nel 1297 da innumerevoli scrivani coi capelli rossi e con gli occhi verdi, forse toccati dalla grazia divina, forse messaggeri del diavolo. Che è riapparso nel 1334, in una lettera vergata da un abate ormai troppo anziano per sopportare il peso di quel mistero. Che, nel corso del XVI secolo, ha illuminato la strada di un teologo, i sogni di un visionario e le parole di un genio. È un semplice libro antico, ma sta per scatenare l'inferno. Perché quel libro dovrebbe trovarsi nella Biblioteca dei Morti, la sconfinata raccolta di volumi in cui è riportata la data di nascita e di morte di tutti gli uomini vissuti dall'VIII secolo in poi. E, dopo essere rimasto sepolto sotto la polvere della Storia per oltre settecento anni, adesso è riemerso ed è diventato un'ossessione per Will Piper, deciso a cancellare il dolore che la Biblioteca ha portato nella sua vita; per Henry Spence, che ha dedicato la sua esistenza alla soluzione dell'enigma e che ormai ha i giorni contati; per Malcolm Frazier, il capo della sicurezza della Biblioteca, determinato a uccidere pur d'impedire al mondo di conoscere la verità. Un'ossessione che inevitabilmente porta altro dolore, altri enigmi, altro sangue.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850240180,
+      "title" : "I custodi della biblioteca",
+      "publishingDate" : "06-25-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/bibliotecaMorti_3.jpg",
+      "abstract" : "Il destino di ogni uomo è un segreto sepolto nel silenzio... Il silenzio in cui si sono suicidati gli scrivani di Vectis. Dopo aver compilato la sterminata Biblioteca che riporta il giorno di nascita e di morte di ogni uomo vissuto dall'VIII secolo in poi, la loro eredità è una data: il 9 febbraio 2027. Ma la giovane Clarissa non sa nulla di tutto ciò. Il suo unico pensiero è fuggire. Fuggire da quell'abbazia maledetta, per mettere in salvo il dono più prezioso che Dio le abbia mai concesso. Il futuro dell'umanità è un mistero nascosto tra le pagine di un libro... Il libro in cui è indicato il giorno del giudizio. Mentre il mondo s'interroga su cosa accadrà davvero il 9 febbraio 2027, alcune persone ricevono una cartolina sulla quale ci sono il disegno di una bara e una data: il giorno della loro morte. Proprio come all'inizio della straordinaria serie di eventi che avevano portato alla scoperta della Biblioteca dei Morti. C'è soltanto una differenza: tutte le \"vittime\" sono di origine cinese. È una provocazione? Un avvertimento? L'ultima verità non è mai stata trovata... Will Piper ha trovato la pace: sa che vivrà oltre il 9 febbraio 2027, e ha deciso di lasciarsi alle spalle l'enigma della Biblioteca di Vectis e la sua secolare scia di sangue. Almeno finché suo figlio parte all'improvviso per l'Inghilterra e poi sparisce nel nulla. D'un tratto, per Will, ogni cosa torna a ruotare intorno all'origine della Biblioteca dei Morti. Lì dove tutto è cominciato. E dove tutto finirà.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850240258,
+      "title" : "Dannati",
+      "publishingDate" : "05-14-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/dannati_1.jpg",
+      "abstract" : "Lo chiamano Oltre. Alcuni sono appena arrivati in quel mondo così simile al nostro eppure così diverso. Altri invece sono lì da secoli e sono ormai indifferenti alla perenne coltre di nubi che nasconde il sole e all'atmosfera cupa che li circonda. Ma ognuno di loro condivide lo stesso destino: dopo essere morti, sono stati condannati per l'eternità. Sia che abbiano scritto a caratteri di fuoco il loro nome nel grande libro della Storia - tiranni sanguinari, sovrani spietati, criminali di guerra - sia che nel corso della loro oscura esistenza si siano macchiati di colpe incancellabili, adesso sono tutti relegati in quel luogo maledetto. Tutti, tranne John Camp. Lui è \"vivo\", ed è lì per sua scelta. Perché ha giurato di salvare la donna che ama. Durante un audace esperimento di fisica delle particelle, la dottoressa Emily Loughty è scomparsa nel nulla e, quando si è deciso di ripetere il procedimento per capire cosa fosse successo, John si è posizionato nel punto esatto in cui lei era sparita e... in un attimo è stato catapultato nel mondo chiamato Oltre. E ora deve affrontare il male assoluto per ritrovare Emily e riportarla indietro. Ma il tempo a sua disposizione è poco, e tutti e due rischiano di rimanere per sempre prigionieri nella terra dei Dannati...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850242207,
+      "title" : "La porta delle tenebre",
+      "publishingDate" : "11-05-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/dannati_2.jpg",
+      "abstract" : "La speranza è durata poco più di un battito di ciglia. La speranza di potere, un giorno, dimenticare il cielo plumbeo e l'atmosfera opprimente dell'Oltre. La speranza di essersi lasciati per sempre alle spalle il mondo dove sono confinati tutti i malvagi vissuti sulla Terra dall'inizio dei tempi. Invece, non appena si rendono conto di avercela fatta, di essere nuovamente a casa, John Camp ed Emily Loughty sono costretti ad affrontare una realtà agghiacciante. L'incubo non è finito. Come previsto, l'avvio dell'acceleratore di particelle ha aperto il varco grazie al quale John ed Emily si sono ritrovati nel laboratorio di Dartford, in Inghilterra, ma allo stesso tempo ha inghiottito un numero imprecisato d'innocenti. Tra cui ci sono anche la sorella e i nipotini di Emily. Lei quindi non ha scelta: per salvarli, deve attraversare ancora una volta la Porta delle Tenebre e tornare all'Inferno. E mentre a Londra c'è chi è determinato a smascherare le menzogne del governo su quanto sta accadendo a Dartford, Emily e John si preparano con una squadra di recupero ad affrontare un viaggio ancor più pericoloso e ricco d'insidie del precedente. Un viaggio durante il quale incontreranno nuovi, terribili nemici, e stringeranno alleanze con coloro che li hanno aiutati a sopravvivere all'Inferno. Ma ci si può veramente fidare di chi, in vita, ha ceduto alle seduzioni del Male ed è da secoli relegato nella terra dei Dannati?",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842924678,
+      "title" : "L'invasione' delle tenebre",
+      "publishingDate" : "11-16-2015",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/dannati_3.jpg",
+      "abstract" : "Londra è una città fantasma. I pochi che non hanno voluto − o non hanno potuto – dare seguito all’ordine d’evacuazione del governo, sono barricati in casa, nella vana speranza che tutto quello che stanno vivendo sia un incubo da cui presto si sveglieranno. Ma è tutto reale. Perché sono reali le vetrine infrante, i negozi saccheggiati, i cadaveri lasciati per strada. E, soprattutto, sono reali le bande di uomini assetati di sangue che, dopo essere comparsi all’improvviso dal nulla, stanno mettendo a ferro e fuoco la città e alcuni suoi sobborghi. Uomini che continuano ad arrivare senza sosta, come l’onda di piena di un fiume immenso. Un fiume che ha la sua sorgente all’Inferno, come sanno bene John Camp ed Emily Loughty. Dopo il loro ultimo «viaggio» nel mondo dei Dannati, infatti, i varchi interdimensionali non soltanto si sono moltiplicati, ma sono anche rimasti aperti, portando letteralmente l’Inferno in Terra e catapultando centinaia d’innocenti «dall’altra parte». E c’è solo una persona che sa come chiudere per sempre le Porte delle Tenebre: Paul Loomis, l’ex capo di Emily. Purtroppo Paul Loomis è morto, si è suicidato sette anni fa, dopo aver ucciso la moglie e l’amante di lei con due colpi di fucile. Ma Emily e John sanno dove trovarlo e come mettersi in contatto con lui. Perché lo hanno già incontrato all’Inferno…",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850246427,
+      "title" : "La mappa del destino",
+      "publishingDate" : "07-13-2017",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/mappaDestino.jpg",
+      "abstract" : "Per settecento anni è rimasto nascosto in un muro dell'abbazia. Poi una scintilla ha scatenato un incendio e il muro è crollato. Stupito, l'abate Menaud sfoglia quel volume impreziosito da disegni di animali e di piante. È scritto in codice, ma le prime parole sono in latino: \"Io, Barthomieu, monaco dell'abbazia di Ruac, ho duecentoventi anni. E questa è la mia storia.\" Per migliaia di anni è rimasto immerso nell'oscurità. Poi un'intuizione ha squarciato le tenebre. Incredulo, l'archeologo Lue Simard cammina in quel grandioso complesso di caverne, interamente decorate con splendidi dipinti rupestri. E arriva all'ultima grotta, la più sorprendente, dove sono raffigurate alcune piante: le stesse riprodotte nell'enigmatico manoscritto medievale... Per un tempo indefinibile è rimasto avvolto nel mistero. È stato custodito da santi e da assassini, è stato una fonte di vita e una ragione di morte. Poi un imprevisto ha rischiato di svelarlo agli occhi del mondo. Spietati, gli abitanti di Ruac non hanno dubbi: i forestieri devono essere fermati. Perché la cosa più importante è difendere il loro segreto. A ogni costo.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850253845,
+      "title" : "Il marchio del diavolo",
+      "publishingDate" : "05-30-2019",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/marchioDiavolo.jpg",
+      "abstract" : "Roma, 1139. Inquieto, un uomo alza gli occhi alla volta celeste. Seguendo le indicazioni dei suoi predecessori, è arrivato nella Città Eterna per assistere all'eclissi che mostrerà un allineamento astrale unico. All'ora stabilita, la luna a poco a poco si dissolve nell'oscurità, rivelando 112 stelle. È il segno che l'uomo aspettava: ancora 112 papi, poi, sulle rovine della Chiesa, sorgerà un nuovo mondo. Roma, 2000. Incredula, una giovane archeologa fissa il cielo. Poche ore prima, il Vaticano le ha ordinato d'interrompere gli scavi nelle catacombe di San Callisto, mettendo così fine alla sua carriera accademica. E adesso lei giace sull'asfalto, in una pozza di sangue. Tuttavia, nell'istante in cui l'aggressore le ha conficcato il pugnale nel petto, Elisabetta ha notato un dettaglio agghiacciante. Un dettaglio impossibile da dimenticare. Roma, oggi. Sconcertata, una suora studia i simboli astrologici tracciati sul muro. Ma quello non è il solo enigma custodito dall'antico colombario di San Callisto. Intorno a lei, infatti, ci sono decine di scheletri caratterizzati da un'anomalia inquietante: la stessa anomalia del sicario che, anni prima, aveva cercato di ucciderla. Decisa a far luce sul mistero, suor Elisabetta entra in possesso di un rarissimo esemplare del Dottor Faust di Marlowe e intuisce che quei versi sono il codice per svelare il cerchio diabolico che lega passato, presente e futuro. Perché il papa è morto, il conclave è alle porte e la profezia sta per compiersi...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850247738,
+      "title" : "L'ultimo giorno",
+      "publishingDate" : "07-06-2017",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/ultimoGiorno.jpg",
+      "abstract" : "Milano, oggi. È la crisi più grave che il mondo abbia mai attraversato. Disorientati, giovani e anziani, credenti e atei si pongono tutti le stesse, angoscianti domande: cosa faranno ora che il più grande sogno dell'umanità si è trasformato in un incubo? Cosa succederà allo scoccare dell'ultimo giorno? Boston, qualche mese prima. È l'indagine più complessa che Cyrus O'Malley abbia mai affrontato. Sconvolto, il detective dell'FBI osserva le foto delle vittime: per l'ennesima volta, si chiede perché, dopo averle strangolate, il serial killer abbia praticato loro un minuscolo foro alla base del cranio. Per Cyrus, quel caso è diventato un'ossessione. E non importa se, per risolverlo, sarà costretto a rinunciare a tutto ciò che gli è caro... Londra, 1988. È la sensazione più travolgente che Alex Weller abbia mai provato. In estasi, il ragazzo osserva il fiume di luce che scorre davanti a lui: sull'altra sponda c'è suo padre, che lo esorta a raggiungerlo. Ma, per quanto si sforzi, Alex non riesce a muoversi e, d'improvviso, si trova di nuovo incastrato fra le lamiere, sul luogo del terribile incidente d'auto che ha causato la morte dei genitori. Da quel momento, Alex avrà un solo obiettivo: rivivere quell'esperienza. E non importa se, per farlo, sarà costretto a uccidere...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788850237296,
+      "title" : "Il calice della vita",
+      "publishingDate" : "11-06-2014",
+      "publishingHouse" : "TEA",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/caliceVita.jpg",
+      "abstract" : "Inghilterra, XV secolo. Non è la prigione a gettare Thomas Malory nel più nero sconforto. È la consapevolezza di avere fallito, proprio come tutti coloro che lo hanno preceduto. Ormai ha una sola ragione di vita: proteggere la chiave che dà accesso a un segreto antichissimo. E ha un solo modo per farlo: scrivere un'opera sulle gesta di re Artù e dei cavalieri della Tavola Rotonda... Inghilterra, oggi. Arthur Malory è sconvolto. Prima ha visto il suo migliore amico, Andrew, morire per mano di un assassino, poi è sfuggito per miracolo all'incendio che ha distrutto la sua casa. E tutto ha avuto inizio con una telefonata, quella in cui Andrew gli annunciava di avere novità sensazionali riguardo alla loro grande passione comune: il Graal. Da quel momento, Arthur è diventato il bersaglio di uomini senza scrupoli, determinati a completare una missione iniziata in Palestina, la notte in cui Gesù ha bevuto dal sacro calice, durante l'Ultima Cena. La sua unica possibilità di salvezza è trovare il Graal prima di loro. E, per riuscirci, dovrà rintracciare e seguire una catena d'indizi lasciata dal suo illustre antenato, Thomas Malory. Ma la sfida più grande che attende Arthur è la natura stessa del potere del Graal. Un potere che risale all'origine dell'universo, un potere che va oltre la Chiesa, oltre la morte di Cristo, oltre la vita...",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842928942,
+      "title" : "Il segno della croce",
+      "publishingDate" : "11-07-2016",
+      "publishingHouse" : "Nord",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/segnoCroce.jpg",
+      "abstract" : "Intorno a loro, si apre l’infinito deserto di ghiaccio e vento dell’Antartide. Dopo ore di faticoso cammino, il gruppo di uomini raggiunge il punto segnato sulla mappa. E lo individuano: l’ingresso di una caverna scavata decenni prima da chi li ha preceduti in quel continente disabitato. Quando entrano, in religioso silenzio, si trovano davanti un museo ideato per conservare reperti che il mondo crede perduti per sempre. Ma quegli uomini sono arrivati lì per due oggetti soltanto. E adesso li stringono tra le mani. Ne manca ancora uno, poi l’alba di una nuova era sorgerà sul mondo. In un piccolo paese dell’Abruzzo, un giovane sacerdote si alza dal letto. Il dolore è lancinante. La fasciatura intorno ai polsi è intrisa di sangue. Con cautela, il prete scioglie le bende. Le sue suppliche non sono state esaudite, le piaghe sono ancora aperte. Il sacerdote chiude gli occhi e inizia a pregare. Prega che gli sia risparmiata quella sofferenza. Che gli sia data la forza di superare quella prova. E che nessuno venga mai a conoscenza del suo segreto. Una ricerca iniziata quasi 2000 anni fa e giunta solo oggi a compimento. Un’ossessione sopravvissuta alla guerra che segnerà il destino di tutti noi. Una storia la cui parola «fine» sarà scritta col sangue Questo romanzo è un invito. Un invito a vivere un’avventura appassionante, ricca di mistero e svolte inaspettate. Ma anche un invito a esplorare l’indistinta linea di confine che separa Storia, religione e scienza, un territorio ambiguo e affascinante che Glenn Cooper ci ha fatto conoscere – e amare – fin dai tempi del suo fortunatissimo esordio narrativo, La Biblioteca dei Morti.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842929123,
+      "title" : "Il debito",
+      "publishingDate" : "11-06-2017",
+      "publishingHouse" : "Nord",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/debito.jpg",
+      "abstract" : "Per Cal, è come essere in paradiso. Chilometri e chilometri di scaffali sui quali sono conservati centinaia di migliaia tra manoscritti, documenti antichi e reperti inestimabili. E quel tesoro immenso è lì, a sua disposizione. Grazie al ruolo da protagonista svolto nel caso del sacerdote con le stimmate rapito da un’organizzazione neonazista, Cal ha ricevuto da papa Celestino VI un privilegio unico: l’accesso illimitato alla Biblioteca Vaticana e all’Archivio Segreto Vaticano. Cal ne approfitta subito per svolgere una ricerca su un oscuro cardinale italiano vissuto a metà dell’Ottocento, durante la prima guerra d’Indipendenza e i moti rivoluzionari. E s’imbatte in una lettera privata in cui si fa riferimento a un banchiere e all’urgenza di trasferirlo di nascosto fuori Roma. Nel corso dei suoi studi, Cal ha imparato a fidarsi del proprio istinto, e l’istinto adesso gli suggerisce di approfondire quella strana vicenda. Ed è così che, passo dopo passo, Cal si convince dell’esistenza di un ingente debito contratto dalla Chiesa con una banca posseduta da una famiglia ebrea e mai restituito. Cal informa il pontefice della sua scoperta, e la richiesta di Celestino è sorprendente: trovare le prove che quel debito è ancora valido. Quali sono le reali intenzioni del papa? Cal non è l’unico a porsi questa domanda. Alcuni membri della Curia ritengono che in gioco ci sia la sopravvivenza stessa della Chiesa, e sono pronti a tutto pur di fermare le ricerche di Cal e i progetti segreti del papa…",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842929130,
+      "title" : "I figli di Dio",
+      "publishingDate" : "06-18-2018",
+      "publishingHouse" : "Nord",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/figliDio.jpg",
+      "abstract" : "Manila, Filippine. Nausea, mal di testa, uno svenimento: per sapere di cosa si tratti, Maria, una sedicenne che vive in una baraccopoli, affronta la lunga attesa per essere visitata da un medico volontario. La diagnosi è semplice: Maria è incinta. Ma le circostanze di quella gravidanza sono eccezionali… Maria infatti è ancora vergine. Gort, Irlanda. Da alcuni giorni, fuori della casa della famiglia Riordan, c'è una fila di persone raccolte in preghiera. Vogliono un’unica cosa: vedere e toccare la giovane Mary, una sedicenne in attesa di un bambino. E vergine. Lima, Perù. L’arcivescovo della diocesi sudamericana manda un messaggio urgente al Vaticano: uno sperduto villaggio di montagna sta diventando meta di pellegrinaggi, perché si è sparsa la voce che lì viva una sedicenne, vergine, incinta. Il suo nome è María.Sconcertato, il papa decide di affidare a Cal Donovan il compito d’incontrare le tre vergini per capire se quello che è successo sia un miracolo autentico. E Cal si mette subito in viaggio. Prima parla con la ragazza filippina, poi con quella irlandese. Entrambe sono disorientate e confuse. E hanno un altro punto in comune: qualche tempo prima, mentre tornavano a casa, tutte e due sono state accecate da una luce abbagliante e hanno sentito una voce dire: «Sei stata scelta». Poi Cal vola in Perù, ma non riuscirà a incontrare l’ultima Maria: la ragazza è scomparsa. E, nel giro di poche ore, anche delle altre due vergini si perdono le tracce. Cosa sta succedendo? Chi ha preso le tre ragazze? Mentre il mondo s’interroga sulla loro sorte, Cal intuisce che forze oscure, fuori e dentro il Vaticano, hanno messo in moto un piano per destabilizzare dalle fondamenta il papato di Celestino VI. E lui è l’unico che può sventare la più grande minaccia che incombe sulla Chiesa di Roma dai tempi della riforma protestante…",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+    {
+      "isbn": 9788842929147,
+      "title" : "Il sigillo del cielo",
+      "publishingDate" : "06-10-2019",
+      "publishingHouse" : "Nord",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/sigilloDelCielo.jpg",
+      "abstract" : "Mosul, 1095. Daniel Basidi è un uomo di fede. Eppure teme che stavolta il Signore abbia caricato un fardello troppo grande sulle sue spalle. Per anni ha cercato di mettere il suo dono al servizio degli altri. Ma quest'ultima rivelazione, terribile e sublime, non può essere condivisa con nessuno, perché è troppo pericolosa. Daniel deve portarla con sé nella tomba. Iraq, 1989. Hiram Donovan è un uomo di scienza. Eppure, quando tocca quella pietra sepolta nella sabbia, si sente come pervadere da una corrente elettrica. E ha paura. Infrangendo la legge e i suoi stessi principi morali, Hiram sottrae l'oggetto dallo scavo e lo spedisce alla moglie, in America. Sarà l'ultima cosa che farà prima di morire. New York, oggi. Cal Donovan è un uomo d'azione. Eppure, non appena riceve la notizia che sua madre è stata uccisa, si sente crollare la terra sotto i piedi. All'apparenza sembrerebbe un furto andato male, se non fosse che in casa non manca nulla. I presunti ladri hanno messo a soqquadro ogni stanza, senza prendere né gioielli, né quadri, né contanti. Che cosa cercassero, Cal lo scopre dopo qualche giorno, in una scatola da scarpe nascosta in fondo a un armadio. Un pacco ancora sigillato che suo padre aveva mandato dall'Iraq trent’anni prima. All’interno, c'è l'ossessione che ha tormentato avventurieri e imperatori, il segreto per cui hanno dato la vita santi e ciarlatani, la minaccia che deve restare sepolta, per il bene del mondo. E ora tocca a Cal proteggerla. A ogni costo.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788832732580,
+      "title" : "La lega degli straordinari gentlemen vol.1",
+      "publishingDate" : "06-27-2019",
+      "publishingHouse" : "Bao Publishing",
+      "genre" : "Comic",
+      "image" : "../assets/images/books/laLegaDegliStraordinariGentlemen.jpg",
+      "abstract" : "Torna in libreria, nel formato originale americano, perfettamente riveduta e corretta, la prima, amatissima storia della «Lega degli straordinari gentlemen». Mina Murray, Allan Quatermain, Dr. Jekyll, Griffin l'uomo invisibile, il Capitano Nemo! Il più straordinario gruppo di avventurieri, nella sua prima missione. L'inizio della saga, capolavoro di Alan Moore e Kevin O'Neill.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788830452848,
+      "title" : "Instinct",
+      "publishingDate" : "06-27-2019",
+      "publishingHouse" : "Longanesi",
+      "genre" : "Thriller Novel",
+      "image" : "../assets/images/books/instinct.jpg",
+      "abstract" : "Il professor Dylan Reinhart, ex agente della CIA, è uno stimato docente della Ivy League nonché massima autorità in fatto di comportamento criminale. Ma quando una copia del suo bestseller sull’argomento viene rinvenuta sulla scena di un omicidio raccapricciante insieme a un messaggio minaccioso dell’assassino, la polizia inizia a pensare che qualcuno possa aver «preso appunti». Elizabeth Needham, brillante e determinata detective della polizia di New York responsabile del caso, recluta Dylan per assisterla nelle indagini e in particolare per decifrare il significato di un altro souvenir lasciato sulla scena: una carta da gioco. Ma la scia di sangue non sembra fermarsi: a ogni omicidio corrisponde una nuova carta. Così il professor Reinhart inizia a sospettare che le carte non siano una firma, ma piuttosto un punto di riferimento, un indizio del killer che punta direttamente alla prossima vittima. Mentre i titoli dei tabloid sull’assassino conosciuto come Il Mazziere spopolano in edicola, New York è in preda al panico. La polizia sembra perdere terreno e può puntare ormai solo su Dylan per dare la caccia a un serial killer letale e imprevedibile. E se, dopo essersi addentrato sempre più nella mente dell’assassino, dopo aver pensato davvero come un criminale, Dylan non riuscisse più a tornare indietro?",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788861909366,
+      "title" : "Manifesto contro il potere distruttivo",
+      "publishingDate" : "06-27-2019",
+      "publishingHouse" : "Chiarelettere",
+      "genre" : "Social Novel",
+      "image" : "../assets/images/books/manifestoControIlPotereDistruttivo.jpg",
+      "abstract" : "«Il potere distruttivo esprime, nel microcosmo familiare come nel macrocosmo sociale, il malessere, il disagio psicologico, quando non l’evidente disturbo mentale, dettati dall’angoscia di morte, dalla paura, dalla rabbia, dalla frustrazione, dall’impotenza di chi lo ricerca, di chi lo esercita o tenta di esercitarlo. E, ancora, di chi lo accetta e lo sostiene facendolo, per delega, esercitare ad altri. […] Il “Manifesto contro il potere distruttivo” è stato pensato e scritto contro tutti i dittatori e contro tutti i potenti e gli sfruttatori criminali che ancora opprimono, con le loro imprese e le loro perversioni, milioni di esseri umani e tante nazioni del mondo. E, ancora, è stato pensato e scritto, con l’aiuto di molti, per denunciare non soltanto quei dittatori ma tutti gli psicopatici, i narcisisti maligni, gli accumulatori seriali di denaro, armi, beni e territori; i ‘Signori della guerra’ che alimentano odi, orrori e conflitti.» Maria Rita Parsi Completano il libro il Decalogo del potere positivo, il Decalogo della pace, il Decalogo dei diritti delle bambine. Con un’antologia di testi di E. Fromm, M. Schatzman, L. De Marchi, S. Morace e D. Renzi, F. Cetta, F. Di Giulio, S. Giannella, I. Rizzi, D. Bendura. Postfazione di Salvatore Giannella.",
+      "authorInterview" : "",
+      "price" : 10.00
+    },
+  
+  
+  
+  
+    {
+      "isbn": 9788865513095,
+      "title" : "Animali funesti: Il segugio-La cagnolina bianca-Gli intrusi-L'avvoltoio",
+      "publishingDate" : "06-26-2019",
+      "publishingHouse" : "ABEditore",
+      "genre" : "Informative, Essay",
+      "image" : "../assets/images/books/animaliFunesti.jpg",
+      "abstract" : "La tanto attesa nuova ristampa del famosissimo saggio di Howard P. Lovecraft, Charles Nodier e Saki",
+      "authorInterview" : "",
+      "price" : 10.00
     }
-  ]
+    
+]
 

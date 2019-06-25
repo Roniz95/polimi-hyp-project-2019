@@ -1,16 +1,132 @@
-{
-  "0": 
-    {
-      "title": "Bologna Children’s Book Fair. I libri al centro del mondo",
-      "date": "2019-07-17",
-      "mapSrc" : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11380.601052379896!2d11.362568!3d44.5120755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61f27c44a349a0d6!2sFiera+di+Bologna!5e0!3m2!1sit!2sit!4v1561030305004!5m2!1sit!2sit",
-      "address" : "Piazza della Costituzione,<br>40128 Bologna BO",
-      "phoneNumber" : "051 282111",
-      "mail" : "bolognafiere@mail.com",
-      "start" : "9:00",
-      "end" : "18:00",
-      "image" : "../assets/images/events3.jpg",
-      "description" : "È ancora vivo il ricordo della fittissima la folla che lo scorso anno si aggirava per i padiglioni della Fiera di Bologna, nel tentativo, impossibile, di vedere tutto.<br>Il programma della cinquattaquattresima edizione della Bologna Children’s Book Fair, il più importante evento internazionale dedicato ai professionisti dell’editoria per giovani lettori, sarà come sempre fitto di presentazioni, incontri, mostre, conferenze, premiazioni.<br>È, ancora una volta, il luogo in cui è importante essere per conoscere, scoprire e, soprattutto incontrarsi.<br>Le novità però non mancheranno neppure quest'anno: “The Illustrators Survival Corner” il nuovo spazio pensato come luogo di confronto tra illustratori, dove condividere esperienze, successi e dubbi del mestiere. Realizzato in collaborazione con il Mimaster in illustrazione di Milano e grazie al sostegno di Fabriano è anche un doveroso riconoscimento di coloro senza cui buona parte dell’industria editoriale per ragazzi non avrebbe modo di esistere, a partire dalla fiera stessa. La sua anima, infatti, più ancora che editori, agenti letterari, autori, traduttori, business developer, licensor e licensee, packager, stampatori, distributori, librai, bibliotecari, insegnanti e fornitori di servizi editoriali sono gli illustratori.<br>Gli ospiti speciali di quest'anno saranno <b>J.K. Rowling</b> e <b>George R. R. Martin</b> i quali, oltre a consegnare alcuni premi presenteranno i loro nuovi libri in anteprima esclusiva. <br>A partire dai molti giovanissimi che lo scorso anno hanno affollato i padiglioni, e reso incredibile, come ogni anno, l’oramai famoso muro dove lasciare una traccia del proprio lavoro (un segno della propria arte, nella speranza di essere notati, contattati, e magari un giorno di trovarsi dall’altra parte, fra i tanti bravissimi selezionati per la mostra degli illustratori, o addirittura fra i protagonisti delle mostre personali) Bologna riapre le porte il <b>17 Luglio all'area fiere</b>.<br>La manifestazione durerà tutto il giorno, dalle 9:00 fino alle 18:00. Per tutta la durata dell'evento, nei vari padiglioni dell'area ristorazione, saranno presenti degli stand gastronomici.<br>Per ulteriori info vi consigliamo di consultare il sito ufficiale dell'evento <a href=\"http://www.bolognachildrensbookfair.com/home/878.html\" target=\"_blank\">http://www.bolognachildrensbookfair.com/home/878.html</a>"
-      
-    }
-}
+[
+  {
+    "id": 0,
+    "title": "Chiara Francini presenta \"Un anno felice\"",
+    "date": "07-25-2019",
+    "mapSrc" : "",
+    "address" : "SEDE BOLOGNA",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event1.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 1,
+    "title": "Glenn Cooper presenta \"Il sigillo del cielo\"",
+    "date": "07-15-2019",
+    "mapSrc" : "",
+    "address" : "SEDE MILANO",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event2.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 2,
+    "title": "Bologna Children’s Book Fair. I libri al centro del mondo",
+    "date": "07-17-2019",
+    "mapSrc" : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11380.601052379896!2d11.362568!3d44.5120755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x61f27c44a349a0d6!2sFiera+di+Bologna!5e0!3m2!1sit!2sit!4v1561030305004!5m2!1sit!2sit",
+    "address" : "Piazza della Costituzione,<br>40128 Bologna BO",
+    "phoneNumber" : "051 282111",
+    "mail" : "bolognafiere@mail.com",
+    "start" : "9:00",
+    "end" : "18:00",
+    "image" : "../assets/images/events/event3.jpg",
+    "description" : "È ancora vivo il ricordo della fittissima la folla che lo scorso anno si aggirava per i padiglioni della Fiera di Bologna, nel tentativo, impossibile, di vedere tutto.<br>Il programma della cinquattaquattresima edizione della Bologna Children’s Book Fair, il più importante evento internazionale dedicato ai professionisti dell’editoria per giovani lettori, sarà come sempre fitto di presentazioni, incontri, mostre, conferenze, premiazioni.<br>È, ancora una volta, il luogo in cui è importante essere per conoscere, scoprire e, soprattutto incontrarsi.<br>Le novità però non mancheranno neppure quest'anno: “The Illustrators Survival Corner” il nuovo spazio pensato come luogo di confronto tra illustratori, dove condividere esperienze, successi e dubbi del mestiere. Realizzato in collaborazione con il Mimaster in illustrazione di Milano e grazie al sostegno di Fabriano è anche un doveroso riconoscimento di coloro senza cui buona parte dell’industria editoriale per ragazzi non avrebbe modo di esistere, a partire dalla fiera stessa. La sua anima, infatti, più ancora che editori, agenti letterari, autori, traduttori, business developer, licensor e licensee, packager, stampatori, distributori, librai, bibliotecari, insegnanti e fornitori di servizi editoriali sono gli illustratori.<br>Gli ospiti speciali di quest'anno saranno <b>J.K. Rowling</b> e <b>George R. R. Martin</b> i quali, oltre a consegnare alcuni premi presenteranno i loro nuovi libri in anteprima esclusiva. <br>A partire dai molti giovanissimi che lo scorso anno hanno affollato i padiglioni, e reso incredibile, come ogni anno, l’oramai famoso muro dove lasciare una traccia del proprio lavoro (un segno della propria arte, nella speranza di essere notati, contattati, e magari un giorno di trovarsi dall’altra parte, fra i tanti bravissimi selezionati per la mostra degli illustratori, o addirittura fra i protagonisti delle mostre personali) Bologna riapre le porte il <b>17 Luglio all'area fiere</b>.<br>La manifestazione durerà tutto il giorno, <b>dalle 9:00 fino alle 18:00</b>. Per tutta la durata dell'evento, nei vari padiglioni dell'area ristorazione, saranno presenti degli stand gastronomici.<br>Per ulteriori info vi consigliamo di consultare il sito ufficiale dell'evento <a href=\"http://www.bolognachildrensbookfair.com/home/878.html\" target=\"_blank\">http://www.bolognachildrensbookfair.com/home/878.html</a>"  
+  },
+  {
+    "id": 3,
+    "title": "La lunga notte del lettore",
+    "date": "07-20-2019",
+    "mapSrc" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.863570598485!2d9.162121515557095!3d45.45240527910078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c3e5ba100051%3A0xe79c993799f1fe46!2sBASE+Milano!5e0!3m2!1sit!2sit!4v1561498365403!5m2!1sit!2sit",
+    "address" : "Via Bergognone, 34,<br>20144 Milano MI",
+    "phoneNumber" : "not available",
+    "mail" : "not available",
+    "start" : "21:00",
+    "end" : "--:--",
+    "image" : "../assets/images/events/event4.jpg",
+    "description" : "<b>Sabato 20 Luglio 2019</b>, per il terzo anno di fila, negli spazi di <b>Base Milano</b> torna La lunga notte dei lettori: <b>dalle ore 21.00</b>, una serata a ingresso gratuito all’insegna del piacere della lettura e della buona musica. Una festa al ritmo di Atomic Bar dj-set, con i dj che da sempre animano una delle serate più note della movida milanese, free drink per chi acquista un libro e un ricco bookshop con tutti i titoli del catalogo Bookabook. Per i lettori più appassionati, la novità della Lunga notte dei lettori 2019 è un percorso a premi con quattro giochi letterari: Trivial booksuit per riscoprire assieme i classici intramontabili della letteratura; Trova il refuso per indossare i panni di un editor della casa editrice e tanti altri giochi che accompagneranno il lettore alla scoperta del mondo editoriale. Bookabook è la casa editrice che dà ai lettori l’ultima parola sulla scelta dei libri da pubblicare. I lettori possono infatti scaricare gratuitamente l’anteprima di un libro e, se desiderano continuare la lettura, possono pre-ordinare una copia nel formato che preferiscono, cartaceo o ebook. Attorno a ogni libro si costruisce così una comunità e un passaparola, prima ancora che sia pubblicato.<br>Per ulteriori info vi consigliamo di consultare il sito ufficiale di Base Milano: <a href=\"https://base.milano.it/\" target=\"_blank\">https://base.milano.it/</a>"  
+  },
+  {
+    "id": 4,
+    "title": "Tombola letteraria",
+    "date": "07-15-2019",
+    "mapSrc" : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11188.805310988144!2d9.1946336!3d45.4858904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa14161934f47e030!2sKasa+dei+Libri!5e0!3m2!1sit!2sit!4v1561501006836!5m2!1sit!2sit",
+    "address" : "Largo Aldo de Benedetti, 4,<br>20124 Milano MI",
+    "phoneNumber" : "02 66989018",
+    "mail" : "not available",
+    "start" : "18:00",
+    "end" : "23:00",
+    "image" : "../assets/images/events/event5.jpg",
+    "description" : "Chi ha detto che la tombola sia una prerogativa esclusiva delle feste natalizie? Una tombola letteraria va bene in qualunque stagione. Proprio come quella in programma <b>alle ore 18.00 alle 23:00 di lunedì 15 Luglio 2019 alla Kasa dei Libri di Milano</b>, in collaborazione con l’editore Neri Pozza: 90 numeri, come da tradizione, abbinati a un testo letterario del loro catalogo, da cui leggere dei brani per stare insieme in maniera letteraria ma allegra e diversa dalle solite. Una rivisitazione in piena regola della classica tombola chiamata napoletana: per ciascun numero della Smorfia un libro che lo ricordi, dall’1 (L’Italia) con Italiani brava gente? di Angelo del Boca fino al 90 (’a Paura) con Io ho paura di Silvio Perrella. E, tra un’estrazione e l’altra, qualche piccolo intermezzo per gustare alcuni brani scelti tra i 90 titoli letterari. A condurre il gioco è Alessandra Tedesco, giornalista e voce della rubrica Il cacciatore di libri su Radio24. I premi sono tutti letterari, da  gadget di Neri Pozza alla tazza della Kasa dei Libri, da volumi autografati a uno speciale sconto per l’Escape Room ispirata al romanzo Le sette morti di Evelyn Hardcastle, fino all’esclusiva visita guidata fra i 30 mila libri della Kasa dei Libri, comprensiva di merenda in compagnia dei volumi. Per ulteriori informazioni telefonare al numero 02 66989018."  
+  },
+  {
+    "id": 5,
+    "title": "Jack Whyte presenta \"La fratellanza dell'impero\"",
+    "date": "07-10-2019",
+    "mapSrc" : "",
+    "address" : "SEDE MILANO",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event6.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 6,
+    "title": "Gillian Flynn presenta \"Sharp objects\"",
+    "date": "07-23-2019",
+    "mapSrc" : "",
+    "address" : "SEDE TORINO",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event7.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 7,
+    "title": "Alan Moore e Kevin O'Neil presentano \"La lega degli straordinari gentlemen vol. 1\"",
+    "date": "07-16-2019",
+    "mapSrc" : "",
+    "address" : "SEDE TORINO",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event8.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 8,
+    "title": "Maria Rita Parsi e Salvatore Giannella presentano \"Il manifesto del potere distruttivo\"",
+    "date": "07-12-2019",
+    "mapSrc" : "SEDE BOLOGNA",
+    "address" : "",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event9.jpg",
+    "description" : "TO DO"  
+  },
+  {
+    "id": 9,
+    "title": "James Patterson presenta \"Instinct\"",
+    "date": "07-28-2019",
+    "mapSrc" : "SEDE MILANO",
+    "address" : "",
+    "phoneNumber" : "",
+    "mail" : "",
+    "start" : "",
+    "end" : "",
+    "image" : "../assets/images/events/event10.jpg",
+    "description" : "TO DO"  
+  }
+]

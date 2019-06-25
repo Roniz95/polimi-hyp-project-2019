@@ -22,59 +22,50 @@ function fetchEvents(){
   document.getElementById("soonId").style.display = "none";
   
   //Call DB to retrieve thisMonth Events
-  var thisMonthEvents = [
-    { id: 1, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 2, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 3, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 4, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 5, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 6, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 7, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 8, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 9, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 10, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' }
-  ]
-  setEvents(thisMonthEvents, 'thisMonthId');
+  $.ajax({
+    url: '/events',//'/monthEvents',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ setEvents(data, 'thisMonthId', 'events'); } }
+  });
   
   //Call DB to retrieve soon Events
-  var soonEvents = [
-    { id: 1, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 2, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 3, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 4, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' }
-  ]
-  setEvents(soonEvents, 'soonId');
+  $.ajax({
+    url: '/soonEvents',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ setEvents(data, 'soonId', 'events'); } }
+  });
 }
 
-function setEvents(events, id){
-  var container = document.getElementById(id);
-  var i;
-  for(i=0; i<events.length; i++){
+function setEvents(events, elementID, from){
+  var container = document.getElementById(elementID);
+  for(let i=0; i<events.length; i++){
     var div = document.createElement('div');
     div.className = "event card-1";
-    div.setAttribute("onclick", "goToEvent()");
+    div.onclick = () => goToEvent(events[i].id, from);
+    
     var img = document.createElement('img');
     img.className = "event_image";
-    img.src = events[i].img;
+    img.src = events[i].image;
     div.appendChild(img);
+    
     var title = document.createElement('p');
     title.className = "eventBox_borderBottom";
     var title_txt = document.createTextNode(events[i].title);
     title.append(title_txt);
     div.appendChild(title);
-    var city = document.createElement('p');
-    city.className = "eventBox_borderBottom";
-    var city_txt = document.createTextNode(events[i].city);
-    city.append(city_txt);
-    div.appendChild(city);
+    
     var date = document.createElement('p');
+    date.className = "date_text"
     var date_txt = document.createTextNode(events[i].date);
     date.append(date_txt);
     div.appendChild(date);
+    
     container.appendChild(div);
   }
 }
 
-function goToEvent(){
-  window.location.href = "/eventX/0/events";
+function goToEvent(eventID, from){
+  window.location.href = "/eventX/" + eventID + "/" + from;
 }

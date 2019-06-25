@@ -383,22 +383,65 @@ router.get('/event', function (req, res){
    res.sendFile(pages + 'Event.html');
 });
 
-router.get('/event/:eventId', function (req, res) {
-    res.send();
-});
-
-router.get('/search', function (req, res) {
-  res.sendFile(pages + 'Search.html');
-  /* EVENTX PAGE */
-});
+/* EVENTX PAGE */
 router.get('/eventX', function (req, res) {
    res.sendFile(pages + 'EventX.html');
 });
 
+/* FETCH all events */
+router.get('/events', function (req, res){
+  /*
+    SELECT *
+    FROM events
+  */
+  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
+  res.json(events);
+});
+
 /* FETCH a specific event */
 router.get('/event/:eventID', function (req, res){
+  var eventID = parseInt(req.params.eventID);
+  /*
+    SELECT *
+    FROM events
+    WHERE events.id = eventID
+  */
   let events = require(__dirname + '/public/assets/jsonFiles/events.json');
-  res.json(events[req.params.eventID]);
+  var event = events.filter( function(elem) { return elem.id===eventID } )
+  res.json(event[0]);
+});
+
+/* FETCH the next two weeks' events */
+router.get('/soonEvents', function (req, res){
+  /*
+    SELECT *
+    FROM events
+    WHERE events.date > OGGI AND events.date < 2 settimane  */
+  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
+  var today = new Date();
+  var twoWeeksLater = new Date().setDate(today.getDate()+15); 
+  var eventsList = events.filter( function(elem) { return (new Date(elem.date)>=today && new Date(elem.date)<=twoWeeksLater); } )
+  res.json(eventsList);
+});
+
+/* FETCH this month's events */
+router.get('/monthEvents', function (req, res){
+  /*
+    SELECT *
+    FROM events
+    WHERE new Date(events.date).getFullYear() = new Date().getFullYear() AND new Date(events.date).getMonth() = new Date().getMonth()
+  */
+  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
+  var today = new Date();
+  var eventsList = events.filter( 
+    function(elem) { 
+      return (
+        new Date(elem.date).getFullYear() == today.getFullYear() && 
+        new Date(elem.date).getMonth() == today.getMonth()
+      ); 
+    } 
+  )
+  res.json(eventsList);
 });
 
 /* FETCH all books presented at the event */

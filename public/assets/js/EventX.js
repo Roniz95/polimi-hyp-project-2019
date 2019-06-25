@@ -28,7 +28,7 @@ function fetchData() {
     { id: 10, title: 'Libro Z', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
     { id: 11, title: 'Libro U', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
   ];
-  SetBooks(eventBooks, 'eventBooks');
+  //SetBooks(eventBooks, 'eventBooks');
   
   //Call DB and retrieve authors of 'eventID'
   var authors = [
@@ -44,7 +44,7 @@ function fetchData() {
     { id: 10, name: 'AutoreX', img: '../assets/images/autore.jpg' },
     { id: 11, name: 'AutoreY', img: '../assets/images/autore.jpg' },
   ];
-  SetAuthors(authors, 'eventAuthors');
+  //SetAuthors(authors, 'eventAuthors');
   
 }
 
