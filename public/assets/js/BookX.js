@@ -55,6 +55,25 @@ function fetchData() {
         }
       });
     }
+    else if(from.substring(0,10)=='eventBooks'){
+      /* event ID */
+      var idParam2 = parameters[2].split("=");
+      var eventID = unescape(idParam2[1]);
+      $.ajax({
+        url: '/booksEvent/'+eventID,
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+          if(data){
+            var str = JSON.stringify(data);
+            sessionStorage.setItem("bookList", str);
+            setPagination(data, currentBookISBN);
+            var orientationInfo = "you have searched books at event <b>&nbsp;" + from.substring(11, from.length-1) + "</b>";
+            $('#orientationInfoID').append(orientationInfo);
+          }
+        }
+      });
+    }
     else if(from=='searchFromTitle'){
       var idParam2 = parameters[2].split("=");
       var title = unescape(idParam2[1]);

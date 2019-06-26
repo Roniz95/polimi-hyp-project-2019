@@ -263,7 +263,7 @@ router.get('/bookX/:bookISBN/:from', function (req, res) {
   res.redirect('/bookX?isbn='+req.params.bookISBN+'&from='+req.params.from);
 });
 
-/* REDIRECT to bookX page from similarBooks or authorBooks (searchID needs for pagination system) */
+/* REDIRECT to bookX page from similarBooks, authorBooks or eventBooks (searchID needs for pagination system) */
 router.get('/bookX/:bookISBN/:from/:searchISBN', function (req, res) {
   res.redirect('/bookX?isbn='+req.params.bookISBN+'&from='+req.params.from+'&searchISBN='+req.params.searchISBN);
 });
@@ -366,7 +366,7 @@ router.get('/authorX/:authorID/:from', function (req, res) {
   res.redirect('/authorX?id='+req.params.authorID+'&from='+req.params.from);
 });
 
-/* REDIRECT to authorX page from bookX or similarAuthors */
+/* REDIRECT to authorX page from bookX, similarAuthors or eventAuthors */
 router.get('/authorX/:authorID/:from/:searchID', function (req, res) {
   res.redirect('/authorX?id='+req.params.authorID+'&from='+req.params.from+'&searchID='+req.params.searchID);
 });
@@ -409,6 +409,44 @@ router.get('/event/:eventID', function (req, res){
   let events = require(__dirname + '/public/assets/jsonFiles/events.json');
   var event = events.filter( function(elem) { return elem.id===eventID } )
   res.json(event[0]);
+});
+
+/* FETCH all books of a specific event */
+router.get('/booksEvent/:eventID', function (req, res){
+  var eventID = parseInt(req.params.eventID);
+  /*
+    SELECT books.isbn, books.title, books.image
+    FROM books, eventsBooks
+    WHERE eventsBooks.eventID = eventID AND books.isbn = eventsBooks.bookISBN
+  */
+  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
+  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
+  var eventBooks = eventsBooks.filter( function(elem) { return elem.eventID==eventID; } );
+  function foo(isbn, list){
+    for(let i=0; i<list.length; i++){ if(list[i].bookISBN==isbn){ return true; } }
+    return false;
+  }
+  var booksList = books.filter( function(elem) { return foo(elem.isbn, eventBooks); } )
+  res.json(booksList);
+});
+
+/* FETCH all authors of a specific event */
+router.get('/authorsEvent/:eventID', function (req, res){
+  var eventID = parseInt(req.params.eventID);
+  /*
+    SELECT authors.id, authors.name, authors.image
+    FROM authors, eventsAuthors
+    WHERE eventsBooks.eventID = eventID AND authors.id = eventsAuthors.authorID
+  */
+  let eventsAuthors = require(__dirname + '/public/assets/jsonFiles/eventsAuthors.json');
+  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
+  var eventAuthors = eventsAuthors.filter( function(elem) { return elem.eventID==eventID; } );
+  function foo(id, list){
+    for(let i=0; i<list.length; i++){ if(list[i].authorID==id){ return true; } }
+    return false;
+  }
+  var authorsList = authors.filter( function(elem) { return foo(elem.id, eventAuthors); } )
+  res.json(authorsList);
 });
 
 /* FETCH the next two weeks' events */

@@ -14,38 +14,6 @@ function fetchData() {
   
   setEvent(currentEventID);
   
-  //Call DB and retrieve all books of 'eventID'
-  var eventBooks = [
-    { id: 1, title: 'Harry Potter e la pietra filosofale', img: '../assets/images/harry1.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 2, title: 'Harry Potter e la camera dei segreti', img: '../assets/images/HP2.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 3, title: 'Harry Potter e il prigioniero di Azkaban', img: '../assets/images/harry3.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 4, title: 'Harry Potter e il calice di fuoco', img: '../assets/images/harry4.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 5, title: 'Harry Potter e l\'ordine della fenice', img: '../assets/images/HP5.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 6, title: 'Harry Potter e il principe mezzosangue', img: '../assets/images/harry6.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 7, title: 'Harry Potter e i doni della morte', img: '../assets/images/harry7.jpg', genre: 'Fantasy', author: 'J.K. Rowling' },
-    { id: 8, title: 'Libro X', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-    { id: 9, title: 'Libro Y', img: '../assets/images/h8.jpg', genre: 'Comedy', author: 'J.K. Rowling' },
-    { id: 10, title: 'Libro Z', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-    { id: 11, title: 'Libro U', img: '../assets/images/h8.jpg', genre: 'Thriller', author: 'J.K. Rowling' },
-  ];
-  //SetBooks(eventBooks, 'eventBooks');
-  
-  //Call DB and retrieve authors of 'eventID'
-  var authors = [
-    { id: 1, name: 'Elena Ferrante', img: '../assets/images/autore.jpg' },
-    { id: 2, name: 'Stephen King', img: '../assets/images/scrittore.jpg' },
-    { id: 3, name: 'Erri De Luca', img: '../assets/images/scrittore.jpg'},
-    { id: 4, name: 'Alessandro Baricco', img: '../assets/images/scrittore.jpg' },
-    { id: 5, name: 'George R. Martin', img: '../assets/images/scrittore.jpg' },
-    { id: 6, name: 'Oriana Fallaci', img: '../assets/images/autore.jpg' },
-    { id: 7, name: 'Marcus Heitz', img: '../assets/images/scrittore.jpg' },
-    { id: 8, name: 'Isaac Asimov', img: '../assets/images/scrittore.jpg' },
-    { id: 9, name: 'Tom Clancy', img: '../assets/images/scrittore.jpg' },
-    { id: 10, name: 'AutoreX', img: '../assets/images/autore.jpg' },
-    { id: 11, name: 'AutoreY', img: '../assets/images/autore.jpg' },
-  ];
-  //SetAuthors(authors, 'eventAuthors');
-  
 }
 
 function setEvent(id){
@@ -62,10 +30,11 @@ function setEvent(id){
         $('#eventAddressID').append(data.address);
         $('#eventNumberID').append(data.phoneNumber);
         $('#eventMailID').append(data.mail);
-        //var str = createDateString(data.date);
         $('#eventDateID').append(createDateString(data.date));
         $('#eventStartID').append(data.start);
         $('#eventEndID').append(data.end);
+        fetchEventBooks(id, data.title);
+        fetchEventAuthors(id, data.title);
       }
     }
   });
@@ -81,19 +50,27 @@ function createDateString(data){
 }
 
 
-function SetBooks(books, id) {
-  var deckBook = document.getElementById(id);
-  var length = books.length < 8 ? books.length : 8; //oppure li restituisco tutti???
-  var i;
-  
-  for(i=0; i<length; i++){
+
+
+function fetchEventBooks(eventID, eventTitle){
+  $.ajax({
+    url: '/booksEvent/' + eventID,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ SetBooks(data, 'eventBooks', eventID, eventTitle); } }
+  });
+}
+
+function SetBooks(books, elementID, eventID, eventTitle) {
+  var deckBook = document.getElementById(elementID);
+  for(let i=0; i<books.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
-    div.setAttribute("onclick", "goToBook()");
+    div.onclick = () => goToBook(books[i].isbn, eventID, eventTitle);
     
     var img = document.createElement('img');
     img.className = 'cardBook__image';
-    img.src = books[i].img;
+    img.src = books[i].image;
     div.appendChild(img);
     
     var title = document.createElement('div');
@@ -107,8 +84,7 @@ function SetBooks(books, id) {
     var author = document.createElement('div');
     author.className = 'cardBook__link border__bottom';
     var b2 = document.createElement('b');
-    var t2 = document.createTextNode(books[i].author);
-    b2.append(t2);
+    createAuthorsList(books[i].isbn, b2);
     author.appendChild(b2);
     div.appendChild(author);
     
@@ -125,17 +101,49 @@ function SetBooks(books, id) {
   
 }
 
-function SetAuthors(authors, id) { 
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/bookAuthors/' + bookISBN,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].name;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
 
-  var deckAuthor = document.getElementById(id);
-  var i;
-  for(i=0; i<authors.length; i++){
+function goToBook(newBookISBN, eventID, eventTitle){
+  window.location.href = '/bookX/'+ newBookISBN + '/eventBooks(' + eventTitle + ')/' + eventID;
+}
+
+
+
+
+function fetchEventAuthors(eventID, eventTitle){
+  $.ajax({
+    url: '/authorsEvent/' + eventID,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ SetAuthors(data, 'eventAuthors', eventID, eventTitle); } }
+  });
+}
+
+
+function SetAuthors(authors, elementID, eventID, evenTitle) { 
+  var deckAuthor = document.getElementById(elementID);
+  for(let i=0; i<authors.length; i++){
     var div = document.createElement('div');
     div.className = "cardAuthor card-1";
-    div.addEventListener("click", goToAuthor.bind(null, authors[i].id));
+    div.onclick = () => goToAuthor(authors[i].id, eventID, evenTitle);
+    
     var img = document.createElement('img');
     img.className = 'cardAuthor__image';
-    img.src = authors[i].img;
+    img.src = authors[i].image;
     div.appendChild(img);
     
     var name = document.createElement('div');
@@ -150,12 +158,6 @@ function SetAuthors(authors, id) {
   }
 }
 
-function goToBook(){
-  window.location.href = '/bookX';
-}
-
-function goToAuthor(authorID){
-  //var link = 'AuthorX.html?authorID='+authorID;
-  //alert(link);
-  window.location.href = '/authorX'; 
+function goToAuthor(newAuthorID, eventID, eventTitle){
+  window.location.href = '/authorX/' + newAuthorID + '/eventAuthors(' + eventTitle + ')/' + eventID; 
 }

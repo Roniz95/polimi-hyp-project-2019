@@ -90,6 +90,25 @@ function fetchData() {
       });
     }
   }
+  else if(from.substring(0,12)=='eventAuthors'){
+    /* previous author ID */
+    var idParam2 = parameters[2].split("=");
+    var eventID = unescape(idParam2[1]);
+    $.ajax({
+      url: '/authorsEvent/'+ eventID,
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => { 
+        if(data){
+          var str = JSON.stringify(data);
+          sessionStorage.setItem("authorList", str);
+          setPagination(data, currentAuthorID);
+          var orientationInfo = "you have searched authors at event &nbsp;<b>" + from.substring(13, from.length-1) + "</b>";
+          $('#orientationInfoID').append(orientationInfo);
+        } 
+      }
+    });
+  }
   
   setAuthor(currentAuthorID);
 }
