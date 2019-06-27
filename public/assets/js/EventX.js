@@ -28,6 +28,25 @@ function fetchData() {
       }
     });
   }
+  else if(from.substring(0,12)=='bookEventsId'){
+    /* book ID */
+    var idParam2 = parameters[2].split("=");
+    var bookISBN = unescape(idParam2[1]);    
+    $.ajax({
+      url: 'bookEvents/' + bookISBN,
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        if(data){ 
+          var str = JSON.stringify(data);
+          sessionStorage.setItem("eventList", str);
+          setPagination(data, currentEventID);
+          var orientationInfo = "you have searched events where book &nbsp;<b>\"" + from.substring(13, from.length-1) + "\"</b>&nbsp;is presented";
+          $('#orientationInfoID').append(orientationInfo);
+        }
+      }
+    });
+  }
   else {
     $.ajax({
       url: 'soonEvents',

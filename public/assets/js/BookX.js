@@ -192,14 +192,6 @@ function fetchData() {
   
   setBook(currentBookISBN);
   
-  /* Will be updated when events are inserted */
-  var bookEvents = [
-    { id: 1, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 2, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' },
-    { id: 3, img: '../assets/images/event.jpg', title: 'TITOLO', city: 'città', date: 'GG-MM-AA' }
-  ]
-  setEvents(bookEvents, 'bookEventsId');
-  
 }
 
 
@@ -318,6 +310,7 @@ function setBook(isbn){
         $('#similarBooks').empty();
         fetchAuthorsBooks(data.isbn);
         fetchSimilarBooks(isbn, data.title);
+        fetchBookEvents(isbn, data.title);
       }
     }
   });
@@ -445,34 +438,38 @@ function noReview(){
   review.appendChild(p);
 }
 
-//TO BE MODIFIED when events will be added
 /* Fetch events where the book will be presented (TO DO) */
-function fetchBookEvents(){
-  //TO DO
+function fetchBookEvents(isbn, title){
+  $.ajax({
+    url: '/bookEvents/'+isbn,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ setEvents(data, 'bookEventsId', title, isbn) }
+    } 
+  });
 }
 
 /* Set the events where the book will be presented */
-function setEvents(events, id){
-  var container = document.getElementById(id);
-  var i;
-  for(i=0; i<events.length; i++){
+function setEvents(events, elementID, eventTitle, bookISBN){
+  var container = document.getElementById(elementID);
+  while(container.firstChild){ container.removeChild(container.firstChild) }
+  for(let i=0; i<events.length; i++){
     var div = document.createElement('div');
     div.className = "event card-1";
-    div.setAttribute("onclick", "goToEvent()");
+    div.onclick = () => goToEvent(events[i].id, elementID, eventTitle, bookISBN);
+    
     var img = document.createElement('img');
     img.className = "event_image";
-    img.src = events[i].img;
+    img.src = events[i].image;
     div.appendChild(img);
+    
     var title = document.createElement('p');
     title.className = "eventBox_borderBottom";
     var title_txt = document.createTextNode(events[i].title);
     title.append(title_txt);
     div.appendChild(title);
-    var city = document.createElement('p');
-    city.className = "eventBox_borderBottom";
-    var city_txt = document.createTextNode(events[i].city);
-    city.append(city_txt);
-    div.appendChild(city);
+    
     var date = document.createElement('p');
     var date_txt = document.createTextNode(events[i].date);
     date.append(date_txt);
@@ -482,8 +479,8 @@ function setEvents(events, id){
 }
 
 /* Redirect to eventX page */
-function goToEvent(){
-  window.location.href = "/eventX";
+function goToEvent(newEventID, from, eventTitle, bookISBN){
+  window.location.href = "/eventX/" + newEventID + '/' + from + '(' + eventTitle + ')/' + bookISBN;
 }
 
 

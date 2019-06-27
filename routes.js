@@ -269,6 +269,25 @@ router.get('/searchBooksFromFilters/:genre/:theme/:author/:bestSellers/:newRelea
   res.json(books);
 });
 
+/* FETCH all events where a specific book is presented */
+router.get('/bookEvents/:bookISBN', function (req, res) {
+  var isbn = parseInt(req.params.bookISBN);
+  /*
+    SELECT events.id, events.title, events.image, events.date
+    FROM events, eventsBooks
+    WHERE events.bookISN = isbn AND events.id = eventsBook.eventID
+  */
+  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
+  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
+  var bookEvents = eventsBooks.filter( function(elem) { return elem.bookISBN==isbn } )
+  function foo(id, list){
+    for(let i=0; i<list.length; i++){ if(list[i].eventID==id) { return true } }
+    return false;
+  }
+  var eventsList = events.filter( function(elem){ return foo(elem.id, bookEvents) });
+  res.json(eventsList);
+});
+
 /* REDIRECT to bookX page from bookOfTheMonth, bestSellers, classics, ourRecommendations or nextComings */
 router.get('/bookX/:bookISBN/:from', function (req, res) {
   res.redirect('/bookX?isbn='+req.params.bookISBN+'&from='+req.params.from);
@@ -499,9 +518,14 @@ router.get('/eventBook/:eventID', function (req, res){
   res.json(eventsBooks[req.params.eventID]);
 });
 
-/* REDIRECT to eventX page from all events, soonEvents or from bookEvents */
+/* REDIRECT to eventX page from all events or soonEvents */
 router.get('/eventX/:eventID/:from', function (req, res) {
   res.redirect('/eventX?id='+req.params.eventID+'&from='+req.params.from);
+});
+
+/* REDIRECT to eventX page from bookEvents */
+router.get('/eventX/:eventID/:from/:bookISBN', function (req, res) {
+  res.redirect('/eventX?id='+req.params.eventID+'&from='+req.params.from+'&bookISBN='+req.params.bookISBN);
 });
 
 

@@ -43,7 +43,7 @@ function createDB() {
     app.sqlDB.schema.hasTable("books").then(exist => {
         if(!exist) {
             app.sqlDB.schema.createTable("books", table => {
-                table.string('isbn').primary();
+                table.integer('isbn').primary();
                 table.string('title');
                 table.integer('publishingDate');
                 table.string('publishingHouse');
