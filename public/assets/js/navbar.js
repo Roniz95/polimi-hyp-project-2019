@@ -170,7 +170,7 @@ logged_menu.id = "logged_menu";
 /* My cart */
 var myCart = document.createElement('a');
 myCart.className = "dropdown-item";
-myCart.href = "#";
+myCart.href = "/cart";
 var cartIcon = document.createElement('i');
 cartIcon.className = "fa fa-shopping-cart drop_icon";
 myCart.appendChild(cartIcon);

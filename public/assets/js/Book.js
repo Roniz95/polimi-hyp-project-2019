@@ -65,10 +65,11 @@ function setNewReleases(){
 
 function SetBooks(books, elementID) {
   var deckBook = document.getElementById(elementID);
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<books.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
-    div.onclick = () => goToBookPage(books[i].id, elementID);
+    div.onclick = () => goToBookPage(books[i].isbn, elementID);
     
     var img = document.createElement('img');
     img.className = 'cardBook__image';

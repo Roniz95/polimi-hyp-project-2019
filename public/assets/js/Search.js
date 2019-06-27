@@ -174,6 +174,7 @@ function searchBooksFromFilters(){
 /* Set Results from search from title */
 function SetResults1(books, titleInserted) {
   var deckBook = document.getElementById('bookResults');
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   if(books.length>0){
     for(let i=0; i<books.length; i++){
       var div = document.createElement('div');
@@ -222,6 +223,7 @@ function SetResults1(books, titleInserted) {
 /* Set Results from search from filters */
 function SetResults2(books, genreX, authorX, themeX, bs, nc) {
   var deckBook = document.getElementById('bookResults');
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   if(books.length>0){
     for(let i=0; i<books.length; i++){
       var div = document.createElement('div');

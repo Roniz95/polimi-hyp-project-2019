@@ -26,7 +26,7 @@ function fetchEvents(){
     url: '/events',//'/monthEvents',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ setEvents(data, 'thisMonthId', 'events'); } }
+    success: (data) => { if(data){ setEvents(data, 'thisMonthId', 'monthEvents'); } }
   });
   
   //Call DB to retrieve soon Events
@@ -34,12 +34,13 @@ function fetchEvents(){
     url: '/soonEvents',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ setEvents(data, 'soonId', 'events'); } }
+    success: (data) => { if(data){ setEvents(data, 'soonId', 'soonEvents'); } }
   });
 }
 
 function setEvents(events, elementID, from){
   var container = document.getElementById(elementID);
+  while(container.firstChild){ container.removeChild(container.firstChild) }
   for(let i=0; i<events.length; i++){
     var div = document.createElement('div');
     div.className = "event card-1";

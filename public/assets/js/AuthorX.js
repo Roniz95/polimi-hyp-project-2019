@@ -206,6 +206,7 @@ function fetchAuthorBooks(authorID, authorName){
 
 function SetBooks(booksIDs, elementID, bookTitle, searchID) {
   var deckBook = document.getElementById(elementID); 
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<booksIDs.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
@@ -272,7 +273,7 @@ function fetchSimilarAuthors(id, authorName){
 
 function setSimilarAuthors(authors, authorName, authorID) {
   var deckAuthor = document.getElementById('similarAuthor');
-  
+  while(deckAuthor.firstChild){ deckAuthor.removeChild(deckAuthor.firstChild) }
   for(let i=0; i<authors.length; i++){
     var div = document.createElement('div');
     div.className = "cardAuthor card-1";

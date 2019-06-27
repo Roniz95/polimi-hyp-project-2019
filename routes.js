@@ -27,6 +27,16 @@ router.get('/contact', function (req, res) {
   res.sendFile(pages + 'Contact.html');
 });
 
+/* ORDERING AND SHIPPING INFO PAGE */
+router.get('/infos', function (req, res) {
+  res.sendFile(pages + 'Info.html');
+});
+
+/* CART PAGE */
+router.get('/cart', function (req, res) {
+  res.sendFile(pages + 'Cart.html');
+});
+
 
 
 
@@ -226,13 +236,14 @@ router.get('/ourRecommendations', function (req, res) {
 
 /* FETCH all New Releases books */
 router.get('/newReleases', function (req, res) {
+  var date = new Date();
+  date.setDate(date.getDate() - 60 );
   /*
     SELECT books.isbn, books.title, books.image
     FROM books
-    WHERE books.publishingDate > DATE(data del mese scorso, dal primo giono) 
-    (in sostanza i libri pubblicati da massimo il mese scorso ad oggi)
+    WHERE books.publishingDate > DATE 
+    (in sostanza i libri pubblicati da oggi fino a due mesi fa)
   */
-  var date = new Date("01-01-2016"); //Messa a caso perchè al momento non ho ancora inserito libri più nuovi
   let books = require(__dirname + '/public/assets/jsonFiles/books.json');
   var booksList = books.filter( function(elem){ return new Date(elem.publishingDate)>date });
   res.json(booksList);

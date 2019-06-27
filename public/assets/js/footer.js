@@ -115,7 +115,7 @@ company_list.appendChild(li_privacy);
 var li_order = document.createElement('li');
 li_order.className = "footer__link";
 var orderingLink = document.createElement('a');
-orderingLink.href = "#"; //Ordering and shipping info page
+orderingLink.href = "/infos";
 var t_ordering = document.createTextNode("Learn our ordering and shipping infos");
 orderingLink.append(t_ordering);
 li_order.appendChild(orderingLink);

@@ -12,9 +12,96 @@ function fetchData() {
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
   
+  if(from=='monthEvents'){   
+    $.ajax({
+      url: 'events',//'/monthEvents',
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        if(data){ 
+          var str = JSON.stringify(data);
+          sessionStorage.setItem("eventList", str);
+          setPagination(data, currentEventID);
+          var orientationInfo = "you have searched <b>&nbsp;Month's events";
+          $('#orientationInfoID').append(orientationInfo);
+        }
+      }
+    });
+  }
+  else {
+    $.ajax({
+      url: 'soonEvents',
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        if(data){ 
+          var str = JSON.stringify(data);
+          sessionStorage.setItem("eventList", str);
+          setPagination(data, currentEventID);
+          var orientationInfo = "you have searched <b>&nbsp;Soon events";
+          $('#orientationInfoID').append(orientationInfo);
+        }
+      }
+    });
+  }
+  
   setEvent(currentEventID);
   
 }
+
+
+/*-----------------------
+  PAGINATION FUNCTIONS
+------------------------*/
+
+/* Called when user clicks one of the pagination buttons */
+function changePage(dir){
+  var str = sessionStorage.getItem('eventList');
+  var data = JSON.parse(str);
+  var counter = document.getElementById('counter');
+  var tabIndex = counter.tabIndex;
+  var newIndex = tabIndex + dir;
+  
+  if(newIndex>=1 && newIndex<=data.length){
+    counter.tabIndex = newIndex;
+    counter.textContent = " "+newIndex+" / "+data.length; 
+    setEvent(data[newIndex-1].id);
+    paginationStyle(newIndex, data.length);
+  }
+}
+
+/* Set pagination data */
+function setPagination(data, id){
+  var i=0;
+  while(data[i].id!=id && i<data.length){ i++ }
+  var counter = document.getElementById('counter');
+  counter.tabIndex = i+1;
+  counter.textContent = " "+(i+1)+" / "+data.length;
+  paginationStyle(i+1, data.length);
+}
+
+/* Set pagination style on page changing */
+function paginationStyle(tabIndex, length){
+  var prev5 = document.getElementById('prev5_ID');
+  var prev1 = document.getElementById('prev1_ID');
+  var next1 = document.getElementById('next1_ID');
+  var next5 = document.getElementById('next5_ID');
+    
+  if(tabIndex==1){ prev1.disabled = true; }
+  else { prev1.disabled = false; }
+    
+  if(tabIndex<=5){ prev5.disabled = true; }
+  else { prev5.disabled = false; }
+    
+  if(tabIndex==length){ next1.disabled = true; }
+  else { next1.disabled = false; }
+      
+  if(tabIndex>length-5){ next5.disabled = true; }
+  else { next5.disabled = false; }
+}
+
+
+
 
 function setEvent(id){
   $.ajax({
@@ -23,16 +110,24 @@ function setEvent(id){
     dataType: 'json',
     success: (data) => {
       if(data){
+        $('#eventTitleID').empty();
         $('#eventTitleID').append(data.title);
         $('#eventImageID').attr("src", data.image);
+        $('#eventDescriptionID').empty();
         $('#eventDescriptionID').append(data.description);
         $('#eventMapID').attr("src", data.mapSrc);
+        $('#eventAddressID').empty();
         $('#eventAddressID').append(data.address);
-        $('#eventNumberID').append(data.phoneNumber);
-        $('#eventMailID').append(data.mail);
-        $('#eventDateID').append(createDateString(data.date));
-        $('#eventStartID').append(data.start);
-        $('#eventEndID').append(data.end);
+        $('#eventNumberID').empty();
+        $('#eventNumberID').append("<b>Number: </b>" + data.phoneNumber);
+        $('#eventMailID').empty();
+        $('#eventMailID').append("<b>Mail: </b>" + data.mail);
+        $('#eventDateID').empty();
+        $('#eventDateID').append("<b>Event date: </b>" + createDateString(data.date));
+        $('#eventStartID').empty();
+        $('#eventStartID').append("<b>Event start: </b>" + data.start);
+        $('#eventEndID').empty();
+        $('#eventEndID').append("<b>Event finish: </b>" + data.end);
         fetchEventBooks(id, data.title);
         fetchEventAuthors(id, data.title);
       }
@@ -50,8 +145,6 @@ function createDateString(data){
 }
 
 
-
-
 function fetchEventBooks(eventID, eventTitle){
   $.ajax({
     url: '/booksEvent/' + eventID,
@@ -63,6 +156,7 @@ function fetchEventBooks(eventID, eventTitle){
 
 function SetBooks(books, elementID, eventID, eventTitle) {
   var deckBook = document.getElementById(elementID);
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<books.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
@@ -136,6 +230,7 @@ function fetchEventAuthors(eventID, eventTitle){
 
 function SetAuthors(authors, elementID, eventID, evenTitle) { 
   var deckAuthor = document.getElementById(elementID);
+  while(deckAuthor.firstChild){ deckAuthor.removeChild(deckAuthor.firstChild) }
   for(let i=0; i<authors.length; i++){
     var div = document.createElement('div');
     div.className = "cardAuthor card-1";

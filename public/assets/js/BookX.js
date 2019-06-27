@@ -170,7 +170,7 @@ function fetchData() {
   }
   else if(from=='nextComingBooks'){
       $.ajax({
-        url: '/nextComings',
+        url: '/newReleases',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -529,7 +529,8 @@ function fetchSimilarBooks(isbn, title){
 
 /* Set the results of the Fetch functions above to page */
 function SetBooks(booksIDs, elementID, bookTitle, bookISBN) {
-  var deckBook = document.getElementById(elementID); 
+  var deckBook = document.getElementById(elementID);
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<booksIDs.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";
@@ -643,4 +644,26 @@ function selectBookEvents(){
   document.getElementById("interviewId").style.display = "none";
   document.getElementById("newReviewId").style.display = "none";
   document.getElementById("bookEventsId").style.display = "flex";
+}
+
+
+
+
+/*--------------------
+  CART FUNCTIONS
+----------------------*/
+function addToCart(){
+  var element = document.getElementById('bookIsbnID').innerText;
+  var bookISBN = parseInt(element);
+  var storage = sessionStorage.getItem('cart');
+  if(storage){
+    var cart = JSON.parse(storage);
+    cart.push(bookISBN);
+    sessionStorage.setItem('cart', JSON.stringify(cart)); 
+  }else{
+    var books = [];
+    books.push(bookISBN);
+    sessionStorage.setItem('cart', JSON.stringify(books)); 
+  }
+  alert('book correctly added to cart');
 }

@@ -26,6 +26,7 @@ function setNewReleases(){
 
 function SetBooks(books, elementID) {
   var deckBook = document.getElementById(elementID);
+  while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<books.length; i++){
     var div = document.createElement('div');
     div.className = "cardBook card-1";

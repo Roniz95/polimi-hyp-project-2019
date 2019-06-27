@@ -32,6 +32,9 @@
       <h1></h1>
     </div>
   </section>
+  
+  <!-- ORIENTATION INFO -->
+  <div id="orientationInfoID" class="orientation_info"><!-- data --></div>
    
   <div class="container eventBox">
     <div class="eventDescription">
@@ -43,15 +46,26 @@
       <div class="eventMaps__info">
         <div class="mapsInfo">
           <p><b id="eventAddressID"><!-- data --></b></p>
-          <p id="eventNumberID"><b>Number : </b><!-- data --></p>
-          <p id="eventMailID"><b>Mail : </b><!-- data --></p>
-          <p id="eventDateID"><b>Event date : </b><!-- data --></p>
-          <p id="eventStartID"><b>Event start : </b><!-- data --></p>
-          <p id="eventEndID"><b>Event finish : </b><!-- data --></p>
+          <p id="eventNumberID"><!-- data --></p>
+          <p id="eventMailID"><!-- data --></p>
+          <p id="eventDateID"><!-- data --></p>
+          <p id="eventStartID"><!-- data --></p>
+          <p id="eventEndID"><!-- data --></p>
         </div>    
       </div>
     </div>
-  </div> 
+  </div>
+   
+  <!-- PAGINATION -->
+  <nav id="paginationID" aria-label="Page navigation example">
+    <ul  class="pagination justify-content-center">
+      <li class="page-item"><button id="prev5_ID" type="button" class="page-link" onclick="changePage(-5)">&laquo;</button></li>
+      <li class="page-item"><button id="prev1_ID" type="button" class="page-link" onclick="changePage(-1)">&lsaquo;</button></li>
+      <li class="page-item"><p id="counter" class="page-link pagination_text" disabled tabindex="1"><!-- data --></p></li>
+      <li class="page-item"><button id="next1_ID" type="button" class="page-link" onclick="changePage(1)">&rsaquo;</button></li>
+      <li class="page-item"><button id="next5_ID" type="button" class="page-link" onclick="changePage(5)">&raquo;</button></li>
+    </ul>
+  </nav>
     
   <div class="deckBook_title"><h6><b>LIBRI PRESENTI</b></h6></div>
   <div id="eventBooks" class="deckBook"></div>
