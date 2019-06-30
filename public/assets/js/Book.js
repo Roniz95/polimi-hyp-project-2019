@@ -1,3 +1,4 @@
+/* Static choice for book of the month */
 var bookOfTheMonthISBN = 9781781103852;
 
 $(document).ready(fetchData())
@@ -10,6 +11,10 @@ function fetchData() {
   setNewReleases();
 }
 
+
+
+
+/* Set book of the month */
 function setBook(bookISBN){
   $.ajax({
     url: '/book/' + bookISBN,
@@ -26,6 +31,7 @@ function setBook(bookISBN){
   });
 }
 
+/* Fetch recommended books from db */
 function setRecommendedBooks(){
   $.ajax({
     url: '/ourRecommendations',
@@ -35,15 +41,17 @@ function setRecommendedBooks(){
   });
 }
 
+/* Fetch best sellers from db */
 function setBestSellers(){
   $.ajax({
     url: '/bestSellers',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'topSellersBooks') } }
+    success: (data) => { if(data){ SetBooks(data, 'bestSellers') } }
   });
 }
 
+/* Fetch Classics from db */
 function setClassics(){
   $.ajax({
     url: '/classics',
@@ -53,16 +61,20 @@ function setClassics(){
   });
 }
 
+/* Fetch new releases from db */
 function setNewReleases(){
   $.ajax({
     url: '/newReleases',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'nextComingBooks') } }
+    success: (data) => { if(data){ SetBooks(data, 'newReleases') } }
   });
 }
 
 
+
+
+/* Set books list from db to page */
 function SetBooks(books, elementID) {
   var deckBook = document.getElementById(elementID);
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
@@ -121,21 +133,26 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* redirect to bookX page */
 function goToBookPage(newBookID, from){
   window.location.href = '/bookX/'+newBookID+'/'+from;
 }
 
 
+
+
+/* Click search books item */
 function select_searchBook() {
   document.getElementById("book_of_the_month").classList.remove("button_active");
-  document.getElementById("bookOfTheMonth").classList.toggle("choice_hide");
+  document.getElementById("bookOfTheMonth").style.display = "none";
   document.getElementById('search_book').classList.toggle("button_active");
-  document.getElementById('searchBooks').classList.remove("choice_hide");
+  document.getElementById('searchBooks').style.display = "block";
 }
 
+/* Click book of the month item */
 function select_bookOfTheMonth() {
   document.getElementById('search_book').classList.remove("button_active");
-  document.getElementById("searchBooks").classList.toggle("choice_hide");
+  document.getElementById("searchBooks").style.display = "none";
   document.getElementById("book_of_the_month").classList.toggle("button_active");
-  document.getElementById('bookOfTheMonth').classList.remove("choice_hide");
+  document.getElementById('bookOfTheMonth').style.display = "block";
 }

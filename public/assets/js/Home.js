@@ -1,29 +1,98 @@
 $(document).ready(fetchData())
 
 function fetchData() {
+  setEvents();
   setBestSellers();
   setNewReleases();
 }
 
 
+
+
+/* fetch events from db */
+function setEvents(){
+  $.ajax({
+    url: '/events',//soonEvents,
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { if(data){ SetEvents(data) } }
+  });
+}
+
+/* set events to carousel */
+function SetEvents(events) {
+  setIndicators(events.length);
+  setItems(events);
+}
+
+/* set Carousel's Indicators */
+function setIndicators(length){
+  var ol = document.getElementById('eventsIndicatorsID');
+  for(let i=0; i<length; i++){
+    var li = document.createElement('li');
+    if(i==0){ li.className = "active"; }
+    li.setAttribute("data-target", "#carousel1");
+    li.setAttribute("data-slide-to", i);
+    ol.appendChild(li);
+  }
+}
+
+/* set Carousel's Items (image, title, description) */
+function setItems(events){
+  var element = document.getElementById('eventsInnerItemsID');
+  for(let i=0; i<events.length; i++){
+    var div = document.createElement('div');
+    div.classList.toggle('carousel-item');
+    if(i==0){ div.classList.toggle('active'); }
+    
+    var img = document.createElement('img');
+    img.setAttribute("src", events[i].image);
+    img.className = "carousel__image";
+    div.appendChild(img);
+    
+    var caption = document.createElement('div');
+    caption.className = "carousel-caption";
+    var h3 = document.createElement('h3');
+    h3.textContent = events[i].title;
+    caption.appendChild(h3);
+    var p = document.createElement('p');
+    p.className = "eventDescription";
+    p.innerHTML = events[i].description;
+    caption.appendChild(p);
+    div.appendChild(caption);
+    
+    var cover = document.createElement('div');
+    cover.className = "cover__carousel";
+    div.appendChild(cover);
+    
+    element.appendChild(div);
+  }
+}
+
+
+
+
+/* fetch best sellers from db */
 function setBestSellers(){
   $.ajax({
     url: '/bestSellers',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'topSellersBooks') } }
+    success: (data) => { if(data){ SetBooks(data, 'bestSellers') } }
   });
 }
 
+/* fetch new releases from db */
 function setNewReleases(){
   $.ajax({
     url: '/newReleases',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'nextComingBooks') } }
+    success: (data) => { if(data){ SetBooks(data, 'newReleases') } }
   });
 }
 
+/* set books fetched from db to slider */
 function SetBooks(books, elementID) {
   var deckBook = document.getElementById(elementID);
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
@@ -65,6 +134,7 @@ function SetBooks(books, elementID) {
   
 }
 
+/* create authors list for book Card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
     url: '/bookAuthors/' + bookISBN,
@@ -81,6 +151,7 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* redirect to bookX page */
 function goToBookPage(newBookISBN, from){
   window.location.href = '/bookX/'+newBookISBN+'/'+from;
 }

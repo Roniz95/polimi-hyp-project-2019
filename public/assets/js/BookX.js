@@ -136,7 +136,7 @@ function fetchData() {
         }
       });
   }
-  else if(from=='topSellersBooks'){
+  else if(from=='bestSellers'){
       $.ajax({
         url: '/bestSellers',
         type: 'GET',
@@ -168,7 +168,7 @@ function fetchData() {
         }
       });
   }
-  else if(from=='nextComingBooks'){
+  else if(from=='newReleases'){
       $.ajax({
         url: '/newReleases',
         type: 'GET',
@@ -178,7 +178,7 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookISBN);
-            var orientationInfo = "you have searched &nbsp;<b>Next comings</b>";
+            var orientationInfo = "you have searched &nbsp;<b>New Releases</b>";
             $('#orientationInfoID').append(orientationInfo);
           }
         }
