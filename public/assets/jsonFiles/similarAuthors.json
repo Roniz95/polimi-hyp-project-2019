@@ -1,202 +1,218 @@
 [
-  {
-    "id": 0, 
-    "similar1": 18,
-    "similar2": 19,
-    "similar3": 1,
-    "similar4": 4,
-    "similar5": 5,
-    "similar6": 6,
-    "similar7": 7
-  },
-  {
-    "id": 1, 
-    "similar1": 0,
-    "similar2": 12,
-    "similar3": 13,
-    "similar4": 14,
-    "similar5": 15,
-    "similar6": 16,
-    "similar7": 17
-  },
-  {
-    "id": 2, 
-    "similar1": 0,
-    "similar2": 1,
-    "similar3": 8,
-    "similar4": 4,
-    "similar5": 15,
-    "similar6": 6,
-    "similar7": 17
-  },
-  {
-    "id": 3, 
-    "similar1": 1,
-    "similar2": 2,
-    "similar3": 0,
-    "similar4": 14,
-    "similar5": 5,
-    "similar6": 16,
-    "similar7": 17
-  },
-  {
-    "id": 4, 
-    "similar1": 11,
-    "similar2": 12,
-    "similar3": 13,
-    "similar4": 0,
-    "similar5": 7,
-    "similar6": 9,
-    "similar7": 2
-  },
-  {
-    "id": 5, 
-    "similar1": 0,
-    "similar2": 7,
-    "similar3": 2,
-    "similar4": 4,
-    "similar5": 15,
-    "similar6": 10,
-    "similar7": 11
-  },
-  {
-    "id": 6, 
-    "similar1": 2,
-    "similar2": 0,
-    "similar3": 13,
-    "similar4": 14,
-    "similar5": 8,
-    "similar6": 9,
-    "similar7": 10
-  },
-  {
-    "id": 7, 
-    "similar1": 1,
-    "similar2": 2,
-    "similar3": 8,
-    "similar4": 14,
-    "similar5": 15,
-    "similar6": 9,
-    "similar7": 0
-  },
-  {
-    "id": 8, 
-    "similar1": 1,
-    "similar2": 5,
-    "similar3": 10,
-    "similar4": 7,
-    "similar5": 12,
-    "similar6": 2,
-    "similar7": 11
-  },
-  {
-    "id": 9, 
-    "similar1": 7,
-    "similar2": 12,
-    "similar3": 11,
-    "similar4": 17,
-    "similar5": 16,
-    "similar6": 3,
-    "similar7": 4
-  },
-  {
-    "id": 10, 
-    "similar1": 11,
-    "similar2": 0,
-    "similar3": 1,
-    "similar4": 3,
-    "similar5": 5,
-    "similar6": 6,
-    "similar7": 7
-  },
-  {
-    "id": 11, 
-    "similar1": 3,
-    "similar2": 6,
-    "similar3": 14,
-    "similar4": 17,
-    "similar5": 5,
-    "similar6": 9,
-    "similar7": 0
-  },
-  {
-    "id": 12, 
-    "similar1": 0,
-    "similar2": 2,
-    "similar3": 3,
-    "similar4": 11,
-    "similar5": 17,
-    "similar6": 7,
-    "similar7": 9
-  },
-  {
-    "id": 13, 
-    "similar1": 10,
-    "similar2": 2,
-    "similar3": 14,
-    "similar4": 1,
-    "similar5": 5,
-    "similar6": 6,
-    "similar7": 7
-  },
-  {
-    "id": 14, 
-    "similar1": 0,
-    "similar2": 2,
-    "similar3": 4,
-    "similar4": 8,
-    "similar5": 10,
-    "similar6": 13,
-    "similar7": 15
-  },
-  {
-    "id": 15, 
-    "similar1": 11,
-    "similar2": 12,
-    "similar3": 13,
-    "similar4": 7,
-    "similar5": 3,
-    "similar6": 6,
-    "similar7": 0
-  },
-  {
-    "id": 16, 
-    "similar1": 0,
-    "similar2": 1,
-    "similar3": 2,
-    "similar4": 17,
-    "similar5": 15,
-    "similar6": 4,
-    "similar7": 5
-  },
-  {
-    "id": 17, 
-    "similar1": 5,
-    "similar2": 4,
-    "similar3": 14,
-    "similar4": 8,
-    "similar5": 9,
-    "similar6": 12,
-    "similar7": 3
-  },
-  {
-    "id": 18, 
-    "similar1": 0,
-    "similar2": 19,
-    "similar3": 1,
-    "similar4": 3,
-    "similar5": 6,
-    "similar6": 5,
-    "similar7": 16
-  },
-  {
-    "id": 19, 
-    "similar1": 0,
-    "similar2": 18,
-    "similar3": 1,
-    "similar4": 8,
-    "similar5": 4,
-    "similar6": 7,
-    "similar7": 2
-  }
+  { "id": 0, "similarID": 18 },
+  { "id": 0, "similarID": 19 },
+  { "id": 0, "similarID": 1 },
+  { "id": 0, "similarID": 4 },
+  { "id": 0, "similarID": 5 },
+  { "id": 0, "similarID": 6 },
+  { "id": 0, "similarID": 7 },
+  
+  
+  
+  
+  { "id": 1, "similarID": 0 },
+  { "id": 1, "similarID": 12 },
+  { "id": 1, "similarID": 13 },
+  { "id": 1, "similarID": 14 },
+  { "id": 1, "similarID": 15 },
+  { "id": 1, "similarID": 16 },
+  { "id": 1, "similarID": 17 },
+  
+  
+  
+  
+  { "id": 2, "similarID": 0 },
+  { "id": 2, "similarID": 1 },
+  { "id": 2, "similarID": 8 },
+  { "id": 2, "similarID": 4 },
+  { "id": 2, "similarID": 15 },
+  { "id": 2, "similarID": 6 },
+  { "id": 2, "similarID": 17 },
+  
+  
+  
+  
+  { "id": 3, "similarID": 1 },
+  { "id": 3, "similarID": 2 },
+  { "id": 3, "similarID": 0 },
+  { "id": 3, "similarID": 14 },
+  { "id": 3, "similarID": 5 },
+  { "id": 3, "similarID": 16 },
+  { "id": 3, "similarID": 17 },
+  
+  
+  
+  
+  { "id": 4, "similarID": 11 },
+  { "id": 4, "similarID": 12 },
+  { "id": 4, "similarID": 13 },
+  { "id": 4, "similarID": 0 },
+  { "id": 4, "similarID": 7 },
+  { "id": 4, "similarID": 9 },
+  { "id": 4, "similarID": 2 },
+  
+  
+  
+  
+  { "id": 5, "similarID": 0 },
+  { "id": 5, "similarID": 7 },
+  { "id": 5, "similarID": 2 },
+  { "id": 5, "similarID": 4 },
+  { "id": 5, "similarID": 15 },
+  { "id": 5, "similarID": 10 },
+  { "id": 5, "similarID": 11 },
+  
+  
+  
+  
+  { "id": 6, "similarID": 2 },
+  { "id": 6, "similarID": 0 },
+  { "id": 6, "similarID": 13 },
+  { "id": 6, "similarID": 14 },
+  { "id": 6, "similarID": 8 },
+  { "id": 6, "similarID": 9 },
+  { "id": 6, "similarID": 10 },
+  
+  
+  
+  
+  { "id": 7, "similarID": 1 },
+  { "id": 7, "similarID": 2 },
+  { "id": 7, "similarID": 8 },
+  { "id": 7, "similarID": 14 },
+  { "id": 7, "similarID": 15 },
+  { "id": 7, "similarID": 9 },
+  { "id": 7, "similarID": 0 },
+  
+  
+  
+  
+  { "id": 8, "similarID": 1 },
+  { "id": 8, "similarID": 5 },
+  { "id": 8, "similarID": 10 },
+  { "id": 8, "similarID": 7 },
+  { "id": 8, "similarID": 12 },
+  { "id": 8, "similarID": 2 },
+  { "id": 8, "similarID": 11 },
+  
+  
+  
+  
+  { "id": 9, "similarID": 7 },
+  { "id": 9, "similarID": 12 },
+  { "id": 9, "similarID": 11 },
+  { "id": 9, "similarID": 17 },
+  { "id": 9, "similarID": 16 },
+  { "id": 9, "similarID": 3 },
+  { "id": 9, "similarID": 4 },
+  
+  
+  
+  
+  { "id": 10, "similarID": 11 },
+  { "id": 10, "similarID": 0 },
+  { "id": 10, "similarID": 1 },
+  { "id": 10, "similarID": 3 },
+  { "id": 10, "similarID": 5 },
+  { "id": 10, "similarID": 6 },
+  { "id": 10, "similarID": 7 },
+  
+  
+  
+  
+  { "id": 11, "similarID": 3 },
+  { "id": 11, "similarID": 6 },
+  { "id": 11, "similarID": 14 },
+  { "id": 11, "similarID": 17 },
+  { "id": 11, "similarID": 5 },
+  { "id": 11, "similarID": 9 },
+  { "id": 11, "similarID": 0 },
+  
+  
+  
+  
+  { "id": 12, "similarID": 0 },
+  { "id": 12, "similarID": 2 },
+  { "id": 12, "similarID": 3 },
+  { "id": 12, "similarID": 11 },
+  { "id": 12, "similarID": 17 },
+  { "id": 12, "similarID": 7 },
+  { "id": 12, "similarID": 9 },
+  
+  
+  
+  
+  { "id": 13, "similarID": 10 },
+  { "id": 13, "similarID": 2 },
+  { "id": 13, "similarID": 14 },
+  { "id": 13, "similarID": 1 },
+  { "id": 13, "similarID": 5 },
+  { "id": 13, "similarID": 6 },
+  { "id": 13, "similarID": 7 },
+  
+  
+  
+  
+  { "id": 14, "similarID": 0 },
+  { "id": 14, "similarID": 2 },
+  { "id": 14, "similarID": 4 },
+  { "id": 14, "similarID": 8 },
+  { "id": 14, "similarID": 10 },
+  { "id": 14, "similarID": 13 },
+  { "id": 14, "similarID": 15 },
+  
+  
+  
+  
+  { "id": 15, "similarID": 11 },
+  { "id": 15, "similarID": 12 },
+  { "id": 15, "similarID": 13 },
+  { "id": 15, "similarID": 7 },
+  { "id": 15, "similarID": 3 },
+  { "id": 15, "similarID": 6 },
+  { "id": 15, "similarID": 0 },
+  
+  
+  
+  
+  { "id": 16, "similarID": 0 },
+  { "id": 16, "similarID": 1 },
+  { "id": 16, "similarID": 2 },
+  { "id": 16, "similarID": 17 },
+  { "id": 16, "similarID": 15 },
+  { "id": 16, "similarID": 4 },
+  { "id": 16, "similarID": 5 },
+  
+  
+  
+  
+  { "id": 17, "similarID": 5 },
+  { "id": 17, "similarID": 4 },
+  { "id": 17, "similarID": 14 },
+  { "id": 17, "similarID": 8 },
+  { "id": 17, "similarID": 9 },
+  { "id": 17, "similarID": 12 },
+  { "id": 17, "similarID": 3 },
+  
+  
+  
+  
+  { "id": 18, "similarID": 0 },
+  { "id": 18, "similarID": 19 },
+  { "id": 18, "similarID": 1 },
+  { "id": 18, "similarID": 3 },
+  { "id": 18, "similarID": 6 },
+  { "id": 18, "similarID": 5 },
+  { "id": 18, "similarID": 16 },
+  
+  
+  
+  
+  { "id": 19, "similarID": 0 },
+  { "id": 19, "similarID": 18 },
+  { "id": 19, "similarID": 1 },
+  { "id": 19, "similarID": 8 },
+  { "id": 19, "similarID": 4 },
+  { "id": 19, "similarID": 7 },
+  { "id": 19, "similarID": 2 }
 ]
