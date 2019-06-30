@@ -1,0 +1,500 @@
+swagger: "2.0"
+info:
+  description: "This is the api documentation for the Hypermedia project"
+  version: "1.0.0"
+  title: "Hypermedia project 2019"
+  contact:
+    email: "sergioplacanica95.rc@gmail.it"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "heroku.link.com"
+basePath: "/backend/apidoc"
+tags: 
+  - name: 'book'
+    description: 'fetch data starting from /books'
+  - name: 'author'
+    description: 'fetch data starting from /authors'
+  - name: 'event'
+    description: 'fetch data starting from /events'
+  - name: 'user'
+    description: 'operations on users accounts'
+
+definitions:
+    book:
+        type: object
+        properties:
+            isbn:
+                type: string
+            title:
+                type: string
+            publishingDate:
+                type: string
+            publishingHouse:
+                type: string
+            genre:
+                type: string
+            image:
+                type: string
+            abstract:
+                type: string
+                format: text
+            authorInterview:
+                type: string
+                format: text
+            price:
+                type: number
+                format: double
+            isBestSeller:
+                type: boolean
+            isClassic:
+                type: boolean
+            isRecommended:
+                type: boolean
+            isNewRelease:
+                type: boolean
+
+    author:
+        type: object
+        properties:
+            id:
+                type: integer
+            name:
+                type: string
+            image:
+                type: string
+            link:
+                type: string
+            bio:
+                type: string
+                format: text
+
+    event:
+        type: object
+        properties:
+            id:
+                type: integer
+            title:
+                type: string
+            date:
+                type: string
+                format: date
+            mapSrc:
+                type: string
+            address:
+                type: string
+            phoneNumber:
+                type: string
+            email:
+                type: string
+                format: email
+            start:
+                type: string
+                format: time
+            end:
+                type: string
+                format: time
+            image:
+                type: string
+            description:
+                type: string
+                format: text
+
+    user:
+        type: object
+        properties:
+            id:
+                type: integer
+            username:
+                type: string
+            password:
+                type: string
+            name:
+                type: string
+            surname:
+                type: string
+            email:
+                format: email
+                type: string
+
+    theme:
+        type: object
+        properties:
+            data: 
+              type: integer
+              format: increment
+            value:
+              type: string
+
+    review:
+        type: object
+        properties:
+            isbn:
+              type: string
+            bookReview:
+              type: string
+              format: text
+              
+    unexpected error:
+        type: object
+        properties:
+            error:
+              type: string
+            code: 
+              type: integer
+
+
+paths:
+    /books:
+        get:
+            tags:
+              - 'book'
+            description: 'fetch books based on query parameters, if no query parameters are present, fetch all books'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: query
+                  name: bestSeller
+                  type: boolean
+                  required: false
+                - in: query
+                  name: newRelease
+                  type: boolean
+                  required: false
+                - in: query
+                  name: recommended
+                  type: boolean
+                  required: false
+                - in: query
+                  name: author
+                  type: string
+                  required: false
+                - in: query
+                  name: title
+                  type: string
+                  required: false
+                - in: query
+                  name: theme
+                  type: string
+                  required: false
+                - in: query
+                  name: genre
+                  type: string
+                  required: false
+
+            responses:
+                200:
+                    description: 'Books response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/book'
+                default:
+                    description: 'unexpected error'
+
+
+    /books/{isbn}:
+        get:
+            tags:
+              - 'book'
+            description: 'Return a books based on its isbn'
+            produces:
+                - 'application/json'
+            parameters:
+                - name: 'isbn'
+                  in: 'path'
+                  description: 'isbn of book to fetch'
+                  required: true
+                  type: string
+            responses:
+                200:
+                    description: 'Book response'
+                    schema:
+                        $ref: '#/definitions/book'
+                default:
+                    description: 'unexpected error'
+    /books/{isbn}/authors:
+        get:
+            tags:
+              - 'book'
+            description: 'Return all the authors of a book based on its isbn'
+            produces:
+                - 'application/json'
+            parameters:
+                - name: 'isbn'
+                  in: 'path'
+                  description: 'isbn of the book'
+                  required: true
+                  type: string
+            responses:
+                200:
+                    description: 'Authors response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/author'
+                default:
+                    description: 'unexpected error'
+
+
+    /books/{isbn}/themes:
+        get:
+            tags:
+              - 'book'
+            description: 'Returns all the themes of a book based on its isbn'
+            produces:
+                - 'application/json'
+            parameters:
+                - name: 'isbn'
+                  in: 'path'
+                  description: 'isbn of the book'
+                  required: true
+                  type: string
+            responses:
+                200:
+                    description: 'Themes response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/theme'
+                default:
+                    description: 'unexpected error'
+
+    /books/{isbn}/reviews:
+        get:
+            tags:
+              - 'book'
+            description: 'Returns all the reviews of a book based on its isbn'
+            produces:
+                - 'application/json'
+            parameters:
+                - name: 'isbn'
+                  in: 'path'
+                  description: 'isbn of the book'
+                  required: true
+                  type: string
+            responses:
+                200:
+                    description: 'Reviews response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/review'
+                default:
+                    description: 'unexpected error'
+
+    /books/{isbn}/similar:
+        get:
+            tags:
+              - 'book'
+            description: 'Returns all the books similar to this book'
+            produces:
+                - 'application/json'
+            parameters:
+                - name: 'isbn'
+                  in: 'path'
+                  description: 'isbn of the book'
+                  required: true
+                  type: string
+            responses:
+                200:
+                    description: 'books response'
+                    schema:
+                        type: array
+                        items:
+                             $ref: '#/definitions/book'
+                default:
+                  description: 'unexpected error'
+
+    /authors:
+        get:
+            tags:
+              - 'author'
+            description: 'Returns all the authors matching with name query parameter or all the authors if no query parameter is present'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: query
+                  name: name
+                  description: 'matching string of the author'
+                  required: false
+                  type: string
+            responses:
+                200:
+                    description: 'Authors response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/author'
+                default:
+                    description: 'unexpected error'
+
+    /authors/{id}:
+        get:
+            tags:
+              - 'author'
+            description: 'Returns one author based on his id'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'id of the author'
+                  required: true
+                  type: integer
+            responses:
+                200:
+                    description: 'Author response'
+                    schema:
+                        $ref: '#/definitions/author'
+                default:
+                    description: 'unexpected error'
+
+    /authors/{id}/books:
+        get:
+            tags:
+              - 'author'
+            description: 'fetch all the books written by this author'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'id of the author'
+                  required: true
+                  type: integer
+            responses:
+                200:
+                    description: 'Books response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/book'
+                default:
+                    description: 'unexpected error'
+
+    /authors/{id}/similar:
+        get:
+            tags:
+              - 'author'
+            description: 'fetch all authors similar the one specified by id'
+            produces:
+                - 'application/json'
+            parameters:
+                -   in: 'path'
+                    name: 'id'
+                    description: 'id of the author'
+                    required: true
+                    type: integer
+            responses:
+                200:
+                    description: 'Authors response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/author'
+                default:
+                    description: 'unexpected error'
+
+    /events:
+        get:
+            tags:
+              - 'event'
+            description: 'get all the events in the range (fromDate, toDate), get all the events if no query parameters are present'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: query
+                  name: 'fromDate'
+                  description: 'lower bound on the date'
+                  type: string
+                  format: date
+                  required: false
+                - in: query
+                  name: 'toDate'
+                  description: 'upper bound on date'
+                  type: string
+                  format: date
+                  required: false
+            responses:
+                200:
+                    description: 'Events response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/event'
+                default:
+                    description: 'unexpected error'
+
+    /events/{id}:
+        get:
+            tags:
+              - 'event'
+            description: 'get a specific event by its id'
+            produces:
+                  - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'id of the event to fetch'
+                  required: true
+                  type: integer
+            responses:
+                200:
+                    description: 'Event response'
+                    schema:
+                        $ref: '#/definitions/event'
+                default:
+                    description: 'unexpected error'
+
+    /events/{id}/books:
+        get:
+            tags:
+              - 'event'
+            description: 'get all books of a specific event'
+            produces:
+                - 'application/jsons'
+            parameters:
+                - in: 'path'
+                  name: 'id'
+                  description: 'id of the event'
+                  required: true
+                  type: integer
+            responses:
+                200:
+                    description: 'Books response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/book'
+                default:
+                    description: 'unexpected error'
+
+    /events/{id}/authors:
+        get:
+            tags:
+              - 'event'
+            description: 'fetch all authors presents at a specific event'
+            produces:
+                - 'application/json'
+            parameters:
+                -   in: 'path'
+                    name: 'id'
+                    description: 'id of the event'
+                    required: true
+                    type: integer
+            responses:
+                200:
+                    description: 'Authors response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/author'
+                default:
+                    description: 'unexpected error'
+    
+    
+
+
+
+
