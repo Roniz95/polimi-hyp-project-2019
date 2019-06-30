@@ -1,9 +1,9 @@
 [
-  { "eventID" : 0, "bookISBN" : 9788817118958 },
-  { "eventID" : 1, "bookISBN" : 9788842929147 },
-  { "eventID" : 5, "bookISBN" : 9788822732996 },
-  { "eventID" : 6, "bookISBN" : 9788817141673 },
-  { "eventID" : 7, "bookISBN" : 9788832732580 },
-  { "eventID" : 8, "bookISBN" : 9788861909366 },
-  { "eventID" : 9, "bookISBN" : 9788830452848 }
+  { "eventID" : 0, "isbn" : 9788817118958 },
+  { "eventID" : 1, "isbn" : 9788842929147 },
+  { "eventID" : 5, "isbn" : 9788822732996 },
+  { "eventID" : 6, "isbn" : 9788817141673 },
+  { "eventID" : 7, "isbn" : 9788832732580 },
+  { "eventID" : 8, "isbn" : 9788861909366 },
+  { "eventID" : 9, "isbn" : 9788830452848 }
 ]
