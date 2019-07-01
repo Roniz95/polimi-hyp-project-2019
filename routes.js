@@ -60,7 +60,7 @@ router.get('/books', function (req, res) {
 
     }
     if (typeof req.query.isBestSeller != "undefined") {
-        if (typeof req.query.isBestSeller != "boolean") {
+        if (common.isParamValid('isBestSeller', req.params.isBestSeller)) {
             errorList.push(common.error("badQuery", 'isBestSeller'));
         } else {
             query.where('isBestSeller', req.query.isBestSeller);
@@ -439,10 +439,6 @@ router.get('/autocomplete/themes', function (req, res) {
 
 router.get('/backend/main.html', function (req, res) {
     res.sendFile(pages + 'main.html')
-});
-
-router.get('/backend/apidoc.yml', function (req, res) {
-
 });
 
 //handle 404
