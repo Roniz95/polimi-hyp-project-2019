@@ -9,46 +9,13 @@ app = require('./index');
 let pages = path.join(__dirname, '/public/pages/');
 
 
-/*--------------------
-  STATIC PAGES PART
----------------------*/
-
-/* HOME PAGE */
-router.get('/', function (req, res) {
-    res.sendFile(pages + 'index.html');
-});
-
-/* ABOUT US PAGE */
-router.get('/about-us', function (req, res) {
-    res.sendFile(pages + 'AboutUs.html');
-});
-
-/* CONTACT PAGE */
-router.get('/contact', function (req, res) {
-    res.sendFile(pages + 'Contact.html');
-});
-
-/* ORDERING AND SHIPPING INFO PAGE */
-router.get('/infos', function (req, res) {
-    res.sendFile(pages + 'Info.html');
-});
-
-/* CART PAGE */
-router.get('/cart', function (req, res) {
-    res.sendFile(pages + 'Cart.html');
-});
-
-
-/*-------------------
-  BOOKS PAGES PART
----------------------*/
-
-/* BOOK PAGE */
+/*---------------
+  BOOKS
+-----------------*/
 
 //returns all the books if no query parameters are specified,
 //else returns the filters sets obtained by query parameters
 //parameters : ['title', 'isBestSeller'. 'isRecommended', 'isClassic', 'author', 'theme', 'genre']
-
 router.get('/books', function (req, res) {
     let errorList = [];
     let query = res.app.sqlDB('books').select('books.*');
@@ -125,7 +92,7 @@ router.get('/books', function (req, res) {
     }
 });
 
-//select a specific book
+//GET a specific book
 router.get('/books/:isbn', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
@@ -175,6 +142,15 @@ router.get('/books/:isbn/themes', function (req, res) {
 
 });
 
+//GET all genres of a book
+router.get('/books/:isbn/genres', function (req, res) {
+    res.app.sqlDB('genres')
+        .select('genres.*')
+        .leftJoin('bookGenres', 'genres.data', 'bookGenres.genreID')
+        .where('bookGenres.isbn', req.params.isbn)
+        .then(genres => res.send(genres))
+});
+
 //GET all review of a book
 router.get('/books/:isbn/reviews', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
@@ -200,39 +176,22 @@ router.get('/books/:isbn/similar', function (req, res) {
 
 });
 
-/* BOOKX PAGE */
-router.get('/books/book', function (req, res) {
-    res.sendFile(pages + 'BookX.html');
-});
-
-/* REDIRECT to bookX page from bookOfTheMonth, bestSellers, classics, ourRecommendations or nextComings */
-router.get('/bookX/:bookISBN/:from', function (req, res) {
-    res.redirect('/bookX?isbn=' + req.params.bookISBN + '&from=' + req.params.from);
-});
-
-/* REDIRECT to bookX page from similarBooks, authorBooks or eventBooks (searchID needs for pagination system) */
-router.get('/bookX/:bookISBN/:from/:searchISBN', function (req, res) {
-    res.redirect('/bookX?isbn=' + req.params.bookISBN + '&from=' + req.params.from + '&searchISBN=' + req.params.searchISBN);
-});
-
-/* REDIRECT to bookX page from searchfromTitle */
-router.get('/bookTitle/:bookISBN/:title', function (req, res) {
-    var from = "searchFromTitle";
-    res.redirect('/bookX?isbn=' + req.params.bookISBN + '&from=' + from + '&title=' + req.params.title);
-});
-
-/* REDIRECT to bookX page from searchfromFilters */
-router.get('/bookFilters/:bookISBN/:genre/:author/:theme/:bs/:nc', function (req, res) {
-    var from = "searchFromFilters";
-    res.redirect('/bookX?isbn=' + req.params.bookISBN + '&from=' + from + '&genre=' + req.params.genre + '&author=' + req.params.author + '&theme=' + req.params.theme + '&bs=' + req.params.bs + '&nc=' + req.params.nc);
+//GET all events of a book
+router.get('/books/:isbn/events', function (req, res) {
+    res.app.sqlDB('events')
+        .select('events.*')
+        .leftJoin('eventsBooks', 'events.id', 'eventsBooks.eventID')
+        .where('eventsBooks.isbn', req.params.isbn)
+        .then(events => res.send(events))
 });
 
 
-/*--------------------
-  AUTHOR PAGES PART
-----------------------*/
 
-//get all authors
+/*-------------
+  AUTHORS
+---------------*/
+
+//GET all authors
 router.get('/authors', function (req, res) {
     let errorList = [];
     let query = res.app.sqlDB('authors');
@@ -292,26 +251,12 @@ router.get('/authors/:id/similar', function (req, res) {
 
 });
 
-/* AUTHORX PAGE */
-router.get('/authors/author', function (req, res) {
-    res.sendFile(pages + 'AuthorX.html');
-});
 
 
-/* REDIRECT to authorX page from authorOfTheMonth or authorSearch */
-router.get('/authorX/:authorID/:from', function (req, res) {
-    res.redirect('/authorX?id=' + req.params.authorID + '&from=' + req.params.from);
-});
 
-/* REDIRECT to authorX page from bookX, similarAuthors or eventAuthors */
-router.get('/authorX/:authorID/:from/:searchID', function (req, res) {
-    res.redirect('/authorX?id=' + req.params.authorID + '&from=' + req.params.from + '&searchID=' + req.params.searchID);
-});
-
-
-/*-------------------
-  EVENTS PAGES PART
----------------------*/
+/*-----------
+  EVENTS
+-------------*/
 //TODO make the date filters works
 //GET events filtered by date, if no query parameters are present, return all events
 router.get('/events', function (req, res) {
@@ -382,15 +327,7 @@ router.get('/events/month', function (req, res) {
 
 });
 
-/* REDIRECT to eventX page from all events or soonEvents */
-router.get('/eventX/:eventID/:from', function (req, res) {
-    res.redirect('/eventX?id=' + req.params.eventID + '&from=' + req.params.from);
-});
 
-/* REDIRECT to eventX page from bookEvents */
-router.get('/eventX/:eventID/:from/:bookISBN', function (req, res) {
-    res.redirect('/eventX?id=' + req.params.eventID + '&from=' + req.params.from + '&bookISBN=' + req.params.bookISBN);
-});
 
 
 /*--------------------------
