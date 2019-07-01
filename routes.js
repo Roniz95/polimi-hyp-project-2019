@@ -35,7 +35,7 @@ router.get('/books', function (req, res) {
         }
     }
     if (typeof req.query.isNewRelease != "undefined") {
-        if (!common.isParamValid('isNewRelease', req.params.isNewRelease)) {
+        if (!common.isParamValid('isNewRelease', req.query.isNewRelease)) {
             errorList.push(common.error("badQuery", 'isNewRelease'))
         } else {
             query.where('isNewRelease', req.query.isNewRelease);
@@ -250,7 +250,6 @@ router.get('/authors/:id/similar', function (req, res) {
     }
 
 });
-
 
 
 
