@@ -17,15 +17,19 @@ const options = {
         swagger: '2.0',
         info: {
             title: 'hypermedia project',
+            description: 'api documentation for the hypermedia project 2019',
+            contact: {
+               email: 'sergioplacanica95.rc@gmail.com'
+            },
             version: '1.0.0',
         },
-        basePath: '/api',
+        basePath: '/',
     },
-    apis: ['./public/pages/apidoc.yaml'],
+    apis: ['./public/pages/apidoc.yml'],
 };
 const swaggerSpec = swaggerJSDoc(options);
 
-app.use('/backend/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/backend/apidoc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 

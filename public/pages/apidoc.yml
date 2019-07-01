@@ -9,7 +9,7 @@ info:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 host: "heroku.link.com"
-basePath: "/backend/apidoc"
+basePath: "/"
 tags: 
   - name: 'book'
     description: 'fetch data starting from /books'
@@ -135,13 +135,14 @@ definitions:
               type: string
               format: text
               
-    unexpected error:
+    error:
         type: object
+        description: 'the object returned by the api when something wrong happens, useful for debugging malformed urls'
         properties:
             error:
               type: string
-            code: 
-              type: integer
+              description: 'contains the probable cause of why the request went wrong'
+
 
 
 paths:
@@ -189,6 +190,12 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/book'
+                244:
+                    description: 'the server understand the request but parameters values are wrong'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
                 default:
                     description: 'unexpected error'
 
