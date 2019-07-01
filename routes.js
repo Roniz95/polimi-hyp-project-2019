@@ -8,6 +8,8 @@ app = require('./index');
 let pages = path.join(__dirname, '/public/pages/');
 
 
+
+
 /*--------------------
   STATIC PAGES PART
 ---------------------*/
@@ -45,247 +47,97 @@ router.get('/cart', function (req, res) {
 ---------------------*/
 
 /* BOOK PAGE */
-router.get('/book', function (req, res) {
-   res.sendFile(pages + 'Book.html');
+
+//returns all the books if no query parameters are specified,
+//else returns the filters sets obtained by query parameters
+//parameters : ['title', 'isBestSeller'. 'isRecommended', 'isClassic', 'author', 'theme', 'genre']
+
+router.get('/books', function (req, res) {
+    let query = res.app.sqlDB('books').select('books.*');
+    //if title is not null, then select by title
+    if(typeof req.query.title != "undefined") {
+
+        let title = '%' + req.query.title + '%';
+        query.whereRaw('LOWER(title) LIKE ?', [title])
+
+    }
+    if(typeof req.query.isBestSeller != "undefined") {
+        query.where('isBestSeller', req.query.isBestSeller);
+    }
+    if(typeof req.query.isNewRelease != "undefined") {
+        query.where('isNewRelease', req.query.isNewRelease);
+    }
+    if(typeof req.query.isRecommended != 'undefined') {
+        query.where('isRecommended', req.query.isRecommended)
+    }
+    if(typeof req.query.isClassic != 'undefined') {
+        query.where('isClassic', req.query.isClassic)
+    }
+
+    if(typeof req.query.author != "undefined") {
+        query.leftJoin('authorsOf', 'books.isbn', 'author.isbn')
+            .where('authorID', req.query.authorID)
+    }
+
+    if(typeof req.query.theme != "undefined") {
+        query.leftJoin('bookThemes', 'books.isbn', 'bookThemes.isbn')
+            .where('bookThemes.IDTheme', req.query.theme)
+    }
+
+    if(typeof req.query.genre != "undefined") {
+        query.leftJoin('bookGenres', 'books.isbn', 'bookGenres.isbn')
+            .where('bookGenres.genreID', req.query.genre)
+    }
+
+
+    console.log(query.toString());
+    query.then(filteredBooks => res.send(filteredBooks));
+});
+
+//select a specific book
+router.get('/books/:isbn', function (req, res) {
+  res.app.sqlDB('books')
+      .where('isbn', req.params.isbn)
+      .then(book => {
+        res.send(book);
+      });
+});
+
+//GET all authors of a book
+router.get('/books/:isbn/authors', function (req, res) {
+  res.app.sqlDB('authors').select('authors.*')
+      .leftJoin('authorsOf', 'authors.id', "authorsOf.authorID")
+      .where('authorsOf.isbn', req.params.isbn)
+      .then(authors => res.send(authors))
+});
+
+//GET all themes of a book
+router.get('/books/:isbn/themes', function (req, res) {
+    res.app.sqlDB('themes')
+        .select('themes.*')
+        .leftJoin('bookThemes', 'themes.data', 'bookThemes.IDTheme')
+        .where('bookThemes.isbn', req.params.isbn)
+        .then(themes => res.send(themes))
+});
+
+//GET all review of a book
+router.get('/books/:isbn/reviews', function (req, res) {
+    res.app.sqlDB('reviews').select('reviews.*')
+        .where('reviews.isbn', req.params.isbn)
+        .then(reviews => res.send(reviews))
+});
+
+//GET all books similar to the book with this isbn
+router.get('/books/:isbn/similar', function (req, res) {
+  res.app.sqlDB('books').select('books.*')
+      .leftJoin('similarBooks', 'books.isbn', 'similarBooks.similarISBN')
+      .where('similarBooks.isbn', req.params.isbn)
+      .then(books => res.send(books))
 });
 
 /* BOOKX PAGE */
-router.get('/bookX', function (req, res) {
+router.get('/books/book', function (req, res) {
   res.sendFile(pages + 'BookX.html');
-});
-
-/* FETCH a specific book */
-router.get('/book/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT *
-    FROM books
-    WHERE books.isbn = isbn
-  */
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var book = books.filter(function(elem){ return elem.isbn==isbn });
-  res.json(book[0]);
-});
-
-/* FETCH all book's authors */
-router.get('/bookAuthors/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT authors.id, authors.name
-    FROM authors
-    WHERE 
-      authors.id = (SELECT author1_id FROM authorsOf WHERE authorsOf.isbn=isbn) ||
-      authors.id = (SELECT author2_id FROM authorsOf WHERE authorsOf.isbn=isbn) ||
-      authors.id = (SELECT author3_id FROM authorsOf WHERE authorsOf.isbn=isbn) ||
-      authors.id = (SELECT author4_id FROM authorsOf WHERE authorsOf.isbn=isbn)
-  */
-  let bookAuths = require(__dirname + '/public/assets/jsonFiles/authorsOf.json');
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  var bookAuthors = bookAuths.filter( function(elem){ return elem.isbn==isbn });
-  let auth1ID = bookAuthors[0].author1_id.toString();
-  var authsList = authors.filter(
-    function(elem){ 
-      return (
-        (bookAuthors[0].author1_id>=0 && elem.id===bookAuthors[0].author1_id) ||
-        (bookAuthors[0].author2_id>=0 && elem.id===bookAuthors[0].author2_id) ||
-        (bookAuthors[0].author3_id>=0 && elem.id===bookAuthors[0].author3_id) ||
-        (bookAuthors[0].author4_id>=0 && elem.id===bookAuthors[0].author4_id)
-      );
-  });
-  res.json(authsList);
-});
-
-/* FETCH all book's themes */
-router.get('/bookThemes/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT themes.value
-    FROM themes, 
-    INNER JOIN bookThemes ON themes.data = bookThemes.idTheme
-    WHERE bookThemes.isbn = isbn;
-  */
-  let booksThemes = require(__dirname + '/public/assets/jsonFiles/bookThemes.json');
-  let themes = require(__dirname + '/public/assets/jsonFiles/themes.json');
-  var bookThemes = booksThemes.filter( function(elem){ return elem.isbn==isbn });
-  function foo(themeID, list){
-    for(let i=0; i<list.length; i++){ if(list[i].idTheme==themeID) return true;  }
-    return false;
-  }
-  var themesList = themes.filter( function(elem){ return foo(elem.data, bookThemes); });
-  res.json(themesList);
-});
-
-/* FETCH all reviews of a book */
-router.get('/bookReviews/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT *
-    FROM bookReviews
-    WHERE bookReviews.isbn=isbn
-  */
-  let booksReviews = require(__dirname + '/public/assets/jsonFiles/booksReviews.json');
-  var reviewsList = booksReviews.filter( function(elem){ return elem.isbn==isbn });
-  res.json(reviewsList);
-});
-
-/* FETCH all similar books of a book */
-router.get('/bookSimilar/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT *
-    FROM books
-    WHERE books.isbn IN (SELECT similarBooks.similarISBN FROM similarBooks WHERE similarBooks.isbn=isbn)
-  */
-  let similarBooks = require(__dirname + '/public/assets/jsonFiles/similarBooks.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var similarISBNs = similarBooks.filter( function(elem) { return elem.isbn==isbn });
-  function foo(isbn, similarlist){
-    for(let i=0; i<similarlist.length; i++){ if(similarlist[i].similarISBN==isbn){ return true } }
-    return false;
-  }
-  var booksList = books.filter( function(elem) { return foo(elem.isbn, similarISBNs); });
-  res.json(booksList);
-});
-
-/* FETCH all author's books */
-router.get('/authorBooks/:authorID', function (req, res) {
-  var authorID = parseInt(req.params.authorID);
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.isbn IN (
-      SELECT authorsOf.isbn FROM authorsOf
-      WHERE (
-        authorsOf.author1_id=authorID ||
-        authorsOf.author2_id=authorID ||
-        authorsOf.author3_id=authorID ||
-        authorsOf.author4_id=authorID
-      )
-    )
-  */
-  let authorsOf = require(__dirname + '/public/assets/jsonFiles/authorsOf.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var authorBooks = authorsOf.filter(
-    function(elem){ 
-      return ( 
-        (elem.author1_id>=0 && elem.author1_id===authorID) || 
-        (elem.author2_id>=0 && elem.author2_id===authorID) ||
-        (elem.author3_id>=0 && elem.author3_id===authorID) || 
-        (elem.author4_id>=0 && elem.author4_id===authorID)
-      ) 
-    }
-  );
-  function foo(isbn, list){
-    for(let i=0; i<list.length; i++){ if(list[i].isbn===isbn){ return true; } }
-    return false;
-  }
-  var booksList = books.filter( function(elem) { return foo(elem.isbn, authorBooks); } );
-  res.json(booksList);
-});
-
-/* FETCH all BestSellers books */
-router.get('/bestSellers', function (req, res) {
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.isbn IN (SELECT bestSellers.isbn FROM bestSellers)
-  */
-  let bestSellers = require(__dirname + '/public/assets/jsonFiles/bestSellers.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  function foo(isbn, list){
-    for(let i=0; i<list.length; i++){ if(list[i].isbn==isbn) return true }
-    return false;
-  }
-  var booksList = books.filter( function(elem){ return foo(elem.isbn, bestSellers) });
-  res.json(booksList);
-});
-
-/* FETCH all Classics books */
-router.get('/classics', function (req, res) {
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.isbn IN (SELECT classics.isbn FROM classics)
-  */
-  let classics = require(__dirname + '/public/assets/jsonFiles/classics.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  function foo(isbn, list){
-    for(let i=0; i<list.length; i++){ if(list[i].isbn==isbn) return true }
-    return false;
-  }
-  var booksList = books.filter( function(elem){ return foo(elem.isbn, classics) });
-  res.json(booksList);
-});
-
-/* FETCH all "our recommendations" books */
-router.get('/ourRecommendations', function (req, res) {
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.isbn IN (SELECT ourRecommendations.isbn FROM ourRecommendations)
-  */
-  let ourRecommendations = require(__dirname + '/public/assets/jsonFiles/ourRecommendations.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  function foo(isbn, list){
-    for(let i=0; i<list.length; i++){ if(list[i].isbn==isbn) return true }
-    return false;
-  }
-  var booksList = books.filter( function(elem){ return foo(elem.isbn, ourRecommendations) });
-  res.json(booksList);
-});
-
-/* FETCH all New Releases books */
-router.get('/newReleases', function (req, res) {
-  var date = new Date();
-  date.setDate(date.getDate() - 60 );
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.publishingDate > DATE 
-    (in sostanza i libri pubblicati da oggi fino a due mesi fa)
-  */
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var booksList = books.filter( function(elem){ return new Date(elem.publishingDate)>date });
-  res.json(booksList);
-});
-
-/* FETCH all books whose title contains a specific string */
-router.get('/searchBooksFromTitle/:title', function (req, res) {
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books
-    WHERE books.title LIKE %req.params.title%
-  */
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var booksList = books.filter(function(elem){ return elem.title.includes(req.params.title) });
-  res.json(booksList);
-});
-
-/* FETCH all books matching with filters (genre, author, theme, bestSellers, nextComings) */
-router.get('/searchBooksFromFilters/:genre/:theme/:author/:bestSellers/:newReleases', function (req, res) {
-  //Genre, Theme, Author: if == "null" (the string contains the word null) means that this filter is not being selected  
-  //Best Sellers, NewReleases: "0"(the string 0) means filter not selected, "1"(the string 1) means filter selected
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  res.json(books);
-});
-
-/* FETCH all events where a specific book is presented */
-router.get('/bookEvents/:bookISBN', function (req, res) {
-  var isbn = parseInt(req.params.bookISBN);
-  /*
-    SELECT events.id, events.title, events.image, events.date
-    FROM events, eventsBooks
-    WHERE events.bookISN = isbn AND events.id = eventsBook.eventID
-  */
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
-  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
-  var bookEvents = eventsBooks.filter( function(elem) { return elem.bookISBN==isbn } )
-  function foo(id, list){
-    for(let i=0; i<list.length; i++){ if(list[i].eventID==id) { return true } }
-    return false;
-  }
-  var eventsList = events.filter( function(elem){ return foo(elem.id, bookEvents) });
-  res.json(eventsList);
 });
 
 /* REDIRECT to bookX page from bookOfTheMonth, bestSellers, classics, ourRecommendations or nextComings */
@@ -317,79 +169,50 @@ router.get('/bookFilters/:bookISBN/:genre/:author/:theme/:bs/:nc', function (req
   AUTHOR PAGES PART
 ----------------------*/
 
-/* AUTHOR PAGE */
-router.get('/author', function (req, res) {
-    res.sendFile(pages + 'Author.html');
+//get all authors
+router.get('/authors', function (req, res) {
+    let query = res.app.sqlDB('authors')
+    if(typeof req.query.name != "undefined") {
+        let authorName = req.query.name.toLowerCase();
+        query.whereRaw('LOWER(name) LIKE ?', ['%' + authorName + '%'])
+    }
+    console.log(query.toString());
+    query.then(authors => res.send(authors));
+});
+
+//GET author from id
+router.get('/authors/:id', function(req, res) {
+  res.app.sqlDB('authors')
+      .where('id', req.params.id)
+      .then(author => res.send(author))
+});
+
+//GET all author book by author id
+router.get('/authors/:id/books', function (req, res) {
+  res.app.sqlDB('books').select('books.*')
+      .leftJoin('authorsOf', 'books.isbn', 'authorsOf.isbn')
+      .where('authorsOf.authorID', req.params.id)
+      .then(books => res.send(books))
+
+});
+
+//GET all authors similar to this one
+router.get('/authors/:id/similar', function (req, res) {
+  res.app.sqlDB('similarAuthors').select('authors.*')
+      .where('similarAuthors.id', req.params.id)
+      .rightJoin('authors', 'authors.id', 'similarAuthors.similarID')
+      .then(authors => res.send(authors))
 });
 
 /* AUTHORX PAGE */
-router.get('/authorX', function (req, res) {
+router.get('/authors/author', function (req, res) {
    res.sendFile(pages + 'AuthorX.html');
 });
 
-/* FETCH a specific author */
-router.get('/author/:authorID', function (req, res) {
-  var authID = parseInt(req.params.authorID);
-  /*
-    SELECT * 
-    FROM authors
-    WHERE authors.id = authID 
-  */
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  var author = authors.filter(function(elem){ return elem.id===authID })
-  res.json(author[0]);
-});
 
-/* FETCH all authors */
-router.get('/authors', function (req, res) {
-  /*
-    SELECT authors.id, authors.name, authors.image
-    FROM authors
-  */
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  res.json(authors);
-});
 
-/* FETCH all authors whose name contains a specific string */
-router.get('/authors/:name', function (req, res) {
-  /*
-    SELECT authors.id, authors.name, authors.image
-    FROM authors
-    WHERE authors.name LIKE %req.params.name%
-  */
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  var authsList = authors.filter(function(elem){ return elem.name.includes(req.params.name) });
-  res.json(authsList);
-});
 
-/* FETCH all authors similar to another author */
-router.get('/similarAuthors/:authorID', function (req, res) {
-  var authID = parseInt(req.params.authorID);
-  /* 
-    SELECT authors.id, authors.name, authors.image 
-    FROM authors
-    WHERE 
-      authors.id = (SELECT similarAuthors.similar1 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar2 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar3 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar4 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar5 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar6 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-      authors.id = (SELECT similarAuthors.similar7 FROM similarAuthors WHERE similarAuthors.id == authID) ||
-  */
-  let similarAuthors = require(__dirname + '/public/assets/jsonFiles/similarAuthors.json');
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  var authsList = similarAuthors.filter(function(elem){ return elem.id==authID }); 
-  var results = [];
-  results[0] = authors.filter(function(elem){ return elem.id===authsList[0].similar1 })[0];
-  results[1] = authors.filter(function(elem){ return elem.id===authsList[0].similar2 })[0];
-  results[2] = authors.filter(function(elem){ return elem.id===authsList[0].similar3 })[0];
-  results[3] = authors.filter(function(elem){ return elem.id===authsList[0].similar4 })[0];
-  results[4] = authors.filter(function(elem){ return elem.id===authsList[0].similar5 })[0];
-  results[5] = authors.filter(function(elem){ return elem.id===authsList[0].similar6 })[0];
-  results[6] = authors.filter(function(elem){ return elem.id===authsList[0].similar7 })[0];
-  res.json(results);
-});
+
 
 /* REDIRECT to authorX page from authorOfTheMonth or authorSearch */
 router.get('/authorX/:authorID/:from', function (req, res) {
@@ -407,115 +230,57 @@ router.get('/authorX/:authorID/:from/:searchID', function (req, res) {
 /*-------------------
   EVENTS PAGES PART
 ---------------------*/
-
-/* ALL EVENTS PAGE */
-router.get('/event', function (req, res){
-   res.sendFile(pages + 'Event.html');
-});
-
-/* EVENTX PAGE */
-router.get('/eventX', function (req, res) {
-   res.sendFile(pages + 'EventX.html');
-});
-
-/* FETCH all events */
+//TODO make the date filters works
+//GET events filtered by date, if no query parameters are present, return all events
 router.get('/events', function (req, res){
-  /*
-    SELECT *
-    FROM events
-  */
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
-  res.json(events);
+  let query =  res.app.sqlDB('events')
+    if(typeof req.query.fromDate != "undefined") {
+        query.where("date", ">=", req.query.fromDate)
+    }
+    if(typeof req.query.toDate != "undefined") {
+        query.where('date', "<=", req.query.toDate)
+    }
+
+    query.then(events => res.send(events))
 });
 
-/* FETCH a specific event */
-router.get('/event/:eventID', function (req, res){
-  var eventID = parseInt(req.params.eventID);
-  /*
-    SELECT *
-    FROM events
-    WHERE events.id = eventID
-  */
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
-  var event = events.filter( function(elem) { return elem.id===eventID } )
-  res.json(event[0]);
+//GET a specific event
+router.get('/events/:id', function (req, res){
+  res.app.sqlDB('events')
+      .where('id', req.params.id)
+      .then(event => res.send(event))
 });
 
-/* FETCH all books of a specific event */
-router.get('/booksEvent/:eventID', function (req, res){
-  var eventID = parseInt(req.params.eventID);
-  /*
-    SELECT books.isbn, books.title, books.image
-    FROM books, eventsBooks
-    WHERE eventsBooks.eventID = eventID AND books.isbn = eventsBooks.bookISBN
-  */
-  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
-  let books = require(__dirname + '/public/assets/jsonFiles/books.json');
-  var eventBooks = eventsBooks.filter( function(elem) { return elem.eventID==eventID; } );
-  function foo(isbn, list){
-    for(let i=0; i<list.length; i++){ if(list[i].bookISBN==isbn){ return true; } }
-    return false;
-  }
-  var booksList = books.filter( function(elem) { return foo(elem.isbn, eventBooks); } )
-  res.json(booksList);
+//GET all books of an event
+router.get('/events/:id/books', function (req, res) {
+    res.app.sqlDB('books').select('books.*')
+        .leftJoin('eventsBooks', 'books.isbn', 'eventsBooks.isbn')
+        .where('eventsBooks.eventID', req.params.id)
+        .then(booksOfEvent => res.send(booksOfEvent))
 });
 
-/* FETCH all authors of a specific event */
-router.get('/authorsEvent/:eventID', function (req, res){
-  var eventID = parseInt(req.params.eventID);
-  /*
-    SELECT authors.id, authors.name, authors.image
-    FROM authors, eventsAuthors
-    WHERE eventsBooks.eventID = eventID AND authors.id = eventsAuthors.authorID
-  */
-  let eventsAuthors = require(__dirname + '/public/assets/jsonFiles/eventsAuthors.json');
-  let authors = require(__dirname + '/public/assets/jsonFiles/authors.json');
-  var eventAuthors = eventsAuthors.filter( function(elem) { return elem.eventID==eventID; } );
-  function foo(id, list){
-    for(let i=0; i<list.length; i++){ if(list[i].authorID==id){ return true; } }
-    return false;
-  }
-  var authorsList = authors.filter( function(elem) { return foo(elem.id, eventAuthors); } )
-  res.json(authorsList);
+//GET all authors of a specific event
+router.get('/events/:id/authors', function (req, res){
+  res.app.sqlDB('authors').select('authors.*')
+      .leftJoin('eventsAuthors', 'authors.id', 'eventsAuthors.authorID')
+      .where('eventsAuthors.eventID', req.params.id)
+      .then(eventAuthors => res.send(eventAuthors))
 });
 
-/* FETCH the next two weeks' events */
-router.get('/soonEvents', function (req, res){
-  /*
-    SELECT *
-    FROM events
-    WHERE events.date > OGGI AND events.date < 2 settimane  */
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
+//TODO the next two get should be integrated inside /events
+router.get('/events/soon', function (req, res){
   var today = new Date();
-  var twoWeeksLater = new Date().setDate(today.getDate()+15); 
-  var eventsList = events.filter( function(elem) { return (new Date(elem.date)>=today && new Date(elem.date)<=twoWeeksLater); } )
-  res.json(eventsList);
+  var twoWeeksLater = new Date().setDate(today.getDate()+15);
+  res.app.sqlDB('events')
+      .where('start', '>=', today)
+      .andWhere('end', '<=', twoWeeksLater)
+      .then(soonEvents => res.send(soonEvents));
 });
 
-/* FETCH this month's events */
-router.get('/monthEvents', function (req, res){
-  /*
-    SELECT *
-    FROM events
-    WHERE new Date(events.date).getFullYear() = new Date().getFullYear() AND new Date(events.date).getMonth() = new Date().getMonth()
-  */
-  let events = require(__dirname + '/public/assets/jsonFiles/events.json');
-  var today = new Date();
-  var eventsList = events.filter( 
-    function(elem) { 
-      return (
-        new Date(elem.date).getFullYear() == today.getFullYear() && 
-        new Date(elem.date).getMonth() == today.getMonth()
-      ); 
-    } 
-  )
-  res.json(eventsList);
-});
 
-/* FETCH all books presented at the event */
-router.get('/eventBook/:eventID', function (req, res){
-  let eventsBooks = require(__dirname + '/public/assets/jsonFiles/eventsBooks.json');
-  res.json(eventsBooks[req.params.eventID]);
+router.get('/events/month', function (req, res){
+
+
 });
 
 /* REDIRECT to eventX page from all events or soonEvents */
@@ -542,9 +307,9 @@ router.get('/auth', function (req, res) {
 
 /* FETCH a specific user */
 router.get('/users/:username', function (req, res){
-  let users = require(__dirname + '/public/assets/jsonFiles/users.json');
-  var user = users.filter(function(elem){ return elem.username===req.params.username })
-  res.json(user);
+  res.app.sqlDB('users')
+      .where('username', req.params.username)
+      .then(user => res.send(user))
 });
 
 
@@ -583,7 +348,7 @@ router.get('/backend/main.html', function (req, res){
   res.sendFile(pages + 'main.html')
 });
 
-router.get('/backend/spec.yaml', function (req, res) {
+router.get('/backend/apidoc.yml', function (req, res) {
 
 });
 
