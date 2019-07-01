@@ -25,11 +25,11 @@ const options = {
         },
         basePath: '/',
     },
-    apis: ['./public/pages/apidoc.yml'],
+    apis: ['./public/pages/apidoc.yaml'],
 };
 const swaggerSpec = swaggerJSDoc(options);
 
-app.use('/backend/apidoc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 

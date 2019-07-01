@@ -55,10 +55,10 @@
         <a href="https://example.com">this address</a>.
     </li>
     <li>Deliverable D2: the YAML or JSON file containing the specification of the app<br>
-        API can be found at <a href="https://example.com/backend/spec.yaml">this address</a>.
+        API can be found at <a href="apidoc.yaml">this address</a>.
     </li>
     <li>Deliverable D3: the SwaggerUI page of the same API is available at<br>
-        <a href="https://example.com/backend/swaggerui">this address</a>.
+        <a href="swaggerui">this address</a>.
     </li>
     <li>Deliverable D4: the source code of D0 is available as a zip file at<br>
         <a href="https://example.com/backend/app.zip">this address</a>.
@@ -79,6 +79,16 @@
 <p>Describe here to what extent did you follow REST principles and what are the<br>
     reasons for which you might have decided to diverge. Note, you must not describe<br>
     the whole API here, just the design decisions.</p>
+<p> The backend implementation follows REST principle at 100%.<br>
+    We opted for a model where data is returned as a jsonArray containing jsonObjects. <br>
+    The reason behind this decision is that every endpoint ALWAYS return what is expected or, <br>
+    as per specification, an appropriate error. We decided to avoid big request with large amount of <br>
+    data and informations to adhere to the principle that simple is, not always but often, better. <br>
+    So for example if /books/?isBestSeller={value} is called, the API user know that it will always produce <br>
+    an array of books, or an array of error and he can check (and should definitely do it) the content of the response beforehand just by looking at the response code. <br>
+    Thus, using a more elaborated model based on jsonObject containing jsonProperty and JsonArray (like twitter API for example),<br>
+    was not needed and in general it would have been an overkill. <br>
+    </p>
 <h4><a id="OpenAPI_Resource_models_30"></a>OpenAPI Resource models</h4>
 <p>Describe here synthetically, which models you have introduced for resources.</p>
 <h3><a id="Data_model_32"></a>Data model</h3>
