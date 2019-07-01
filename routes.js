@@ -61,8 +61,8 @@ router.get('/books', function (req, res) {
         if (!common.isParamValid('id', req.query.author)) {
             errorList.push(common.error('badQuery', 'author'))
         } else {
-            query.leftJoin('authorsOf', 'books.isbn', 'author.isbn')
-                .where('authorID', req.query.authorID)
+            query.leftJoin('authorsOf', 'books.isbn', 'authorsOf.isbn')
+                .where('authorID', req.query.author)
         }
 
     }
