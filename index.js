@@ -330,7 +330,7 @@ function createDB() {
         if (!exist) {
             app.sqlDB.schema.createTable('bookGenres', table => {
                 table.string('isbn');
-                table.string('genreID');
+                table.integer('genreID');
                 table.primary(['isbn', 'genreID']);
 
             }).then(() => {

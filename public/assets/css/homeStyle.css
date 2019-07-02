@@ -3,9 +3,10 @@
 ---------------*/
 .carousel__image { height: 85vh;  width: 100%;  object-fit: cover; }
 .carousel-caption { z-index: 10; }
-/*.carousel-caption h5 { font-size: 21px; }
-.carousel-caption p { font-size: 15px; }*/
-.cover__carousel { background-color: rgba(0,0,0,0.5);  height: 40%;  width: 100%;  position:absolute;  z-index: 1; bottom: 0; }
+.cover__carousel { background-color: rgba(0,0,0,0.5);  height: 40%;  width: 100%;  position:absolute;  z-index: 1;  bottom: 0; }
+.eventDescription { display: -webkit-box;  -webkit-line-clamp: 4;  -webkit-box-orient: vertical;  overflow: hidden; }
+
+
 
 
 /*--------------
@@ -17,19 +18,15 @@
 
 
 
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1020px){
-    /*.carousel{height:45%;}*/
-    /*.carousel-caption p{font-size: 0px;}*/
+/*---------------
+  Adjustments
+-----------------*/
+@media (max-width: 1024px) and (min-width: 768px){
+  .eventDescription { -webkit-line-clamp: 3; }
 }
 
-/*-----------
-Smartphone
-------------*/
-@media (max-width: 600px){
-    /*.cover__carousel{height: 0%;}
-    .carousel{height: 30%;}
-    .card{width: 96%;margin-right: 10%;max-width: none;}    */ 
+@media (max-width: 767px){
+  .eventDescription { display: none; }
+  .carousel-caption h3 { height: 22.5vh; font-size: 24px; margin 0; display: flex;  align-items: center;  justify-content: center;  -webkit-line-clamp: 4; }
+  .presentation p { font-size: 15px; }
 }

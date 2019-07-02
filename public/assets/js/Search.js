@@ -7,7 +7,12 @@ $.ajax({
   url: '/autocomplete/genres',
   type: 'GET',
   dataType: 'json',
-  success: function(data) { $('#genreSearchBar').autocomplete({ lookup: data.suggestions }) }
+  success: function(data) { 
+    $('#genreSearchBar').autocomplete({ 
+      lookup: data.suggestions,
+      onSelect: function(suggestion){ document.getElementById('genreSearchID').setAttribute("title", suggestion.data); }
+    }) 
+  }
 });
 
 /* Themes */
@@ -15,7 +20,12 @@ $.ajax({
   url: '/autocomplete/themes',
   type: 'GET',
   dataType: 'json',
-  success: function(data) { $('#themeSearchBar').autocomplete({ lookup: data.suggestions }) } 
+  success: function(data) { 
+    $('#themeSearchBar').autocomplete({ 
+      lookup: data.suggestions,
+      onSelect: function(suggestion){ document.getElementById('themeSearchID').setAttribute("title", suggestion.data); }
+    }) 
+  } 
 });
 
 /* Authors */
@@ -23,7 +33,12 @@ $.ajax({
   url: '/autocomplete/authors',
   type: 'GET',
   dataType: 'json',
-  success: function(data) { $('#authorSearchBar').autocomplete({ lookup: data.suggestions }) }
+  success: function(data) { 
+    $('#authorSearchBar').autocomplete({ 
+      lookup: data.suggestions,
+      onSelect: function(suggestion){ document.getElementById('authorSearchID').setAttribute("title", suggestion.data); }
+    }) 
+  }
 });
 
 
@@ -54,7 +69,7 @@ function searchBooksFromTitle(){
     resultTitle.appendChild(bText);
     deckBook.appendChild(resultTitle); 
     $.ajax({
-      url: '/searchBooksFromTitle/'+title,
+      url: '/books?title='+title,
       type: 'GET',
       dataType: 'json',
       success: (data) => { if(data){ SetResults1(data, title); } }
@@ -69,16 +84,19 @@ function searchBooksFromTitle(){
 
 /* Called when user clicks search from filters button */
 function searchBooksFromFilters(){
+  var genreID = -1;
+  var themeID = -1;
+  var authorID = -1;
   var genre = document.getElementById('genreSearchBar').value;
   var theme = document.getElementById('themeSearchBar').value;
   var author = document.getElementById('authorSearchBar').value;
   var bestSellers = document.getElementById('bestSellersCheckBox').checked;
-  var nextComings = document.getElementById('newReleasesCheckBox').checked;
+  var newReleases = document.getElementById('newReleasesCheckBox').checked;
   
   var deckBook = document.getElementById('bookResults');
   while (deckBook.firstChild) { deckBook.removeChild(deckBook.firstChild); }
   
-  if(genre!='' || theme!='' || author!='' || bestSellers || nextComings){
+  if(genre!='' || theme!='' || author!='' || bestSellers || newReleases){
     var resultTitle = document.createElement('p');
     resultTitle.className = "result_title";
   
@@ -88,6 +106,7 @@ function searchBooksFromFilters(){
     div.className = 'filters_div';
   
     if(genre!=''){
+      genreID = document.getElementById('genreSearchID').title;
       var genreDiv = document.createElement('div');
       genreDiv.className = 'result_div';
       var genreText = document.createTextNode('genre: ');
@@ -99,6 +118,7 @@ function searchBooksFromFilters(){
     }
   
     if(theme!=''){
+      themeID = document.getElementById('themeSearchID').title;
       var themeDiv = document.createElement('div');
       themeDiv.className = 'result_div';
       var themeText = document.createTextNode('theme: ');
@@ -110,6 +130,7 @@ function searchBooksFromFilters(){
     }
   
     if(author!=''){
+      authorID = document.getElementById('authorSearchID').title;
       var authorDiv = document.createElement('div');
       authorDiv.className = 'result_div';
       var authorText = document.createTextNode('author: ');
@@ -129,7 +150,7 @@ function searchBooksFromFilters(){
       div.appendChild(bestDiv);
     }
   
-    if(nextComings){
+    if(newReleases){
       var favDiv = document.createElement('div');
       favDiv.className = 'result_div';
       var favB = document.createElement('b');
@@ -141,16 +162,13 @@ function searchBooksFromFilters(){
     resultTitle.appendChild(div);
     deckBook.appendChild(resultTitle);
     
-    var g = genre=="" ? "null" : genre;
-    var t = theme=="" ? "null" : theme;
-    var a = author=="" ? "null" : author;
-    var bs = bestSellers ? '1' : '0';
-    var nc = nextComings ? '1' : '0';
+    var urlSearch = createSearchURL(genreID, authorID, themeID, bestSellers, newReleases);
+    
     $.ajax({
-      url: '/searchBooksFromFilters/'+g+'/'+t+'/'+a+'/'+bs+'/'+nc,
+      url: urlSearch,
       type: 'GET',
       dataType: 'json',
-      success: (data) => { if(data){ SetResults2(data, g, a, t, bs, nc); } }
+      success: (data) => { if(data){ console.log(data); SetResults2(data, genreID, authorID, themeID, bestSellers, newReleases); } }
     });
     
   }
@@ -162,6 +180,37 @@ function searchBooksFromFilters(){
     resultTitle.textContent = 'No filter inserted';
     deckBook.appendChild(resultTitle);
   }
+}
+
+/* Create url string for advanced search */
+function createSearchURL(genre, author, theme, bs, nr){
+  var i=0;
+  var url = '/books?';
+  if(genre>=0){
+    i++;
+    url+=('genre='+genre) 
+  }
+  if(author>=0){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('author='+author) 
+  }
+  if(theme>=0){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('theme='+theme) 
+  }
+  if(bs){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('isBestSeller=true') 
+  }
+  if(nr){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('isNewRelease=true') 
+  }
+  return url;
 }
 
 
@@ -203,8 +252,7 @@ function SetResults1(books, titleInserted) {
       var genre = document.createElement('div');
       genre.className = 'book__text';
       var b3 = document.createElement('b');
-      var t3 = document.createTextNode(books[i].genre);
-      b3.append(t3);
+      //createGenresList(books[i].isbn, b3);
       genre.appendChild(b3);
       div.appendChild(genre);
     
@@ -251,8 +299,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
       var genre = document.createElement('div');
       genre.className = 'book__text';
       var b3 = document.createElement('b');
-      var t3 = document.createTextNode(books[i].genre);
-      b3.append(t3);
+      //createGenresList(books[i].isbn, b3);
       genre.appendChild(b3);
       div.appendChild(genre);
     
@@ -270,7 +317,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
 /* Set author names list to the books card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -284,6 +331,23 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* create genres list for book Card */
+function createGenresList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        console.log("FUNZIONE CREATE GENRES LIST", data);
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].value;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
 
 
 
@@ -293,11 +357,11 @@ function createAuthorsList(bookISBN, element){
 
 /* Redirect to BookX page from search from title */
 function goToBook1(newBookISBN, title){
-  window.location.href = '/bookTitle/'+newBookISBN+'/'+title;
+  window.location.href = 'Book.html?isbn='+newBookISBN+'&from=searchFromTitle&title='+title;
 }
 
 /* Redirect to BookX page from search from filters */
-function goToBook2(newBookISBN, genre, author, theme, bs, nc){
-  window.location.href = '/bookFilters/'+newBookISBN+'/'+genre+'/'+author+'/'+theme+'/'+bs+'/'+nc;
+function goToBook2(newBookISBN, genreID, authorID, themeID, bs, nr){
+  window.location.href = 'Book.html?isbn='+newBookISBN+'&from=searchFromFilters&genre='+genreID+'&author='+authorID+'&theme='+themeID+'&bs='+bs+'&nr='+nr;
 }
 

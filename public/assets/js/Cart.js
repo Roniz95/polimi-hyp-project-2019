@@ -17,7 +17,7 @@ function setList(isbnList){
 
 function setBook(isbn){
   $.ajax({
-    url: '/book/'+isbn,
+    url: '/books/'+isbn,
     type: 'GET',
     dataType: 'json',
     success: (data) => {

@@ -14,7 +14,7 @@ function fetchData() {
   
   if(from=='monthEvents'){   
     $.ajax({
-      url: 'events',//'/monthEvents',
+      url: '/events',//'/monthEvents',
       type: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -33,7 +33,7 @@ function fetchData() {
     var idParam2 = parameters[2].split("=");
     var bookISBN = unescape(idParam2[1]);    
     $.ajax({
-      url: 'bookEvents/' + bookISBN,
+      url: '/books/' + bookISBN + '/events',
       type: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -49,7 +49,7 @@ function fetchData() {
   }
   else {
     $.ajax({
-      url: 'soonEvents',
+      url: '/events/soon',
       type: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -124,31 +124,31 @@ function paginationStyle(tabIndex, length){
 
 function setEvent(id){
   $.ajax({
-    url: '/event/'+id,
+    url: '/events/'+id,
     type: 'GET',
     dataType: 'json',
     success: (data) => {
       if(data){
         $('#eventTitleID').empty();
-        $('#eventTitleID').append(data.title);
-        $('#eventImageID').attr("src", data.image);
+        $('#eventTitleID').append(data[0].title);
+        $('#eventImageID').attr("src", data[0].image);
         $('#eventDescriptionID').empty();
-        $('#eventDescriptionID').append(data.description);
-        $('#eventMapID').attr("src", data.mapSrc);
+        $('#eventDescriptionID').append(data[0].description);
+        $('#eventMapID').attr("src", data[0].mapSrc);
         $('#eventAddressID').empty();
-        $('#eventAddressID').append(data.address);
+        $('#eventAddressID').append(data[0].address);
         $('#eventNumberID').empty();
-        $('#eventNumberID').append("<b>Number: </b>" + data.phoneNumber);
+        $('#eventNumberID').append("<b>Number: </b>" + data[0].phoneNumber);
         $('#eventMailID').empty();
-        $('#eventMailID').append("<b>Mail: </b>" + data.mail);
+        $('#eventMailID').append("<b>Mail: </b>" + data[0].mail);
         $('#eventDateID').empty();
-        $('#eventDateID').append("<b>Event date: </b>" + createDateString(data.date));
+        $('#eventDateID').append("<b>Event date: </b>" + createDateString(data[0].date));
         $('#eventStartID').empty();
-        $('#eventStartID').append("<b>Event start: </b>" + data.start);
+        $('#eventStartID').append("<b>Event start: </b>" + data[0].start);
         $('#eventEndID').empty();
-        $('#eventEndID').append("<b>Event finish: </b>" + data.end);
-        fetchEventBooks(id, data.title);
-        fetchEventAuthors(id, data.title);
+        $('#eventEndID').append("<b>Event finish: </b>" + data[0].end);
+        fetchEventBooks(id, data[0].title);
+        fetchEventAuthors(id, data[0].title);
       }
     }
   });
@@ -166,7 +166,7 @@ function createDateString(data){
 
 function fetchEventBooks(eventID, eventTitle){
   $.ajax({
-    url: '/booksEvent/' + eventID,
+    url: '/events/' + eventID + '/books',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ SetBooks(data, 'eventBooks', eventID, eventTitle); } }
@@ -204,8 +204,7 @@ function SetBooks(books, elementID, eventID, eventTitle) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    var t3 = document.createTextNode(books[i].genre);
-    b3.append(t3);
+    //createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -216,7 +215,7 @@ function SetBooks(books, elementID, eventID, eventTitle) {
 
 function createAuthorsList(bookISBN, element){
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -230,8 +229,26 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* create genres list for book Card */
+function createGenresList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        console.log("FUNZIONE CREATE GENRES LIST", data);
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].value;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
+
 function goToBook(newBookISBN, eventID, eventTitle){
-  window.location.href = '/bookX/'+ newBookISBN + '/eventBooks(' + eventTitle + ')/' + eventID;
+  window.location.href = 'Book.html?isbn='+ newBookISBN + '?from=eventBooks(' + eventTitle + ')&searchID=' + eventID;
 }
 
 
@@ -239,7 +256,7 @@ function goToBook(newBookISBN, eventID, eventTitle){
 
 function fetchEventAuthors(eventID, eventTitle){
   $.ajax({
-    url: '/authorsEvent/' + eventID,
+    url: '/events/' + eventID + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ SetAuthors(data, 'eventAuthors', eventID, eventTitle); } }
@@ -273,5 +290,5 @@ function SetAuthors(authors, elementID, eventID, evenTitle) {
 }
 
 function goToAuthor(newAuthorID, eventID, eventTitle){
-  window.location.href = '/authorX/' + newAuthorID + '/eventAuthors(' + eventTitle + ')/' + eventID; 
+  window.location.href = 'Author.html?id=' + newAuthorID + '&from=eventAuthors(' + eventTitle + ')&searchID=' + eventID; 
 }

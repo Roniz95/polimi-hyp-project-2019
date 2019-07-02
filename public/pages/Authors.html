@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   
+  <title>Authors</title>  
+    
+  <link rel="stylesheet" href="../assets/css/standardStyle.css">
+  <link rel="stylesheet" href="../assets/css/authorStyle.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+  
+  <!-- Autocomplete -->
+  <script src="../assets/plugins/jquery-2.1.4.js"></script>
+  <script src="../assets/plugins/jquery.autocomplete.min.js"></script>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  
+  <!-- NAVBAR -->
+  <script src="../assets/js/navbar.js"></script>
+    
+  <!-- HEADER SECTION -->
+  <section class="cover">
+    <img src="../assets/images/scrittore.jpg" class="cover__image" alt="img">
+    <div class="cover__caption">
+      <h1>Authors</h1>
+    </div>
+  </section>
+  
+  <!-- ORIENTATION INFO -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Authors</li>
+    </ol>
+  </nav>
+  
+  <!-- CHOICE SECTION -->
+  <div class="container">
+    <div class="row justify-content-center button_row">
+      <div class="col-lg-4 col-md-6 choice_container">
+        <button type="button" class="choice_button" id="search_author" onclick="select_searchAuthor()">Search for Authors</button>
+      </div>
+      <div class="col-lg-4 col-md-6 choice_container">
+        <button type="button" class="choice_button button_active" id="author_of_the_month" onclick="select_authorOfTheMonth()" >Author of the month</button>
+      </div>        
+    </div>
+  </div>
+          
+  <!-- CONTENT SECTION -->
+  <!-- Search for authors -->
+  <div id="search" class="container choice_hide">
+    <div class="container">
+      <div class="row justify-content-center title">
+        <div class="col-md-4 col-sm-12">
+          <h3>Insert author name:</h3>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <input type="text" id="autocomplete"/>
+          <button type="submit" id="searchButton" onclick="searchAuthor()">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="author_list" class="row justify-content-center"><!-- data --></div>
+    </div>
+  </div>
+  
+  <!-- Author of the month -->
+  <div id="author" class="container bannerBox">
+    <div class="container banner_title">
+      <h1 id="name_AOTM"><!-- data --></h1>
+    </div>
+    <div class="row justify-content-center">
+      <div class="bannerBox__image col-md-4">
+        <img id="image_AOTM" class="banner__image" alt="img">
+      </div>
+      <div class="bannerBox__info col-md-8">
+        <p id="bio_AOTM"><!-- data--></p>
+        <a id="link_AOTM" class="bannerBox__link">See more infos...</a>
+      </div>
+    </div>
+  </div>
+    
+  <!-- FOOTER -->
+  <script src="../assets/js/footer.js"></script>
+  
+  <script src="../assets/js/Author.js"></script>
+  
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+         
+</body>
+</html>

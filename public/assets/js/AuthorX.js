@@ -22,7 +22,7 @@ function fetchData() {
     var idParam2 = parameters[2].split("=");
     var bookID = unescape(idParam2[1]);
     $.ajax({
-      url: '/bookAuthors/'+bookID,
+      url: '/books/'+ bookID + '/authors',
       type: 'GET',
       dataType: 'json',
       success: (data) => { 
@@ -41,7 +41,7 @@ function fetchData() {
     var idParam2 = parameters[2].split("=");
     var oldAuthID = unescape(idParam2[1]);
     $.ajax({
-      url: '/similarAuthors/'+oldAuthID,
+      url: '/authors/' + oldAuthID + '/similar',
       type: 'GET',
       dataType: 'json',
       success: (data) => { 
@@ -75,7 +75,7 @@ function fetchData() {
     else {
       var strSearched = from.substring(13, from.length-1);
       $.ajax({
-        url: '/authors/'+strSearched,
+        url: '/authors?name='+strSearched,
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -95,7 +95,7 @@ function fetchData() {
     var idParam2 = parameters[2].split("=");
     var eventID = unescape(idParam2[1]);
     $.ajax({
-      url: '/authorsEvent/'+ eventID,
+      url: '/events/'+ eventID + '/authors',
       type: 'GET',
       dataType: 'json',
       success: (data) => { 
@@ -175,21 +175,21 @@ function paginationStyle(tabIndex, length){
 
 function setAuthor(id){
   $.ajax({
-    url: '/author/'+id,
+    url: '/authors/'+id,
     type: 'GET',
     dataType: 'json',
     success: (data) => {
       if(data){
         
-        $('#authorNameID').text(data.name);
-        $('#authorImageID').attr("src", data.image);
+        $('#authorNameID').text(data[0].name);
+        $('#authorImageID').attr("src", data[0].image);
         $('#authorBioID').empty();
-        $('#authorBioID').append(data.bio);
-        $('#authorLinkID').attr("href", data.link);
+        $('#authorBioID').append(data[0].bio);
+        $('#authorLinkID').attr("href", data[0].link);
         $('#authorBooks').empty();
         $('#similarAuthor').empty();
-        fetchAuthorBooks(id, data.name);
-        fetchSimilarAuthors(id, data.name);
+        fetchAuthorBooks(id, data[0].name);
+        fetchSimilarAuthors(id, data[0].name);
       }
     }
   });
@@ -197,7 +197,7 @@ function setAuthor(id){
 
 function fetchAuthorBooks(authorID, authorName){
   $.ajax({
-    url: '/authorBooks/'+authorID,
+    url: '/authors/' + authorID + '/books',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ SetBooks(data, 'authorBooks', authorName, authorID) } }
@@ -235,8 +235,7 @@ function SetBooks(booksIDs, elementID, bookTitle, searchID) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    var t3 = document.createTextNode(booksIDs[i].genre);
-    b3.append(t3);
+    //createGenresList(booksIDs[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -246,7 +245,7 @@ function SetBooks(booksIDs, elementID, bookTitle, searchID) {
 
 function createAuthorsList(bookISBN, element){
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -260,11 +259,29 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* create genres list for book Card */
+function createGenresList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        console.log("FUNZIONE CREATE GENRES LIST", data);
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].value;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
+
 
 
 function fetchSimilarAuthors(id, authorName){
   $.ajax({
-    url: '/similarAuthors/'+id,
+    url: '/authors/' + id + '/similar',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ setSimilarAuthors(data, authorName, id); } }
@@ -300,9 +317,9 @@ function setSimilarAuthors(authors, authorName, authorID) {
 
 function goToBook(newBookISBN, from, name, isbn){
   var str = from + "( of "+name+" )";
-  window.location.href = '/bookX/'+newBookISBN+'/'+str+'/'+isbn;
+  window.location.href = 'Book.html?isbn='+newBookISBN+'&from='+str+'&searchID='+isbn;
 }
 
 function goToAuthor(authorID, authorName, oldAuthorID){
-  window.location.href = '/authorX/'+ authorID + '/similarAuthors(' + authorName + ')/' + oldAuthorID; 
+  window.location.href = 'Author.html?id='+ authorID + '&from=similarAuthors(' + authorName + ')&searchID=' + oldAuthorID; 
 }

@@ -1,40 +1,45 @@
-.button_row { border-bottom: 1px solid #ccc; }
-.choice_container { text-align: center; margin-top: 1em; font-size: 30px; }
-.choice_button { border: none;  background: none; padding-top: 0.5em; padding-bottom: 0.5em; color: #ccc; }
-.button_active { color: #000; }
-.choice_hide { display: none!important; }
 #searchBooks { margin-bottom: 3em; }
+
+
+
 
 /*-------------
   CARDS BOOK
 --------------*/
 .deckBook_title { background-color: #333;  width: 100%; }
 .deckBook_title h6 { padding: 5px;  color: #fff;  text-align: center;  font-size: 25px;  font-style: italic;  margin-bottom: 0; }
-.deckBook { overflow-x: scroll;  overflow-y: hidden; display: flex;  border-bottom: 0;  padding: 1% 0;  margin-bottom: 5%;  width: 100%; }
-.cardBook { width: 275px;  margin: 0 2%;  float: left;  flex: 0 0 auto;  border-radius: 2.5%;  border: 1px solid #ccc; display: flex;  flex-direction: column;  }
+.deckBook { overflow-x: scroll;  overflow-y: hidden;  display: flex;  border-bottom: 0;  padding: 1% 0;  margin-bottom: 5%;  width: 100%; }
+.cardBook { width: 275px;  margin: 0 2%;  float: left;  flex: 0 0 auto;  border-radius: 2.5%;  border: 1px solid #ccc;  display: flex;  flex-direction: column;  }
 .cardBook__image { width: 100%;  height: 300px;  border-top-left-radius: 2.5%;  border-top-right-radius: 2.5%; }
 .cardBook__link { padding: 2%;  text-align: center;  font-size: 100%; }
-.border__bottom { border-bottom: 1px solid #ccc; flex: 1;  justify-content: center;  align-items: center;  display: flex; }
+.border__bottom { border-bottom: 1px solid #ccc;  flex: 1;  justify-content: center;  align-items: center;  display: flex; }
+
+
+
 
 /*----------
   BANNER
 -----------*/
 .bannerBox { margin: 2.5%;  padding: 0 1em; }
 .bannerBox h1 { text-align: center;  margin: 0;  padding: 0.25em; }
-.content_BOTM { margin-top: 1.5em; margin-bottom: 5em; }
+.content_BOTM { margin-top: 1.5em;  margin-bottom: 5em; }
 .bannerBox__image { height: 400px; }
-.banner__image { width: 100%; height: 100%;  object-fit: contain; }
+.banner__image { width: 100%;  height: 100%;  object-fit: contain; }
 .bannerBox__info { padding: 1em 0;  align-items: center;  display: flex; }
 .bannerBox__info p { font-style: italic;  font-size: 17px; }
-.bannerBox__link { color: red;  text-align: right; font-size: 23px; }
+.bannerBox__link { color: red;  text-align: right;  font-size: 23px; }
 
 
-/*---------------------
-  Tablet adjustments
-----------------------*/
+
+
+/*----------------
+  Adjustments
+------------------*/
 @media (max-width: 767px){
   .cardBook { width: 200px; }
   .cardBook__image { height: 225px;  }
   .cardBook__link { font-size: 12.5px; }
+  .content_BOTM { margin-top: 1em;  margin-bottom: 2.5em; }
+  .bannerBox h1 { font-size: 1.75rem; }
   .bannerBox__image { width: 75%!important; }
 }

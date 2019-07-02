@@ -15,12 +15,12 @@ function setEvents(){
     url: '/events',//soonEvents,
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetEvents(data) } }
+    success: (data) => { if(data){ setEventsToPage(data) } }
   });
 }
 
 /* set events to carousel */
-function SetEvents(events) {
+function setEventsToPage(events) {
   setIndicators(events.length);
   setItems(events);
 }
@@ -75,25 +75,25 @@ function setItems(events){
 /* fetch best sellers from db */
 function setBestSellers(){
   $.ajax({
-    url: '/bestSellers',
+    url: '/books?isBestSeller=true',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'bestSellers') } }
+    success: (data) => { if(data){ setBooksToPage(data, 'bestSellers') } }
   });
 }
 
 /* fetch new releases from db */
 function setNewReleases(){
   $.ajax({
-    url: '/newReleases',
+    url: '/books?isNewRelease=true',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'newReleases') } }
+    success: (data) => { if(data){ setBooksToPage(data, 'newReleases') } }
   });
 }
 
 /* set books fetched from db to slider */
-function SetBooks(books, elementID) {
+function setBooksToPage(books, elementID) {
   var deckBook = document.getElementById(elementID);
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<books.length; i++){
@@ -124,8 +124,7 @@ function SetBooks(books, elementID) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    var t3 = document.createTextNode(books[i].genre);
-    b3.append(t3);
+    //createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -137,7 +136,7 @@ function SetBooks(books, elementID) {
 /* create authors list for book Card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -151,7 +150,25 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* create genres list for book Card */
+function createGenresList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        console.log("FUNZIONE CREATE GENRES LIST", data);
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].value;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
+
 /* redirect to bookX page */
 function goToBookPage(newBookISBN, from){
-  window.location.href = '/bookX/'+newBookISBN+'/'+from;
+  window.location.href = 'pages/Book.html?isbn='+newBookISBN+'&from='+from;
 }

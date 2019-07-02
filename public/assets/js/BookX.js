@@ -1,6 +1,5 @@
 $(document).ready(fetchData())
 
-//TO BE MODIFIED when events will be added
 function fetchData() {
   var parameters = location.search.substring(1).split('&');
   
@@ -21,7 +20,7 @@ function fetchData() {
       var oldBookID = unescape(idParam2[1]);
       
       $.ajax({
-        url: '/bookSimilar/'+oldBookID,
+        url: '/books/'+ oldBookID + '/similar',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -41,7 +40,7 @@ function fetchData() {
       var idParam2 = parameters[2].split("=");
       var authID = unescape(idParam2[1]);
       $.ajax({
-        url: '/authorBooks/'+authID,
+        url: '/authors/'+ authID + '/books',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -60,7 +59,7 @@ function fetchData() {
       var idParam2 = parameters[2].split("=");
       var eventID = unescape(idParam2[1]);
       $.ajax({
-        url: '/booksEvent/'+eventID,
+        url: '/events/' + eventID + '/books',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -78,7 +77,7 @@ function fetchData() {
       var idParam2 = parameters[2].split("=");
       var title = unescape(idParam2[1]);
       $.ajax({
-        url: '/searchBooksFromTitle/'+title,
+        url: '/books?title='+title,
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -102,10 +101,11 @@ function fetchData() {
       var idParam5 = parameters[5].split("=");
       var bs = unescape(idParam5[1]);
       var idParam6 = parameters[6].split("=");
-      var nc = unescape(idParam6[1]);
-      
+      var nr = unescape(idParam6[1]);
+      var urlSearch = createSearchURL(genre, author, theme, bs, nr);
+      alert(urlSearch);
       $.ajax({
-        url: '/searchBooksFromFilters/'+genre+'/'+theme+'/'+author+'/'+bs+'/'+nc,
+        url: urlSearch,
         type: 'GET',
         dataType: 'json',
         success: (data) => { 
@@ -113,7 +113,7 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookISBN);
-            var orientationInfo = "you have performed advanced search ( " + createFiltersString(genre, theme, author, bs, nc) + " )";
+            var orientationInfo = "you have performed advanced search ( " + createFiltersString(genre, theme, author, bs, nr) + " )";
             $('#orientationInfoID').append(orientationInfo);
           } 
         }
@@ -122,7 +122,7 @@ function fetchData() {
   }
   else if(from=='recommendedBooks'){
       $.ajax({
-        url: '/ourRecommendations',
+        url: '/books?isRecommended=true',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -138,7 +138,7 @@ function fetchData() {
   }
   else if(from=='bestSellers'){
       $.ajax({
-        url: '/bestSellers',
+        url: '/books?isBestSeller=true',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -154,7 +154,7 @@ function fetchData() {
   }
   else if(from=='classicBooks'){
       $.ajax({
-        url: '/classics',
+        url: '/books?isClassic=true',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -170,7 +170,7 @@ function fetchData() {
   }
   else if(from=='newReleases'){
       $.ajax({
-        url: '/newReleases',
+        url: '/books?isNewRelease=true',
         type: 'GET',
         dataType: 'json',
         success: (data) => {
@@ -192,6 +192,37 @@ function fetchData() {
   
   setBook(currentBookISBN);
   
+}
+
+/* Create url string for advanced search */
+function createSearchURL(genre, author, theme, bs, nr){
+  var i=0;
+  var url = '/books?';
+  if(genre>=0){
+    i++;
+    url+=('genre='+genre) 
+  }
+  if(author>=0){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('author='+author) 
+  }
+  if(theme>=0){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('theme='+theme) 
+  }
+  if(bs=='true'){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('isBestSeller=true') 
+  }
+  if(nr=='true'){ 
+    if(i>0){ url+='&' }
+    i++;
+    url+=('isNewRelease=true') 
+  }
+  return url;
 }
 
 
@@ -219,7 +250,6 @@ function changePage(dir){
 
 /* Set pagination data */
 function setPagination(data, isbn){
-  //console.log(data, isbn);
   var i=0;
   while(data[i].isbn!=isbn && i<data.length){ i++ }
   var counter = document.getElementById('counter');
@@ -258,11 +288,11 @@ function paginationStyle(tabIndex, length){
 /* Create string to be displayed in orientation info when redirected from advanced search */
 function createFiltersString(genre, theme, author, bestSellers, nextComings){
   var str = "";
-  if(genre!="null"){ str+= ('&nbsp;genre:<b>&nbsp;' + genre + '</b>&nbsp;') }
-  if(theme!="null"){ str+= ('&nbsp;theme:<b>&nbsp;' + theme + '</b>&nbsp;') }
-  if(author!="null"){ str+= ('&nbsp;author:<b>&nbsp;' + author + '</b>&nbsp;') }
-  if(bestSellers!="0"){ str+= ('&nbsp;<b>Best Sellers</b>&nbsp;') }
-  if(nextComings!="0"){ str+= ('&nbsp;<b>Next Comings</b>&nbsp;') }
+  if(genre>=0){ str+= ('&nbsp;genre:<b>&nbsp;' + genre + '</b>&nbsp;') }
+  if(theme>=0){ str+= ('&nbsp;theme:<b>&nbsp;' + theme + '</b>&nbsp;') }
+  if(author>=0){ str+= ('&nbsp;author:<b>&nbsp;' + author + '</b>&nbsp;') }
+  if(bestSellers!="false"){ str+= ('&nbsp;<b>Best Sellers</b>&nbsp;') }
+  if(nextComings!="false"){ str+= ('&nbsp;<b>Next Comings</b>&nbsp;') }
   return str;
 }
 
@@ -276,41 +306,43 @@ function createFiltersString(genre, theme, author, bestSellers, nextComings){
 /* Set current book data */
 function setBook(isbn){
   $.ajax({
-    url: '/book/'+isbn,
+    url: '/books/'+isbn,
     type: 'GET',
     dataType: 'json',
     success: (data) => {
       if(data){
-        $('#bookTitleID').text(data.title);
-        $('#bookImageID').attr("src", data.image);
+        $('#bookTitleID').text(data[0].title);
+        $('#bookImageID').attr("src", data[0].image);
         $('#bookAuthorsID').empty();
-        createAuthorsLink(isbn, data.title);
+        createAuthorsLink(isbn, data[0].title);
         $('#bookPublishingHouseID').empty();
-        $('#bookPublishingHouseID').append(data.publishingHouse);
+        $('#bookPublishingHouseID').append(data[0].publishingHouse);
         $('#bookGenreID').empty();
-        $('#bookGenreID').append(data.genre);
+        $('#bookGenreID').append(data[0].genre);
         $('#bookThemesID').empty();
         createThemesString(isbn);
         $('#bookYearID').empty();
-        $('#bookYearID').append(createDateStr(new Date(data.publishingDate)));
+        $('#bookYearID').append(createDateStr(new Date(data[0].publishingDate)));
         $('#bookIsbnID').empty();
-        $('#bookIsbnID').append(data.isbn);
+        $('#bookIsbnID').append(data[0].isbn);
         $('#bookPriceID').empty();
-        $('#bookPriceID').append(data.price.toFixed(2)+' €');
+        $('#bookPriceID').append(data[0].price.toFixed(2)+' €');
         $('#bookPlotID').empty();
-        $('#bookPlotID').append(data.abstract);
+        $('#bookPlotID').append(data[0].abstract);
         $('#reviewsId').empty();
         fetchBookReviews(isbn);
         $('#bookInterviewID').empty();
-        if(data.authorInterview!=""){ $('#bookInterviewID').append(data.authorInterview); }
+        if(data[0].authorInterview!=""){ $('#bookInterviewID').append(data[0].authorInterview); }
         else{ 
           $('#bookInterviewID').append("No interview available");
           $('#bookInterviewID').css('text-align', 'center');
         }
+        $('#authorBooks').empty();
+        fetchAuthorsBooks(isbn);
         $('#similarBooks').empty();
-        fetchAuthorsBooks(data.isbn);
-        fetchSimilarBooks(isbn, data.title);
-        fetchBookEvents(isbn, data.title);
+        fetchSimilarBooks(isbn, data[0].title);
+        $('#bookEventsId').empty();
+        fetchBookEvents(isbn, data[0].title);
       }
     }
   });
@@ -320,14 +352,14 @@ function setBook(isbn){
 function createAuthorsLink(bookISBN, bookTitle){
   var td = document.getElementById('bookAuthorsID');
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
       if(data){ 
         for(let i=0; i<data.length; i++){
           var a = document.createElement('a');
-          a.href = '/authorX/'+ data[i].id + '/book('+ bookTitle +')/' + bookISBN;
+          a.href = 'Author.html?id='+ data[i].id + '&from=book('+ bookTitle +')&searchID=' + bookISBN;
           a.className = "box__link";
           a.textContent = data[i].name;
           td.appendChild(a);
@@ -348,7 +380,7 @@ function createDateStr(dateStr){
 /* Add to page all book's themes */
 function createThemesString(isbn){
   $.ajax({
-    url: '/bookThemes/' + isbn,
+    url: '/books/' + isbn + '/themes',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -368,7 +400,7 @@ function createThemesString(isbn){
 /* Fetch book's review from db */
 function fetchBookReviews(isbn){
   $.ajax({
-    url: '/bookReviews/'+isbn,
+    url: '/books/' + isbn + '/reviews',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -441,11 +473,12 @@ function noReview(){
 /* Fetch events where the book will be presented (TO DO) */
 function fetchBookEvents(isbn, title){
   $.ajax({
-    url: '/bookEvents/'+isbn,
+    url: '/books/' + isbn + '/events',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
-      if(data){ setEvents(data, 'bookEventsId', title, isbn) }
+      if(data.length>0){ setEvents(data, 'bookEventsId', title, isbn) }
+      else{ noEvents() }
     } 
   });
 }
@@ -471,16 +504,28 @@ function setEvents(events, elementID, eventTitle, bookISBN){
     div.appendChild(title);
     
     var date = document.createElement('p');
-    var date_txt = document.createTextNode(events[i].date);
+    var date_txt = document.createTextNode(createDateStr(events[i].date));
     date.append(date_txt);
     div.appendChild(date);
     container.appendChild(div);
   }
 }
 
+/* Called if book has no events */
+function noEvents(){
+  var events = document.getElementById('bookEventsId');
+  //var h1 = document.createElement('h1');
+  //h1.textContent = "EVENTS";
+  //events.appendChild(h1);
+  var p = document.createElement('p');
+  p.textContent = "No Events";
+  p.className = "noReviews";
+  events.appendChild(p);
+}
+
 /* Redirect to eventX page */
 function goToEvent(newEventID, from, eventTitle, bookISBN){
-  window.location.href = "/eventX/" + newEventID + '/' + from + '(' + eventTitle + ')/' + bookISBN;
+  window.location.href = "Event.html?id=" + newEventID + '&from=' + from + '(' + eventTitle + ')&searchID=' + bookISBN;
 }
 
 
@@ -493,13 +538,11 @@ function goToEvent(newEventID, from, eventTitle, bookISBN){
 /* Fetch all book's authors from db */
 function fetchAuthorsBooks(bookISBN){
   $.ajax({
-      url: '/bookAuthors/' + bookISBN,
+      url: '/books/' + bookISBN + '/authors',
       type: 'GET',
       dataType: 'json',
       success: (data) => { 
-        if(data){
-          fetchAuthorBooks(data[0].id, data[0].name)
-        }
+        if(data){ fetchAuthorBooks(data[0].id, data[0].name) }
       }
     });
 }
@@ -507,25 +550,25 @@ function fetchAuthorsBooks(bookISBN){
 /* Fetch all author's books from db */
 function fetchAuthorBooks(authorID, authorName){
   $.ajax({
-      url: '/authorBooks/'+authorID,
+      url: '/authors/' + authorID + '/books',
       type: 'GET',
       dataType: 'json',
-      success: (data) => { if(data){ SetBooks(data, 'authorBooks', authorName, authorID) } }
+      success: (data) => { if(data){ setBooksToPage(data, 'authorBooks', authorName, authorID) } }
     });
 }
 
 /* Fetch all similar books from db */
 function fetchSimilarBooks(isbn, title){
   $.ajax({
-      url: '/bookSimilar/'+isbn,
+      url: '/books/' + isbn + '/similar',
       type: 'GET',
       dataType: 'json',
-      success: (data) => { if(data){ SetBooks(data, 'similarBooks', title, isbn) } }
+      success: (data) => { if(data){ setBooksToPage(data, 'similarBooks', title, isbn) } }
     });
 }
 
 /* Set the results of the Fetch functions above to page */
-function SetBooks(booksIDs, elementID, bookTitle, bookISBN) {
+function setBooksToPage(booksIDs, elementID, bookTitle, bookISBN) {
   var deckBook = document.getElementById(elementID);
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
   for(let i=0; i<booksIDs.length; i++){
@@ -556,11 +599,10 @@ function SetBooks(booksIDs, elementID, bookTitle, bookISBN) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    var t3 = document.createTextNode(booksIDs[i].genre);
-    b3.append(t3);
+    //createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
-    
+  
     deckBook.appendChild(div);
   } 
 }  
@@ -568,7 +610,7 @@ function SetBooks(booksIDs, elementID, bookTitle, bookISBN) {
 /* Set author names list to the books card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
-    url: '/bookAuthors/' + bookISBN,
+    url: '/books/' + bookISBN + '/authors',
     type: 'GET',
     dataType: 'json',
     success: (data) => { 
@@ -582,18 +624,36 @@ function createAuthorsList(bookISBN, element){
   });
 }
 
+/* create genres list for book Card */
+function createGenresList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        console.log("FUNZIONE CREATE GENRES LIST", data);
+        for(let i=0; i<data.length; i++){
+          element.textContent = element.textContent + data[i].value;
+          if(i<data.length-1){ element.textContent = element.textContent + ", "; }
+        }
+      }
+    }
+  });
+}
+
 /* Redirect to bookX page from one of the 2 sliders */
 function goToBook(newBookISBN, from, name, isbn){
   var str = from + "( of "+name+" )";
-  window.location.href = '/bookX/'+newBookISBN+'/'+str+'/'+isbn;
+  window.location.href = 'Book.html?isbn='+newBookISBN+'&from='+str+'&searchID='+isbn;
 }
 
 
 
 
-/*---------------
+/*------------------
   CHOICE FUNCTIONS
------------------*/
+--------------------*/
 
 /* Called when user clicks Reviews button */
 function selectReviews(){

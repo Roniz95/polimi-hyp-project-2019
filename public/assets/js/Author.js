@@ -19,7 +19,7 @@ $(document).ready(fetchData())
 
 function fetchData() {
   setAuthor(authorOfTheMonthID);
-  SetAllAuthors();
+  setAllAuthors();
 }
 
 
@@ -55,22 +55,22 @@ function select_authorOfTheMonth() {
 /* Fetch from db and Set to page Authors of the Month infos */
 function setAuthor(id){
   $.ajax({
-    url: '/author/'+id,
+    url: '/authors/'+id,
     type: 'GET',
     dataType: 'json',
     success: (data) => {
       if(data){
-        $('#name_AOTM').append(data.name);
-        $('#image_AOTM').attr("src", data.image);
-        $('#bio_AOTM').append(data.bio);
-        $('#link_AOTM').attr("href", "/authorX/"+data.id+"/authorOfTheMonth");
+        $('#name_AOTM').append(data[0].name);
+        $('#image_AOTM').attr("src", data[0].image);
+        $('#bio_AOTM').append(data[0].bio);
+        $('#link_AOTM').attr("href", "Author.html?id="+data[0].id+"&from=authorOfTheMonth");
       }
     }
   });
 }
 
 /* Fetch from db the list of all authors */
-function SetAllAuthors(){
+function setAllAuthors(){
   $.ajax({
     url: '/authors',
     type: 'GET',
@@ -85,7 +85,7 @@ function searchAuthor() {
   
   if (authorName !== '') {
     $.ajax({
-      url: '/authors/'+authorName,
+      url: '/authors?name='+authorName,
       type: 'GET',
       dataType: 'json',
       success: (data) => { if(data){ setAuthorList(data, authorName) } }
@@ -140,5 +140,5 @@ function setAuthorList(authorList, stringSearched){
 
 /* Redirect to authorX page */
 function goToAuthor(id, str){
-  window.location.href = '/authorX/' + id + '/authorSearch(' + str + ')';
+  window.location.href = 'Author.html?id=' + id + '&from=authorSearch(' + str + ')';
 }

@@ -31,7 +31,7 @@ function fetchEvents(){
   
   //Call DB to retrieve soon Events
   $.ajax({
-    url: '/soonEvents',
+    url: '/events/soon',
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ setEvents(data, 'soonId', 'soonEvents'); } }
@@ -59,7 +59,7 @@ function setEvents(events, elementID, from){
     
     var date = document.createElement('p');
     date.className = "date_text"
-    var date_txt = document.createTextNode(events[i].date);
+    var date_txt = document.createTextNode(createDateString(events[i].date));
     date.append(date_txt);
     div.appendChild(date);
     
@@ -67,6 +67,16 @@ function setEvents(events, elementID, from){
   }
 }
 
+function createDateString(data){
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var date = new Date(data);
+  var day = date.getDate();
+  var month = months[date.getMonth()];
+  var year = date.getFullYear();
+  return day + ' ' + month + ' ' + year;
+}
+
+
 function goToEvent(eventID, from){
-  window.location.href = "/eventX/" + eventID + "/" + from;
+  window.location.href = "Event.html?id=" + eventID + "&from=" + from;
 }

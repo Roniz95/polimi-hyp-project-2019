@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Events</title>
+    <title>Event</title>
     
     <link rel="stylesheet" href="../assets/css/standardStyle.css">
-    <link rel="stylesheet" href="../assets/css/eventStyle.css">
+    <link rel="stylesheet" href="../assets/css/eventXStyle.css">
+    <link rel="stylesheet" href="../assets/css/bookStyle.css">
+    <link rel="stylesheet" href="../assets/css/authorXStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,42 +27,62 @@
   
   <!-- HEADER SECTION -->
   <section class="cover">
-    <img src="../assets/images/event.jpg" class="cover__image" alt="img">
+    <img id="eventImageID" class="cover__image" alt="img">
     <div class="cover__caption">
-      <h1>Events</h1>
+      <h1></h1>
     </div>
   </section>
+  
+  <!-- ORIENTATION INFO -->
+  <div id="orientationInfoID" class="orientation_info"><!-- data --></div>
    
-  <!-- ORIENTATIO INFO -->
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Events</li>
-    </ol>
-  </nav>
-    
-  <div class="container eventsBox">
-    <div class="button_container">
-      <button id="thisMonthEventsID" class="eventsButtonMenu button_active" onclick="selectThisMonthEvents()">This Month</button> 
-      <button id="soonEventsID" class="eventsButtonMenu" onclick="selectSoonEvents()">Soon</button> 
+  <div class="container eventBox">
+    <div class="eventDescription">
+      <p id="eventTitleID" class="event__title"><!-- data --></p>
+      <p id="eventDescriptionID"><!-- data --></p>
     </div>
-    <hr style="margin-top: 0">
-    <div class="container">
-      <div id="thisMonthId" class="row justify-content-center"></div>
-      <div id="soonId" class="row justify-content-center"></div>  
+    <div class="row eventMaps">
+      <iframe id="eventMapID" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="eventMaps__info">
+        <div class="mapsInfo">
+          <p><b id="eventAddressID"><!-- data --></b></p>
+          <p id="eventNumberID"><!-- data --></p>
+          <p id="eventMailID"><!-- data --></p>
+          <p id="eventDateID"><!-- data --></p>
+          <p id="eventStartID"><!-- data --></p>
+          <p id="eventEndID"><!-- data --></p>
+        </div>    
+      </div>
     </div>
   </div>
-  
+   
+  <!-- PAGINATION -->
+  <nav id="paginationID" aria-label="Page navigation example">
+    <ul  class="pagination justify-content-center">
+      <li class="page-item"><button id="prev5_ID" type="button" class="page-link" onclick="changePage(-5)">&laquo;</button></li>
+      <li class="page-item"><button id="prev1_ID" type="button" class="page-link" onclick="changePage(-1)">&lsaquo;</button></li>
+      <li class="page-item"><p id="counter" class="page-link pagination_text" disabled tabindex="1"><!-- data --></p></li>
+      <li class="page-item"><button id="next1_ID" type="button" class="page-link" onclick="changePage(1)">&rsaquo;</button></li>
+      <li class="page-item"><button id="next5_ID" type="button" class="page-link" onclick="changePage(5)">&raquo;</button></li>
+    </ul>
+  </nav>
+    
+  <div class="deckBook_title"><h6><b>LIBRI PRESENTI</b></h6></div>
+  <div id="eventBooks" class="deckBook"></div>
+    
+  <div class="deckAuthor_title"><h6><b>AUTORI PRESENTI</b></h6></div>
+  <div id="eventAuthors" class="deckAuthor"></div>
+    
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
     
-  <script src="../assets/js/Event.js"></script>
+  <script src="../assets/js/EventX.js"></script>
     
   <!-- JQuery scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      
 </body>
-
 </html>
