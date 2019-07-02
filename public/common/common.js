@@ -19,7 +19,10 @@ module.exports = {
                 description = 'the resource does not exist, url: ' + parameter;
                 break;
             case 'forbidden':
-                description = 'forbidden access to the resource'
+                description = 'forbidden access to the resource';
+            case 'alreadyRegistered':
+                description = 'the user with email: ' + parameter + ' is already registered';
+                break;
         }
         return {'error': description}
 

@@ -1,12 +1,22 @@
+const passport = require('passport');
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const sqlDbFactory = require("knex");
-const process = require("process");
 const router = require('./routes.js');
 const _ = require("lodash");
 const nodemailer = require('nodemailer');
 const mg = require('nodemailer-mailgun-transport');
+const knex = require('./public/common/knexConfig').knexConn();
+
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+    app.use(express.static('public'));
+    app.use(cookieParser());
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+
 
 //swagger 2.0 setup
 const swaggerJSDoc = require('swagger-jsdoc');
@@ -16,7 +26,7 @@ const options = {
     definition: {
         swagger: '2.0',
         info: {
-            title: 'hypermedia project',
+            title: 'hypermedia projerct',
             description: 'api documentation for the hypermedia project 2019',
             contact: {
                email: 'sergioplacanica95.rc@gmail.com'
@@ -58,27 +68,14 @@ let bookGenresList = require(jsonPath + 'bookGenres.json');
 let bookThemesList = require(jsonPath + 'bookThemes.json');
 
 
+router.get('/test', function (req, res) {
 
-function initSqlDBVar()  {
-    app.sqlDB = sqlDbFactory({
-        debug: false,
-        client: "pg",
-        connection: {
-            user: "postgres",
-            password: "pgadmin95",
-            host: "localhost",
-            port: 5432,
-            database: "postgres",
-            ssl: false
-        },
-    })
-}
-
+})
 
 function createDB() {
-    app.sqlDB.schema.hasTable("books").then(exist => {
+    knex.schema.hasTable("books").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable("books", table => {
+            knex.schema.createTable("books", table => {
                 table.string('isbn').primary();
                 table.string('title');
                 table.date('publishingDate');
@@ -96,7 +93,7 @@ function createDB() {
                 .then(() => {
                     return Promise.all(
                         _.map(booksList, b => {
-                            return app.sqlDB("books").insert(b);
+                            return knex("books").insert(b);
                         })
                     );
                 });
@@ -104,9 +101,9 @@ function createDB() {
         }
     });
 
-    app.sqlDB.schema.hasTable('authors').then(exist => {
+    knex.schema.hasTable("authors").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable("authors", table => {
+            knex.schema.createTable("authors", table => {
                 table.increments('id').primary();
                 table.string('name');
                 table.string('image');
@@ -116,16 +113,16 @@ function createDB() {
                 .then(() => {
                     return Promise.all(
                         _.map(authorsList, a => {
-                            return app.sqlDB('authors').insert(a);
+                            return knex("authors").insert(a);
                         })
                     );
                 });
         }
     });
 
-    app.sqlDB.schema.hasTable('authorsOf').then(exist => {
+    knex.schema.hasTable("authorsOf").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('authorsOf', table => {
+            knex.schema.createTable("authorsOf", table => {
                 table.string('isbn');
                 table.integer('authorID');
                 table.primary(['isbn', 'authorID'])
@@ -134,16 +131,16 @@ function createDB() {
                 .then(() => {
                     return Promise.all(
                         _.map(authorsOfList, a => {
-                            return app.sqlDB('authorsOf').insert(a)
+                            return knex("authorsOf").insert(a)
                         })
                     )
             })
         }
     });
 
-    app.sqlDB.schema.hasTable('events').then(exist => {
+    knex.schema.hasTable("events").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('events', table => {
+            knex.schema.createTable('events', table => {
                 table.increments('id').primary();
                 table.string('title');
                 table.timestamp('date', { useTz: false });
@@ -158,16 +155,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(eventsList, e => {
-                        return (app.sqlDB('events').insert(e));
+                        return (knex('events').insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('eventsBooks').then(exist => {
+    knex.schema.hasTable("eventsBooks").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('eventsBooks', table => {
+            knex.schema.createTable("eventsBooks", table => {
                 table.integer('eventID');
                 table.string('isbn');
                 table.primary(['eventID', 'isbn']);
@@ -175,16 +172,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(eventsBooksList, e => {
-                        return (app.sqlDB('eventsBooks').insert(e));
+                        return (knex("eventsBooks").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('eventsAuthors').then(exist => {
+    knex.schema.hasTable("eventsAuthors").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('eventsAuthors', table => {
+            knex.schema.createTable("eventsAuthors", table => {
                 table.integer('eventID');
                 table.integer('authorID');
                 table.primary(['eventID', 'authorID']);
@@ -192,18 +189,18 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(eventsAuthorList, e => {
-                        return (app.sqlDB('eventsAuthors').insert(e));
+                        return (knex("eventsAuthors").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('users').then(exist => {
+    knex.schema.hasTable("users").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('users', table => {
-                table.increments('id').primary();
-                table.string('username').notNullable();
+            knex.schema.createTable("users", table => {
+                table.uuid('id').primary();
+                table.string('username').notNullable().unique();
                 table.string('password').notNullable();
                 table.string('name');
                 table.string('surname');
@@ -211,16 +208,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(usersList, e => {
-                        return (app.sqlDB('users').insert(e));
+                        return (knex("users").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('similarBooks').then(exist => {
+    knex.schema.hasTable("similarBooks").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('similarBooks', table => {
+            knex.schema.createTable("similarBooks", table => {
                 table.string('isbn');
                 table.string('similarISBN');
                 table.primary(['isbn', 'similarISBN'])
@@ -228,16 +225,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(similarBooksList, e => {
-                        return (app.sqlDB('similarBooks').insert(e));
+                        return (knex("similarBooks").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('themes').then(exist => {
+    knex.schema.hasTable("themes").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('themes', table => {
+            knex.schema.createTable("themes", table => {
                 table.integer('data');
                 table.string('value');
                 table.primary(['data', 'value']);
@@ -246,17 +243,17 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(themesList, e => {
-                        return (app.sqlDB('themes').insert(e));
+                        return (knex("themes").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('bookThemes').then(exist => {
+    knex.schema.hasTable("bookThemes").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('bookThemes', table => {
-                table.string('isbn')
+            knex.schema.createTable("bookThemes", table => {
+                table.string('isbn');
                 table.integer('IDTheme');
                 table.primary(['isbn','IDTheme']);
 
@@ -264,7 +261,7 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(bookThemesList, e => {
-                        return (app.sqlDB('bookThemes').insert(e));
+                        return (knex("bookThemes").insert(e));
                     })
                 )
             });
@@ -272,9 +269,9 @@ function createDB() {
     });
 
 
-    app.sqlDB.schema.hasTable('similarAuthors').then(exist => {
+    knex.schema.hasTable("similarAuthors").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('similarAuthors', table => {
+            knex.schema.createTable("similarAuthors", table => {
                 table.integer('id');
                 table.integer('similarID');
                 table.primary(['id', 'similarID']);
@@ -282,16 +279,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(similarAuthorsList, e => {
-                        return (app.sqlDB('similarAuthors').insert(e));
+                        return (knex("similarAuthors").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('reviews').then(exist => {
+    knex.schema.hasTable("reviews").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('reviews', table => {
+            knex.schema.createTable("reviews", table => {
                 table.increments('id').primary();
                 table.string('isbn');
                 table.string('username');
@@ -302,16 +299,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(reviewsList, e => {
-                        return (app.sqlDB('reviews').insert(e));
+                        return (knex("reviews").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('genres').then(exist => {
+    knex.schema.hasTable("genres").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('genres', table => {
+            knex.schema.createTable("genres", table => {
                 table.integer('data');
                 table.string('value');
                 table.primary(['data', 'value']);
@@ -319,16 +316,16 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(genresList, e => {
-                        return (app.sqlDB('genres').insert(e));
+                        return (knex("genres").insert(e));
                     })
                 )
             });
         }
     });
 
-    app.sqlDB.schema.hasTable('bookGenres').then(exist => {
+    knex.schema.hasTable("bookGenres").then(exist => {
         if (!exist) {
-            app.sqlDB.schema.createTable('bookGenres', table => {
+            knex.schema.createTable("bookGenres", table => {
                 table.string('isbn');
                 table.integer('genreID');
                 table.primary(['isbn', 'genreID']);
@@ -336,7 +333,7 @@ function createDB() {
             }).then(() => {
                 return Promise.all(
                     _.map(bookGenresList, e => {
-                        return (app.sqlDB('bookGenres').insert(e));
+                        return (knex("bookGenres").insert(e));
                     })
                 )
             });
@@ -345,8 +342,6 @@ function createDB() {
 }
 
 
-
-initSqlDBVar();
 createDB();
 
 

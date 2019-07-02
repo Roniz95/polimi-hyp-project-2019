@@ -1,10 +1,11 @@
+const passport = require('./public/common/passportConfig');
 const express = require('express');
 const router = express.Router();
-const bodyParser = require("body-parser");
 const path = require('path');
+const authHelper = require('./public/common/authHelper');
 const _ = require("lodash");
-const process = require("process");
-const common = require("./common");
+const common = require("./public/common/common");
+const knex = require('./public/common/knexConfig').knexConn();
 app = require('./index');
 let pages = path.join(__dirname, '/public/pages/');
 
@@ -13,12 +14,41 @@ let pages = path.join(__dirname, '/public/pages/');
   BOOKS
 -----------------*/
 
+
+/* HOME PAGE */
+router.get('/', function (req, res) {
+    res.sendFile(pages + 'index.html');
+});
+
+/* ABOUT US PAGE */
+router.get('/about-us', function (req, res) {
+    res.sendFile(pages + 'AboutUs.html');
+});
+
+/* CONTACT PAGE */
+router.get('/contact', function (req, res) {
+    res.sendFile(pages + 'Contact.html');
+});
+
+/* ORDERING AND SHIPPING INFO PAGE */
+router.get('/infos', function (req, res) {
+    res.sendFile(pages + 'Info.html');
+});
+
+
+
+/*-------------------
+  BOOKS PAGES PART
+---------------------*/
+
+/* BOOK PAGE */
+
 //returns all the books if no query parameters are specified,
 //else returns the filters sets obtained by query parameters
 //parameters : ['title', 'isBestSeller'. 'isRecommended', 'isClassic', 'author', 'theme', 'genre']
 router.get('/books', function (req, res) {
     let errorList = [];
-    let query = res.app.sqlDB('books').select('books.*');
+    let query = knex('books').select('books.*');
     //if title is not null, then select by title
     if (typeof req.query.title != "undefined") {
 
@@ -97,7 +127,7 @@ router.get('/books/:isbn', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
     } else {
-        res.app.sqlDB('books')
+        knex('books')
             .where('isbn', req.params.isbn)
             .then(book => {
                 //the resource doesn't exist
@@ -116,7 +146,7 @@ router.get('/books/:isbn/authors', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
     } else {
-        res.app.sqlDB('authors').select('authors.*')
+        knex('authors').select('authors.*')
             .leftJoin('authorsOf', 'authors.id', "authorsOf.authorID")
             .where('authorsOf.isbn', req.params.isbn)
             .then(authors =>
@@ -131,7 +161,7 @@ router.get('/books/:isbn/themes', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
     } else {
-        res.app.sqlDB('themes')
+        knex('themes')
             .select('themes.*')
             .leftJoin('bookThemes', 'themes.data', 'bookThemes.IDTheme')
             .where('bookThemes.isbn', req.params.isbn)
@@ -144,11 +174,16 @@ router.get('/books/:isbn/themes', function (req, res) {
 
 //GET all genres of a book
 router.get('/books/:isbn/genres', function (req, res) {
-    res.app.sqlDB('genres')
-        .select('genres.*')
-        .leftJoin('bookGenres', 'genres.data', 'bookGenres.genreID')
-        .where('bookGenres.isbn', req.params.isbn)
-        .then(genres => res.send(genres))
+    if (!common.isParamValid('isbn', req.params.isbn)) {
+        res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
+    } else {
+        knex('genres')
+            .select('genres.*')
+            .leftJoin('bookGenres', 'genres.data', 'bookGenres.genreID')
+            .where('bookGenres.isbn', req.params.isbn)
+            .then(genres => res.send(genres))
+    }
+
 });
 
 //GET all review of a book
@@ -156,7 +191,7 @@ router.get('/books/:isbn/reviews', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
     } else {
-        res.app.sqlDB('reviews').select('reviews.*')
+        knex('reviews').select('reviews.*')
             .where('reviews.isbn', req.params.isbn)
             .then(reviews => res.send(reviews))
     }
@@ -168,7 +203,7 @@ router.get('/books/:isbn/similar', function (req, res) {
     if (!common.isParamValid('isbn', req.params.isbn)) {
         res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
     } else {
-        res.app.sqlDB('books').select('books.*')
+        knex('books').select('books.*')
             .leftJoin('similarBooks', 'books.isbn', 'similarBooks.similarISBN')
             .where('similarBooks.isbn', req.params.isbn)
             .then(books => res.send(books))
@@ -178,11 +213,16 @@ router.get('/books/:isbn/similar', function (req, res) {
 
 //GET all events of a book
 router.get('/books/:isbn/events', function (req, res) {
-    res.app.sqlDB('events')
-        .select('events.*')
-        .leftJoin('eventsBooks', 'events.id', 'eventsBooks.eventID')
-        .where('eventsBooks.isbn', req.params.isbn)
-        .then(events => res.send(events))
+    if (!common.isParamValid('isbn', req.params.isbn)) {
+        res.status(422).json([common.error('badParameter', 'isbn', req.params.isbn)])
+    } else {
+        knex('events')
+            .select('events.*')
+            .leftJoin('eventsBooks', 'events.id', 'eventsBooks.eventID')
+            .where('eventsBooks.isbn', req.params.isbn)
+            .then(events => res.send(events))
+    }
+
 });
 
 
@@ -194,7 +234,7 @@ router.get('/books/:isbn/events', function (req, res) {
 //GET all authors
 router.get('/authors', function (req, res) {
     let errorList = [];
-    let query = res.app.sqlDB('authors');
+    let query = knex('authors');
     if (typeof req.query.name != "undefined") {
         if (!common.isParamValid("alphString", 'name')) {
             errorList.push(common.error('badParameter', 'name'))
@@ -217,7 +257,7 @@ router.get('/authors/:id', function (req, res) {
     if (!common.isParamValid('id', req.params.id)) {
         res.status(422).send([common.error('badParameter', 'id')])
     } else {
-        res.app.sqlDB('authors')
+        knex('authors')
             .where('id', req.params.id)
             .then(author => res.send(author))
     }
@@ -229,7 +269,7 @@ router.get('/authors/:id/books', function (req, res) {
     if (!common.isParamValid('id', req.params.id)) {
         res.status(422).send([common.error('badParameter', 'id')])
     } else {
-        res.app.sqlDB('books').select('books.*')
+        knex('books').select('books.*')
             .leftJoin('authorsOf', 'books.isbn', 'authorsOf.isbn')
             .where('authorsOf.authorID', req.params.id)
             .then(books => res.send(books))
@@ -243,7 +283,7 @@ router.get('/authors/:id/similar', function (req, res) {
     if (!common.isParamValid('id', req.params.id)) {
         res.status(422).send([common.error('badParameter', 'id')])
     } else {
-        res.app.sqlDB('similarAuthors').select('authors.*')
+        knex('similarAuthors').select('authors.*')
             .where('similarAuthors.id', req.params.id)
             .rightJoin('authors', 'authors.id', 'similarAuthors.similarID')
             .then(authors => res.send(authors))
@@ -259,7 +299,7 @@ router.get('/authors/:id/similar', function (req, res) {
 //TODO make the date filters works
 //GET events filtered by date, if no query parameters are present, return all events
 router.get('/events', function (req, res) {
-    let query = res.app.sqlDB('events')
+    let query = knex('events')
 
 
     if (typeof req.query.fromDate != "undefined") {
@@ -277,7 +317,7 @@ router.get('/events/:id', function (req, res) {
     if(!common.isParamValid('id', req.params.id)) {
         res.status(422).send(common.error('badParameter', 'id'))
     } else {
-        res.app.sqlDB('events')
+        knex('events')
             .where('id', req.params.id)
             .then(event => res.send(event))
     }
@@ -289,7 +329,7 @@ router.get('/events/:id/books', function (req, res) {
     if(!common.isParamValid('id', req.params.id)) {
         res.status(422).send(common.error('badParameter', 'id'))
     } else {
-        res.app.sqlDB('books').select('books.*')
+        knex('books').select('books.*')
             .leftJoin('eventsBooks', 'books.isbn', 'eventsBooks.isbn')
             .where('eventsBooks.eventID', req.params.id)
             .then(booksOfEvent => res.send(booksOfEvent))
@@ -302,7 +342,7 @@ router.get('/events/:id/authors', function (req, res) {
     if(!common.isParamValid('id', req.params.id)) {
         res.status(422).send(common.error('badParameter', 'id'))
     } else {
-        res.app.sqlDB('authors').select('authors.*')
+        knex('authors').select('authors.*')
             .leftJoin('eventsAuthors', 'authors.id', 'eventsAuthors.authorID')
             .where('eventsAuthors.eventID', req.params.id)
             .then(eventAuthors => res.send(eventAuthors))
@@ -314,7 +354,7 @@ router.get('/events/:id/authors', function (req, res) {
 router.get('/events/soon', function (req, res) {
     var today = new Date();
     var twoWeeksLater = new Date().setDate(today.getDate() + 15);
-    res.app.sqlDB('events')
+    knex('events')
         .where('start', '>=', today)
         .andWhere('end', '<=', twoWeeksLater)
         .then(soonEvents => res.send(soonEvents));
@@ -334,16 +374,66 @@ router.get('/events/month', function (req, res) {
 ----------------------------*/
 
 /* AUTHENTICATION PAGE */
-router.get('/auth', function (req, res) {
-    res.sendFile(pages + 'Authentication.html');
-});
-
 /* FETCH a specific user */
-router.get('/users/:username', function (req, res) {
-    res.app.sqlDB('users')
-        .where('username', req.params.username)
+router.get('/users/:id', function (req, res) {
+    knex('users')
+        .where('id', req.params.id)
         .then(user => res.send(user))
 });
+router.get('/cart', authHelper.loginRequired, (req, res, next) => {
+    res.send('this is the json')
+});
+
+
+
+router.post('/register', authHelper.loginRedirect, (req, res, next) => {
+
+    return authHelper.createUser(req, res).then((response) => {
+        passport.authenticate('local', (err, user, info) => {
+            if (!user) authHelper.handleResponse(res, 200, 'success')
+        })(req, res, next);
+    })
+        .catch(error => {
+            console.log('error');
+            authHelper.handleResponse(res, 500, 'error')
+        } )
+
+});
+router.post('/login', authHelper.loginRedirect, (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) {
+            console.log(err)
+            authHelper.handleResponse(res, 500, 'error');
+        }
+        if (!user) {
+            authHelper.handleResponse(res, 404, 'User not found');
+        }
+        if (user) {
+            req.logIn(user, function (err) {
+                if (err) { authHelper.handleResponse(res, 500, 'error'); }
+                authHelper.handleResponse(res, 200, 'success');
+            });
+        }
+    })(req, res, next);
+});
+router.get('/logout', function (req, res) {
+    console.log(req.isAuthenticated);
+    req.logout();
+    console.log(req.isAuthenticated);
+    res.redirect('/')
+});
+
+
+router.get('/themes/:id', function (req, res) {
+    knex('themes').where('data', req.params.id)
+        .then(theme => res.send(theme))
+});
+
+router.get('/genres/:id', function (req, res) {
+    knex('genres').where('data', req.params.id)
+        .then(genre => res.send(genre))
+});
+
 
 
 /*--------------------
@@ -378,7 +468,7 @@ router.get('/backend/main.html', function (req, res) {
 });
 
 //handle 404
-router.use(function (req, res, next) {
+router.use(function (req, res) {
     res.status(404);
 
     // respond with html page
@@ -396,6 +486,10 @@ router.use(function (req, res, next) {
     // default to plain-text. send()
     res.type('txt').send('Not found');
 });
+
+
+
+
 
 
 module.exports = router;

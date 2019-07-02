@@ -6,10 +6,12 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-session": "^1.16.2",
     "knex": "^0.16.5",
     "knex-cleaner": "^1.1.4",
     "lodash": "latest",
@@ -17,9 +19,14 @@
     "nodemailer": "^6.1.1",
     "nodemailer-mailgun-transport": "^1.4.0",
     "nvmw": "^1.0.0",
+    "passport": "^0.4.0",
     "pg": "^7.11.0",
     "process": "^0.11.10",
     "swagger-jsdoc": "^3.2.9",
-    "swagger-ui-express": "^4.0.4"
+    "swagger-ui-express": "^4.0.4",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "passport-local": "^1.0.0"
   }
 }
