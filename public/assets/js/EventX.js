@@ -248,7 +248,7 @@ function createGenresList(bookISBN, element){
 }
 
 function goToBook(newBookISBN, eventID, eventTitle){
-  window.location.href = 'Book.html?isbn='+ newBookISBN + '?from=eventBooks(' + eventTitle + ')&searchID=' + eventID;
+  window.location.href = 'Book.html?isbn='+ newBookISBN + '&from=eventBooks(' + eventTitle + ')&searchID=' + eventID;
 }
 
 

@@ -10,7 +10,6 @@ function fetchData() {
   /* from */
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
-  
   /* other url parameters */
   if(parameters.length>2){
     if(from.substring(0,12)=='similarBooks'){
