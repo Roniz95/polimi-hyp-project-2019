@@ -399,10 +399,18 @@ router.post('/register', authHelper.loginRedirect, (req, res, next) => {
         } )
 
 });
+router.get('/login', function (req, res) {
+   if(req.user) {
+       res.status(200).send([{'status' : 'already logged in'}])
+   } else {
+       res.status(403).send([{'status' : 'not logged in'}])
+   }
+
+});
 router.post('/login', authHelper.loginRedirect, (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
-            console.log(err)
+            console.log(err);
             authHelper.handleResponse(res, 500, 'error');
         }
         if (!user) {
@@ -416,12 +424,11 @@ router.post('/login', authHelper.loginRedirect, (req, res, next) => {
         }
     })(req, res, next);
 });
-router.get('/logout', function (req, res) {
-    console.log(req.isAuthenticated);
+router.get('/logout', authHelper.loginRequired, (req, res, next) => {
     req.logout();
-    console.log(req.isAuthenticated);
-    res.redirect('/')
+    authHelper.handleResponse(res, 200, 'success');
 });
+
 
 
 router.get('/themes/:id', function (req, res) {
@@ -479,7 +486,7 @@ router.use(function (req, res) {
 
     // respond with json
     if (req.accepts('json')) {
-        res.send({error: 'Not found'});
+        res.send([{error: 'Not found'}]);
         return;
     }
 
