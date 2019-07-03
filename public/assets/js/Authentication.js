@@ -44,17 +44,20 @@ function signIn() {
   var password = document.getElementById('signIn_password').value;
   
   $.ajax({
-    url: '/users/'+uName,
-    type: 'GET',
+    url: '/login',
+    type: 'POST',
+    data: {
+      username: uName,
+      password: password
+    },
+
     dataType: 'json',
     success: (data) => { 
       if(data){
-        if(data.length==0 || data[0].password!=password){ alert('user or password not correct'); }
-        else {
           sessionStorage.setItem('logged', 'true');
           sessionStorage.setItem('username', uName);
           window.location.reload();
-        }
+
       } 
     }
   });

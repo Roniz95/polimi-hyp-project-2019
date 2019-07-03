@@ -241,7 +241,7 @@ if (user_logged === 'true') {
 }
 
 function redirectToAuthPage(){
-  window.location.href = '/auth';
+  window.location.href = (document.title=="Home" ? "pages" : ".") + "/authentication.html";;
 }
    
 function signOut() {

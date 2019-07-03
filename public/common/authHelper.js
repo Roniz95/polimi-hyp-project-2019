@@ -9,7 +9,10 @@ function handleResponse(res, code, statusMsg) {
 
 function loginRedirect(req, res, next) {
     console.log('login redirect');
-    if (req.user) return res.status(401).json({status: 'You are already logged in'});
+    if (req.user) {
+        console.log('already logged');
+        return res.status(401).json({status: 'You are already logged in'});
+    }
     next();
 }
 

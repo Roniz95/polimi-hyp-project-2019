@@ -10,7 +10,11 @@ const knex = require('./public/common/knexConfig').knexConn();
 
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}));
     app.use(express.static('public'));
     app.use(cookieParser());
     app.use(passport.initialize());
@@ -339,6 +343,19 @@ function createDB() {
             });
         }
     });
+
+    knex.schema.hasTable("cart").then(exist => {
+        if (!exist) {
+            knex.schema.createTable("cart", table => {
+                table.string('isbn');
+                table.uuid('userID');
+                table.primary(['isbn', 'userID']);
+
+            }).then(() => {});
+        }
+    });
+
+
 }
 
 
