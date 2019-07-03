@@ -1,19 +1,3 @@
-function selectThisMonthEvents() {
-  document.getElementById("thisMonthId").style.display = "flex";
-  document.getElementById("soonId").style.display = "none";
-  document.getElementById("thisMonthEventsID").classList.toggle("button_active");
-  document.getElementById("soonEventsID").classList.remove("button_active");
-  
-}
-
-function selectSoonEvents() {
-  document.getElementById("thisMonthId").style.display = "none"; 
-  document.getElementById("soonId").style.display = "flex";
-  document.getElementById("thisMonthEventsID").classList.remove("button_active");
-  document.getElementById("soonEventsID").classList.toggle("button_active");
-}
-
-
 $(document).ready(fetchEvents())
 
 function fetchEvents(){
@@ -31,13 +15,16 @@ function fetchEvents(){
   
   //Call DB to retrieve soon Events
   $.ajax({
-    url: '/events/soon',
+    url: '/events', //events/soon
     type: 'GET',
     dataType: 'json',
     success: (data) => { if(data){ setEvents(data, 'soonId', 'soonEvents'); } }
   });
 }
 
+
+
+/* Set events list */
 function setEvents(events, elementID, from){
   var container = document.getElementById(elementID);
   while(container.firstChild){ container.removeChild(container.firstChild) }
@@ -67,6 +54,7 @@ function setEvents(events, elementID, from){
   }
 }
 
+/* From date in form "MM-DD-YYYY" return date in form "DD MonthName YYYY" */
 function createDateString(data){
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var date = new Date(data);
@@ -76,7 +64,30 @@ function createDateString(data){
   return day + ' ' + month + ' ' + year;
 }
 
-
+/* Redirect to eventX page */
 function goToEvent(eventID, from){
   window.location.href = "Event.html?id=" + eventID + "&from=" + from;
+}
+
+
+
+
+/* Click This month item */
+function selectThisMonthEvents() {
+  if(!document.getElementById("thisMonthEventsID").classList.contains("button_active")){
+    document.getElementById("thisMonthEventsID").classList.toggle("button_active");
+    document.getElementById("thisMonthId").style.display = "flex";
+    document.getElementById("soonEventsID").classList.remove("button_active");
+    document.getElementById("soonId").style.display = "none";
+  }
+}
+
+/* Click soon events item */
+function selectSoonEvents() {
+  if(!document.getElementById("soonEventsID").classList.contains("button_active")){
+    document.getElementById("thisMonthEventsID").classList.remove("button_active");
+    document.getElementById("thisMonthId").style.display = "none";
+    document.getElementById("soonEventsID").classList.toggle("button_active");
+    document.getElementById("soonId").style.display = "flex";
+  }
 }

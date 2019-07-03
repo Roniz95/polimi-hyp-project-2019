@@ -2,21 +2,24 @@
 <html lang="en">
 
 <head>
-    <title>Event</title>
     
-    <link rel="stylesheet" href="../assets/css/standardStyle.css">
-    <link rel="stylesheet" href="../assets/css/eventXStyle.css">
-    <link rel="stylesheet" href="../assets/css/bookStyle.css">
-    <link rel="stylesheet" href="../assets/css/authorXStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- JQuery scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Event</title>
+  
+  <!-- meta Tags --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css Links --> 
+  <link rel="stylesheet" href="../assets/css/standardStyle.css">
+  <link rel="stylesheet" href="../assets/css/eventXStyle.css">
+  <link rel="stylesheet" href="../assets/css/bookStyle.css">
+  <link rel="stylesheet" href="../assets/css/authorXStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- JQuery scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
 </head>
 
@@ -35,11 +38,13 @@
   
   <!-- ORIENTATION INFO -->
   <div id="orientationInfoID" class="orientation_info"><!-- data --></div>
-   
+  
+  <!-- EVENT INFOS PART 1 --> 
   <div class="container eventBox">
-    <div class="eventDescription">
+    <div id="eventDescriptionDivID" class="eventDescription">
       <p id="eventTitleID" class="event__title"><!-- data --></p>
       <p id="eventDescriptionID"><!-- data --></p>
+      <!-- data -->
     </div>
     <div class="row eventMaps">
       <iframe id="eventMapID" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -66,21 +71,39 @@
       <li class="page-item"><button id="next5_ID" type="button" class="page-link" onclick="changePage(5)">&raquo;</button></li>
     </ul>
   </nav>
-    
-  <div class="deckBook_title"><h6><b>LIBRI PRESENTI</b></h6></div>
+  
+  <!-- EVENT INFOS PART 2 -->  
+  <!-- Books present at the event -->
+  <div id="eventBooksTitle" class="deckBook_title"><h6><b>BOOKS PRESENT</b></h6></div>
   <div id="eventBooks" class="deckBook"></div>
-    
-  <div class="deckAuthor_title"><h6><b>AUTORI PRESENTI</b></h6></div>
+  <!-- Authors present at the event -->  
+  <div id="eventAuthorsTitle" class="deckAuthor_title"><h6><b>AUTHORS PRESENT</b></h6></div>
   <div id="eventAuthors" class="deckAuthor"></div>
-    
+      
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
-    
-  <script src="../assets/js/EventX.js"></script>
-    
+  
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
+  
+  
+  <!-- SCRIPTS PART -->
+  <!-- Event -->    
+  <script src="../assets/js/EventX.js"></script>  
   <!-- JQuery scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
-    
+  <!-- Libraries -->  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
      

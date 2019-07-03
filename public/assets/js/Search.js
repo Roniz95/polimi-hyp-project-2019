@@ -252,7 +252,7 @@ function SetResults1(books, titleInserted) {
       var genre = document.createElement('div');
       genre.className = 'book__text';
       var b3 = document.createElement('b');
-      //createGenresList(books[i].isbn, b3);
+      createGenresList(books[i].isbn, b3);
       genre.appendChild(b3);
       div.appendChild(genre);
     
@@ -299,7 +299,7 @@ function SetResults2(books, genreX, authorX, themeX, bs, nc) {
       var genre = document.createElement('div');
       genre.className = 'book__text';
       var b3 = document.createElement('b');
-      //createGenresList(books[i].isbn, b3);
+      createGenresList(books[i].isbn, b3);
       genre.appendChild(b3);
       div.appendChild(genre);
     
@@ -339,7 +339,6 @@ function createGenresList(bookISBN, element){
     dataType: 'json',
     success: (data) => { 
       if(data){ 
-        console.log("FUNZIONE CREATE GENRES LIST", data);
         for(let i=0; i<data.length; i++){
           element.textContent = element.textContent + data[i].value;
           if(i<data.length-1){ element.textContent = element.textContent + ", "; }

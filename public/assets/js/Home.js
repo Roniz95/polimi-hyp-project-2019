@@ -124,7 +124,7 @@ function setBooksToPage(books, elementID) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    //createGenresList(books[i].isbn, b3);
+    createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -158,7 +158,6 @@ function createGenresList(bookISBN, element){
     dataType: 'json',
     success: (data) => { 
       if(data){ 
-        console.log("FUNZIONE CREATE GENRES LIST", data);
         for(let i=0; i<data.length; i++){
           element.textContent = element.textContent + data[i].value;
           if(i<data.length-1){ element.textContent = element.textContent + ", "; }

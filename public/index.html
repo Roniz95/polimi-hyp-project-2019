@@ -58,7 +58,7 @@
       <b>“Chi non legge, a 70 anni avrà vissuto una sola vita: la propria.<br>Chi legge avrà vissuto 5000 anni: c’era quando Caino uccise Abele, quando Renzo sposò Lucia, quando Leopardi ammirava l’infinito … <br>perché la lettura è un’immortalità all’indietro”<br> Umberto Eco</b>
     </p>
    </div>
-    
+  
   <!-- BEST SELLERS -->  
   <div class="deckBook_title"><h6><b>BEST SELLERS</b></h6></div>
   <div id="bestSellers" class="deckBook"><!-- data --></div>
@@ -73,7 +73,20 @@
   <!-- FOOTER -->
   <script src="/assets/js/footer.js"></script>
   
-   
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
+  
   <!-- SCRIPTS PART -->
   <!-- Home --> 
   <script src="/assets/js/Home.js"></script>

@@ -5,6 +5,11 @@
     
   <title>Author</title>
   
+  <!-- meta Tags -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css Links -->
   <link rel="stylesheet" href="../assets/css/standardStyle.css">
   <link rel="stylesheet" href="../assets/css/authorStyle.css">
   <link rel="stylesheet" href="../assets/css/authorXStyle.css">
@@ -12,9 +17,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- JQuery Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -63,6 +65,21 @@
   <script src="../assets/js/AuthorX.js"></script>
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
+  
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
+  
   
   <!-- JQuery Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

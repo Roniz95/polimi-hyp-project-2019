@@ -4,7 +4,12 @@
 <head>
    
   <title>Authors</title>  
-    
+  
+  <!-- meta Tags -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css Links -->  
   <link rel="stylesheet" href="../assets/css/standardStyle.css">
   <link rel="stylesheet" href="../assets/css/authorStyle.css">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,9 +19,6 @@
   <!-- Autocomplete -->
   <script src="../assets/plugins/jquery-2.1.4.js"></script>
   <script src="../assets/plugins/jquery.autocomplete.min.js"></script>
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
@@ -36,7 +38,7 @@
   <!-- ORIENTATION INFO -->
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="../index.html">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Authors</li>
     </ol>
   </nav>
@@ -45,10 +47,10 @@
   <div class="container">
     <div class="row justify-content-center button_row">
       <div class="col-lg-4 col-md-6 choice_container">
-        <button type="button" class="choice_button" id="search_author" onclick="select_searchAuthor()">Search for Authors</button>
+        <p type="button" class="choice_button" id="search_author" onclick="select_searchAuthor()">Search for Authors</p>
       </div>
       <div class="col-lg-4 col-md-6 choice_container">
-        <button type="button" class="choice_button button_active" id="author_of_the_month" onclick="select_authorOfTheMonth()" >Author of the month</button>
+        <p type="button" class="choice_button button_active" id="author_of_the_month" onclick="select_authorOfTheMonth()" >Author of the month</p>
       </div>        
     </div>
   </div>
@@ -90,6 +92,21 @@
     
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
+  
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
+  
   
   <script src="../assets/js/Author.js"></script>
   

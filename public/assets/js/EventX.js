@@ -65,8 +65,9 @@ function fetchData() {
   }
   
   setEvent(currentEventID);
-  
 }
+
+
 
 
 /*-----------------------
@@ -121,7 +122,7 @@ function paginationStyle(tabIndex, length){
 
 
 
-
+/* Set current event data */
 function setEvent(id){
   $.ajax({
     url: '/events/'+id,
@@ -134,6 +135,7 @@ function setEvent(id){
         $('#eventImageID').attr("src", data[0].image);
         $('#eventDescriptionID').empty();
         $('#eventDescriptionID').append(data[0].description);
+        clamping();
         $('#eventMapID').attr("src", data[0].mapSrc);
         $('#eventAddressID').empty();
         $('#eventAddressID').append(data[0].address);
@@ -154,6 +156,61 @@ function setEvent(id){
   });
 }
 
+/* Check if clamp is need or not */
+function clamping(){
+  var descriptionDiv = document.getElementById('eventDescriptionDivID');
+  var oldNode = document.getElementById('readMoreLessDivID');
+  if(oldNode) { descriptionDiv.removeChild(oldNode); }
+  
+  $('#eventDescriptionID').css('height', 'auto');
+  $('#eventDescriptionID').removeClass('clampDescription');
+  
+  
+  var strLH = $('#eventDescriptionID').css('line-height');
+  var strH = $('#eventDescriptionID').css('height');
+  var lh = parseFloat(strLH.substring(0,strLH.length-2));
+  var h = parseFloat(strH.substring(0,strH.length-2));
+  
+  if(h / lh > 10){ 
+    var div = document.createElement('div');
+    div.className = "readMoreLessDiv";
+    div.id = "readMoreLessDivID";
+    var p = document.createElement('p');
+    p.id = "readMoreLessID";
+    p.className = "readMoreLess";
+    p.innerHTML = 'Read More &raquo;'; 
+    p.onclick = () => readMoreLess();
+    div.appendChild(p);
+    descriptionDiv.appendChild(div);
+    clampDescription();
+  }
+}
+
+/* If Read More-->Read Less and vice versa */
+function readMoreLess(){
+  if($('#eventDescriptionID').hasClass('clampDescription')){ unClampDescription() }
+  else { clampDescription() }
+}
+
+/* Clamp text */
+function clampDescription(){
+  var str = $('#eventDescriptionID').css('line-height');
+  var lh = parseFloat(str.substring(0,str.length-2));
+  var h = lh * 10;
+  var s = h + 'px';
+  $('#readMoreLessID').html('Read More &raquo;');
+  $('#eventDescriptionID').css('height', s);
+  $('#eventDescriptionID').addClass('clampDescription');
+}
+
+/* Unclamp text */
+function unClampDescription(){
+  $('#readMoreLessID').html('&laquo; Read Less');
+  $('#eventDescriptionID').css('height', 'auto');
+  $('#eventDescriptionID').removeClass('clampDescription');
+}
+
+/* From date in form "MM-DD-YYYY" return date in form "DD MonthName YYYY" */
 function createDateString(data){
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var date = new Date(data);
@@ -164,15 +221,28 @@ function createDateString(data){
 }
 
 
+
+/* Fetch all books of an event */
 function fetchEventBooks(eventID, eventTitle){
   $.ajax({
     url: '/events/' + eventID + '/books',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetBooks(data, 'eventBooks', eventID, eventTitle); } }
+    success: (data) => { 
+      if(data.length>0){ 
+        document.getElementById('eventBooksTitle').style.display = "block";
+        document.getElementById('eventBooks').style.display = "flex";
+        SetBooks(data, 'eventBooks', eventID, eventTitle); 
+      }
+      else{
+        document.getElementById('eventBooksTitle').style.display = "none";
+        document.getElementById('eventBooks').style.display = "none";
+      }
+    }
   });
 }
 
+/* Set results to page */
 function SetBooks(books, elementID, eventID, eventTitle) {
   var deckBook = document.getElementById(elementID);
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
@@ -204,7 +274,7 @@ function SetBooks(books, elementID, eventID, eventTitle) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    //createGenresList(books[i].isbn, b3);
+    createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -213,6 +283,7 @@ function SetBooks(books, elementID, eventID, eventTitle) {
   
 }
 
+/* Set author names list to the books card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
     url: '/books/' + bookISBN + '/authors',
@@ -237,7 +308,6 @@ function createGenresList(bookISBN, element){
     dataType: 'json',
     success: (data) => { 
       if(data){ 
-        console.log("FUNZIONE CREATE GENRES LIST", data);
         for(let i=0; i<data.length; i++){
           element.textContent = element.textContent + data[i].value;
           if(i<data.length-1){ element.textContent = element.textContent + ", "; }
@@ -247,23 +317,34 @@ function createGenresList(bookISBN, element){
   });
 }
 
+/* Redirect to book page */
 function goToBook(newBookISBN, eventID, eventTitle){
   window.location.href = 'Book.html?isbn='+ newBookISBN + '&from=eventBooks(' + eventTitle + ')&searchID=' + eventID;
 }
 
 
 
-
+/* Fetch all authors of an event */
 function fetchEventAuthors(eventID, eventTitle){
   $.ajax({
     url: '/events/' + eventID + '/authors',
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ SetAuthors(data, 'eventAuthors', eventID, eventTitle); } }
+    success: (data) => { 
+      if(data.length>0){ 
+        document.getElementById('eventAuthorsTitle').style.display = "block";
+        document.getElementById('eventAuthors').style.display = "flex";
+        SetAuthors(data, 'eventAuthors', eventID, eventTitle); 
+      }
+      else{
+        document.getElementById('eventAuthorsTitle').style.display = "none";
+        document.getElementById('eventAuthors').style.display = "none";
+      }
+    }
   });
 }
 
-
+/* Set results to page */
 function SetAuthors(authors, elementID, eventID, evenTitle) { 
   var deckAuthor = document.getElementById(elementID);
   while(deckAuthor.firstChild){ deckAuthor.removeChild(deckAuthor.firstChild) }
@@ -289,6 +370,7 @@ function SetAuthors(authors, elementID, eventID, evenTitle) {
   }
 }
 
+/* Redirect to author page */
 function goToAuthor(newAuthorID, eventID, eventTitle){
   window.location.href = 'Author.html?id=' + newAuthorID + '&from=eventAuthors(' + eventTitle + ')&searchID=' + eventID; 
 }

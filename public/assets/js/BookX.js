@@ -102,7 +102,6 @@ function fetchData() {
       var idParam6 = parameters[6].split("=");
       var nr = unescape(idParam6[1]);
       var urlSearch = createSearchURL(genre, author, theme, bs, nr);
-      alert(urlSearch);
       $.ajax({
         url: urlSearch,
         type: 'GET',
@@ -112,8 +111,9 @@ function fetchData() {
             var str = JSON.stringify(data);
             sessionStorage.setItem("bookList", str);
             setPagination(data, currentBookISBN);
-            var orientationInfo = "you have performed advanced search ( " + createFiltersString(genre, theme, author, bs, nr) + " )";
-            $('#orientationInfoID').append(orientationInfo);
+            createFiltersString(genre, theme, author, bs, nr, document.getElementById('orientationInfoID'));
+            //var orientationInfo = "you have performed advanced search ( " + createFiltersString(genre, theme, author, bs, nr) + " )";
+            //$('#orientationInfoID').append(orientationInfo);
           } 
         }
       });
@@ -285,14 +285,38 @@ function paginationStyle(tabIndex, length){
 ------------------------------*/
 
 /* Create string to be displayed in orientation info when redirected from advanced search */
-function createFiltersString(genre, theme, author, bestSellers, nextComings){
-  var str = "";
-  if(genre>=0){ str+= ('&nbsp;genre:<b>&nbsp;' + genre + '</b>&nbsp;') }
-  if(theme>=0){ str+= ('&nbsp;theme:<b>&nbsp;' + theme + '</b>&nbsp;') }
-  if(author>=0){ str+= ('&nbsp;author:<b>&nbsp;' + author + '</b>&nbsp;') }
-  if(bestSellers!="false"){ str+= ('&nbsp;<b>Best Sellers</b>&nbsp;') }
-  if(nextComings!="false"){ str+= ('&nbsp;<b>Next Comings</b>&nbsp;') }
-  return str;
+async function createFiltersString(genre, theme, author, bestSellers, nextComings, element){
+  element.innerHTML = "you have performed advanced search ( ";
+  if(genre>=0){
+    var genreData = await 
+    $.ajax({ 
+      url: '/genres/' + genre,
+      type: 'GET',
+      dataType: 'json'
+    });
+    element.innerHTML += ('&nbsp;genre:<b>&nbsp;' + genreData[0].value + '</b>&nbsp;')
+  }
+  if(theme>=0){ 
+    var themeData = await
+    $.ajax({
+      url: '/themes/' + theme,
+      type: 'GET',
+      dataType: 'json'
+    });
+    element.innerHTML += ('&nbsp;theme:<b>&nbsp;' + themeData[0].value + '</b>&nbsp;')
+  }
+  if(author>=0){ 
+    var authorData = await
+    $.ajax({
+      url: '/authors/' + author,
+      type: 'GET',
+      dataType: 'json'
+    });
+    element.innerHTML += ('&nbsp;author:<b>&nbsp;' + authorData[0].name + '</b>&nbsp;')
+  }
+  if(bestSellers!="false"){ element.innerHTML += ('&nbsp;<b>Best Sellers</b>&nbsp;') }
+  if(nextComings!="false"){ element.innerHTML += ('&nbsp;<b>Next Comings</b>&nbsp;') }
+  element.innerHTML += " )";
 }
 
 
@@ -317,7 +341,7 @@ function setBook(isbn){
         $('#bookPublishingHouseID').empty();
         $('#bookPublishingHouseID').append(data[0].publishingHouse);
         $('#bookGenreID').empty();
-        $('#bookGenreID').append(data[0].genre);
+        createGenresString(isbn);
         $('#bookThemesID').empty();
         createThemesString(isbn);
         $('#bookYearID').empty();
@@ -328,6 +352,7 @@ function setBook(isbn){
         $('#bookPriceID').append(data[0].price.toFixed(2)+' €');
         $('#bookPlotID').empty();
         $('#bookPlotID').append(data[0].abstract);
+        clamping();
         $('#reviewsId').empty();
         fetchBookReviews(isbn);
         $('#bookInterviewID').empty();
@@ -362,8 +387,28 @@ function createAuthorsLink(bookISBN, bookTitle){
           a.className = "box__link";
           a.textContent = data[i].name;
           td.appendChild(a);
-          if(i<data.length-1){ td.appendChild(document.createTextNode(',')); }
+          if(i<data.length-1){ td.appendChild(document.createTextNode(', ')); }
         }
+      }
+    }
+  });
+}
+
+/* Add to page all book's genres */
+function createGenresString(isbn){
+  $.ajax({
+    url: '/books/' + isbn + '/genres',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        var td = document.getElementById('bookGenreID');
+        var str = "";
+        for(let i=0; i<data.length; i++){
+          str+= data[i].value;
+          if(i<data.length-1){ str+=', ' }
+        }
+        td.append(str)
       }
     }
   });
@@ -394,6 +439,59 @@ function createThemesString(isbn){
       }
     }
   });
+}
+
+/* Check if clamp is need or not */
+function clamping(){
+  var plotDiv = document.getElementById('plotDivID');
+  var oldNode = document.getElementById('readMoreLessDivID');
+  if(oldNode) { plotDiv.removeChild(oldNode); }
+  
+  $('#bookPlotID').css('height', 'auto');
+  $('#bookPlotID').removeClass('clampPlot');
+      
+  var strLH = $('#bookPlotID').css('line-height');
+  var strH = $('#bookPlotID').css('height');
+  var lh = parseFloat(strLH.substring(0,strLH.length-2));
+  var h = parseFloat(strH.substring(0,strH.length-2));
+  
+  if(h / lh > 10){ 
+    var div = document.createElement('div');
+    div.className = "readMoreLessDiv";
+    div.id = "readMoreLessDivID";
+    var p = document.createElement('p');
+    p.id = "readMoreLessID";
+    p.className = "readMoreLess";
+    p.innerHTML = 'Read More &raquo;'; 
+    p.onclick = () => readMoreLess();
+    div.appendChild(p);
+    plotDiv.appendChild(div);
+    clampPlot();
+  }
+}
+
+/* If Read More-->Read Less and vice versa */
+function readMoreLess(){
+  if($('#bookPlotID').hasClass('clampPlot')){ unClampPlot() }
+  else { clampPlot() }
+}
+
+/* Clamp text */
+function clampPlot(){
+  var str = $('#bookPlotID').css('line-height');
+  var lh = parseFloat(str.substring(0,str.length-2));
+  var h = lh * 10;
+  var s = h + 'px';
+  $('#readMoreLessID').html('Read More &raquo;');
+  $('#bookPlotID').css('height', s);
+  $('#bookPlotID').addClass('clampPlot');
+}
+
+/* Unclamp text */
+function unClampPlot(){
+  $('#readMoreLessID').html('&laquo; Read Less');
+  $('#bookPlotID').css('height', 'auto');
+  $('#bookPlotID').removeClass('clampPlot');
 }
 
 /* Fetch book's review from db */
@@ -598,7 +696,7 @@ function setBooksToPage(booksIDs, elementID, bookTitle, bookISBN) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    //createGenresList(books[i].isbn, b3);
+    createGenresList(booksIDs[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
   
@@ -631,7 +729,6 @@ function createGenresList(bookISBN, element){
     dataType: 'json',
     success: (data) => { 
       if(data){ 
-        console.log("FUNZIONE CREATE GENRES LIST", data);
         for(let i=0; i<data.length; i++){
           element.textContent = element.textContent + data[i].value;
           if(i<data.length-1){ element.textContent = element.textContent + ", "; }
@@ -656,50 +753,58 @@ function goToBook(newBookISBN, from, name, isbn){
 
 /* Called when user clicks Reviews button */
 function selectReviews(){
-  document.getElementById("reviews_btn").classList.toggle("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "block";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "none";
+  if(!document.getElementById("reviews_btn").classList.contains("btn__active")){
+    document.getElementById("reviews_btn").classList.toggle("btn__active");
+    document.getElementById("interview_btn").classList.remove("btn__active");
+    document.getElementById("new_review_btn").classList.remove("btn__active");
+    document.getElementById("book_events_btn").classList.remove("btn__active");
+    document.getElementById("reviewsId").style.display = "block";
+    document.getElementById("interviewId").style.display = "none";
+    document.getElementById("newReviewId").style.display = "none";
+    document.getElementById("bookEventsId").style.display = "none";
+  }
 }
 
 /* Called when user clicks Intervies button */
 function selectInterview(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.toggle("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "block";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "none";
+  if(!document.getElementById("interview_btn").classList.contains("btn__active")){
+    document.getElementById("reviews_btn").classList.remove("btn__active");
+    document.getElementById("interview_btn").classList.toggle("btn__active");
+    document.getElementById("new_review_btn").classList.remove("btn__active");
+    document.getElementById("book_events_btn").classList.remove("btn__active");
+    document.getElementById("reviewsId").style.display = "none";
+    document.getElementById("interviewId").style.display = "block";
+    document.getElementById("newReviewId").style.display = "none";
+    document.getElementById("bookEventsId").style.display = "none";
+  }
 }
 
 /* Called when user clicks New Reviews button */
 function selectNewReview(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.toggle("btn__active");
-  document.getElementById("book_events_btn").classList.remove("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "block";
-  document.getElementById("bookEventsId").style.display = "none";
+  if(!document.getElementById("new_review_btn").classList.contains("btn__active")){
+    document.getElementById("reviews_btn").classList.remove("btn__active");
+    document.getElementById("interview_btn").classList.remove("btn__active");
+    document.getElementById("new_review_btn").classList.toggle("btn__active");
+    document.getElementById("book_events_btn").classList.remove("btn__active");
+    document.getElementById("reviewsId").style.display = "none";
+    document.getElementById("interviewId").style.display = "none";
+    document.getElementById("newReviewId").style.display = "block";
+    document.getElementById("bookEventsId").style.display = "none";
+  }
 }
 
 /* Called when user clicks Book's events button */
 function selectBookEvents(){
-  document.getElementById("reviews_btn").classList.remove("btn__active");
-  document.getElementById("interview_btn").classList.remove("btn__active");
-  document.getElementById("new_review_btn").classList.remove("btn__active");
-  document.getElementById("book_events_btn").classList.toggle("btn__active");
-  document.getElementById("reviewsId").style.display = "none";
-  document.getElementById("interviewId").style.display = "none";
-  document.getElementById("newReviewId").style.display = "none";
-  document.getElementById("bookEventsId").style.display = "flex";
+  if(!document.getElementById("book_events_btn").classList.contains("btn__active")){
+    document.getElementById("reviews_btn").classList.remove("btn__active");
+    document.getElementById("interview_btn").classList.remove("btn__active");
+    document.getElementById("new_review_btn").classList.remove("btn__active");
+    document.getElementById("book_events_btn").classList.toggle("btn__active");
+    document.getElementById("reviewsId").style.display = "none";
+    document.getElementById("interviewId").style.display = "none";
+    document.getElementById("newReviewId").style.display = "none";
+    document.getElementById("bookEventsId").style.display = "flex";
+  }
 }
 
 

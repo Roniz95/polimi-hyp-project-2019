@@ -54,10 +54,9 @@ function signIn() {
     dataType: 'json',
     success: (data) => { 
       if(data){
-          sessionStorage.setItem('logged', 'true');
-          sessionStorage.setItem('username', uName);
+          localStorage.setItem('logged', 'true');
+          localStorage.setItem('username', uName);
           window.location.reload();
-
       } 
     }
   });
@@ -75,7 +74,7 @@ function signUp() {
   alert('registration not yet implemented');
   //DO BACK END SIGN UP
   
-  //sessionStorage.setItem('logged', 'true');
-  //sessionStorage.setItem('username', uName);
+  //localStorage.setItem('logged', 'true');
+  //localStorage.setItem('username', uName);
   //window.location.reload();
 }

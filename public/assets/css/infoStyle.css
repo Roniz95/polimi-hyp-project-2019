@@ -2,38 +2,18 @@
   INFORMATION
 -----------------*/
 .infoContainer { margin: 1.5em 0 2.5em 0; }
-.infoContainer li { padding-top: 1em; padding-bottom: 1em; }
-
-/*---------
-  TABS
------------*/
-.button_row { border-bottom: 1px solid #ccc; }
-.choice_container { text-align: center; margin-top: 1em; font-size: 30px; }
-.choice_container:hover { cursor: pointer; }
-.choice_button { padding-top: 0.5em; padding-bottom: 0.5em; margin-bottom: 0; color: #ccc; }
-.button_active { color: #000;  border-bottom: 5px solid black; }
+.infoContainer li { padding-top: 1em;  padding-bottom: 1em; }
 
 
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1020px){
-    .title h1{font-size: 50px;}
-    .infoButton{width: 80%;margin: 0% 10%; height: auto;font-size: 26px;}
-    .info{width: 76%;margin: 0% 12%;}
-    .info p{font-size: 21px;}
-    
+
+
+/*---------------
+  Adjustments
+-----------------*/
+@media (max-width: 767px){
+  .infoContainer ul { font-size: 15px; }
 }
 
-
-/*-----------
-Smartphone
-------------*/
-@media (max-width: 600px){
-    
-    .title{margin: 5% 0%;}
-    .title h1{font-size: 40px;}
-    .infoButton{width: 90%;margin: 0% 5%; height: auto;font-size: 24px;}
-    .info{ display: none;  width: 86%;margin: 0% 7%;}
-    .info p{font-size: 19px;}
+@media (max-width: 424px){
+  .breadcrumb li { font-size: 14px; }
 }

@@ -69,7 +69,7 @@ body { overflow-x: hidden; }
 /*-------------------
   OTIENTATION INFO
 ---------------------*/
-.orientation_info { background-color: #e9ecef;  display: flex;  justify-content: center;  align-items: center;  width: 100%;  padding: 0.5em }
+.orientation_info { background-color: #e9ecef;  display: flex;  justify-content: center;  align-items: center;  flex-wrap: wrap;  width: 100%;  padding: 0.5em }
 .breadcrumb_link { color: darkorange!important; }
 
 
@@ -80,6 +80,7 @@ body { overflow-x: hidden; }
 ---------------*/
 .page-link { color: #000!important }
 .page-link:hover { color: darkorange!important }
+.page-link:focus { box-shadow: none!important; }
 .page-link[disabled], .page-link[disabled]:hover { background-color: white!important;  color: #ccc!important }
 .pagination_text[disabled], .pagination_text[disabled]:hover { background-color: white;  color: #000!important }
 
@@ -98,6 +99,18 @@ body { overflow-x: hidden; }
 
 
 
+/*--------------------
+  BACK TO TOP BUTTON
+----------------------*/
+#backToTopButton { display: inline-block;  background-color: #FF9800;  width: 50px;  height: 50px;  text-align: center;  border-radius: 4px;  position: fixed;  bottom: 30px;  right: 30px;  transition: background-color .3s, opacity .5s, visibility .5s;  opacity: 0;  visibility: hidden;  z-index: 1000; }
+#backToTopButton::after { content: "\f077";  font-family: FontAwesome;  font-weight: normal;  font-style: normal;  font-size: 2em;  line-height: 50px;  color: #fff; }
+#backToTopButton:hover { cursor: pointer;  background-color: #333; }
+#backToTopButton:active { background-color: #555; }
+#backToTopButton.show { opacity: 1;  visibility: visible; }
+
+
+
+
 /*--------------
   Adjustments
 ----------------*/
@@ -111,6 +124,10 @@ body { overflow-x: hidden; }
   .footer__info { text-align: center;  margin-top: 15px; }
   .footer__info p { padding: 0 8%; }
   .cover__caption h1 { font-size: 3em; }
+}
+
+@media (max-width: 374px){
+  .choice_button { font-size: 0.975rem; }
 }
 
 

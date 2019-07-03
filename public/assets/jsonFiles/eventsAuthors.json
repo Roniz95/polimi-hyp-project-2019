@@ -1,6 +1,8 @@
 [
   { "eventID" : 0, "authorID" : 7 },
   { "eventID" : 1, "authorID" : 3 },
+  { "eventID" : 2, "authorID" : 0 },
+  { "eventID" : 2, "authorID" : 1 },
   { "eventID" : 5, "authorID" : 2 },
   { "eventID" : 6, "authorID" : 4 },
   { "eventID" : 7, "authorID" : 14 },

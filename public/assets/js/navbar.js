@@ -170,7 +170,7 @@ logged_menu.id = "logged_menu";
 /* My cart */
 var myCart = document.createElement('a');
 myCart.className = "dropdown-item";
-myCart.href = "pages/Cart.html";
+myCart.href = (document.title=="Home" ? "pages" : ".") + "/Cart.html";
 var cartIcon = document.createElement('i');
 cartIcon.className = "fa fa-shopping-cart drop_icon";
 myCart.appendChild(cartIcon);
@@ -226,14 +226,18 @@ document.body.appendChild(navbar);
 
 
 
-
-
-var user_logged = sessionStorage.getItem('logged');
+/* CONTROL IF USER IS LOGGED */
+var user_logged = localStorage.getItem('logged');
       
 if (user_logged === 'true') {
+  /*
+    Controllo se il cookie è ancora valido:
+    - SI procedo normale
+    - NO cancello dal localStorage ed eseguo lo stesso codice delle righe 242-244
+  */
   document.getElementById("notLogged_button").style.display = 'none';
   document.getElementById("dropdownMenuButton").style.display = 'block';
-  document.getElementById("dropdownMenuButton").textContent = sessionStorage.getItem('username');
+  document.getElementById("dropdownMenuButton").textContent = localStorage.getItem('username');
 } else {
   document.getElementById("notLogged_button").style.display = 'block';
   document.getElementById("dropdownMenuButton").style.display = 'none';
@@ -241,12 +245,14 @@ if (user_logged === 'true') {
 }
 
 function redirectToAuthPage(){
-  window.location.href = (document.title=="Home" ? "pages" : ".") + "/authentication.html";;
+  window.location.href = (document.title=="Home" ? "pages" : ".") + "/Authentication.html";
 }
    
 function signOut() {
-  //DO BACK END SIGN OUT
-  sessionStorage.setItem('logged', 'false');
-  sessionStorage.removeItem('username');
+  //DO BACK END SIGN OUT WHERE COOKIE IS DEACTIVATED
+  localStorage.setItem('logged', 'false');
+  localStorage.removeItem('username');
   window.location.reload();
 }
+    
+    

@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
+  <!-- JQuery scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 </head>
 
 <body>
@@ -34,7 +37,7 @@
   <!-- ORIENTATIO INFO -->
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="../index.html">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">About Us</li>
     </ol>
   </nav>  
@@ -56,6 +59,20 @@
     
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
+  
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
   
   
   <!-- SCRIPTS PART -->

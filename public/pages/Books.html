@@ -39,7 +39,7 @@
   <!-- ORIENTATIO INFO -->
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="breadcrumb_link" href="/">Home</a></li>
+      <li class="breadcrumb-item"><a class="breadcrumb_link" href="../index.html">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Books</li>
     </ol>
   </nav>
@@ -98,7 +98,7 @@
        
     </div>
     
-    <div id="bookResults" class="row justify-content-center"></div>
+    <div id="bookResults" class="row justify-content-center"><!-- data --></div>
   
   </div>
   
@@ -135,6 +135,20 @@
     
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
+  
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
   
   
   <!-- SCRIPTS PART -->

@@ -25,7 +25,7 @@ function setBook(bookISBN){
         $('#title_BOTM').append(data[0].title);
         $('#image_BOTM').attr("src", data[0].image);
         $('#abstract_BOTM').append(data[0].abstract);
-        $('#link_BOTM').attr("href", "/bookX/"+data[0].isbn+"/bookOfTheMonth");
+        $('#link_BOTM').attr("href", "Book.html?isbn="+data[0].isbn+"&from=bookOfTheMonth");
       }
     }
   });
@@ -106,7 +106,7 @@ function setBooksToPage(books, elementID) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    //createGenresList(books[i].isbn, b3);
+    createGenresList(books[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
@@ -159,16 +159,20 @@ function goToBookPage(newBookID, from){
 
 /* Click search books item */
 function select_searchBook() {
-  document.getElementById("book_of_the_month").classList.remove("button_active");
-  document.getElementById("bookOfTheMonth").style.display = "none";
-  document.getElementById('search_book').classList.toggle("button_active");
-  document.getElementById('searchBooks').style.display = "block";
+  if(!document.getElementById("search_book").classList.contains("button_active")){
+    document.getElementById("book_of_the_month").classList.remove("button_active");
+    document.getElementById("bookOfTheMonth").style.display = "none";
+    document.getElementById('search_book').classList.toggle("button_active");
+    document.getElementById('searchBooks').style.display = "block";
+  }
 }
 
 /* Click book of the month item */
 function select_bookOfTheMonth() {
-  document.getElementById('search_book').classList.remove("button_active");
-  document.getElementById("searchBooks").style.display = "none";
-  document.getElementById("book_of_the_month").classList.toggle("button_active");
-  document.getElementById('bookOfTheMonth').style.display = "block";
+  if(!document.getElementById("book_of_the_month").classList.contains("button_active")){
+    document.getElementById('search_book').classList.remove("button_active");
+    document.getElementById("searchBooks").style.display = "none";
+    document.getElementById("book_of_the_month").classList.toggle("button_active");
+    document.getElementById('bookOfTheMonth').style.display = "block";
+  }
 }

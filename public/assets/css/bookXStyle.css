@@ -4,25 +4,30 @@
 .intro { background-color: darkorange;  width: 100%;  padding: 5% 0; }
 .intro h1 { color: #333;  text-align: center;  color: #000; }
 .box { padding: 2% 0.5%; }
-.box__one { padding: 2.5% 1% 1.25% 1%; }
+.box__one { padding: 2em 1em; display: flex; align-items: center; }
 .box__one__img { height: 300px;  width: 100%;  object-fit: contain; }
-.box__link/*, .box__link:hover*/ { padding-left: 0.5em; }
-.box__two { padding: 1.25% 2% 2.5% 2%;  border-left: 1px solid #ccc;  font-size: 15px; }
+/*.box__link { padding-left: 0.5em; }*/
+.box__two { padding: 2.5em 2em;  border-left: 1px solid #ccc; display: flex; align-items: center;  }
 .box__two__info { width: 100%;  font-size: 20px; }
-.box__two__info .infoRow { width: 100%;  vertical-align: text-top; }
-.box__two__info p { margin: 0;  padding: 0.5% 0px; }
-.boldTd { padding-right: 0.5em }
+.infoRow { width: 100%;  vertical-align: text-top; }
+.bookData { text-align: left; }
+.boldTd { padding-right: 0.5em;  text-align: left; }
 .addButton { width: 100%;  margin: 1.5% 0%;  background-color: darkorange!important;  border-radius: 5%;  border: none!important; }
 .addButton i { margin-left: 0.5em }
 .plotDiv { margin-top: 1em; }
+.clampPlot { overflow: hidden;  display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 10; }
+.readMoreLessDiv { text-align: right; }
+.readMoreLess { border: 1px solid #ccc;  border-radius: 0.5em; padding: 0.25em 0.5em;  display: inline-block; }
+
+
 
 /*-------------
   SOCIAL ZONE
 ---------------*/
 .socialContainer { width: 100%; }
 .socialBox  { padding-top: 1%;  padding-bottom: 5%; }
-.socialButtonMenu { border: none; background: none; padding: 0.5em 1em; color: #ccc;  font-size: 20px; }
-.btn__active { color: #000; }
+.socialButtonMenu { display: inline-block;  border: none;  padding: 0.5em 1em;  color: #ccc;  font-size: 20px;  cursor: pointer;  margin: 0;}
+.btn__active { color: #000; border-bottom: 5px solid #000; }
 
 /*-- REVIEWS --*/
 .reviews { width: 100%;  color: #000; }
@@ -64,21 +69,36 @@
 .rate > input:checked ~ label:hover ~ label, 
 .rate > label:hover ~ input:checked ~ label { color: #c59b08; }
 
-/* ORIENTATION INFO */
+
+
+
+/*------------------ 
+  ORIENTATION INFO 
+--------------------*/
 .orientation_info { padding-top: 0.5em;  font-style: italic; }
 
 
 
 
-/*------------------------------------
-  Smartphone and Tablet adjustements
---------------------------------------*/
+/*------------------
+  Adjustements
+--------------------*/
 @media (max-width: 768px){ 
   .intro h1 { font-size: 25px; }
   .box__two { border-left: none;  text-align: center; }
+  .box__two__info { font-size: 17.5px; }
+}
+
+@media (max-width: 767px){ 
+  .box__one { padding: 1em 1em; }
+  .box__two { padding: 1em 1em; }
+  .plotDiv { text-align: center; }
 }
 
 @media (max-width: 425px){ 
-  .socialButtonMenu { font-size: 17.5px; }
+  .orientation_info { font-size: 15px; }
+  .box__two__info { font-size: 100%; }
+  .socialContainer { text-align: center; }
+  .socialButtonMenu { font-size: 17.5px;  width: 45%; }
   .reviews h1, .interview h1, .newReview h1 { font-size: 27px; }
 }

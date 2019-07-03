@@ -1,11 +1,7 @@
 /*----------
   EVENTS 
 -----------*/
-.eventsBox { margin-top: 1.5em; }
-.button_container { width: 100%; text-align: center; font-size: 30px; }
-.eventsButtonMenu { border: none; background: none; margin: 0 10%;  padding-top: 0.5em; padding-bottom: 0.5em; color: #ccc; }
-.button_active { color: #000; }
-.choice_active { display: none!important; }
+.eventsResults { margin-top: 1.5em; }
 .event { background-color: #fff;  margin: 1.5rem;  width: 25%;  border: 1px solid #ccc;  border-radius: 1em;  display: flex;  flex-direction: column; }
 .event_image { width: 100%;  height: 15em;  object-fit: cover;  border-top-left-radius: 1em;   border-top-right-radius: 1em; }
 .event p { width: 100%;  font-weight: bold;  text-align: center;  font-size: 100%;  margin: 0;  padding: 0.5em; }
@@ -15,12 +11,14 @@
 
 
 /*---------------
-  adjustments
+  Adjustments
 -----------------*/
 @media (max-width: 1023px) and (min-width: 768px){
   .event { width: 40% }
 }
 
 @media (max-width: 767px){
-  .event { width: 90%; }
+  .event { width: 75%; }
+  .event_image { height: 10em; }
+  .event p { font-size: 15px; }
 }
