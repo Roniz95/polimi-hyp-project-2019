@@ -227,9 +227,8 @@ document.body.appendChild(navbar);
 
 
 /* CONTROL IF USER IS LOGGED */
-var user_logged = localStorage.getItem('logged');
-      
-if (user_logged === 'true') {
+var username = localStorage.getItem('username');
+if (username) {
   /*
     Controllo se il cookie è ancora valido:
     - SI procedo normale
@@ -237,7 +236,7 @@ if (user_logged === 'true') {
   */
   document.getElementById("notLogged_button").style.display = 'none';
   document.getElementById("dropdownMenuButton").style.display = 'block';
-  document.getElementById("dropdownMenuButton").textContent = localStorage.getItem('username');
+  document.getElementById("dropdownMenuButton").textContent = username;
 } else {
   document.getElementById("notLogged_button").style.display = 'block';
   document.getElementById("dropdownMenuButton").style.display = 'none';
@@ -250,7 +249,6 @@ function redirectToAuthPage(){
    
 function signOut() {
   //DO BACK END SIGN OUT WHERE COOKIE IS DEACTIVATED
-  localStorage.setItem('logged', 'false');
   localStorage.removeItem('username');
   window.location.reload();
 }

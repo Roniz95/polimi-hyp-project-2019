@@ -56,7 +56,7 @@ function signIn() {
       if(data){
           localStorage.setItem('logged', 'true');
           localStorage.setItem('username', uName);
-          window.location.reload();
+          window.location.href = "../index.html";
       } 
     }
   });
