@@ -7,10 +7,13 @@
 </head>
 <body id="preview">
 <h1><a id="Documentation_of_the_Backend_part_0"></a>Documentation of the Backend part</h1>
+
 <blockquote>
     <p>Deliverable D1</p>
 </blockquote>
+
 <h2><a id="General_group_information_2"></a>General group information</h2>
+
 <table class="table table-striped table-bordered">
     <thead>
     <tr>
@@ -49,13 +52,15 @@
     </tr>
     </tbody>
 </table>
+
 <h2><a id="Links_to_other_deliverables_8"></a>Links to other deliverables</h2>
+
 <ul>
     <li>Deliverable D0: the web application is accessible at<br>
         <a href="https://polimi-hyp-2019.herokuapp.com/">this address</a>.
     </li>
     <li>Deliverable D2: the YAML or JSON file containing the specification of the app<br>
-        API can be found at <a href="apidoc.yaml">this address</a>.
+        API can be found at <a href="../pages/apidoc.yaml">this address</a>.
     </li>
     <li>Deliverable D3: the SwaggerUI page of the same API is available at<br>
         <a href="swaggerui">this address</a>.
@@ -69,16 +74,18 @@
         instructors.
     </li>
 </ul>
+
 <h2><a id="Specification_21"></a>Specification</h2>
+
 <h3><a id="Web_Architecture_22"></a>Web Architecture</h3>
-<p>Describe here, with a diagram, the components of your web application and how they interact. Highlight which parts
-    belong to the application layer, data layer<br>
-    or presentation layer. How did you ensure that HTML is not rendered server side?</p>
+
+<img src="../assets/images/architecture.png" />
+<p>The APIs return JSONs. In this way the client side the html pages send one or more requests to the server, which will respond by sending JSON files; the HTML page will therefore base its content (writings, images, etc.) on what will be written on this file</p>
+
 <h3><a id="API_25"></a>API</h3>
+
 <h4><a id="REST_compliance_26"></a>REST compliance</h4>
-<p>Describe here to what extent did you follow REST principles and what are the<br>
-    reasons for which you might have decided to diverge. Note, you must not describe<br>
-    the whole API here, just the design decisions.</p>
+
 <p> The backend implementation follows REST principle at 100%.<br>
     We opted for a model where data is returned as a jsonArray containing jsonObjects. <br>
     The reason behind this decision is that every endpoint ALWAYS return what is expected or, <br>
@@ -88,18 +95,27 @@
     an array of books, or an array of error and he can check (and should definitely do it) the content of the response beforehand just by looking at the response code. <br>
     Thus, using a more elaborated model based on jsonObject containing jsonProperty and JsonArray (like twitter API for example),<br>
     was not needed and in general it would have been an overkill. <br>
-    </p>
+</p>
+
 <h4><a id="OpenAPI_Resource_models_30"></a>OpenAPI Resource models</h4>
 <p>Describe here synthetically, which models you have introduced for resources.</p>
+
 <h3><a id="Data_model_32"></a>Data model</h3>
-<p>Describe with an ER diagram the model used in the data layer of your web<br>
-    application. How these map to the OpenAPI data model?</p>
+
+<img src="../assets/images/IDM-Tables.jpg" width="906.75" height="915" />
+<p><b>How these map to the OpenAPI data model?</b></p>
+<p>Through a middleware (knex) we create JSON files based on the database content. This JSON files will be the ones that the open API wil send to the client<br><br><br></p>
+
 <h2><a id="Implementation_35"></a>Implementation</h2>
+
 <h3><a id="Tools_used_36"></a>Tools used</h3>
-<p>Describe here which tools, languages and frameworks did you use for the backend<br>
+
+  <p>Describe here which tools, languages and frameworks did you use for the backend<br>
     of the application.</p>
+
 <h3><a id="Discussion_39"></a>Discussion</h3>
-<p>Describe here:</p>
+
+<p>Describe here:</p><br>
 <ul>
     <li>How did you make sure your web application adheres to the provided OpenAPI<br>
         specification?
@@ -114,17 +130,22 @@
         the data model?
     </li>
 </ul>
+
+<br><br><br>
+
 <h2><a id="Other_information_49"></a>Other information</h2>
+
 <h3><a id="Task_assignment_50"></a>Task assignment</h3>
-<p>Describe here how development tasks have been subdivided among members of the<br>
-    group, e.g.:</p>
 <ul>
-    <li>Foo worked on front end (80%) and OpenAPI Spec (20% of the time)</li>
-    <li>Bar worked on …</li>
+    <li>Alessandro worked principally on Front end part (HTML Page creation, CSS specification and some JS files)</li>
+    <li>Sergio worked principally on server creation and OpenAPI Spec</li>
+    <li>Federico worked both in Front End and Back part (ajax request to server, router path creation, some css modification, etc)</li>
 </ul>
+
 <h3><a id="Analysis_of_existing_API_55"></a>Analysis of existing API</h3>
 <p>Describe here if you have found relevant APIs that have inspired the OpenAPI<br>
     specification and why (at least two).</p>
+
 <h3><a id="Learning_outcome_58"></a>Learning outcome</h3>
 <p>What was the most important thing all the members have learned while developing<br>
     this part of the project, what questions remained unanswered, how you will use<br>
