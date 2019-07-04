@@ -86,13 +86,15 @@
 
 <h4><a id="REST_compliance_26"></a>REST compliance</h4>
 
-<p> The backend implementation follows REST principle at 100%.<br>
+<p> The backend implementation follows REST principle, however we used a cookie login to guarantee<br>
+    session's persistent and this is something that in general breaks REST principle <br>
+    of statelessness but we thought that a stateless API key login would be inappropriate<br>
     We opted for a model where data is returned as a jsonArray containing jsonObjects. <br>
     The reason behind this decision is that every endpoint ALWAYS return what is expected or, <br>
     as per specification, an appropriate error. We decided to avoid big request with large amount of <br>
     data and informations to adhere to the principle that simple is, not always but often, better. <br>
     So for example if /books/?isBestSeller={value} is called, the API user know that it will always produce <br>
-    an array of books, or an array of error and he can check (and should definitely do it) the content of the response beforehand just by looking at the response code. <br>
+    an array of books, or an array of error/status and he can check (and should definitely do it) the content of the response beforehand just by looking at the response code. <br>
     Thus, using a more elaborated model based on jsonObject containing jsonProperty and JsonArray (like twitter API for example),<br>
     was not needed and in general it would have been an overkill. <br>
 </p>
@@ -104,7 +106,8 @@
 
 <img src="../assets/images/IDM-Tables.jpg" width="906.75" height="915" />
 <p><b>How these map to the OpenAPI data model?</b></p>
-<p>Through a middleware (knex) we create JSON files based on the database content. This JSON files will be the ones that the open API wil send to the client<br><br><br></p>
+<p>Through a middleware (knex) we create JSON files based on the database content. <br>
+    This JSON files will be the ones that the open API wil send to the client<br><br><br></p>
 
 <h2><a id="Implementation_35"></a>Implementation</h2>
 
@@ -112,39 +115,79 @@
 
   <p>Describe here which tools, languages and frameworks did you use for the backend<br>
     of the application.</p>
+<ul>
+    <ul title="Backend principal tools">
+        <li>node.js 8.9.4 - asynchronous framework for the backend code </li>
+        <li>npm.js 5.6.0 - Node official packet manager</li>
+        <li>express.js - Node famous middleware</li>
+        <li>passport.js - widely used authentication and session manager library</li>
+        <li>knex.js - database management middleware for Postgres</li>
+        <li>Postgres 11.1 - DBMS</li>
+        <li> Javascript</li>
+        <li>Heroku</li>
+        <li>Postman</li>
+    </ul>
 
+    <
+</ul>
 <h3><a id="Discussion_39"></a>Discussion</h3>
 
 <p>Describe here:</p><br>
 <ul>
     <li>How did you make sure your web application adheres to the provided OpenAPI<br>
         specification?
+        We tested our API using POSTMAN,
     </li>
     <li>Why do you think your web application adheres to common practices to partition<br>
         the web application (static assets vs. application data)
+        Our webapp dynamic assets are sent via Json using the provided API. The frontend <br>
+        of the application was developed as a module that was integrated after with the backend. <br>
+        Ideally, it would be possible to develop a totally different presentation layer,<br>
+        for example a mobile app, and integrate it with the provided API.
     </li>
     <li>Describe synthetically why and how did you manage session state, what are the<br>
-        state change triggering actions (e.g., POST to login etc…).
+        state change triggering actions (e.g., POST to login etc…).<br>
+
+        There are 3 state change REST call being:
+        <ul>
+            <li>/login</li>
+            <li>/register</li>
+            <li>/logout</li>
+        </ul>
+        Session persistence is obtained using a cookie provided to the client after login.
     </li>
     <li>Which technology did you use (relational or a no-SQL database) for managing<br>
         the data model?
+        We used a Postgres SQL database , the choice was dictated by our familiarity with<br>
+        heroku PaaS features.
     </li>
 </ul>
 
 <br><br><br>
 
-<h2><a id="Other_information_49"></a>Other information</h2>
+
 
 <h3><a id="Task_assignment_50"></a>Task assignment</h3>
 <ul>
     <li>Alessandro worked principally on Front end part (HTML Page creation, CSS specification and some JS files)</li>
-    <li>Sergio worked principally on server creation and OpenAPI Spec</li>
+    <li>Sergio worked principally on the development of the backend and API</li>
     <li>Federico worked both in Front End and Back part (ajax request to server, router path creation, some css modification, etc)</li>
 </ul>
 
 <h3><a id="Analysis_of_existing_API_55"></a>Analysis of existing API</h3>
 <p>Describe here if you have found relevant APIs that have inspired the OpenAPI<br>
     specification and why (at least two).</p>
+Our API was inspired by:
+<ul>
+    <li><a href="https://github.com/OAI/OpenAPI-Specification/tree/master/examples/v2.0/yaml">Swagger 2.0 example OpenAPI</a></li>
+    <li><a href="https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9">API design guidelines</a></li>
+    <li><a href="https://www.instagram.com/developer/">Instagram API</a></li>
+</ul>
+We tried to find a balance between using good practices and "common sense". <br>
+We learned that there's no "recipe" for a perfect API and in general the consensus <br>
+shared by developers is that what really make an API intuitive and easy to use is <br>
+the capacity to adapt the good practises to the needed application during development and<br>
+most of all writing a good documentation.
 
 <h3><a id="Learning_outcome_58"></a>Learning outcome</h3>
 <p>What was the most important thing all the members have learned while developing<br>
@@ -152,12 +195,19 @@
     what you’ve learned in your everyday life?<br>
     Examples:</p>
 <ul>
-    <li>Foo learned to write SQL queries and Javascript but wanted to know more about<br>
-        caching, he’s probably going to create his own startup with what she has<br>
-        learned
+    <li>Sergio - I learned how to write an API and its documentation and<br>
+        how to manage a secure connection using cookies. Was really interesting <br>
+        to learn how javascript callbacks and promises logic work and sure it something<br>
+        that i would love to master. I've used the skills developed on an IoT university project <br>
+        to write an API for an ESP8266 microcontroller and an MQTT server.
     </li>
-    <li>Bar learned how to deploy on a cloud platform, he would have liked to know<br>
-        more about promises for asynchronous code…
+    <li>Federico - I learned how to fetch data from an API and render it on the frontend <br>
+        side of the application using Ajax. In the past i had worked at the design of HTML pages.<br>
+        In the future i would like to learn more about backend development.<br>
+    </li>Alessandro - I learned how to design and style HTML pages with CSS and javascript. I learned<br>
+         the basic of nodejs and i'm planning to use it for a side project in the future<br>
+    <li>
+
     </li>
 </ul>
 
