@@ -1,24 +1,36 @@
 swagger: "2.0"
 info:
-  description: "This is the api documentation for the Hypermedia project"
-  version: "1.0.0"
-  title: "Hypermedia project 2019"
-  contact:
-    email: "sergioplacanica95.rc@gmail.it"
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "heroku.link.com"
+    description: "This is the api documentation for the Hypermedia project"
+    version: "1.0.0"
+    title: "Hypermedia project 2019"
+    contact:
+        email: "sergioplacanica95.rc@gmail.it"
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "polimi-hyp-2019.herokuapp.com"
 basePath: "/"
-tags: 
-  - name: 'book'
-    description: 'fetch data starting from /books'
-  - name: 'author'
-    description: 'fetch data starting from /authors'
-  - name: 'event'
-    description: 'fetch data starting from /events'
-  - name: 'user'
-    description: 'operations on users accounts'
+
+tags:
+    - name: 'book'
+      description: 'fetch data starting from /books'
+    - name: 'author'
+      description: 'fetch data starting from /authors'
+    - name: 'event'
+      description: 'fetch data starting from /events'
+    - name: 'authentication'
+      description: 'handle the register, login and logout operations'
+    - name: 'cart'
+      description: 'handle the operation in the shopping cart'
+
+
+
+securityDefinitions:
+    sessionCookie:
+        type: apiKey
+        name: "connect.sid"
+        in: header
+
 
 definitions:
     book:
@@ -100,59 +112,53 @@ definitions:
                 type: string
                 format: text
 
-    user:
-        type: object
-        properties:
-            id:
-                type: integer
-            username:
-                type: string
-            password:
-                type: string
-            name:
-                type: string
-            surname:
-                type: string
-            email:
-                format: email
-                type: string
 
     theme:
         type: object
         properties:
-            data: 
-              type: integer
-              format: increment
+            data:
+                type: integer
+                format: increment
             value:
-              type: string
+                type: string
 
     review:
         type: object
         properties:
             isbn:
-              type: string
+                type: string
             bookReview:
-              type: string
-              format: text
-              
+                type: string
+                format: text
+
+
+
     error:
         type: object
         description: 'the object returned by the api when something wrong happens, useful for debugging malformed urls'
         properties:
             error:
-              type: string
-              description: 'contains the probable cause of why the request went wrong'
-
+                type: string
+                description: 'contains the probable cause of why the request went wrong'
+    status:
+        type: object
+        description: 'the object returned by the api when a state change in the db or user session shoul be notified'
+        properties:
+            status:
+                type: string
+                description: 'explain the result of the rest call'
 
 
 paths:
     /books:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'fetch books based on query parameters, if no query parameters are present, fetch all books'
             produces:
                 - 'application/json'
+            security:
+                - sessionCookie: []
             parameters:
                 - in: query
                   name: bestSeller
@@ -196,14 +202,19 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/error'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+
 
 
     /books/{isbn}:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'Return a books based on its isbn'
             produces:
                 - 'application/json'
@@ -218,12 +229,20 @@ paths:
                     description: 'Book response'
                     schema:
                         $ref: '#/definitions/book'
-                default:
-                    description: 'unexpected error'
+
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+
+
+
     /books/{isbn}/authors:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'Return all the authors of a book based on its isbn'
             produces:
                 - 'application/json'
@@ -240,14 +259,18 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/author'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
 
     /books/{isbn}/themes:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'Returns all the themes of a book based on its isbn'
             produces:
                 - 'application/json'
@@ -264,13 +287,17 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/theme'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
     /books/{isbn}/reviews:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'Returns all the reviews of a book based on its isbn'
             produces:
                 - 'application/json'
@@ -287,13 +314,17 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/review'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
     /books/{isbn}/similar:
         get:
             tags:
-              - 'book'
+                - 'book'
             description: 'Returns all the books similar to this book'
             produces:
                 - 'application/json'
@@ -309,14 +340,14 @@ paths:
                     schema:
                         type: array
                         items:
-                             $ref: '#/definitions/book'
+                            $ref: '#/definitions/book'
                 default:
-                  description: 'unexpected error'
+                    description: 'unexpected error'
 
     /authors:
         get:
             tags:
-              - 'author'
+                - 'author'
             description: 'Returns all the authors matching with name query parameter or all the authors if no query parameter is present'
             produces:
                 - 'application/json'
@@ -333,13 +364,17 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/author'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
     /authors/{id}:
         get:
             tags:
-              - 'author'
+                - 'author'
             description: 'Returns one author based on his id'
             produces:
                 - 'application/json'
@@ -360,7 +395,7 @@ paths:
     /authors/{id}/books:
         get:
             tags:
-              - 'author'
+                - 'author'
             description: 'fetch all the books written by this author'
             produces:
                 - 'application/json'
@@ -377,13 +412,17 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/book'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
     /authors/{id}/similar:
         get:
             tags:
-              - 'author'
+                - 'author'
             description: 'fetch all authors similar the one specified by id'
             produces:
                 - 'application/json'
@@ -406,7 +445,7 @@ paths:
     /events:
         get:
             tags:
-              - 'event'
+                - 'event'
             description: 'get all the events in the range (fromDate, toDate), get all the events if no query parameters are present'
             produces:
                 - 'application/json'
@@ -436,10 +475,10 @@ paths:
     /events/{id}:
         get:
             tags:
-              - 'event'
+                - 'event'
             description: 'get a specific event by its id'
             produces:
-                  - 'application/json'
+                - 'application/json'
             parameters:
                 - in: 'path'
                   name: 'id'
@@ -451,13 +490,17 @@ paths:
                     description: 'Event response'
                     schema:
                         $ref: '#/definitions/event'
-                default:
-                    description: 'unexpected error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
 
     /events/{id}/books:
         get:
             tags:
-              - 'event'
+                - 'event'
             description: 'get all books of a specific event'
             produces:
                 - 'application/jsons'
@@ -480,7 +523,7 @@ paths:
     /events/{id}/authors:
         get:
             tags:
-              - 'event'
+                - 'event'
             description: 'fetch all authors presents at a specific event'
             produces:
                 - 'application/json'
@@ -497,10 +540,303 @@ paths:
                         type: array
                         items:
                             $ref: '#/definitions/author'
-                default:
-                    description: 'unexpected error'
-    
-    
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+
+    /register:
+        post:
+            tags:
+                - 'authentication'
+            summary: Register a user to the website
+            description: 'register a user to the website.'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'formData'
+                  name: 'username'
+                  description: 'the unique username that the user must choose, lenght shoult be at least 6 characters'
+                  required: true
+                  type: string
+                - in: 'formData'
+                  name: 'password'
+                  description: "password of the user, at least 6 characters"
+                  required: true
+                  type: string
+                - in: 'formData'
+                  name: 'name'
+                  required: true
+                  description: 'first name of user'
+                  type: string
+                - in: 'formData'
+                  name: 'surname'
+                  description: 'last name of the user'
+                  type: string
+                  required: true
+                - in: 'formData'
+                  name: 'email'
+                  description: 'email of the user'
+                  type: string
+                  format: email
+                  required: true
+
+            responses:
+                200:
+                    description: 'correctly registered'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                401:
+                    description: 'already logged in'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+
+
+    /login:
+        post:
+            tags:
+                - 'authentication'
+            summary: log in a registered user to the website
+            description: 'log in a user to the website, a cookie that ensure a persistent connection is returned.'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'formData'
+                  name: 'username'
+                  description: 'the unique username that the user must choose, lenght shoult be at least 6 characters'
+                  required: true
+                  type: string
+                - in: 'formData'
+                  name: 'password'
+                  description: "password of the user, at least 6 characters"
+                  required: true
+                  type: string
+
+            responses:
+                200:
+                    description: 'correctly registered'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                401:
+                    description: 'already logged in'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+
+    /logout:
+        post:
+            security:
+                - sessionCookie: []
+            tags:
+                - 'authentication'
+            summary: logout a logged in user
+            description: 'logout a user discarding its session cookie'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+
+
+            responses:
+                200:
+                    description: 'correctly registered'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                401:
+                    description: 'already logged in'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+
+    /cart/books:
+        get:
+            tags:
+                - 'cart'
+            summary: get all books in the cart of the loggedin user
+            description: 'return all the books in the shopping cart of the user a user.'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+
+            responses:
+                200:
+                    description: 'Books response'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/book'
+                401:
+                    description: 'forbidden'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+
+    /cart/add/{isbn}:
+        post:
+            tags:
+                - 'cart'
+            security:
+                - sessionCookie: []
+            summary: add a book to the cart
+            description: 'add a book to the cart of the current user, if the book is already in the cart, increment the its quantity by one'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'isbn'
+                  description: 'book to be added isbn'
+                  required: true
+                  type: string
+
+
+            responses:
+                200:
+                    description: 'correctly added the book'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                401:
+                    description: 'forbidden'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+
+    /cart/delete/{isbn}:
+        post:
+            tags:
+                - 'cart'
+            security:
+                - sessionCookie: []
+            summary: delete a book from the cart
+            description: 'delete a book to the cart of the current user, if quantity of the book in the cart is >1, then it is decremented by one'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'isbn'
+                  description: 'book to be deleted isbn'
+                  required: true
+                  type: string
+
+
+            responses:
+                200:
+                    description: 'correctly removed/decremented the book'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                401:
+                    description: 'forbidden'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+
+    /cart/delete/{isbn}/all:
+        post:
+            security:
+                - sessionCookie: []
+            tags:
+                - 'cart'
+            summary: delete all the book of one type from the cart
+            description: 'delete a book to the cart of the current user, if quantity of the book in the cart is >1, then it is decremented by one'
+            consumes:
+                - 'application/x-www-form-urlencoded'
+            produces:
+                - 'application/json'
+            parameters:
+                - in: 'path'
+                  name: 'isbn'
+                  description: 'book to be deleted isbn'
+                  required: true
+                  type: string
+
+
+            responses:
+                200:
+                    description: 'correctly removed the book'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/status'
+                422:
+                    description: 'bad formatted query parameters in url'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+                500:
+                    description: 'internal server error'
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/error'
+
+
+
+
+
 
 
 
