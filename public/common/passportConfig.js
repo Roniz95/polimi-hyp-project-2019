@@ -24,6 +24,7 @@ passport.use(new LocalStrategy(options, function (username, password, done) {
             } else return done(null, user)
         })
         .catch(error => {
+            console.log('uao')
             return done(error)
         })
 }));

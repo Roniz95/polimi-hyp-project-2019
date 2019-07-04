@@ -366,6 +366,77 @@ router.get('/events/month', function (req, res) {
 
 });
 
+router.post('/cart/add/:isbn', authHelper.loginRequired, (req, res, next) => {
+    knex('cart').select('isbn', 'quantity')
+        .where('userID', req.user.id)
+        .andWhere('isbn', req.params.isbn)
+        .then(cart => {
+            if(cart.length === 1) {
+                knex('cart')
+                    .update({
+                        quantity : cart[0].quantity + 1
+                    })
+                    .then(result => {
+                        res.send(200)
+                    }).catch(err => res.sendStatus(500).send(err))
+            } else {
+                knex('cart')
+                    .insert({
+                        isbn : req.params.isbn,
+                        userID : req.user.id,
+                        quantity : 1
+                    })
+                    .then(result => res.send('added to the cart'))
+                    .catch(err => res.status(500).send(common.error('serverError')))
+            }
+        })
+});
+
+router.post('/cart/delete/:isbn', authHelper.loginRequired, (req, res, next) => {
+
+    knex('cart')
+        .where('isbn', req.params.isbn)
+        .andWhere('userID', req.user.id)
+        .then(cart => {
+            if(cart.length === 1 ) {
+
+                if(cart[0].quantity > 1) {
+                    knex('cart')
+                        .where('isbn', req.params.isbn)
+                        .andWhere('userID', req.user.id)
+                        .update({
+                            "quantity" : cart[0].quantity -1
+                        })
+                        .then((result) => {
+                            res.send('eliminated')
+                    })  .catch(err => res.status(500).send(common.error('serverError')))
+                } else {
+                    knex('cart')
+                        .where('isbn', req.params.isbn)
+                        .andWhere('userID', req.user.id)
+                        .del().then(result => {
+                        res.status(200).send()
+                    })  .catch(err =>{
+                        res.status(500).send(common.error('serverError'))
+                    })
+                }
+            } else {res.status(404).send([common.error('noExist')])}
+        })
+});
+
+
+router.get('/cart/books',authHelper.loginRequired, (req, res, next) => {
+    knex('books.*')
+        .leftJoin('cart', 'books.isbn', 'cart.isbn')
+        .where('cart.userID', req.user.id)
+        .then((books) => {
+            res.send(books)
+        }) .catch(err => {
+                console.log(err)
+                res.status(500).send(common.error('serverError'))
+    })
+
+});
 
 
 
@@ -380,17 +451,13 @@ router.get('/users/:id', function (req, res) {
         .where('id', req.params.id)
         .then(user => res.send(user))
 });
-router.get('/cart', authHelper.loginRequired, (req, res, next) => {
-    res.send('this is the json')
-});
-
 
 
 router.post('/register', authHelper.loginRedirect, (req, res, next) => {
 
     return authHelper.createUser(req, res).then((response) => {
         passport.authenticate('local', (err, user, info) => {
-            if (!user) authHelper.handleResponse(res, 200, 'success')
+            if (user) authHelper.handleResponse(res, 200, 'success')
         })(req, res, next);
     })
         .catch(error => {
@@ -408,6 +475,7 @@ router.get('/login', function (req, res) {
 
 });
 router.post('/login', authHelper.loginRedirect, (req, res, next) => {
+
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             console.log(err);
@@ -419,7 +487,14 @@ router.post('/login', authHelper.loginRedirect, (req, res, next) => {
         if (user) {
             req.logIn(user, function (err) {
                 if (err) { authHelper.handleResponse(res, 500, 'error'); }
-                authHelper.handleResponse(res, 200, 'success');
+                knex('users').select('id')
+                    .where('username', req.body.username)
+                    .then(username =>  {
+                        res.cookie('id_code', username[0].id)
+                        authHelper.handleResponse(res, 200, 'success');
+                    });
+
+
             });
         }
     })(req, res, next);
@@ -466,6 +541,8 @@ router.get('/autocomplete/themes', function (req, res) {
 });
 
 
+
+
 /*---------------
   OTHER PART
 ----------------*/
@@ -493,6 +570,9 @@ router.use(function (req, res) {
     // default to plain-text. send()
     res.type('txt').send('Not found');
 });
+
+//cart
+
 
 
 

@@ -4,14 +4,12 @@ const knex = require('./knexConfig').knexConn();
 
 
 function handleResponse(res, code, statusMsg) {
-    res.status(code).json({status: statusMsg});
+    res.status(code).json([{status: statusMsg}]);
 }
 
 function loginRedirect(req, res, next) {
-    console.log('login redirect');
     if (req.user) {
-        console.log('already logged');
-        return res.status(401).json({status: 'You are already logged in'});
+        return res.status(401).json([{status: 'You are already logged in'}]);
     }
     next();
 }
@@ -59,7 +57,7 @@ function handleErrors(req) {
 }
 
 function loginRequired(req, res, next) {
-    if (!req.user) return res.status(401).json({status: 'Please log in'});
+    if (!req.user) return res.status(401).json({status: 'Forbidden'});
     return next();
 }
 
@@ -68,5 +66,5 @@ module.exports = {
     loginRequired,
     loginRedirect,
     handleResponse,
-    handleErrors
+
 };

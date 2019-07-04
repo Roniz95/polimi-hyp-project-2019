@@ -349,6 +349,7 @@ function createDB() {
             knex.schema.createTable("cart", table => {
                 table.string('isbn');
                 table.uuid('userID');
+                table.integer('quantity');
                 table.primary(['isbn', 'userID']);
 
             }).then(() => {});
