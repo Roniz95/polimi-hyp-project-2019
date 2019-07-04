@@ -29,6 +29,7 @@
   text-align: right; 
 }
 .readMoreLess { 
+  cursor: pointer;
   border: 1px solid #ccc;  
   border-radius: 0.5em; 
   padding: 0.25em 0.5em;  

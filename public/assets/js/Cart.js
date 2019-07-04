@@ -11,19 +11,28 @@ function fetchData(){
     });
 }
 
+
+
+
+/*-------------------
+  BOOKS FUNCTIONS
+---------------------*/
+
+/* set books list to page */
 function setList(booksList){
   for(let i=0; i<booksList.length; i++){ setBook(booksList[i]) }
 }
 
+/* set book to page */
 function setBook(data){
   var list = document.getElementById('listID');
   var totalCostElement = document.getElementById('totalCostID');
         
   var div = document.createElement('div');
-  div.className = "row shoppingMenuRow";
+  div.className = "row shoppingMenuRow justify-content-center";
         
   var imageDiv = document.createElement('div');
-  imageDiv.className = "col-2 bookImage_div";
+  imageDiv.className = "col-md-3 bookImage_div";
   var img = document.createElement('img');
   img.className = "bookImage";
   img.src = data.image;
@@ -31,13 +40,14 @@ function setBook(data){
   div.appendChild(imageDiv);
         
   var infoDiv = document.createElement('div');
-  infoDiv.className = "col-8 bookInfos";
+  infoDiv.className = "col-md-7 bookInfos";
   var ul = document.createElement('ul');
   var titleLi = document.createElement('li');
   titleLi.innerHTML = "<b>Title:</b> "+data.title;
   ul.appendChild(titleLi);
   var authorsLi = document.createElement('li');
-  authorsLi.innerHTML = "<b>Auhors:</b> "+ "data.title"; //To add create Authors List
+  authorsLi.innerHTML = "<b>Auhors: </b>";
+  createAuthorsList(data.isbn, authorsLi)
   ul.appendChild(authorsLi);
   var publishingLi = document.createElement('li');
   publishingLi.innerHTML = "<b>Publishing House:</b> "+data.publishingHouse;
@@ -52,12 +62,12 @@ function setBook(data){
   div.appendChild(infoDiv);
         
   var priceDiv = document.createElement('div');
-  priceDiv.className = "col-2 bookPrice";
+  priceDiv.className = "col-md-2 bookPrice";
   var innerDiv = document.createElement('div');
   innerDiv.className = "lastColumn";
         
   var price = document.createElement('b');
-  price.textContent = data.price.toFixed(2) + " €";
+  price.textContent = (data.price*data.quantity).toFixed(2) + " €";
   innerDiv.appendChild(price);
         
   var incrementDiv = document.createElement('div');
@@ -91,29 +101,53 @@ function setBook(data){
   div.appendChild(priceDiv);
         
   list.appendChild(div);
-  totalCost += data.price;
+  totalCost += (data.price*data.quantity);
   totalCostElement.textContent = totalCost.toFixed(2) + " €";
 }
 
+/* Set author names list to the books card */
+function createAuthorsList(bookISBN, element){
+  $.ajax({
+    url: '/books/' + bookISBN + '/authors',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => { 
+      if(data){ 
+        for(let i=0; i<data.length; i++){
+          element.innerHTML = element.innerHTML + data[i].name;
+          if(i<data.length-1){ element.innerHTML = element.innerHTML + ", "; }
+        }
+      }
+    }
+  });
+}
+
+/* remove book from cart */
 function removeBook(book, elementValue, element, totalCostElement){
-  var strQtyValue = elementValue.textContent;
-  var qty = parseInt(strQtyValue);
-  var c = parseFloat(book.price) * qty;
-  totalCost = totalCost - (book.price * qty);
-  totalCostElement.textContent = totalCost.toFixed(2) + " €";
-  var cart = JSON.parse(sessionStorage.getItem('cart'));
-  var index = cart.indexOf(book.isbn);
-  cart.splice(index, 1);
-  sessionStorage.setItem('cart', JSON.stringify(cart));
-  element.parentNode.removeChild(element);
+  $.ajax({
+      url: '/cart/delete/' + book.isbn + '/all',
+      type: 'POST',
+      dataType: 'json'
+  }).catch(
+    () => {
+      var strQtyValue = elementValue.textContent;
+      var qty = parseInt(strQtyValue);
+      var c = parseFloat(book.price) * qty;
+      totalCost = totalCost - (book.price * qty);
+      totalCostElement.textContent = totalCost.toFixed(2) + " €";
+      element.parentNode.removeChild(element);
+    }
+  )
 }
 
+/* +1 book quantity */
 function addQty(element, isbn, bookPrice, priceElement, totalCostElement){
   $.ajax({
       url: '/cart/add/' + isbn,
       type: 'POST',
       dataType: 'json'
-  }).then(
+  })
+  .catch(
     () => {
       var priceBooks = parseFloat(priceElement.textContent);
       var strQtyValue = element.textContent;
@@ -123,20 +157,30 @@ function addQty(element, isbn, bookPrice, priceElement, totalCostElement){
       priceElement.textContent = newPrice.toFixed(2) + ' €';
       totalCost += bookPrice; 
       totalCostElement.textContent = totalCost.toFixed(2) + ' €';
-    },
-    () => { alert('ERROR:\nThere are problems on our server.\n\nPlease retry.\nIf the problem persists, please contact our service center') }
-  );
+    }
+  )
 }
 
-function removeQty(element, bookPrice, priceElement, totalCostElement){
-  var priceBooks = parseFloat(priceElement.textContent);
+/* -1 book quantity */
+function removeQty(element, isbn, bookPrice, priceElement, totalCostElement){
   var strQtyValue = element.textContent;
   var qty = parseInt(strQtyValue);
-  if(qty>1) { 
-    element.textContent = qty-1;
-    var newPrice = priceBooks - bookPrice;
-    priceElement.textContent = newPrice.toFixed(2) + ' €';
-    totalCost -= bookPrice; 
-    totalCostElement.textContent = totalCost.toFixed(2) + ' €';
+  if(qty>1) {
+    $.ajax({
+      url: '/cart/delete/' + isbn,
+      type: 'POST',
+      dataType: 'json'
+    }).catch(
+      () => {
+        var priceBooks = parseFloat(priceElement.textContent);
+        var strQtyValue = element.textContent;
+        var qty = parseInt(strQtyValue);
+        element.textContent = qty-1;
+        var newPrice = priceBooks - bookPrice;
+        priceElement.textContent = newPrice.toFixed(2) + ' €';
+        totalCost -= bookPrice; 
+        totalCostElement.textContent = totalCost.toFixed(2) + ' €';
+      }
+    )
   }
 }

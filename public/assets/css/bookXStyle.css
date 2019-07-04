@@ -52,6 +52,12 @@
   border-radius: 5%;  
   border: none!important; 
 }
+.addButton:focus { 
+  box-shadow: none!important; 
+}
+.addButton:active { 
+  background-color: red!important;
+}
 .addButton i { 
   margin-left: 0.5em 
 }
@@ -68,6 +74,7 @@
   text-align: right; 
 }
 .readMoreLess { 
+  cursor: pointer;
   border: 1px solid #ccc;  
   border-radius: 0.5em; 
   padding: 0.25em 0.5em;  

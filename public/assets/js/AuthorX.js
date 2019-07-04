@@ -239,7 +239,7 @@ function SetBooks(booksIDs, elementID, bookTitle, searchID) {
     var genre = document.createElement('div');
     genre.className = 'cardBook__link';
     var b3 = document.createElement('b');
-    //createGenresList(booksIDs[i].isbn, b3);
+    createGenresList(booksIDs[i].isbn, b3);
     genre.appendChild(b3);
     div.appendChild(genre);
     
