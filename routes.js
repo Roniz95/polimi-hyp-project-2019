@@ -426,7 +426,8 @@ router.post('/cart/delete/:isbn', authHelper.loginRequired, (req, res, next) => 
 
 
 router.get('/cart/books',authHelper.loginRequired, (req, res, next) => {
-    knex('books.*')
+    knex('books')
+        .select("books.*")
         .leftJoin('cart', 'books.isbn', 'cart.isbn')
         .where('cart.userID', req.user.id)
         .then((books) => {
