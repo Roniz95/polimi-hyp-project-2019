@@ -239,7 +239,7 @@ router.get('/authors', function (req, res) {
     let errorList = [];
     let query = knex('authors');
     if (typeof req.query.name != "undefined") {
-        if (!common.isParamValid("alphString", 'name')) {
+        if (!common.isParamValid("alphanumString", 'name')) {
             errorList.push(common.error('badParameter', 'name'))
         } else {
             let authorName = req.query.name.toLowerCase();
@@ -445,7 +445,7 @@ router.get('/cart/books',authHelper.loginRequired, (req, res, next) => {
         .then((books) => {
             res.send(books)
         }) .catch(err => {
-                console.log(err)
+                console.log(err);
                 res.status(500).send(common.error('serverError'))
     })
 
