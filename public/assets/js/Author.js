@@ -31,18 +31,22 @@ function fetchData() {
 
 /* Called when user clicks Search For Author button */
 function select_searchAuthor() {
-  document.getElementById("author_of_the_month").classList.remove("button_active");
-  document.getElementById("search").classList.remove("choice_hide");
-  document.getElementById('search_author').classList.toggle("button_active");
-  document.getElementById('author').classList.toggle("choice_hide");
+  if(!document.getElementById("search_author").classList.contains("button_active")){
+    document.getElementById('search_author').classList.toggle("button_active");
+    document.getElementById("author_of_the_month").classList.remove("button_active");
+    document.getElementById("search").style.display = "block";
+    document.getElementById('author').style.display = "none";
+  }
 }
 
 /* Called when user clicks Author of the Month button */
 function select_authorOfTheMonth() {
-  document.getElementById('search_author').classList.remove("button_active");
-  document.getElementById("author").classList.remove("choice_hide");
-  document.getElementById("author_of_the_month").classList.toggle("button_active");
-  document.getElementById('search').classList.toggle("choice_hide");
+  if(!document.getElementById("author_of_the_month").classList.contains("button_active")){
+    document.getElementById('search_author').classList.remove("button_active");
+    document.getElementById("author_of_the_month").classList.toggle("button_active");
+    document.getElementById('search').style.display = "none";
+    document.getElementById("author").style.display = "block";
+  }
 }
 
 

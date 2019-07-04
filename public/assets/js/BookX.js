@@ -188,6 +188,11 @@ function fetchData() {
     var orientationInfo = "you have searched &nbsp;<b>Book of the month</b>";
     $('#orientationInfoID').append(orientationInfo);
   }
+  else if(from=='errorPage'){
+    document.getElementById("paginationID").style.display = "none";
+    var orientationInfo = "you have been redirected here from &nbsp;<b>404 page</b>";
+    $('#orientationInfoID').append(orientationInfo);
+  }
   
   setBook(currentBookISBN);
   

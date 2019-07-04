@@ -46,26 +46,26 @@
   <!-- CHOICE SECTION -->
   <div class="container">
     <div class="row justify-content-center button_row">
-      <div class="col-lg-4 col-md-6 choice_container">
-        <p type="button" class="choice_button" id="search_author" onclick="select_searchAuthor()">Search for Authors</p>
+      <div class="col-lg-4 col-6 choice_container">
+        <p class="choice_button" id="search_author" onclick="select_searchAuthor()">Search for Authors</p>
       </div>
-      <div class="col-lg-4 col-md-6 choice_container">
-        <p type="button" class="choice_button button_active" id="author_of_the_month" onclick="select_authorOfTheMonth()" >Author of the month</p>
+      <div class="col-lg-4 col-6 choice_container">
+        <p class="choice_button button_active" id="author_of_the_month" onclick="select_authorOfTheMonth()" >Author of the month</p>
       </div>        
     </div>
   </div>
           
   <!-- CONTENT SECTION -->
   <!-- Search for authors -->
-  <div id="search" class="container choice_hide">
+  <div id="search" class="container" style="display: none;">
     <div class="container">
       <div class="row justify-content-center title">
-        <div class="col-md-4 col-sm-12">
+        <div class="col-lg-4">
           <h3>Insert author name:</h3>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div id="authorSearchBarID" class="col-lg-6">
           <input type="text" id="autocomplete"/>
-          <button type="submit" id="searchButton" onclick="searchAuthor()">Search</button>
+          <button type="submit" id="searchButton" onclick="searchAuthor()">Search<i class="fa fa-search searchIcon"></i></button>
         </div>
       </div>
     </div>
@@ -73,19 +73,18 @@
       <div id="author_list" class="row justify-content-center"><!-- data --></div>
     </div>
   </div>
-  
   <!-- Author of the month -->
   <div id="author" class="container bannerBox">
     <div class="container banner_title">
       <h1 id="name_AOTM"><!-- data --></h1>
     </div>
     <div class="row justify-content-center">
-      <div class="bannerBox__image col-md-4">
+      <div class="bannerBox__image col-lg-4">
         <img id="image_AOTM" class="banner__image" alt="img">
       </div>
-      <div class="bannerBox__info col-md-8">
+      <div class="bannerBox__info col-lg-8">
         <p id="bio_AOTM"><!-- data--></p>
-        <a id="link_AOTM" class="bannerBox__link">See more infos...</a>
+        <a id="link_AOTM" class="bannerBox__link">See more infos</a>
       </div>
     </div>
   </div>
@@ -108,9 +107,13 @@
   </script>
   
   
+  <!-- SCRIPTS PART -->
+  <!-- Authors -->
   <script src="../assets/js/Author.js"></script>
-  
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <!-- Autocomplete -->
+  <script src="../assets/plugins/jquery-2.1.4.js"></script>
+  <script src="../assets/plugins/jquery.autocomplete.min.js"></script>
+  <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
          
