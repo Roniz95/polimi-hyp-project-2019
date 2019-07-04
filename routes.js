@@ -426,7 +426,16 @@ router.post('/cart/delete/:isbn', authHelper.loginRequired, (req, res, next) => 
             } else {res.status(404).send([common.error('noExist')])}
         })
 });
-
+router.post('/cart/delete/:isbn/all', authHelper.loginRequired, (req, res, next) => {
+    knex('cart')
+        .where('isbn', req.params.isbn)
+        .andWhere('userID', req.user.id)
+        .del().then(result => {
+        res.status(200).send()
+    })  .catch(err =>{
+        res.status(500).send(common.error('serverError'))
+    })
+});
 
 router.get('/cart/books',authHelper.loginRequired, (req, res, next) => {
     knex('books')
