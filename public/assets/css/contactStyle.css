@@ -1,17 +1,48 @@
 /*----------
   MAPS
 ------------*/
-.maps { width: 90%;  height: 40%;  background-color: #333;  margin: 5%;  padding: 1%;  display: flex;  align-content: center;  justify-content: center;  flex-wrap: wrap; }
-.maps iframe { width: 70%;  height: 200px; }
-.maps__info { height: 200px;  width: 30%;  color: #fff;  text-align: center;  display: inline-grid;  align-items: center;  padding: 1em; }
-.maps__info p { font-size: 14px; }
+.maps { 
+  width: 90%;  
+  height: 40%;  
+  background-color: #333;  
+  margin: 5%;  
+  padding: 1%;  
+  display: flex;  
+  align-content: center; 
+  justify-content: center;  
+  flex-wrap: wrap; 
+}
+.maps iframe { 
+  width: 70%;  
+  height: 200px; 
+}
+.maps__info { 
+  height: 200px;  
+  width: 30%;  
+  color: #fff;  
+  text-align: center;  
+  display: inline-grid;  
+  align-items: center;  
+  padding: 1em; 
+}
+.maps__info p { 
+  font-size: 14px; 
+}
 
 
 /*--------------
   Adjustments
 ----------------*/
 @media (max-width: 1020px){
-  .maps { height: auto; }
-  .maps iframe { width: 100%;  height: auto; }
-  .maps__info { height: auto; width: 100%; }
+  .maps { 
+    height: auto; 
+  }
+  .maps iframe { 
+    width: 100%;  
+    height: auto; 
+  }
+  .maps__info { 
+    height: auto; 
+    width: 100%; 
+  }
 }

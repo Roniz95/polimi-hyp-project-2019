@@ -1,12 +1,48 @@
 /*----------
   EVENTS 
 -----------*/
-.eventsResults { margin-top: 1.5em; }
-.event { background-color: #fff;  margin: 1.5rem;  width: 25%;  border: 1px solid #ccc;  border-radius: 1em;  display: flex;  flex-direction: column; }
-.event_image { width: 100%;  height: 15em;  object-fit: cover;  border-top-left-radius: 1em;   border-top-right-radius: 1em; }
-.event p { width: 100%;  font-weight: bold;  text-align: center;  font-size: 100%;  margin: 0;  padding: 0.5em; }
-.eventBox_borderBottom { border-bottom: 1px solid #ccc;  flex: 1;  justify-content: center;  align-items: center;  display: flex; }
-.date_text { border-bottom-left-radius: 1em;  border-bottom-right-radius: 1em; }
+.eventsResults { 
+  margin-top: 1.5em; 
+}
+.event { 
+  background-color: #fff;  
+  margin: 1.5rem;  
+  width: 25%;  
+  border: 1px solid #ccc;  
+  border-radius: 1em;  
+  display: flex;  
+  flex-direction: column; 
+}
+.event_image { 
+  width: 100%;  
+  height: 15em;  
+  object-fit: cover;  
+  border-top-left-radius: 1em;  
+  border-top-right-radius: 1em; 
+}
+.event p { 
+  width: 100%;  
+  font-weight: bold;  
+  text-align: center;  
+  font-size: 100%;  
+  margin: 0;  
+  padding: 0.5em; 
+}
+.eventBox_borderBottom { 
+  border-bottom: 1px solid #ccc;  
+  flex: 1;  
+  justify-content: center;  
+  align-items: center;  
+  display: flex; 
+}
+.date_text { 
+  border-bottom-left-radius: 1em;  
+  border-bottom-right-radius: 1em; 
+}
+.noEventsFound { 
+  font-style: italic; 
+  padding: 1em; 
+}
 
 
 
@@ -14,11 +50,19 @@
   Adjustments
 -----------------*/
 @media (max-width: 1023px) and (min-width: 768px){
-  .event { width: 40% }
+  .event { 
+    width: 40%; 
+  }
 }
 
 @media (max-width: 767px){
-  .event { width: 75%; }
-  .event_image { height: 10em; }
-  .event p { font-size: 15px; }
+  .event { 
+    width: 75%; 
+  }
+  .event_image { 
+    height: 10em; 
+  }
+  .event p { 
+    font-size: 15px; 
+  }
 }

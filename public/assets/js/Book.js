@@ -14,6 +14,10 @@ function fetchData() {
 
 
 
+/*-------------------
+  BOOKS FUNCTIONS
+--------------------*/
+
 /* Set book of the month */
 function setBook(bookISBN){
   $.ajax({
@@ -70,9 +74,6 @@ function setNewReleases(){
     success: (data) => { if(data){ setBooksToPage(data, 'newReleases') } }
   });
 }
-
-
-
 
 /* Set books list from db to page */
 function setBooksToPage(books, elementID) {
@@ -156,6 +157,10 @@ function goToBookPage(newBookID, from){
 
 
 
+
+/*------------------
+  CHOICE FUNCTIONS
+--------------------*/
 
 /* Click search books item */
 function select_searchBook() {

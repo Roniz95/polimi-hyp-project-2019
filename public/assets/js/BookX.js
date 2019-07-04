@@ -355,6 +355,7 @@ function setBook(isbn){
         $('#bookIsbnID').append(data[0].isbn);
         $('#bookPriceID').empty();
         $('#bookPriceID').append(data[0].price.toFixed(2)+' €');
+        document.getElementById('addToCartID').onclick = () => addToCart(data[0].isbn);
         $('#bookPlotID').empty();
         $('#bookPlotID').append(data[0].abstract);
         clamping();
@@ -818,24 +819,14 @@ function selectBookEvents(){
 /*--------------------
   CART FUNCTIONS
 ----------------------*/
-function addToCart(){
+function addToCart(isbn){
   var username = localStorage.getItem('username'); 
   if (username) {
-    //da levare
-    /* ADD BOOK ISBN TO CART - start - */
-    var element = document.getElementById('bookIsbnID').innerText;
-    var bookISBN = parseInt(element);
-    var storage = sessionStorage.getItem('cart');
-    if(storage){
-      var cart = JSON.parse(storage);
-      cart.push(bookISBN);
-      sessionStorage.setItem('cart', JSON.stringify(cart)); 
-    }else{
-      var books = [];
-      books.push(bookISBN);
-      sessionStorage.setItem('cart', JSON.stringify(books)); 
-    }
-    alert('book correctly added to cart');
-    /* ADD BOOK ISBN TO CART - end - */
+    $.ajax({
+      url: '/cart/add/' + isbn,
+      type: 'POST',
+      dataType: 'json',
+      success: () => { console.log('success') }
+    });
   }else { window.location.href = "Authentication.html" }
 }

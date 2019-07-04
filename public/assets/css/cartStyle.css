@@ -1,62 +1,195 @@
-/*-----------
-SHOPPING ITEM
-------------*/
-.contentDiv { margin: 3em 0; }
-.cartTitle { text-align: center; }
-.shoppingMenuRow { padding: 1em 0; border-bottom: 1px solid black; }
-.intestationRow { text-align: center; font-size: 30px; padding-bottom: 0.3em!important;}
-.bookImage_div { display: flex; justify-content: center; align-items: center; }
-.bookImage { width: 150px; height: 220px; }
-.bookInfos { display: flex; justify-content: flex-start; align-items: center; }
-.bookPrice { display: flex; justify-content: center; align-items: center; }
-.lastColumn { text-align: center; }
-.lastColumn b { font-size: 25px; }
-.incrementDiv { border-radius: 0.5em; border: 1px solid #ccc; margin: 0.25em 0!important;}
-.multiplierButtonL { padding: 0!important;  border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em; border: none; font-weight: bold;  font-size: 20px; }
-.multiplierButtonR { padding: 0!important;  border-top-right-radius: 0.25em; border-bottom-right-radius: 0.25em; border: none; font-weight: bold;  font-size: 20px; }
-.multiplier { margin: 0!important;  padding: 0.25em 0;  display: flex; align-items: center; justify-content: center; }
-.removeButton { height: 60px;  margin: 0.5em 0; padding: 0 1em;  background-color: darkorange;  color: #fff;  font-size: 20px;  border: none;  border-radius: 0.5em}
-
-
-.lastRow { display: flex;  align-content: center;  justify-content: center; }
-.buyBox { margin: 2.5em;  width: 40%; }
-.buyBox p { text-align: center;  font-size: 30px;  margin: 0.5em 0; }
-.buy__button { width: 50%;  background-color: darkorange;  height: 50px;  margin: 0% 25%;  margin-bottom: 2%;  font-size: 20px;  border: none;  border-radius: 0.5em; color: #fff; }
-
-button:focus { outline: none!important; }
-button:active { background-color: red!important; }
-
-/*-----------
-Ipad
-------------*/
-@media (max-width: 1020px){
-    .shopping__menu__info{width: 18%;margin-left: 82%;min-width: 80px;}
-    
-    .shopping__item__img{width: 19%;min-width: 100px;}
-    .shopping__item__image{width: 100%;height: 130px;}
-    .shopping__item__info{width: 59%;height: 130px}
-    .shopping__item__price{width: 18%;height: 130px;min-width: 80px; margin: 0%;margin-top: 1%;}
-    .shopping__remove{width: 100%;height: 40px;margin: 0%;margin-top: 20%;} 
-    
-    .buyBox{margin: 3% 20%;width: 60%;}
+/*---------------
+  SHOPPING ITEM
+-----------------*/
+.contentDiv { 
+  margin: 3em 0; 
+}
+.cartTitle { 
+  text-align: center; 
+}
+.shoppingMenuRow { 
+  padding: 1em 0; 
+  border-bottom: 1px solid black; 
+}
+.intestationRow { 
+  text-align: center; 
+  font-size: 30px; 
+  padding-bottom: 0.3em!important;
+}
+.bookImage_div { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.bookImage { 
+  width: 150px; 
+  height: 220px; 
+}
+.bookInfos { 
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+}
+.bookPrice { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.lastColumn { 
+  text-align: center; 
+}
+.lastColumn b { 
+  font-size: 25px; 
+}
+.incrementDiv { 
+  border-radius: 0.5em; 
+  border: 1px solid #ccc; 
+  margin: 0.25em 0!important;
+}
+.multiplierButtonL { 
+  padding: 0!important;  
+  border-top-left-radius: 0.25em; 
+  border-bottom-left-radius: 0.25em; 
+  border: none; 
+  font-weight: bold;  
+  font-size: 20px; 
+}
+.multiplierButtonR { 
+  padding: 0!important;  
+  border-top-right-radius: 0.25em; 
+  border-bottom-right-radius: 0.25em; 
+  border: none; 
+  font-weight: bold;  
+  font-size: 20px; 
+}
+.multiplier { 
+  margin: 0!important;  
+  padding: 0.25em 0;  
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.removeButton { 
+  height: 60px;  
+  margin: 0.5em 0; 
+  padding: 0 1em;  
+  background-color: darkorange;  
+  color: #fff;  
+  font-size: 20px;  
+  border: none;  
+  border-radius: 0.5em
+}
+.lastRow { 
+  display: flex;  
+  align-content: center;  
+  justify-content: center; 
+}
+.buyBox { 
+  margin: 2.5em;  
+  width: 40%; 
+}
+.buyBox p { 
+  text-align: center;  
+  font-size: 30px;  
+  margin: 0.5em 0; 
+}
+.buy__button { 
+  width: 50%;  
+  background-color: darkorange;  
+  height: 50px;  
+  margin: 0% 25%;  
+  margin-bottom: 2%;  
+  font-size: 20px;  
+  border: none;  
+  border-radius: 0.5em; 
+  color: #fff; 
+}
+button:focus { 
+  outline: none!important; 
+}
+button:active { 
+  background-color: red!important; 
 }
 
 
-/*-----------
-Smartphone
-------------*/
+
+
+/*--------------
+  Adjustments
+----------------*/
+@media (max-width: 1020px){
+  .shopping__menu__info {
+    width: 18%;
+    margin-left: 82%;
+    min-width: 80px;
+  }
+  .shopping__item__img {
+    width: 19%;
+    min-width: 100px;
+  }
+  .shopping__item__image {
+    width: 100%;
+    height: 130px;
+  }
+  .shopping__item__info {
+    width: 59%;
+    height: 130px;
+  }
+  .shopping__item__price {
+    width: 18%;
+    height: 130px;
+    min-width: 80px; 
+    margin: 0%;
+    margin-top: 1%;
+  }
+  .shopping__remove {
+    width: 100%;
+    height: 40px;
+    margin: 0%;
+    margin-top: 20%;
+  } 
+  .buyBox {
+    margin: 3% 20%;
+    width: 60%;
+  }
+}
+
 @media (max-width: 600px){
-    
-    .shopping__menu h1{font-size: 40px;}
-    
-    .shopping__item{margin-bottom: 3%;}
-    .shopping__menu__info{width: 100px;float: right;}
-    
-    .shopping__item__img{width: 100px;margin: 0;margin-top: 1%;}
-    .shopping__item__info{width: 0%; height: 0px;margin: 0;}
-    .shopping__item__price{width: 100px;float: right;}
-    .shopping__remove{margin-top: 30%;} 
-    
-    .buyBox{margin: 5% 5%;width: 90%;}
-    .buy__button{width: 80%;margin: 0% 10%;margin-bottom: 5%;height: 70px;}
+  .shopping__menu h1 {
+    font-size: 40px;
+  }
+  .shopping__item {
+    margin-bottom: 3%;
+  }
+  .shopping__menu__info {
+    width: 100px;
+    float: right;
+  }
+  .shopping__item__img {
+    width: 100px;
+    margin: 0;
+    margin-top: 1%;
+  }
+  .shopping__item__info {
+    width: 0%; 
+    height: 0px;
+    margin: 0;
+  }
+  .shopping__item__price {
+    width: 100px;
+    float: right;
+  }
+  .shopping__remove {
+    margin-top: 30%;
+  } 
+  .buyBox {
+    margin: 5% 5%;
+    width: 90%;
+  }
+  .buy__button {
+    width: 80%;
+    margin: 0% 10%;
+    margin-bottom: 5%;
+    height: 70px;
+  }
 }

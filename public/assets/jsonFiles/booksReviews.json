@@ -86,5 +86,437 @@
     "stars" : 5,
     "value" : "Awesome",
     "comment" : "Spettacolare, impressionante. Non pensavo che mi avrebbe appassionato come i libri della precedente saga"
+  },
+  {
+    "id": 11,
+    "isbn": 9785271340871,
+    "username" : "aleRocco",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 12,
+    "isbn": 9785271340871,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Very very beautiful!!!"
+  },
+  {
+    "id": 13,
+    "isbn": 9788865461754,
+    "username" : "fedecere94",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : "Good, but I was expecting somethig more"
+  },
+  {
+    "id": 14,
+    "isbn": 9788865461754,
+    "username" : "Roniz95",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : "Nothing special"
+  },
+  {
+    "id": 15,
+    "isbn": 9788865461754,
+    "username" : "aleRocco",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 16,
+    "isbn": 9788865461321,
+    "username" : "Roniz95",
+    "stars" : 4,
+    "value" : "Very Good",
+    "comment" : ""
+  },
+  {
+    "id": 17,
+    "isbn": 9781415958339,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 18,
+    "isbn": 9781415958977,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "It left me speechless"
+  },
+  {
+    "id": 19,
+    "isbn": 9781415958384,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Very impressive"
+  },
+  {
+    "id": 20,
+    "isbn": 9788817093750,
+    "username" : "fedecere94",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 21,
+    "isbn": 9788817093750,
+    "username" : "aleRocco",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 22,
+    "isbn": 9788817118958,
+    "username" : "Roniz95",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 23,
+    "isbn": 9788817118958,
+    "username" : "aleRocco",
+    "stars" : 4,
+    "value" : "Very Good",
+    "comment" : ""
+  },
+  {
+    "id": 24,
+    "isbn": 9788817118958,
+    "username" : "fedecere94",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 25,
+    "isbn": 9788856609714,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 26,
+    "isbn": 9788838485664,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 27,
+    "isbn": 9788838485664,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Incredible!!! Very engaging and beautiful story"
+  },
+  {
+    "id": 28,
+    "isbn": 9788838485695,
+    "username" : "Roniz95",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 29,
+    "isbn": 9788822732996,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "I've read it in only 2 days. It's awesome!"
+  },
+  {
+    "id": 30,
+    "isbn": 9788822732996,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "It's written very well!"
+  },
+  {
+    "id": 31,
+    "isbn": 9788822732996,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 32,
+    "isbn": 9788850221257,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Impressive, very very impressive"
+  },
+  {
+    "id": 33,
+    "isbn": 9788850221639,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Terrific, the story became always better"
+  },
+  {
+    "id": 34,
+    "isbn": 9788850222667,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Tungdil is one of my favourite character ever"
+  },
+  {
+    "id": 35,
+    "isbn": 9788850224012,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Wonderful, wonderful, wonderful"
+  },
+  {
+    "id": 36,
+    "isbn": 9788850251414,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : "Speachless....It's devastating!!!! Read it as soon as possible"
+  },
+  {
+    "id": 37,
+    "isbn": 9788804666578,
+    "username" : "aleRocco",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 38,
+    "isbn": 9788804666578,
+    "username" : "Roniz95",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 39,
+    "isbn": 9788804666653,
+    "username" : "Roniz95",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 40,
+    "isbn": 9788845268342,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 41,
+    "isbn": 9788845268342,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 42,
+    "isbn": 9788845270741,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 43,
+    "isbn": 9788845270758,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 44,
+    "isbn": 9788845270758,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 45,
+    "isbn": 9788845270758,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 46,
+    "isbn": 9788845270765,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 47,
+    "isbn": 9788845270765,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 48,
+    "isbn": 9788845272400,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 49,
+    "isbn": 9788817141673,
+    "username" : "fedecere94",
+    "stars" : 2,
+    "value" : "Kindly bad",
+    "comment" : "One of the few cases where the TV series is better than the book"
+  },
+  {
+    "id": 50,
+    "isbn": 9788817141673,
+    "username" : "aleRocco",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 51,
+    "isbn": 9788850240173,
+    "username" : "aleRocco",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 52,
+    "isbn": 9788850240180,
+    "username" : "Roniz95",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 53,
+    "isbn": 9788850240180,
+    "username" : "fedecere94",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 54,
+    "isbn": 9788850247738,
+    "username" : "fedecere94",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 55,
+    "isbn": 9788850247738,
+    "username" : "Roniz95",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 56,
+    "isbn": 9788850247738,
+    "username" : "aleRocco",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 57,
+    "isbn": 9788850237296,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 58,
+    "isbn": 9788850237296,
+    "username" : "Roniz95",
+    "stars" : 3,
+    "value" : "Good",
+    "comment" : ""
+  },
+  {
+    "id": 59,
+    "isbn": 9788842928942,
+    "username" : "Roniz95",
+    "stars" : 4,
+    "value" : "Very good",
+    "comment" : ""
+  },
+  {
+    "id": 60,
+    "isbn": 9788842929123,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 61,
+    "isbn": 9788842929130,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 62,
+    "isbn": 9788842929147,
+    "username" : "Roniz95",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 63,
+    "isbn": 9788842929147,
+    "username" : "fedecere94",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
+  },
+  {
+    "id": 64,
+    "isbn": 9788842929147,
+    "username" : "aleRocco",
+    "stars" : 5,
+    "value" : "Awesome",
+    "comment" : ""
   }
 ]

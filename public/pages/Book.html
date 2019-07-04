@@ -3,21 +3,23 @@
 
 <head>
     
-    <title>Book</title>
+  <title>Book</title>
+  
+  <!-- meta Tags --> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css Links -->   
+  <link rel="stylesheet" href="../assets/css/standardStyle.css">
+  <link rel="stylesheet" href="../assets/css/bookXStyle.css">
+  <link rel="stylesheet" href="../assets/css/bookStyle.css">
+  <link rel="stylesheet" href="../assets/css/eventStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="../assets/css/standardStyle.css">
-    <link rel="stylesheet" href="../assets/css/bookXStyle.css">
-    <link rel="stylesheet" href="../assets/css/bookStyle.css">
-    <link rel="stylesheet" href="../assets/css/eventStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- JQuery Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- JQuery Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
 </head>
 
@@ -84,7 +86,7 @@
               <td class="bookData" id="bookPriceID"><!-- data --></td>
             </tr>
           </table>
-          <button class="btn btn-primary addButton" type="submit" onclick="addToCart()">Add To Cart<i class="fa fa-cart-plus"></i></button>
+          <button class="btn btn-primary addButton" id="addToCartID" type="submit">Add To Cart<i class="fa fa-cart-plus"></i></button>
           <button class="btn btn-primary addButton" type="submit">Add to whish list<i class="fa fa-heart"></i></button>    
         </div>
       </div>

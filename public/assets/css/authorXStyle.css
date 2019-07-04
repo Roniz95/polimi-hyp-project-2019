@@ -1,38 +1,118 @@
 /*-------------
   MAIN AUTHOR
 ---------------*/
-.intro { background-color: darkorange;  width: 100%;  padding: 5% 0; }
-.intro h1 { color: #333;  text-align: center;  color: #000; }
-.box { padding: 2% 0.5%; }
-.box__image { width: 100%;  display: flex;  justify-content: center;  align-items: center; }
-.box__img { width: 50%;  border-radius: 30%;  border: 3px solid #000;  }
-.box__info { width: 100%;  margin-top: 3%;  padding: 1% 0px;  border-top: 1px solid #ccc;  border-bottom: 1px solid #ccc;  font-size: 23px; }
-.box__info p { color: #000;  float: left;  font-style: italic; }
-.box__info__link { color: darkorange;  float: right; }
+.intro { 
+  background-color: darkorange;  
+  width: 100%;  
+  padding: 5% 0; 
+}
+.intro h1 { 
+  color: #333;  
+  text-align: center;  
+  color: #000; 
+}
+.box { 
+  padding: 2% 0.5%; 
+}
+.box__image { 
+  width: 100%;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center; 
+}
+.box__img { 
+  width: 50%;  
+  border-radius: 30%;  
+  border: 3px solid #000;  
+}
+.box__info { 
+  width: 100%;  
+  margin-top: 3%;  
+  padding: 1% 0px;  
+  border-top: 1px solid #ccc;  
+  border-bottom: 1px solid #ccc;  
+  font-size: 23px; 
+}
+.box__info p { 
+  color: #000;  
+  float: left;  
+  font-style: italic; 
+}
+.box__info__link { 
+  color: darkorange;  float: right; 
+}
 
 
 /*---------------
   CARDS AUTHORS
 -----------------*/
-.deckAuthor_title { background-color: #333;  width: 100%; }
-.deckAuthor_title h6 { padding: 5px;  color: #fff;  text-align: center;  font-size: 25px;  font-style: italic;  margin-bottom: 0; }
-.deckAuthor { overflow-x: scroll;  overflow-y: hidden;  display: flex;  padding: 1% 0;  margin-bottom: 5%;  width: 100%; }
-.cardAuthor { width: 275px;  margin: 0% 2%;  float: left;  flex: 0 0 auto;  border-radius: 2.5%;  border: 1px solid #ccc; }
-.cardAuthor__image { width: 100%;  height: 175px;  border-top-left-radius: 2.5%;  border-top-right-radius: 2.5%; }
-.cardAuthor__body { font-size: 23px; text-align: center;  padding: 2%; }
+.deckAuthor_title { 
+  background-color: #333;  
+  width: 100%; 
+}
+.deckAuthor_title h6 { 
+  padding: 5px;  
+  color: #fff;  
+  text-align: center;  
+  font-size: 25px;  
+  font-style: italic;  
+  margin-bottom: 0; 
+}
+.deckAuthor { 
+  overflow-x: scroll;  
+  overflow-y: hidden;  
+  display: flex;  
+  padding: 1% 0;  
+  margin-bottom: 5%;  
+  width: 100%; 
+}
+.cardAuthor { 
+  width: 275px;  
+  margin: 0% 2%;  
+  float: left;  
+  flex: 0 0 auto;  
+  border-radius: 2.5%;  
+  border: 1px solid #ccc; 
+}
+.cardAuthor__image { 
+  width: 100%;  
+  height: 175px;  
+  border-top-left-radius: 2.5%;  
+  border-top-right-radius: 2.5%; 
+}
+.cardAuthor__body { 
+  font-size: 23px; 
+  text-align: center;  
+  padding: 2%; 
+}
 
 
 
 
-/*-----------
-Smartphone
-------------*/
+/*--------------
+  Adjustments
+---------------*/
 @media (max-width: 767px){ 
-  .box__info { font-size: 18px; }
-  .box__info p { text-align: center; }
-  .box__image { padding-top: 1%;  padding-bottom: 1%;  }
-  .box__img{ width: 90%; }
-  .cardAuthor { width: 200px; }
-  .cardAuthor__image { height: 120px; }
-  .cardAuthor__body { font-size: 12.5px; }
+  .box__info { 
+    font-size: 18px; 
+  }
+  .box__info p { 
+    text-align: center; 
+  }
+  .box__image { 
+    padding-top: 1%;  
+    padding-bottom: 1%;  
+  }
+  .box__img{ 
+    width: 90%; 
+  }
+  .cardAuthor { 
+    width: 200px; 
+  }
+  .cardAuthor__image { 
+    height: 120px; 
+  }
+  .cardAuthor__body { 
+    font-size: 12.5px; 
+  }
 }

@@ -226,36 +226,16 @@ document.body.appendChild(navbar);
 
 
 
-/* CONTROL IF USER IS LOGGED */
-var username = localStorage.getItem('username');
-if (username) { 
-  $.ajax({
-    url: '/login',
-    type: 'GET'
-  }).then( 
-    (success) => {
-      document.getElementById("notLogged_button").style.display = 'none';
-      document.getElementById("dropdownMenuButton").style.display = 'block';
-      document.getElementById("dropdownMenuButton").textContent = username; 
-    },
-    (fail) => {
-      localStorage.removeItem('username');
-      document.getElementById("notLogged_button").style.display = 'block';
-      document.getElementById("dropdownMenuButton").style.display = 'none';
-      document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
-    }
-  );
-} 
-else {
-  document.getElementById("notLogged_button").style.display = 'block';
-  document.getElementById("dropdownMenuButton").style.display = 'none';
-  document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
-}
+/*-----------------
+  OTHER FUNCTIONS
+-------------------*/
 
+/* redirect user to Authentication page */
 function redirectToAuthPage(){
   window.location.href = (document.title=="Home" ? "pages" : ".") + "/Authentication.html";
 }
-   
+
+/* user sign out */
 function signOut() {
   $.ajax({
     url: '/logout',
@@ -267,6 +247,37 @@ function signOut() {
       else { window.location.href = (document.title=="Home" ? "" : "../") + "index.html"; }
     }
   })
+}
+
+
+
+
+/*----------------------------
+  CONTROL IF USER IS LOGGED 
+------------------------------*/
+var username = localStorage.getItem('username');
+if (username) { 
+  $.ajax({
+    url: '/login',
+    type: 'GET',
+    dataType: 'json',
+    success: (success) => {
+      document.getElementById("notLogged_button").style.display = 'none';
+      document.getElementById("dropdownMenuButton").style.display = 'block';
+      document.getElementById("dropdownMenuButton").textContent = username; 
+    },
+    error: (err) => {
+      localStorage.removeItem('username');
+      document.getElementById("notLogged_button").style.display = 'block';
+      document.getElementById("dropdownMenuButton").style.display = 'none';
+      document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
+    } 
+  })
+} 
+else {
+  document.getElementById("notLogged_button").style.display = 'block';
+  document.getElementById("dropdownMenuButton").style.display = 'none';
+  document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
 }
     
     

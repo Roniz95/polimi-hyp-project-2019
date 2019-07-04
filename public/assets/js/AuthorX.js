@@ -170,9 +170,11 @@ function paginationStyle(tabIndex, length){
 
 
 
+/*--------------------------
+  CURRENT AUTHOR FUNCTIONS
+----------------------------*/
 
-
-
+/* Set current author data */
 function setAuthor(id){
   $.ajax({
     url: '/authors/'+id,
@@ -195,6 +197,7 @@ function setAuthor(id){
   });
 }
 
+/* Fetch all author's books */
 function fetchAuthorBooks(authorID, authorName){
   $.ajax({
     url: '/authors/' + authorID + '/books',
@@ -204,6 +207,7 @@ function fetchAuthorBooks(authorID, authorName){
   });
 }
 
+/* Set all book list to page */
 function SetBooks(booksIDs, elementID, bookTitle, searchID) {
   var deckBook = document.getElementById(elementID); 
   while(deckBook.firstChild){ deckBook.removeChild(deckBook.firstChild) }
@@ -243,6 +247,7 @@ function SetBooks(booksIDs, elementID, bookTitle, searchID) {
   } 
 } 
 
+/* Set author names list to the books card */
 function createAuthorsList(bookISBN, element){
   $.ajax({
     url: '/books/' + bookISBN + '/authors',
@@ -277,8 +282,13 @@ function createGenresList(bookISBN, element){
   });
 }
 
+/* Redirect to book page */
+function goToBook(newBookISBN, from, name, isbn){
+  var str = from + "( of "+name+" )";
+  window.location.href = 'Book.html?isbn='+newBookISBN+'&from='+str+'&searchID='+isbn;
+}
 
-
+/* Fetch all similar author */
 function fetchSimilarAuthors(id, authorName){
   $.ajax({
     url: '/authors/' + id + '/similar',
@@ -288,6 +298,7 @@ function fetchSimilarAuthors(id, authorName){
   });
 }
 
+/* Set authors list to page */
 function setSimilarAuthors(authors, authorName, authorID) {
   var deckAuthor = document.getElementById('similarAuthor');
   while(deckAuthor.firstChild){ deckAuthor.removeChild(deckAuthor.firstChild) }
@@ -313,13 +324,7 @@ function setSimilarAuthors(authors, authorName, authorID) {
   }
 }
 
-
-
-function goToBook(newBookISBN, from, name, isbn){
-  var str = from + "( of "+name+" )";
-  window.location.href = 'Book.html?isbn='+newBookISBN+'&from='+str+'&searchID='+isbn;
-}
-
+/* Redirect to author page */
 function goToAuthor(authorID, authorName, oldAuthorID){
   window.location.href = 'Author.html?id='+ authorID + '&from=similarAuthors(' + authorName + ')&searchID=' + oldAuthorID; 
 }

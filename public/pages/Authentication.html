@@ -30,10 +30,12 @@
   <div class="wrapper">
     <div class="filter">
       <div class="authentication_div">
+        <!-- choice signIn/signUp container -->
         <div class="signInUp_div">
           <p id="signIn" class="sign_mode_active" onclick="select_SignIn()">SIGN IN</p>
           <p id="signUp" onclick="select_SignUp()">SIGN UP</p>
         </div>
+        <!-- sign in form -->
         <div id="signIn_form" class="floating-form">
           <div class="floating-label">      
             <input id="signIn_username" class="floating-input" type="text" placeholder=" ">
@@ -46,8 +48,9 @@
             <label>Password</label>
             <i class="fa fa-lg fa-eye-slash password_icon" onclick="showHidePassword(this, 'signIn_password')"></i>
           </div>
-          <button type="button" class="btn btn-primary" onclick="signIn()">SIGN IN</button>
+          <button type="button" class="btn btn-primary signButton" onclick="signIn()">SIGN IN</button>
         </div>
+        <!-- sign up form -->
         <div id="signUp_form" class="floating-form form_inactive">
           <div class="floating-label">      
             <input id="signUp_name" class="floating-input" type="text" placeholder=" ">
@@ -81,7 +84,7 @@
             <label>Confirm password</label>
             <i class="fa fa-lg fa-eye-slash password_icon" onclick="showHidePassword(this, 'signUp_conf_password')"></i>
           </div>
-          <button type="button" class="btn btn-primary" onclick="signUp()">SIGN UP</button>
+          <button type="button" class="btn btn-primary signButton" onclick="signUp()">SIGN UP</button>
         </div>
       </div>
     </div>

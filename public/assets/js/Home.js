@@ -9,14 +9,32 @@ function fetchData() {
 
 
 
+/*------------------
+  EVENTS FUNCTIONS
+--------------------*/
+
 /* fetch events from db */
 function setEvents(){
+  var date = createDateStrForDBRequest(new Date());
   $.ajax({
-    url: '/events',//soonEvents,
+    url: '/events?fromDate=' + date,
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ setEventsToPage(data) } }
+    success: (data) => { 
+      if(data.length>0){ setEventsToPage(data) }
+      else { setEventsToPage(staticData) }
+    }
   });
+}
+
+/* create a date string for API request */
+function createDateStrForDBRequest(date){
+  var year = date.getFullYear().toString();
+  var tmpMonth = date.getMonth() + 1; 
+  var month = tmpMonth>9 ? tmpMonth.toString() : ('0'+tmpMonth.toString());
+  var tmpDay = date.getDate();
+  var day = tmpDay>9 ? date.getDate().toString() : ('0'+tmpDay.toString());
+  return year+'-'+month+'-'+day;
 }
 
 /* set events to carousel */
@@ -71,6 +89,10 @@ function setItems(events){
 
 
 
+
+/*------------------
+  BOOKS FUNCTIONS
+--------------------*/
 
 /* fetch best sellers from db */
 function setBestSellers(){
@@ -171,3 +193,27 @@ function createGenresList(bookISBN, element){
 function goToBookPage(newBookISBN, from){
   window.location.href = 'pages/Book.html?isbn='+newBookISBN+'&from='+from;
 }
+
+
+
+
+/*--------------------------------------
+  IF NO EVENTS, FIXED CAROUSEL CHOICE
+---------------------------------------*/
+var staticData = [
+  {
+    "title": "Company Name",
+    "image" : "../assets/images/sfondo2.jpg",
+    "description" : "Since 2015 we are one of the best physical and online retailers in the field of reading.<br>Come and meet us in our stores in:<br>Milan, Bologna and Turin"  
+  },
+  {
+    "title": "Company Name",
+    "image" : "../assets/images/sfondo4.jpg",
+    "description" : "Since 2015 we are one of the best physical and online retailers in the field of reading.<br>Come and meet us in our stores in:<br>Milan, Bologna and Turin"  
+  },
+  {
+    "title": "Company Name",
+    "image" : "../assets/images/sfondo5.jpg",
+    "description" : "Since 2015 we are one of the best physical and online retailers in the field of reading.<br>Come and meet us in our stores in:<br>Milan, Bologna and Turin"  
+  }
+]

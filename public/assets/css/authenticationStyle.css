@@ -117,6 +117,13 @@ label {
   border-color: darkorange;  
   font-weight: bold; 
 }
+.signButton:focus { 
+  box-shadow: none!important;
+}
+.signButton:active { 
+  background-color: darkorange;  
+  border-color: darkorange;
+}
 
 /* active state */
 .floating-input:focus ~ .highlight {

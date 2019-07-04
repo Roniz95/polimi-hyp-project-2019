@@ -10,7 +10,7 @@
     "start" : "16:30",
     "end" : "18:30",
     "image" : "../assets/images/events/event1.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Giovedì 25 Luglio, dalle 16:30 alle 18:30</b>, Chiara Francini presenterà la sua nuova ed imperdibile opera nella nostra sede di <b>Bologna</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>16:30-17:30</b> presentazione libro con intervista<br>- <b>17:30-18:30</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 1,
@@ -23,7 +23,7 @@
     "start" : "13:00",
     "end" : "15:00",
     "image" : "../assets/images/events/event2.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Lunedì 15 Luglio, dalle 13:00 alle 15:00</b>, Glenn Cooper presenterà la sua nuova ed imperdibile opera nella nostra sede di <b>Milano</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>13:00-14:00</b> presentazione libro con intervista<br>- <b>14:00-15:00</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 2,
@@ -75,7 +75,7 @@
     "start" : "15:00",
     "end" : "16:30",
     "image" : "../assets/images/events/event6.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Mercoledì 10 Luglio, dalle 15:00 alle 16:30</b>, Jack Whyte presenterà la sua nuova ed imperdibile opera nella nostra sede di <b>Milano</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>15:00-16:00</b> presentazione libro con intervista<br>- <b>16:00-16:30</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 6,
@@ -88,7 +88,7 @@
     "start" : "10:00",
     "end" : "12:00",
     "image" : "../assets/images/events/event7.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Martedì 23 Luglio, dalle 10:00 alle 12:00</b>, Gillian Flynn presenterà la sua nuova ed imperdibile opera nella nostra sede di <b>Torino</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>10:00-11:00</b> presentazione libro con intervista<br>- <b>11:00-12:00</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 7,
@@ -101,7 +101,7 @@
     "start" : "14:30",
     "end" : "17:00",
     "image" : "../assets/images/events/event8.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Martedì 16 Luglio, dalle 14:30 alle 17:00</b>, Alan Moore e Kevin O'Neal presenteranno la loro nuova ed imperdibile opera nella nostra sede di <b>Torino</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>14:30-16:00</b> presentazione libro con intervista<br>- <b>16:00-17:00</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 8,
@@ -114,7 +114,7 @@
     "start" : "15:00",
     "end" : "16:30",
     "image" : "../assets/images/events/event9.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Venerdì 12 Luglio, dalle 15:00 alle 16:30</b>, Maria Rita Parsi e Salvatore Giannelle presenteranno la loro nuova ed imperdibile opera nella nostra sede di <b>Bologna</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>15:00-16:00</b> presentazione libro con intervista<br>- <b>16:00-16:30</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   },
   {
     "id": 9,
@@ -127,6 +127,6 @@
     "start" : "16:30",
     "end" : "19:00",
     "image" : "../assets/images/events/event10.jpg",
-    "description" : "TO DO"  
+    "description" : "<b>Domenica 28 Luglio, dalle 16:30 alle 19:00</b>, James Patterson presenterà la sua nuova ed imperdibile opera nella nostra sede di <b>Milano</b>.<br>L'incontro sarà organizzato nel seguente modo:<br>- <b>16:30-17:30</b> presentazione libro con intervista<br>- <b>17:30-19:00</b> firmacopie<br>Per maggiori informazioni scrivi al nostro recapito mail"  
   }
 ]

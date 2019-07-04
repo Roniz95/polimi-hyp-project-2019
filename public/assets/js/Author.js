@@ -25,33 +25,6 @@ function fetchData() {
 
 
 
-/*------------------
-  CHOICE FUNCTIONS
---------------------*/
-
-/* Called when user clicks Search For Author button */
-function select_searchAuthor() {
-  if(!document.getElementById("search_author").classList.contains("button_active")){
-    document.getElementById('search_author').classList.toggle("button_active");
-    document.getElementById("author_of_the_month").classList.remove("button_active");
-    document.getElementById("search").style.display = "block";
-    document.getElementById('author').style.display = "none";
-  }
-}
-
-/* Called when user clicks Author of the Month button */
-function select_authorOfTheMonth() {
-  if(!document.getElementById("author_of_the_month").classList.contains("button_active")){
-    document.getElementById('search_author').classList.remove("button_active");
-    document.getElementById("author_of_the_month").classList.toggle("button_active");
-    document.getElementById('search').style.display = "none";
-    document.getElementById("author").style.display = "block";
-  }
-}
-
-
-
-
 /*-------------------
   AUTHOR FUNCTIONS
 --------------------*/
@@ -145,4 +118,31 @@ function setAuthorList(authorList, stringSearched){
 /* Redirect to authorX page */
 function goToAuthor(id, str){
   window.location.href = 'Author.html?id=' + id + '&from=authorSearch(' + str + ')';
+}
+
+
+
+
+/*------------------
+  CHOICE FUNCTIONS
+--------------------*/
+
+/* Called when user clicks Search For Author button */
+function select_searchAuthor() {
+  if(!document.getElementById("search_author").classList.contains("button_active")){
+    document.getElementById('search_author').classList.toggle("button_active");
+    document.getElementById("author_of_the_month").classList.remove("button_active");
+    document.getElementById("search").style.display = "block";
+    document.getElementById('author').style.display = "none";
+  }
+}
+
+/* Called when user clicks Author of the Month button */
+function select_authorOfTheMonth() {
+  if(!document.getElementById("author_of_the_month").classList.contains("button_active")){
+    document.getElementById('search_author').classList.remove("button_active");
+    document.getElementById("author_of_the_month").classList.toggle("button_active");
+    document.getElementById('search').style.display = "none";
+    document.getElementById("author").style.display = "block";
+  }
 }

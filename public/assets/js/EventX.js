@@ -12,9 +12,20 @@ function fetchData() {
   var idParam1 = parameters[1].split('=');
   var from = unescape(idParam1[1]);
   
+  var today = new Date();
+  
   if(from=='monthEvents'){   
+    var thisMonth = today.getMonth()+1;
+    var thisMonthStr = thisMonth>9 ? thisMonth.toString() : ('0'+thisMonth.toString());
+    var firstMonthDayDate = new Date(today.getFullYear().toString()+'-'+thisMonthStr+'-01'); 
+    var lastMonthDayDate = new Date(); 
+    if(thisMonth===11 || thisMonth===4 || thisMonth===6 || thisMonth===9 ){ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 29); }
+    else if(thisMonth===2){ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 27); }
+    else{ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 30); }
+    var fromDate1 = createDateStrForDBRequest(firstMonthDayDate);
+    var toDate1 = createDateStrForDBRequest(lastMonthDayDate);
     $.ajax({
-      url: '/events',//'/monthEvents',
+      url: '/events',
       type: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -48,8 +59,12 @@ function fetchData() {
     });
   }
   else {
+    var twoWeeksLater = new Date();
+    twoWeeksLater.setDate(today.getDate() + 15);
+    var fromDate = createDateStrForDBRequest(today);
+    var toDate = createDateStrForDBRequest(twoWeeksLater);
     $.ajax({
-      url: '/events/soon',
+      url: '/events?fromDate=' + fromDate + '&toDate=' + toDate,
       type: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -65,6 +80,16 @@ function fetchData() {
   }
   
   setEvent(currentEventID);
+}
+
+/* create a date string for API request */
+function createDateStrForDBRequest(date){
+  var year = date.getFullYear().toString();
+  var tmpMonth = date.getMonth() + 1; 
+  var month = tmpMonth>9 ? tmpMonth.toString() : ('0'+tmpMonth.toString());
+  var tmpDay = date.getDate();
+  var day = tmpDay>9 ? date.getDate().toString() : ('0'+tmpDay.toString());
+  return year+'-'+month+'-'+day;
 }
 
 
@@ -121,6 +146,11 @@ function paginationStyle(tabIndex, length){
 }
 
 
+
+
+/*------------------------
+  CURRENT EVENT FUNCTIONS
+--------------------------*/
 
 /* Set current event data */
 function setEvent(id){
@@ -219,8 +249,6 @@ function createDateString(data){
   var year = date.getFullYear();
   return day + ' ' + month + ' ' + year;
 }
-
-
 
 /* Fetch all books of an event */
 function fetchEventBooks(eventID, eventTitle){
@@ -321,8 +349,6 @@ function createGenresList(bookISBN, element){
 function goToBook(newBookISBN, eventID, eventTitle){
   window.location.href = 'Book.html?isbn='+ newBookISBN + '&from=eventBooks(' + eventTitle + ')&searchID=' + eventID;
 }
-
-
 
 /* Fetch all authors of an event */
 function fetchEventAuthors(eventID, eventTitle){

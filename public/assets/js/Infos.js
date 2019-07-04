@@ -1,3 +1,7 @@
+/*-------------------
+  CHOICE FUNCTIONS
+---------------------*/
+
 /* Click order infos item */
 function selectOrderInfo(){
   if(!document.getElementById('orderButtonID').classList.contains("button_active")){

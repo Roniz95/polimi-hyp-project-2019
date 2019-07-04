@@ -1,17 +1,62 @@
 /*--------------
   EVENT
 ---------------*/
-.cover { height: 85vh!important; }
-.eventBox { padding-top: 1em; }
-.event__title { width: 100%;  padding: 0.5em;  text-align: center;  font-size: 30px;  font-weight: bold; }
-.eventDescription { width: 100%;  background-color: #fff;  font-size: 20px; }
-.clampDescription { overflow: hidden;  display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 10; }
-.readMoreLessDiv { text-align: right; }
-.readMoreLess { border: 1px solid #ccc;  border-radius: 0.5em; padding: 0.25em 0.5em;  display: inline-block; }
-.eventMaps { background-color: #333;  margin: 3em 0!important;  padding: 1em; }
-.eventMaps iframe { width: 70%;  height: 350px; }
-.eventMaps__info { width: 30%;  color: #fff;  padding: 1em 0;  text-align: center;  display:flex;  justify-content: center;  align-items: center; }
-.mapsInfo p { width: 100%; margin: 0;  padding: 0.25em 0; }
+.cover { 
+  height: 85vh!important; 
+}
+.eventBox { 
+  padding-top: 1em; 
+}
+.event__title { 
+  width: 100%;  
+  padding: 0.5em;  
+  text-align: center;  
+  font-size: 30px;  
+  font-weight: bold; 
+}
+.eventDescription { 
+  width: 100%;  
+  background-color: #fff;  
+  font-size: 20px; 
+}
+.clampDescription { 
+  overflow: hidden;  
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 10; 
+}
+.readMoreLessDiv { 
+  text-align: right; 
+}
+.readMoreLess { 
+  border: 1px solid #ccc;  
+  border-radius: 0.5em; 
+  padding: 0.25em 0.5em;  
+  display: inline-block; 
+}
+.eventMaps { 
+  background-color: #333;  
+  margin: 3em 0!important;  
+  padding: 1em; 
+}
+.eventMaps iframe { 
+  width: 70%;  
+  height: 350px; 
+}
+.eventMaps__info { 
+  width: 30%;  
+  color: #fff;  
+  padding: 1em 0;  
+  text-align: center;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center; 
+}
+.mapsInfo p { 
+  width: 100%; 
+  margin: 0;  
+  padding: 0.25em 0; 
+}
 
 
 
@@ -19,7 +64,10 @@
 /*------------------ 
   ORIENTATION INFO 
 --------------------*/
-.orientation_info { padding-top: 0.5em;  font-style: italic; }
+.orientation_info { 
+  padding-top: 0.5em;  
+  font-style: italic; 
+}
 
 
 
@@ -28,14 +76,29 @@
   Adjustments
 --------------------*/
 @media (max-width: 1020px){
-  .eventMaps iframe{ width: 100%;  height: auto; }
-  .eventMaps__info { width: 100%;  padding: 1em 0 0 0; }
+  .eventMaps iframe{ 
+    width: 100%;  
+    height: auto; 
+  }
+  .eventMaps__info { 
+    width: 100%;  
+    padding: 1em 0 0 0; 
+  }
 }
 
 @media (max-width: 767px){
-  .eventDescription { width: 100%;  background-color: #fff;  font-size: 15px; }
-  .event__title { font-size: 25px; }
-  #eventDescriptionID { text-align: center; padding: 0 0.25em; }
+  .eventDescription { 
+    width: 100%;  
+    background-color: #fff;  
+    font-size: 15px; 
+  }
+  .event__title { 
+    font-size: 25px; 
+  }
+  #eventDescriptionID { 
+    text-align: center; 
+    padding: 0 0.25em; 
+  }
 }
 
 

@@ -350,6 +350,7 @@ function createGenresList(bookISBN, element){
 
 
 
+
 /*---------------------
   REDIRECT FUNCTIONS
 -----------------------*/
@@ -363,4 +364,3 @@ function goToBook1(newBookISBN, title){
 function goToBook2(newBookISBN, genreID, authorID, themeID, bs, nr){
   window.location.href = 'Book.html?isbn='+newBookISBN+'&from=searchFromFilters&genre='+genreID+'&author='+authorID+'&theme='+themeID+'&bs='+bs+'&nr='+nr;
 }
-

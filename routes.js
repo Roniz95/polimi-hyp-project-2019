@@ -380,7 +380,7 @@ router.post('/cart/add/:isbn', authHelper.loginRequired, (req, res, next) => {
                         quantity : cart[0].quantity + 1
                     })
                     .then(result => {
-                        res.send()
+                        res.sendStatus(200)
                     }).catch(err => res.sendStatus(500).send(err))
             } else {
                 knex('cart')

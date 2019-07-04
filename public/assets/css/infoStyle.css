@@ -1,8 +1,13 @@
 /*---------------
   INFORMATION
 -----------------*/
-.infoContainer { margin: 1.5em 0 2.5em 0; }
-.infoContainer li { padding-top: 1em;  padding-bottom: 1em; }
+.infoContainer { 
+  margin: 1.5em 0 2.5em 0; 
+}
+.infoContainer li { 
+  padding-top: 1em;  
+  padding-bottom: 1em; 
+}
 
 
 
@@ -11,9 +16,13 @@
   Adjustments
 -----------------*/
 @media (max-width: 767px){
-  .infoContainer ul { font-size: 15px; }
+  .infoContainer ul { 
+    font-size: 15px; 
+  }
 }
 
 @media (max-width: 424px){
-  .breadcrumb li { font-size: 14px; }
+  .breadcrumb li { 
+    font-size: 14px; 
+  }
 }

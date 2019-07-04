@@ -5,24 +5,60 @@ function fetchEvents(){
   document.getElementById("thisMonthId").style.display = "flex";
   document.getElementById("soonId").style.display = "none";
   
+  var today = new Date();
+  
   //Call DB to retrieve thisMonth Events
+  var thisMonth = today.getMonth()+1;
+  var thisMonthStr = thisMonth>9 ? thisMonth.toString() : ('0'+thisMonth.toString());
+  var firstMonthDayDate = new Date(today.getFullYear().toString()+'-'+thisMonthStr+'-01'); 
+  var lastMonthDayDate = new Date(); 
+  if(thisMonth===11 || thisMonth===4 || thisMonth===6 || thisMonth===9 ){ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 29); }
+  else if(thisMonth===2){ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 27); }
+  else{ lastMonthDayDate.setDate(firstMonthDayDate.getDate() + 30); }
+  var fromDate1 = createDateStrForDBRequest(firstMonthDayDate);
+  var toDate1 = createDateStrForDBRequest(lastMonthDayDate);
   $.ajax({
-    url: '/events',//'/monthEvents',
+    url: '/events?fromDate=' + fromDate1 + '&toDate=' + toDate1,
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ setEvents(data, 'thisMonthId', 'monthEvents'); } }
+    success: (data) => { 
+      if(data.length>0){ setEvents(data, 'thisMonthId', 'monthEvents'); }
+      else { document.getElementById('thisMonthId').innerHTML = "<p class=\"noEventsFound\">No events found</p>"; }
+    }
   });
   
-  //Call DB to retrieve soon Events
+  //Call DB to retrieve soon Events (next two weeks)
+  var twoWeeksLater = new Date();
+  twoWeeksLater.setDate(twoWeeksLater.getDate() + 15);
+  var fromDate2 = createDateStrForDBRequest(today);
+  var toDate2 = createDateStrForDBRequest(twoWeeksLater);
   $.ajax({
-    url: '/events', //events/soon
+    url: '/events?fromDate=' + fromDate2 + '&toDate=' + toDate2,
     type: 'GET',
     dataType: 'json',
-    success: (data) => { if(data){ setEvents(data, 'soonId', 'soonEvents'); } }
+    success: (data) => { 
+      if(data.length>0){ setEvents(data, 'soonId', 'soonEvents'); }
+      else { document.getElementById('soonId').innerHTML = "<p class=\"noEventsFound\">No events found</p>"; }
+    }
   });
 }
 
+/* create a date string for API request */
+function createDateStrForDBRequest(date){
+  var year = date.getFullYear().toString();
+  var tmpMonth = date.getMonth() + 1; 
+  var month = tmpMonth>9 ? tmpMonth.toString() : ('0'+tmpMonth.toString());
+  var tmpDay = date.getDate();
+  var day = tmpDay>9 ? date.getDate().toString() : ('0'+tmpDay.toString());
+  return year+'-'+month+'-'+day;
+}
 
+
+
+
+/*-------------------
+  EVENTS FUNCTIONS
+--------------------*/
 
 /* Set events list */
 function setEvents(events, elementID, from){
@@ -71,6 +107,10 @@ function goToEvent(eventID, from){
 
 
 
+
+/*------------------
+  CHOICE FUNCTIONS
+--------------------*/
 
 /* Click This month item */
 function selectThisMonthEvents() {
