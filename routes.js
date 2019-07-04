@@ -57,7 +57,7 @@ router.get('/books', function (req, res) {
 
     }
     if (typeof req.query.isBestSeller != "undefined") {
-        if (common.isParamValid('isBestSeller', req.params.isBestSeller)) {
+        if (!common.isParamValid('isBestSeller', req.params.isBestSeller)) {
             errorList.push(common.error("badQuery", 'isBestSeller'));
         } else {
             query.where('isBestSeller', req.query.isBestSeller);
@@ -108,9 +108,12 @@ router.get('/books', function (req, res) {
     }
 
     if (typeof req.query.genre != "undefined") {
-        if (!common.isParamValid('id', req.query.genre))
+        if (!common.isParamValid('id', req.query.genre)) {
+            errorList.push(common.error('badQuery', 'genre'))
+        } else {
             query.leftJoin('bookGenres', 'books.isbn', 'bookGenres.isbn')
                 .where('bookGenres.genreID', req.query.genre)
+        }
     }
 
 
