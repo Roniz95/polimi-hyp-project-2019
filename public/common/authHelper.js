@@ -57,7 +57,7 @@ function handleErrors(req) {
 }
 
 function loginRequired(req, res, next) {
-    if (!req.user) return res.status(401).json({status: 'Forbidden'});
+    if (!req.user) return res.status(401).json([common.error('forbidden', res.url)]);
     return next();
 }
 
