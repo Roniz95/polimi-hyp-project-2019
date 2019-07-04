@@ -1,5 +1,5 @@
 knex = require('knex');
-let test = false;
+let test = true;
 module.exports = {
     knexConn: function () {
         if(test) {
