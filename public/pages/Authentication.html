@@ -90,6 +90,20 @@
   <!-- FOOTER -->
   <script src="../assets/js/footer.js"></script>
   
+  <!--  Back To Top Button -->
+  <a id="backToTopButton"></a>
+  <script>
+    var btnBTT = $('#backToTopButton');
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 300) { btnBTT.addClass('show') } 
+      else { btnBTT.removeClass('show') }
+    });
+    btnBTT.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
+  </script>
+  
   
   <!-- SCRIPTS PART -->
   <!-- Auth -->

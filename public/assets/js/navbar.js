@@ -228,16 +228,25 @@ document.body.appendChild(navbar);
 
 /* CONTROL IF USER IS LOGGED */
 var username = localStorage.getItem('username');
-if (username) {
-  /*
-    Controllo se il cookie è ancora valido:
-    - SI procedo normale
-    - NO cancello dal localStorage ed eseguo lo stesso codice delle righe 242-244
-  */
-  document.getElementById("notLogged_button").style.display = 'none';
-  document.getElementById("dropdownMenuButton").style.display = 'block';
-  document.getElementById("dropdownMenuButton").textContent = username;
-} else {
+if (username) { 
+  $.ajax({
+    url: '/login',
+    type: 'GET'
+  }).then( 
+    (success) => {
+      document.getElementById("notLogged_button").style.display = 'none';
+      document.getElementById("dropdownMenuButton").style.display = 'block';
+      document.getElementById("dropdownMenuButton").textContent = username; 
+    },
+    (fail) => {
+      localStorage.removeItem('username');
+      document.getElementById("notLogged_button").style.display = 'block';
+      document.getElementById("dropdownMenuButton").style.display = 'none';
+      document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
+    }
+  );
+} 
+else {
   document.getElementById("notLogged_button").style.display = 'block';
   document.getElementById("dropdownMenuButton").style.display = 'none';
   document.getElementById("dropdownMenuButton").textContent = 'Sign In / Sign Up';
@@ -248,9 +257,16 @@ function redirectToAuthPage(){
 }
    
 function signOut() {
-  //DO BACK END SIGN OUT WHERE COOKIE IS DEACTIVATED
-  localStorage.removeItem('username');
-  window.location.reload();
+  $.ajax({
+    url: '/logout',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      localStorage.removeItem('username');
+      if(document.title != 'Cart'){ window.location.reload() }
+      else { window.location.href = (document.title=="Home" ? "" : "../") + "index.html"; }
+    }
+  })
 }
     
     

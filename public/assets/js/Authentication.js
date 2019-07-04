@@ -50,7 +50,6 @@ function signIn() {
       username: uName,
       password: password
     },
-
     dataType: 'json',
     success: (data) => { 
       if(data){
@@ -71,10 +70,27 @@ function signUp() {
   var password = document.getElementById('signUp_password').value;
   var confPassword = document.getElementById('signUp_conf_password').value;
   
-  alert('registration not yet implemented');
-  //DO BACK END SIGN UP
+  if(password==confPassword){
+    $.ajax({
+      url: '/register',
+      type: 'POST',
+      data: {
+        username: uName,
+        password: password,
+        name: name,
+        surname: surname,
+        email: email
+      },
+      dataType: 'json',
+      success: (data) => {
+        alert('user correctly registered.\nPlease Sign In to complete the operation');
+        console.log(data);
+      },
+      error: (err) => { alert(err); console.log(err); }
+    })
   
   //localStorage.setItem('logged', 'true');
   //localStorage.setItem('username', uName);
   //window.location.reload();
+}
 }
