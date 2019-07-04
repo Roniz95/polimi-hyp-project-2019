@@ -158,7 +158,6 @@ router.get('/books/:isbn/authors', function (req, res) {
             .then(authors =>
                 authors ? res.send(authors) : res.status(400)
                     .send([common.error('serverError')]))
-            .catch(err=> res.status(500).send([common.error('serverError')]))
     }
 
 });
@@ -175,8 +174,6 @@ router.get('/books/:isbn/themes', function (req, res) {
             .then(themes =>
                 themes ? res.send(themes) : res.status(400)
                     .send([common.error("serverError")]))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -191,8 +188,6 @@ router.get('/books/:isbn/genres', function (req, res) {
             .leftJoin('bookGenres', 'genres.data', 'bookGenres.genreID')
             .where('bookGenres.isbn', req.params.isbn)
             .then(genres => res.send(genres))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -205,8 +200,6 @@ router.get('/books/:isbn/reviews', function (req, res) {
         knex('reviews').select('reviews.*')
             .where('reviews.isbn', req.params.isbn)
             .then(reviews => res.send(reviews))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -220,8 +213,6 @@ router.get('/books/:isbn/similar', function (req, res) {
             .leftJoin('similarBooks', 'books.isbn', 'similarBooks.similarISBN')
             .where('similarBooks.isbn', req.params.isbn)
             .then(books => res.send(books))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -236,8 +227,6 @@ router.get('/books/:isbn/events', function (req, res) {
             .leftJoin('eventsBooks', 'events.id', 'eventsBooks.eventID')
             .where('eventsBooks.isbn', req.params.isbn)
             .then(events => res.send(events))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -262,9 +251,7 @@ router.get('/authors', function (req, res) {
 
     }
     if (errorList.length === 0) {
-        query.then(authors => res.send(authors))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
+        query.then(authors => res.send(authors));
     } else {
         res.status(422).send(errorList);
     }
@@ -279,8 +266,6 @@ router.get('/authors/:id', function (req, res) {
         knex('authors')
             .where('id', req.params.id)
             .then(author => res.send(author))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -294,8 +279,6 @@ router.get('/authors/:id/books', function (req, res) {
             .leftJoin('authorsOf', 'books.isbn', 'authorsOf.isbn')
             .where('authorsOf.authorID', req.params.id)
             .then(books => res.send(books))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 
@@ -310,8 +293,6 @@ router.get('/authors/:id/similar', function (req, res) {
             .where('similarAuthors.id', req.params.id)
             .rightJoin('authors', 'authors.id', 'similarAuthors.similarID')
             .then(authors => res.send(authors))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -358,8 +339,6 @@ router.get('/events/:id/books', function (req, res) {
             .leftJoin('eventsBooks', 'books.isbn', 'eventsBooks.isbn')
             .where('eventsBooks.eventID', req.params.id)
             .then(booksOfEvent => res.send(booksOfEvent))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
@@ -373,12 +352,25 @@ router.get('/events/:id/authors', function (req, res) {
             .leftJoin('eventsAuthors', 'authors.id', 'eventsAuthors.authorID')
             .where('eventsAuthors.eventID', req.params.id)
             .then(eventAuthors => res.send(eventAuthors))
-            .catch(err => res.status(500).send([common.error('serverError')]))
-
     }
 
 });
 
+//TODO the next two get should be integrated inside /events
+router.get('/events/soon', function (req, res) {
+    var today = new Date();
+    var twoWeeksLater = new Date().setDate(today.getDate() + 15);
+    knex('events')
+        .where('start', '>=', today)
+        .andWhere('end', '<=', twoWeeksLater)
+        .then(soonEvents => res.send(soonEvents));
+});
+
+
+router.get('/events/month', function (req, res) {
+
+
+});
 
 router.post('/cart/add/:isbn', authHelper.loginRequired, (req, res, next) => {
     knex('cart').select('isbn', 'quantity')
