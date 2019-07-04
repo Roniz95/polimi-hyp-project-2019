@@ -118,7 +118,9 @@ router.get('/books', function (req, res) {
     if (errorList.length !== 0) {
         res.status(422).send(errorList);
     } else {
-        query.then(filteredBooks => res.send(filteredBooks));
+        query
+            .then(filteredBooks => res.send(filteredBooks))
+            .catch(err => res.send([common.error("serverError")]));
     }
 });
 
@@ -136,7 +138,8 @@ router.get('/books/:isbn', function (req, res) {
                 } else {
                     res.status(200).send(book);
                 }
-            });
+            })
+            .catch(err => res.status(500).send(common.error('serverError')));
     }
 
 });
@@ -377,7 +380,7 @@ router.post('/cart/add/:isbn', authHelper.loginRequired, (req, res, next) => {
                         quantity : cart[0].quantity + 1
                     })
                     .then(result => {
-                        res.send(200)
+                        res.send()
                     }).catch(err => res.sendStatus(500).send(err))
             } else {
                 knex('cart')
@@ -427,7 +430,7 @@ router.post('/cart/delete/:isbn', authHelper.loginRequired, (req, res, next) => 
 
 router.get('/cart/books',authHelper.loginRequired, (req, res, next) => {
     knex('books')
-        .select("books.*")
+        .select("books.*", "cart.quantity")
         .leftJoin('cart', 'books.isbn', 'cart.isbn')
         .where('cart.userID', req.user.id)
         .then((books) => {
