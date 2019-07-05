@@ -57,7 +57,7 @@ router.get('/books', function (req, res) {
 
     }
     if (typeof req.query.isBestSeller != "undefined") {
-        if (!common.isParamValid('isBestSeller', req.params.isBestSeller)) {
+        if (!common.isParamValid('isBestSeller', req.query.isBestSeller)) {
             errorList.push(common.error("badQuery", 'isBestSeller'));
         } else {
             query.where('isBestSeller', req.query.isBestSeller);

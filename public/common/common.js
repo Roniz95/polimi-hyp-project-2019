@@ -37,6 +37,7 @@ module.exports = {
         switch (param) {
             case 'isNewRelease':
             case 'isClassic':
+            case 'isBestSeller':
             case 'isRecommended':
                 return (value == "true" || value == "false");
             case 'isbn':
@@ -48,7 +49,7 @@ module.exports = {
             case 'alphanumString':
                 return (value.length <= 255)
 
-            //TODO date
+
         }
 
 
