@@ -99,9 +99,6 @@
     was not needed and in general it would have been an overkill. <br>
 </p>
 
-<h4><a id="OpenAPI_Resource_models_30"></a>OpenAPI Resource models</h4>
-<p>Describe here synthetically, which models you have introduced for resources.</p>
-
 <h3><a id="Data_model_32"></a>Data model</h3>
 
 <img src="../assets/images/IDM-Tables.jpg" width="906.75" height="915" />
@@ -128,25 +125,25 @@
         <li>Postman</li>
     </ul>
 
-    <
+
 </ul>
 <h3><a id="Discussion_39"></a>Discussion</h3>
 
 <p>Describe here:</p><br>
 <ul>
     <li>How did you make sure your web application adheres to the provided OpenAPI<br>
-        specification?
-        We tested our API using POSTMAN,
+        specification?<br><br>
+        We tested our API using POSTMAN<br><br>
     </li>
-    <li>Why do you think your web application adheres to common practices to partition<br>
-        the web application (static assets vs. application data)
+    <li>Why do you think your web application adheres to common practices to partition<br><br>
+        the web application (static assets vs. application data) <br>
         Our webapp dynamic assets are sent via Json using the provided API. The frontend <br>
         of the application was developed as a module that was integrated after with the backend. <br>
         Ideally, it would be possible to develop a totally different presentation layer,<br>
-        for example a mobile app, and integrate it with the provided API.
+        for example a mobile app, and integrate it with the provided API.<br><br>
     </li>
     <li>Describe synthetically why and how did you manage session state, what are the<br>
-        state change triggering actions (e.g., POST to login etc…).<br>
+        state change triggering actions (e.g., POST to login etc…).<br><br>
 
         There are 3 state change REST call being:
         <ul>
@@ -154,10 +151,10 @@
             <li>/register</li>
             <li>/logout</li>
         </ul>
-        Session persistence is obtained using a cookie provided to the client after login.
+        Session persistence is obtained using a cookie provided to the client after login.<br><br>
     </li>
     <li>Which technology did you use (relational or a no-SQL database) for managing<br>
-        the data model?
+        the data model? <br><br>
         We used a Postgres SQL database , the choice was dictated by our familiarity with<br>
         heroku PaaS features.
     </li>
@@ -206,9 +203,7 @@ most of all writing a good documentation.
         In the future i would like to learn more about backend development.<br>
     </li>Alessandro - I learned how to design and style HTML pages with CSS and javascript. I learned<br>
          the basic of nodejs and i'm planning to use it for a side project in the future<br>
-    <li>
-
-    </li>
+    
 </ul>
 
 </body>
